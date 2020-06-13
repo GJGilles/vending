@@ -47,6 +47,22 @@
             }
         },
         {
+            "Key": "16f9d31d-725d-427f-88a1-ac219630d477",
+            "Value": {
+                "id": "1b1335ec-b6bc-4c44-a6b8-fa2a5a54b6ff",
+                "resourcePath": "objects\\obj_g_tea_leaves\\obj_g_tea_leaves.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1c73d267-6a74-47a3-93eb-0d706bef8723",
+            "Value": {
+                "id": "c6f82bf5-b4ac-4997-bc5a-4b275f656591",
+                "resourcePath": "objects\\obj_g_tea_leaves_in\\obj_g_tea_leaves_in.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "1d6347bc-8e6e-4f64-84f8-f12e7305900c",
             "Value": {
                 "id": "667a69c6-cbc1-44bf-bbd2-0e04bbf98150",
@@ -223,6 +239,14 @@
             }
         },
         {
+            "Key": "b890b2ff-230e-4f1d-a33e-9ab0bbf30d11",
+            "Value": {
+                "id": "ceb6ae71-6566-4616-a880-9c8623a8340d",
+                "resourcePath": "objects\\obj_water\\obj_water.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bb063f12-f66c-487d-b67b-f6111d1ff2e7",
             "Value": {
                 "id": "2791b702-fe55-4950-b3ec-c4c0696a4592",
@@ -251,6 +275,14 @@
             "Value": {
                 "id": "76007bbf-2348-419d-a3c8-570e0979d62f",
                 "resourcePath": "views\\c19ed704-38fb-4fcf-ba93-1c3e77f4da50.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c5eda05c-ad96-420c-a76f-aac45ba4b42d",
+            "Value": {
+                "id": "2a5c41ef-5285-406f-8bdb-564a29877b8d",
+                "resourcePath": "views\\c5eda05c-ad96-420c-a76f-aac45ba4b42d.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -303,11 +335,27 @@
             }
         },
         {
+            "Key": "dde7c624-c4c0-4b9f-9170-71a73578f8d4",
+            "Value": {
+                "id": "3630b33c-c00d-41f6-8593-f4ef30944bf2",
+                "resourcePath": "objects\\obj_junk\\obj_junk.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
             "Value": {
                 "id": "171e131e-eb0d-4a5c-bc18-3390ede93630",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f6a67118-fbcb-4a88-9c0f-1577b07e4ef6",
+            "Value": {
+                "id": "efcf9e99-a737-4f64-9d3e-7d1c78a55373",
+                "resourcePath": "objects\\obj_g_tea\\obj_g_tea.yy",
+                "resourceType": "GMObject"
             }
         }
     ],

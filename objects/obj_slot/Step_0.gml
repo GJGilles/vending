@@ -9,6 +9,8 @@ if (component) {
 		if (component.inputs[i] && directions[i].component) {
 			var buff = directions[i].component.buffer[opposite[i]];
 			while (ds_queue_size(buff) > 0 && ds_queue_size(buffer[i]) < buff_size[i]) {
+				buffer[i].x = x;
+				buffer[i].y = y;
 				ds_queue_enqueue(buffer[i], ds_queue_dequeue(buff));
 			}
 		}
@@ -46,6 +48,8 @@ if (component) {
 					ds_queue_enqueue(component.buffer[i], result[i]);
 				}
 			}
+			
+			wait = 0;
 		}
 	}
 }

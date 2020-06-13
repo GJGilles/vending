@@ -12,4 +12,4 @@ buff_size = array_create(4, 4);
 
 max_wait = 1;
 
-process = scr_process_pipe;
+process = scr_process_steeper;

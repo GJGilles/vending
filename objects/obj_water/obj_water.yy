@@ -1,33 +1,23 @@
 {
-    "id": "b03faaa3-7662-451b-8c82-11f15f36a44f",
+    "id": "b890b2ff-230e-4f1d-a33e-9ab0bbf30d11",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_input",
+    "name": "obj_water",
     "eventList": [
         {
-            "id": "dfb41c96-6dfe-406f-83d1-ab45d857e3b9",
+            "id": "9dedc224-8982-4f1b-a3d4-22aad6a181de",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "b03faaa3-7662-451b-8c82-11f15f36a44f"
-        },
-        {
-            "id": "ae94cdf6-6ff6-4a0c-b18f-5af98571346a",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "b03faaa3-7662-451b-8c82-11f15f36a44f"
+            "m_owner": "b890b2ff-230e-4f1d-a33e-9ab0bbf30d11"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "2574f6ce-c61c-4734-bed1-28039d41f1d8",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

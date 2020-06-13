@@ -26,3 +26,6 @@ for (var i = 0; i < slot_width; i++) {
 		if (j != slot_height - 1)  { slots[i, j].down = slots[i, j + 1]; }
 	}
 }
+
+
+slots[0, 0].up = instance_create_layer(0, 0, "Instances", obj_g_tea_leaves_in);
