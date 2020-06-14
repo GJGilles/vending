@@ -11,14 +11,15 @@ if (component) {
 		var prev_slot = directions[idx];
 		
 		if (component.inputs[i] && prev_slot.component) {
-			var prev_idx = opposite[i] + prev_slot.component.rotation;
+			var prev_idx = opposite[idx] + prev_slot.component.rotation;
 			if (prev_idx > 3) { prev_idx -= 4; }
 			
 			var buff = prev_slot.component.buffer[prev_idx];
-			while (ds_queue_size(buff) > 0 && ds_queue_size(buffer[i]) < buff_size[i]) {
-				buffer[i].x = x;
-				buffer[i].y = y;
-				ds_queue_enqueue(buffer[i], ds_queue_dequeue(buff));
+			while (ds_queue_size(buff) > 0 && ds_queue_size(component.buffer[i]) < component.buff_size[i]) {
+				var item = ds_queue_dequeue(buff);
+				item.x = x;
+				item.y = y;
+				ds_queue_enqueue(component.buffer[i], item);
 			}
 		}
 	}
