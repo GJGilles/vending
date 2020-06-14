@@ -3,10 +3,10 @@
 
 event_inherited();
 
-inputs[0] = 1;
 inputs[1] = 1;
+inputs[2] = 1;
 
-outputs[2] = 1;
+outputs[0] = 1;
 
 buff_size = array_create(4, 4);
 

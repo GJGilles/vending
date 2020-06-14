@@ -13,7 +13,7 @@ var height = sprite_get_height(spr_slot);
 slots[0, 0] = 0;
 for (var i = 0; i < slot_width; i++) {
 	for (var j = 0; j < slot_height; j++) {
-		slots[i, j] = instance_create_layer(i * width, j * height, "Instances", obj_slot);
+		slots[i, j] = instance_create_layer(16 + i * width, 16 + j * height, "Factory", obj_slot);
 	}
 }
 
@@ -28,4 +28,7 @@ for (var i = 0; i < slot_width; i++) {
 }
 
 
-slots[0, 0].up = instance_create_layer(0, 0, "Instances", obj_g_tea_leaves_in);
+// Test
+slots[0, 0].component = instance_create_layer(0, 0, "Components", obj_g_tea_leaves_in);
+slots[0, 1].component = instance_create_layer(slots[0, 1].x, slots[0, 1].y, "Components", obj_pipe);
+slots[0, 1].component.rotation = 1;

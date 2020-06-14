@@ -7,3 +7,5 @@ up = -1;
 down = -1;
 
 component = -1;
+
+result = -1;

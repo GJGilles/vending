@@ -7,6 +7,5 @@ freq = 10;
 
 item = obj_g_tea_leaves;
 
-dir = 3;
-
-buff_size = 10;
+buff_size[3] = 10;
+outputs[3] = 1;
