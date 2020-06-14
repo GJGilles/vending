@@ -4,13 +4,11 @@
 event_inherited();
 
 inputs[0] = 1;
-inputs[2] = 1;
 
-outputs[0] = 1;
 outputs[2] = 1;
 
 buff_size = array_create(4, 4);
 
-max_wait = 1;
+max_wait = 300;
 
 process = scr_process_pipe;

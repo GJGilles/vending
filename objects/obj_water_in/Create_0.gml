@@ -5,7 +5,7 @@ event_inherited();
 
 freq = 300;
 
-item = obj_g_tea_leaves;
+item = obj_water;
 
 buff_size[3] = 10;
 outputs[3] = 1;

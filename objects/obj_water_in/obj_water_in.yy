@@ -1,33 +1,23 @@
 {
-    "id": "16de7fc4-9b39-4769-9a5a-3deccd79a02c",
+    "id": "a716a169-5da4-4174-82c3-f4a91e2c4b86",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_factory",
+    "name": "obj_water_in",
     "eventList": [
         {
-            "id": "98424585-5d87-4297-810b-aeeac3285e7c",
+            "id": "b4d47ffd-f020-4add-8a8b-0b717fa69666",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "16de7fc4-9b39-4769-9a5a-3deccd79a02c"
-        },
-        {
-            "id": "594e2d61-707d-4755-9f55-e5c9e543c7bf",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 8,
-            "m_owner": "16de7fc4-9b39-4769-9a5a-3deccd79a02c"
+            "m_owner": "a716a169-5da4-4174-82c3-f4a91e2c4b86"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "b03faaa3-7662-451b-8c82-11f15f36a44f",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -43,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
+    "spriteId": "4bf6dd80-4b67-4677-a88c-a13e0344e1fa",
     "visible": true
 }

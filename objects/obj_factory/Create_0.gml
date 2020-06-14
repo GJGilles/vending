@@ -29,6 +29,16 @@ for (var i = 0; i < slot_width; i++) {
 
 
 // Test
-slots[0, 0].component = instance_create_layer(slots[0, 0].x, slots[0, 0].y, "Components", obj_g_tea_leaves_in);
-slots[0, 1].component = instance_create_layer(slots[0, 1].x, slots[0, 1].y, "Components", obj_pipe);
-slots[0, 1].component.rotation = 1;
+slots[1, 0].component = instance_create_layer(slots[1, 0].x, slots[1, 0].y, "Components", obj_g_tea_leaves_in);
+
+slots[1, 1].component = instance_create_layer(slots[1, 1].x, slots[1, 1].y, "Components", obj_pipe);
+slots[1, 1].component.rotation = 1;
+
+slots[1, 3].component = instance_create_layer(slots[1, 3].x, slots[1, 3].y, "Components", obj_water_in);
+slots[1, 3].component.rotation = 2;
+
+slots[1, 2].component = instance_create_layer(slots[1, 2].x, slots[1, 2].y, "Components", obj_steeper);
+slots[1, 2].component.rotation = 1;
+
+slots[2, 2].component = instance_create_layer(slots[2, 2].x, slots[2, 2].y, "Components", obj_pipe);
+slots[2, 2].component.rotation = 2;

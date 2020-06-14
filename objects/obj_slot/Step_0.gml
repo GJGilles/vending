@@ -11,8 +11,8 @@ if (component) {
 		var prev_slot = directions[idx];
 		
 		if (component.inputs[i] && prev_slot.component) {
-			var prev_idx = opposite[idx] + prev_slot.component.rotation;
-			if (prev_idx > 3) { prev_idx -= 4; }
+			var prev_idx = opposite[idx] - prev_slot.component.rotation;
+			if (prev_idx < 0) { prev_idx += 4; }
 			
 			var buff = prev_slot.component.buffer[prev_idx];
 			while (ds_queue_size(buff) > 0 && !ds_queue_head(buff).moved && ds_queue_size(component.buffer[i]) < component.buff_size[i]) {
@@ -21,11 +21,12 @@ if (component) {
 				item.y = component.y;
 				item.moved = true;
 				ds_queue_enqueue(component.buffer[i], item);
+				head = ds_queue_head(buff);
 			}
 		}
 	}
 	
-	if (component.process) {
+	if (component.process != -1) {
 		if (result == -1) {
 			var is_input = true;
 			for (var i = 0; i < 4; i++) {
@@ -44,12 +45,12 @@ if (component) {
 			}
 		
 		
-		} else if (wait < max_wait) {
-			wait++;
+		} else if (component.wait < component.max_wait) {
+			component.wait++;
 		} else {
 			var is_output = true;
 			for (var i = 0; i < 4; i++) {
-				if (component.outputs[i] == 1 && ds_queue_size(component.buffer[i]) >= component.buff_size[i]) { is_input = false; }
+				if (component.outputs[i] == 1 && ds_queue_size(component.buffer[i]) >= component.buff_size[i]) { is_output = false; }
 			}
 		
 			if (is_output) {
@@ -59,7 +60,8 @@ if (component) {
 					}
 				}
 			
-				wait = 0;
+				component.wait = 0;
+				result = -1;
 			}
 		}
 	}
