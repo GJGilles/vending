@@ -29,6 +29,6 @@ for (var i = 0; i < slot_width; i++) {
 
 
 // Test
-slots[0, 0].component = instance_create_layer(0, 0, "Components", obj_g_tea_leaves_in);
+slots[0, 0].component = instance_create_layer(slots[0, 0].x, slots[0, 0].y, "Components", obj_g_tea_leaves_in);
 slots[0, 1].component = instance_create_layer(slots[0, 1].x, slots[0, 1].y, "Components", obj_pipe);
 slots[0, 1].component.rotation = 1;

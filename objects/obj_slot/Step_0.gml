@@ -15,10 +15,11 @@ if (component) {
 			if (prev_idx > 3) { prev_idx -= 4; }
 			
 			var buff = prev_slot.component.buffer[prev_idx];
-			while (ds_queue_size(buff) > 0 && ds_queue_size(component.buffer[i]) < component.buff_size[i]) {
+			while (ds_queue_size(buff) > 0 && !ds_queue_head(buff).moved && ds_queue_size(component.buffer[i]) < component.buff_size[i]) {
 				var item = ds_queue_dequeue(buff);
-				item.x = x;
-				item.y = y;
+				item.x = component.x;
+				item.y = component.y;
+				item.moved = true;
 				ds_queue_enqueue(component.buffer[i], item);
 			}
 		}

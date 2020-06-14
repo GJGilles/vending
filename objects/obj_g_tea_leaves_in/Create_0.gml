@@ -3,7 +3,7 @@
 
 event_inherited();
 
-freq = 10;
+freq = 60;
 
 item = obj_g_tea_leaves;
 
