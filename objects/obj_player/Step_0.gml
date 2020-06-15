@@ -15,6 +15,19 @@ var total_frames = sprite_get_number(sprite_index) / 4;
 x_spd = 0;
 y_spd = 0;
 
+
+if (x_dist % 32 != 0) { 
+	if (tilemap_get_at_pixel(layer_tilemap_get_id(layer_get_id("collision")), x + spd * (cardinal_dir == 0 ? 1 : -1), y)) {
+		direction += 180;
+		cardinal_dir = round(direction / 90)
+	}
+} else if (y_dist % 32 != 0) { 
+	if (tilemap_get_at_pixel(layer_tilemap_get_id(layer_get_id("collision")), x, y + spd * (cardinal_dir == 3 ? 1 : -1))) {
+		direction += 180;
+		cardinal_dir = round(direction / 90)
+	}
+}
+
 if (x_dist % 32 != 0) { x_spd = spd * (cardinal_dir == 0 ? 1 : -1); }
 else if (y_dist % 32 != 0) { y_spd = spd * (cardinal_dir == 3 ? 1 : -1); }
 else if (key_left || key_right) { x_spd = spd * (key_right - key_left); }
@@ -26,8 +39,6 @@ x += x_spd;
 y += y_spd;
 x_dist += x_spd;
 y_dist += y_spd;
-
-// scr_player_collision();
 
 if (x_spd == 0 && y_spd == 0) {
 	image_index = cardinal_dir;

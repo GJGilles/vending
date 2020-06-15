@@ -13,7 +13,7 @@ var height = sprite_get_height(spr_slot);
 slots[0, 0] = 0;
 for (var i = 0; i < slot_width; i++) {
 	for (var j = 0; j < slot_height; j++) {
-		slots[i, j] = instance_create_layer(16 + i * width, 16 + j * height, "Factory", obj_slot);
+		slots[i, j] = instance_create_layer(x + i * width - 16, y + j * height - 16, "Factory", obj_slot);
 	}
 }
 
