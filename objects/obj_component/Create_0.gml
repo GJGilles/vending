@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+name = "";
+
 inputs = array_create(4, 0);
 outputs = array_create(4, 0);
 

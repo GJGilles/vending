@@ -3,6 +3,8 @@
 
 event_inherited();
 
+name = "Tea Steeper";
+
 inputs[0] = 1;
 inputs[2] = 1;
 

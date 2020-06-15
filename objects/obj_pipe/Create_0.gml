@@ -3,6 +3,8 @@
 
 event_inherited();
 
+name = "Straight Pipe";
+
 inputs[0] = 1;
 
 outputs[2] = 1;
