@@ -167,14 +167,6 @@
             }
         },
         {
-            "Key": "45c68b1a-eef5-4e0c-af09-5261d35eaf28",
-            "Value": {
-                "id": "4784e0e7-c300-4fa9-b642-c77759109233",
-                "resourcePath": "views\\45c68b1a-eef5-4e0c-af09-5261d35eaf28.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "4698812f-18d6-4559-8297-4102ad209b9a",
             "Value": {
                 "id": "c7a74f39-ca49-4052-a82e-c9c1842f00ad",
@@ -199,11 +191,11 @@
             }
         },
         {
-            "Key": "5a1af035-6a6f-405d-ac1a-6797ddd226e5",
+            "Key": "5e3782d7-7173-4994-a39c-ba9807b45c7c",
             "Value": {
-                "id": "f486799a-d64b-4599-91db-6c4f9c9adb9b",
-                "resourcePath": "objects\\obj_inventory_component\\obj_inventory_component.yy",
-                "resourceType": "GMObject"
+                "id": "87a9a76a-6cd0-4afd-b7d6-9a4a2fb8ef86",
+                "resourcePath": "scripts\\scr_g_tea_leaves_in_process\\scr_g_tea_leaves_in_process.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -282,7 +274,7 @@
             "Key": "7ffd7af2-6765-401f-8ba6-e0f9da529654",
             "Value": {
                 "id": "a05e60b0-3d5b-4a5c-a1b8-f89226c07a86",
-                "resourcePath": "objects\\obj_inventory\\obj_inventory.yy",
+                "resourcePath": "objects\\obj_component_list\\obj_component_list.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -327,6 +319,14 @@
             }
         },
         {
+            "Key": "9aaf700d-771c-4f0a-9f39-df1625a26c59",
+            "Value": {
+                "id": "cab76e23-1334-4cef-bdce-d2c562c0a30a",
+                "resourcePath": "scripts\\scr_water_in_process\\scr_water_in_process.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9c958829-3b0d-48c2-8525-091cfc0ee2d4",
             "Value": {
                 "id": "1d89dbf7-93c9-4a57-928a-a28548af935b",
@@ -340,6 +340,14 @@
                 "id": "2a29f9c8-cd11-4321-8071-643eb19df4dd",
                 "resourcePath": "sprites\\spr_grid\\spr_grid.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "9fc0018c-201e-454a-a5c3-04db7c30128a",
+            "Value": {
+                "id": "771bbe98-9388-4a1a-a13a-0261cef7ed20",
+                "resourcePath": "views\\9fc0018c-201e-454a-a5c3-04db7c30128a.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -380,14 +388,6 @@
                 "id": "6e155cb5-ea8e-472a-9d29-0ad827f7c822",
                 "resourcePath": "sprites\\spr_pipe\\spr_pipe.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "b03faaa3-7662-451b-8c82-11f15f36a44f",
-            "Value": {
-                "id": "f8f68126-ac12-4c98-af8d-c4b9e8509acd",
-                "resourcePath": "objects\\obj_input\\obj_input.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -500,6 +500,14 @@
                 "id": "b2ea09b1-7823-41e2-a4ac-f16081cf6d01",
                 "resourcePath": "views\\c71a3bed-20c5-4e55-aa34-e7bf52e77393.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "cac9889d-1d35-4297-88df-91e3723d3800",
+            "Value": {
+                "id": "9950e494-3d9d-4349-85bc-6b1391bfd0dc",
+                "resourcePath": "objects\\obj_blueprint_table\\obj_blueprint_table.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -626,7 +634,9 @@
     "script_order": [
         "0da365ac-a120-43a4-af3d-3b8155576bf7",
         "7777841a-60ec-45ad-a724-afed1358cb6d",
-        "c0f10e36-dd87-4c02-86fc-575bd8959deb"
+        "c0f10e36-dd87-4c02-86fc-575bd8959deb",
+        "5e3782d7-7173-4994-a39c-ba9807b45c7c",
+        "9aaf700d-771c-4f0a-9f39-df1625a26c59"
     ],
     "tutorial": ""
 }

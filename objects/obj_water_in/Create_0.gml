@@ -3,9 +3,9 @@
 
 event_inherited();
 
-freq = 300;
+max_wait = 300;
 
-item = obj_water;
+process = scr_water_in_process;
 
 buff_size[3] = 10;
 outputs[3] = 1;
