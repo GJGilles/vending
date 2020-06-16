@@ -6,6 +6,7 @@ right = -1;
 up = -1;
 down = -1;
 
+rotation = 0;
 component = -1;
 
 buffer = array_create(4, -1);

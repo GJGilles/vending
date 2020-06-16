@@ -4,9 +4,6 @@
 slot_width = 10;
 slot_height = 9;
 
-inputs = array_create(2 * (slot_width + slot_height), -1);
-outputs = array_create(2 * (slot_width + slot_height), -1);
-
 var width = sprite_get_width(spr_slot);
 var height = sprite_get_height(spr_slot);
 
@@ -29,16 +26,16 @@ for (var i = 0; i < slot_width; i++) {
 
 
 // Test
-slots[1, 0].component = instance_create_layer(slots[1, 0].x, slots[1, 0].y, "Components", obj_g_tea_leaves_in);
+slots[1, 0].component = obj_game.all_components[ComponentEnum.g_tea_leaves_in];
 
-slots[1, 1].component = instance_create_layer(slots[1, 1].x, slots[1, 1].y, "Components", obj_pipe);
-slots[1, 1].component.rotation = 1;
+slots[1, 1].component = obj_game.all_components[ComponentEnum.pipe];
+slots[1, 1].rotation = 1;
 
-slots[1, 3].component = instance_create_layer(slots[1, 3].x, slots[1, 3].y, "Components", obj_water_in);
-slots[1, 3].component.rotation = 2;
+slots[1, 3].component = obj_game.all_components[ComponentEnum.water_in];
+slots[1, 3].rotation = 2;
 
-slots[1, 2].component = instance_create_layer(slots[1, 2].x, slots[1, 2].y, "Components", obj_steeper);
-slots[1, 2].component.rotation = 1;
+slots[1, 2].component = obj_game.all_components[ComponentEnum.steeper];
+slots[1, 2].rotation = 1;
 
-slots[2, 2].component = instance_create_layer(slots[2, 2].x, slots[2, 2].y, "Components", obj_pipe);
-slots[2, 2].component.rotation = 2;
+slots[2, 2].component = obj_game.all_components[ComponentEnum.pipe];
+slots[2, 2].rotation = 2;

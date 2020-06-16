@@ -1,12 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-max_mana = 0;
+max_mana = 100;
 
-components = array_create(0);
+all_components = scr_define_all_components();
+all_items = scr_define_all_items();
 
 
-// test
-components[0] = obj_pipe;
-components[1] = obj_steeper;
-
+room_goto(rm_factory);

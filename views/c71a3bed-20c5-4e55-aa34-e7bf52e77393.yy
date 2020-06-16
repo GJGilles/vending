@@ -6,12 +6,8 @@
     "children": [
         "9fc0018c-201e-454a-a5c3-04db7c30128a",
         "bb063f12-f66c-487d-b67b-f6111d1ff2e7",
-        "30361ce9-c542-45da-bd59-83dc9de341a6",
-        "9c958829-3b0d-48c2-8525-091cfc0ee2d4",
-        "c5eda05c-ad96-420c-a76f-aac45ba4b42d",
         "e4260d82-d22e-43d5-9d07-e8591f584f59",
         "84238191-4b93-4819-b532-95488cf3e14e",
-        "1d861865-40f4-4998-afd2-201fa0fdd4c8",
         "4dbe2b8a-923e-4867-900c-bae6f4d6d247"
     ],
     "filterType": "GMObject",
