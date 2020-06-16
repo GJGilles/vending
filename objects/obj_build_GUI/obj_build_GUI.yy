@@ -1,10 +1,19 @@
 {
-    "id": "cac9889d-1d35-4297-88df-91e3723d3800",
+    "id": "6820d9ae-d116-47fb-9740-0f95a49aec19",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_blueprint_table",
+    "name": "obj_build_GUI",
     "eventList": [
-        
+        {
+            "id": "70b81027-e509-4709-af5d-6035f8f870de",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 64,
+            "eventtype": 8,
+            "m_owner": "6820d9ae-d116-47fb-9740-0f95a49aec19"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "bf7181ce-dce8-4361-929f-c4ab771184e9",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

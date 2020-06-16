@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 slot_width = 10;
-slot_height = 10;
+slot_height = 9;
 
 inputs = array_create(2 * (slot_width + slot_height), -1);
 outputs = array_create(2 * (slot_width + slot_height), -1);

@@ -1,8 +1,8 @@
 {
-    "id": "cac9889d-1d35-4297-88df-91e3723d3800",
+    "id": "e2f1be19-3620-4d55-acd2-1def7cf0a7a4",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_blueprint_table",
+    "name": "obj_vend_GUI",
     "eventList": [
         
     ],
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "bf7181ce-dce8-4361-929f-c4ab771184e9",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }
