@@ -24,6 +24,6 @@ if (component != -1) {
 			draw_sprite(item[? "sprite"], -1, x_pos, y_pos);
 		}
 	}
-} else if (obj_game.mouse == id && obj_factory.selected_component != -1) {
-	script_execute(obj_factory.selected_component[? "draw"], x, y, obj_factory.selected_rotation, 0.5);
+} else if (obj_game.mouse == id && instance_exists(obj_build_mode) && obj_build_mode.selection != -1) {
+	script_execute(obj_build_mode.selection[? "draw"], x, y, obj_build_mode.rotation, 0.5);
 }

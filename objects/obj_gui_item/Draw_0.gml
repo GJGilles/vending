@@ -4,5 +4,3 @@
 var camera = view_get_camera(0);
 x = x_origin + camera_get_view_x(camera);
 y = y_origin + camera_get_view_y(camera);
-
-draw_self();

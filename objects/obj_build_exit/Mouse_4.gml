@@ -3,5 +3,5 @@
 
 if (obj_game.mouse == id) {
 	obj_factory.building_mode = false;
-	instance_destroy(obj_build_GUI);
+	obj_build_mode.alarm[1] = 1;
 }

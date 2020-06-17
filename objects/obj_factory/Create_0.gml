@@ -1,10 +1,6 @@
 /// @description 
 // You can write your code in this editor
 
-building_mode = false;
-selected_component = -1;
-selected_rotation = 0;
-
 slot_width = 10;
 slot_height = 9;
 
