@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 	
+event_inherited();
+	
 if (component != -1) {
 	var io = component[? "io"];
 	var size = component[? "size"];

@@ -4,7 +4,7 @@
 draw_self();
 
 if (component != -1) {
-	script_execute(component[? "draw"], x, y, rotation);
+	script_execute(component[? "draw"], x, y, rotation, 1);
 	
 	for (var i = 0; i < 4; i++) {
 		if (!ds_queue_empty(buffer[i])) {
@@ -24,4 +24,6 @@ if (component != -1) {
 			draw_sprite(item[? "sprite"], -1, x_pos, y_pos);
 		}
 	}
+} else if (obj_game.mouse == id && obj_factory.selected_component != -1) {
+	script_execute(obj_factory.selected_component[? "draw"], x, y, obj_factory.selected_rotation, 0.5);
 }
