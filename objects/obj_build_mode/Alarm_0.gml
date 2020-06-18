@@ -17,7 +17,7 @@ if (animo_frame == animo_len) {
 		components[i].depth -= 2;
 	}
 
-	x_btn = instance_create_layer(x, y, BUILD_GUI_LAYER, obj_build_exit);
+	x_btn = instance_create_layer(x_origin, y_origin, BUILD_GUI_LAYER, obj_build_exit);
 	//eraser = instance_create_layer(5, 5, BUILD_GUI_LAYER, obj_build_eraser);
 } else {
 	alarm[0] = 1;

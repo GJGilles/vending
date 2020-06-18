@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "21a96a28-5c71-4b6b-b00c-339aecb54de2",
+            "Value": {
+                "id": "178c9024-2eec-4a18-ac05-5ed1e02d920b",
+                "resourcePath": "sprites\\spr_trending\\spr_trending.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "21acfbb4-ccde-4177-8085-1ec24f9b0473",
             "Value": {
                 "id": "969b4c5d-e59b-4ca6-bce6-b9060d82dee2",
@@ -91,6 +99,14 @@
             "Value": {
                 "id": "6cbf1f8f-2cd1-485d-a305-edb5f50f1d81",
                 "resourcePath": "views\\2301e138-c919-45ac-aaa3-277c985cab91.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2c14a283-f830-4220-a657-0f66eb0c456f",
+            "Value": {
+                "id": "789d3d96-2dd0-4533-b659-8d7f2118e870",
+                "resourcePath": "views\\2c14a283-f830-4220-a657-0f66eb0c456f.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -199,11 +215,27 @@
             }
         },
         {
+            "Key": "66c5b033-b775-4fb3-b5d1-ce8f57ed06a2",
+            "Value": {
+                "id": "def69386-5145-4b4f-bb0d-ef9254fc53a8",
+                "resourcePath": "sprites\\spr_vending_view\\spr_vending_view.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6820d9ae-d116-47fb-9740-0f95a49aec19",
             "Value": {
                 "id": "da13d63a-1fc4-49de-a454-7e86ef89455c",
                 "resourcePath": "objects\\obj_build_mode\\obj_build_mode.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "693fe1e2-824a-45fe-ab08-bc73b6dfe9c8",
+            "Value": {
+                "id": "b0196fd9-8905-4e1d-a430-2278aa53a233",
+                "resourcePath": "views\\693fe1e2-824a-45fe-ab08-bc73b6dfe9c8.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -228,6 +260,14 @@
                 "id": "993df095-a80c-4b87-8ef1-5068296c2599",
                 "resourcePath": "views\\6a7fa9f6-b913-4252-a0fa-3227c8e0fb0e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6ea5ce5a-fa43-4adf-81ae-52304dc94b0e",
+            "Value": {
+                "id": "b21400ed-077a-4c3a-9c46-cf49a4003641",
+                "resourcePath": "objects\\obj_vending_sidebar\\obj_vending_sidebar.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -295,6 +335,14 @@
             }
         },
         {
+            "Key": "7e6fe394-b922-45ce-af7a-9d6984025eb8",
+            "Value": {
+                "id": "7e6e737a-830d-4149-bb20-ea36dda4e95d",
+                "resourcePath": "sprites\\spr_weather\\spr_weather.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7f1f507e-cdb7-4159-9bbd-84787c8c65d2",
             "Value": {
                 "id": "538ca7f9-81c3-4d9e-b07a-a84f88dd9ddb",
@@ -356,6 +404,14 @@
                 "id": "27429a21-b87f-4863-8f9e-becd154b9a53",
                 "resourcePath": "views\\94f73e06-bea6-440a-9cdb-9cfe7754df13.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "977e721b-38b2-4094-af3e-a833ca4ff001",
+            "Value": {
+                "id": "ed27a149-ef5a-4505-9f43-a9c60b96798e",
+                "resourcePath": "sprites\\spr_build_exit\\spr_build_exit.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -580,6 +636,14 @@
                 "id": "76007bbf-2348-419d-a3c8-570e0979d62f",
                 "resourcePath": "views\\c19ed704-38fb-4fcf-ba93-1c3e77f4da50.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c31aba88-cfa9-46f9-bfc6-570eb40f13ac",
+            "Value": {
+                "id": "d60163ab-48c8-4f2b-ad14-4b33d8e9f1e8",
+                "resourcePath": "sprites\\spr_daily_bonus\\spr_daily_bonus.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

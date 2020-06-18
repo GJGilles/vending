@@ -11,6 +11,6 @@ x_btn = -1;
 eraser = -1;
 
 animo_frame = 0;
-animo_len = 30;
+animo_len = 25;
 
 alarm[0] = 1;
