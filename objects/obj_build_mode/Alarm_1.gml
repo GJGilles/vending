@@ -13,7 +13,7 @@ if (animo_frame == (animo_len - 1)) {
 	}
 
 	instance_destroy(x_btn);
-	//instance_destroy(eraser);
+	instance_destroy(eraser);
 } else if (animo_frame = 0) { 
 	instance_destroy(id);
 } 

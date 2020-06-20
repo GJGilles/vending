@@ -3,9 +3,17 @@
 
 draw_self();
 
-if (component != -1) {
+var isBuild = obj_game.mouse == id && instance_exists(obj_build_mode);
+if (component != -1 && isBuild && obj_build_mode.selection == BuildToolsEnum.erase) {
+	script_execute(component[? "draw"], x, y, rotation, 0.5);
+} else if (component != -1) {
 	script_execute(component[? "draw"], x, y, rotation, 1);
-	
+} else if (isBuild && obj_build_mode.selection >= BuildToolsEnum.build) {
+	script_execute(obj_build_mode.selection[? "draw"], x, y, obj_build_mode.rotation, 0.5);
+}
+
+
+if (component != -1) {
 	for (var i = 0; i < 4; i++) {
 		if (!ds_queue_empty(buffer[i])) {
 			var x_pos = x;
@@ -24,6 +32,4 @@ if (component != -1) {
 			draw_sprite(item[? "sprite"], -1, x_pos, y_pos);
 		}
 	}
-} else if (obj_game.mouse == id && instance_exists(obj_build_mode) && obj_build_mode.selection != -1) {
-	script_execute(obj_build_mode.selection[? "draw"], x, y, obj_build_mode.rotation, 0.5);
 }

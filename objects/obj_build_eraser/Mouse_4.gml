@@ -2,10 +2,9 @@
 // You can write your code in this editor
 
 if (obj_game.mouse == id) {
-	if (obj_build_mode.selection == component) {
+	if (obj_build_mode.selection == BuildToolsEnum.erase) {
 		obj_build_mode.selection = BuildToolsEnum.none;
 	} else {
-		obj_build_mode.selection = component;
-		obj_build_mode.rotation = 0;
+		obj_build_mode.selection = BuildToolsEnum.erase;
 	}
 }

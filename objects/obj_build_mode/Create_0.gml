@@ -3,7 +3,13 @@
 
 event_inherited();
 
-selection = -1;
+enum BuildToolsEnum {
+	erase = -2,
+	none = -1,
+	build = 0
+}
+
+selection = BuildToolsEnum.none;
 rotation = 0;
 
 components = array_create(0);

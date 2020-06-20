@@ -18,7 +18,7 @@ if (animo_frame == animo_len) {
 	}
 
 	x_btn = instance_create_layer(x_origin, y_origin, BUILD_GUI_LAYER, obj_build_exit);
-	//eraser = instance_create_layer(5, 5, BUILD_GUI_LAYER, obj_build_eraser);
+	eraser = instance_create_layer(CAMERA_WIDTH - 20, y_origin + 28, BUILD_GUI_LAYER, obj_build_eraser);
 } else {
 	alarm[0] = 1;
 }
