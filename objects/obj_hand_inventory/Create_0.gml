@@ -1,10 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-queue = -1;
-io = -1;
+event_inherited();
 
-
-animo_frame = 0;
-animo_len = 50;
-height = 4;
+max_size = 3;
