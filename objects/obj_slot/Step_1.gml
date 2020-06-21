@@ -2,7 +2,6 @@
 // You can write your code in this editor
 
 if (component != -1) {
-	var directions = [right, up, left, down];
 	var opposite = [2, 3, 0, 1];
 	
 	var io = component[? "io"];
