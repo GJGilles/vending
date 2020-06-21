@@ -8,7 +8,10 @@
         "924ca948-5fa7-409e-962e-b97bbeead2d6",
         "ffcd65c0-29e3-4a22-8a62-cb8de715c126",
         "e40280c0-31b8-447f-81fc-3d0957cd0096",
-        "a90b12e1-b27a-4a85-80d3-883292041795"
+        "a90b12e1-b27a-4a85-80d3-883292041795",
+        "bfe53b7a-2aa7-4fe2-a7ab-810cce918b29",
+        "5cd35a20-ec84-4703-b9ca-d7b26fc47e61",
+        "d730ebde-d826-47cb-8dfe-5550c353cdff"
     ],
     "filterType": "GMSprite",
     "folderName": "components",

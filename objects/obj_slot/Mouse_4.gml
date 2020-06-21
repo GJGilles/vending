@@ -3,9 +3,7 @@
 
 var isBuild = obj_game.mouse == id && instance_exists(obj_build_mode);
 if (isBuild &&  obj_build_mode.selection >= BuildToolsEnum.build) {
-	component = obj_build_mode.selection;
-	rotation = obj_build_mode.rotation;
+	scr_slot_set_component(id, obj_build_mode.selection, obj_build_mode.rotation);
 } else if (isBuild && obj_build_mode.selection == BuildToolsEnum.erase) {
-	component = -1;
-	rotation = 0;
+	scr_slot_set_component(id, -1, 0);
 }

@@ -3,6 +3,3 @@
 
 queue = -1;
 io = -1;
-
-x_origin = x;
-y_origin = y; 

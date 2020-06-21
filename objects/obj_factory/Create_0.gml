@@ -15,10 +15,10 @@ for (var i = 0; i < slot_width; i++) {
 for (var i = 0; i < slot_width; i++) {
 	for (var j = 0; j < slot_height; j++) {
 		var slot = slots[i, j];
-		if (i != 0)                { slot[2] = slots[i - 1, j]; }
-		if (i != slot_width - 1)   { slot[0] = slots[i + 1, j]; }
-		if (j != 0)                { slot[1] = slots[i, j - 1]; }
-		if (j != slot_height - 1)  { slot[3] = slots[i, j + 1]; }
+		if (i != 0)                { slot.directions[2] = slots[i - 1, j]; }
+		if (i != slot_width - 1)   { slot.directions[0] = slots[i + 1, j]; }
+		if (j != 0)                { slot.directions[1] = slots[i, j - 1]; }
+		if (j != slot_height - 1)  { slot.directions[3] = slots[i, j + 1]; }
 	}
 }
 

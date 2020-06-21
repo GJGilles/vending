@@ -1,16 +1,18 @@
-var comp = argument0;
-var slot = argument1;
+var slot = argument0;
+var comp = argument1;
+var rot = argument2;
 
 
 slot.component = comp;
+slot.rotation = rot;
 
 var opposite = [2, 3, 0, 1];
 for (var i = 0; i < 4; i++) {
 	var idx = i + slot.rotation;
 	if (idx > 3) { idx -= 4; }
 	
-	if (slot.directions[idx] != -1 && slot.directions[idx].component != -1) {
-		var prev_slot = slot.directions[idx];
+	var prev_slot = slot.directions[idx];
+	if (prev_slot != -1 && prev_slot.component != -1) {
 		var prev_io = prev_slot.component[? "io"];
 		var prev_idx = opposite[idx] - prev_slot.rotation;
 		if (prev_idx < 0) { prev_idx += 4; }
@@ -29,20 +31,22 @@ for (var i = 0; i < 4; i++) {
 				prev_slot.io[prev_idx]  = -1;
 			}
 		}
-	} else if (comp != -1){
-		var offset = (slot.sprite_width / 2);
-		var x_pos = slot.x + lengthdir_x(offset, 90 * i);
-		var y_pos = slot.y + lengthdir_y(offset, 90 * i);
+	} else if (comp != -1) {
 		var io = slot.component[? "io"];
+		if (io[i] != IOEnum.none) {
+			var offset = (slot.sprite_width / 2);
+			var x_pos = slot.x + lengthdir_x(offset, 90 * idx);
+			var y_pos = slot.y + lengthdir_y(offset, 90 * idx);
 				
-		prev_slot.io[idx] = instance_create_layer(x_pos, y_pos, "Components", obj_item_bubble);
-		prev_slot.io[idx].queue = prev_slot.buffer[idx];
-		prev_slot.io[idx].io = io[idx];
+			slot.io[i] = instance_create_layer(x_pos, y_pos, "Components", obj_item_bubble);
+			slot.io[i].queue = slot.buffer[i];
+			slot.io[i].io = io[i];
+		}
 	}
 	
-	if (comp == -1) {
-		instance_destroy(slot.io[idx]);
-		slot.io[idx]  = -1;
+	if (comp == -1 && slot.io[i] != -1) {
+		instance_destroy(slot.io[i]);
+		slot.io[i]  = -1;
 	}
 }
 
