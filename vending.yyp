@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "3424c6d1-8e89-4cd8-9e2f-7b2675d75e8b",
+            "Value": {
+                "id": "16e888f1-04ba-4a43-ac5d-3fa1985db12d",
+                "resourcePath": "views\\3424c6d1-8e89-4cd8-9e2f-7b2675d75e8b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "37393e14-2883-46ac-b704-f087f5814cd8",
             "Value": {
                 "id": "e3e61ee9-b67b-4833-989e-f3fa4580e92e",
@@ -203,6 +211,14 @@
             "Value": {
                 "id": "fd471f26-8b3b-45dc-a9dd-8a13247e46da",
                 "resourcePath": "sprites\\spr_item_in\\spr_item_in.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4fb11cfd-78e3-4c59-903d-6c8e46a66379",
+            "Value": {
+                "id": "ae229de1-eb42-45f2-a64a-5007f63f74d3",
+                "resourcePath": "sprites\\spr_inventory_mid\\spr_inventory_mid.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -343,6 +359,14 @@
             }
         },
         {
+            "Key": "7c3f33ef-97e9-4fc3-a99d-5191ef85517e",
+            "Value": {
+                "id": "a22cc5c2-a6b4-479f-9e57-157e85e3f8a3",
+                "resourcePath": "sprites\\spr_inventory_top\\spr_inventory_top.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "7d7d23df-2e6b-41f1-ad79-4d5637637778",
             "Value": {
                 "id": "78a757b3-e9f5-48e1-b1f7-f2a996d98bc8",
@@ -436,6 +460,14 @@
                 "id": "27429a21-b87f-4863-8f9e-becd154b9a53",
                 "resourcePath": "views\\94f73e06-bea6-440a-9cdb-9cfe7754df13.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "957e4d21-a5f7-4d20-b5cc-f73d9c0fc167",
+            "Value": {
+                "id": "7ca19a94-289d-4ccc-811c-39a2ed8ba6ef",
+                "resourcePath": "sprites\\spr_inventory_bot\\spr_inventory_bot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
