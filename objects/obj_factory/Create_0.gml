@@ -11,6 +11,14 @@ for (var i = 0; i < slot_width; i++) {
 	}
 }
 
+instance_destroy(slots[0, 7]);
+slots[0, 7] = instance_create_layer(x + 0 * TILE_SIZE - 16, y + 7 * TILE_SIZE - 16, "Factory", obj_slot_input);
+slots[0, 7].item = ItemEnum.g_tea_leaves;
+slots[0, 7].rotation = 1;
+
+instance_destroy(slots[7, 0]);
+slots[7, 0] = instance_create_layer(x + 7 * TILE_SIZE - 16, y + 0 * TILE_SIZE - 16, "Factory", obj_slot_input);
+slots[7, 0].item = ItemEnum.water;
 
 for (var i = 0; i < slot_width; i++) {
 	for (var j = 0; j < slot_height; j++) {
@@ -21,40 +29,3 @@ for (var i = 0; i < slot_width; i++) {
 		if (j != slot_height - 1)  { slot.directions[3] = slots[i, j + 1]; }
 	}
 }
-
-
-/*
-// Test
-slots[1, 0].component = obj_game.all_components[ComponentEnum.g_tea_leaves_in];
-
-slots[1, 1].component = obj_game.all_components[ComponentEnum.pipe];
-slots[1, 1].rotation = 1;
-
-slots[1, 3].component = obj_game.all_components[ComponentEnum.water_in];
-slots[1, 3].rotation = 2;
-
-slots[1, 2].component = obj_game.all_components[ComponentEnum.steeper];
-slots[1, 2].rotation = 1;
-
-slots[2, 2].component = obj_game.all_components[ComponentEnum.pipe];
-slots[2, 2].rotation = 2;
-
-
-
-slots[3, 3].component = obj_game.all_components[ComponentEnum.elbow];
-slots[3, 3].rotation = 3;
-
-slots[3, 4].component = obj_game.all_components[ComponentEnum.elbow];
-slots[3, 4].rotation = 0;
-
-slots[4, 3].component = obj_game.all_components[ComponentEnum.pipe];
-
-slots[4, 4].component = obj_game.all_components[ComponentEnum.pipe];
-slots[4, 4].rotation = 2;
-
-slots[5, 3].component = obj_game.all_components[ComponentEnum.elbow];
-slots[5, 3].rotation = 2;
-
-slots[5, 4].component = obj_game.all_components[ComponentEnum.elbow];
-slots[5, 4].rotation = 1;
-*/

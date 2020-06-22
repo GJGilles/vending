@@ -15,6 +15,13 @@ current_components = array_create(0);
 // test
 
 var length = array_length_1d(all_components);
-array_copy(current_components, 0, all_components, 0, length);
+var idx = 0;
+for (var i = 0; i < length; i++) {
+	var comp = all_components[i];
+	if (comp[? "id"] == ComponentEnum.item_in) { continue; }
+	
+	current_components[idx] = all_components[i];
+	idx++;
+}
 
 room_goto(rm_factory);
