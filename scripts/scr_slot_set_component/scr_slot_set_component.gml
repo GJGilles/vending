@@ -23,8 +23,11 @@ for (var i = 0; i < 4; i++) {
 				var x_pos = prev_slot.x + lengthdir_x(offset, 90 * opposite[idx]);
 				var y_pos = prev_slot.y + lengthdir_y(offset, 90 * opposite[idx]);
 				
+				var size = prev_slot.component[? "size"];
+				
 				prev_slot.io[prev_idx] = instance_create_layer(x_pos, y_pos, "Components", obj_item_bubble);
 				prev_slot.io[prev_idx].queue = prev_slot.buffer[prev_idx];
+				prev_slot.io[prev_idx].size = size[prev_idx];
 				prev_slot.io[prev_idx].io = prev_io[prev_idx];
 			} else {
 				instance_destroy(prev_slot.io[prev_idx]);
@@ -38,8 +41,11 @@ for (var i = 0; i < 4; i++) {
 			var x_pos = slot.x + lengthdir_x(offset, 90 * idx);
 			var y_pos = slot.y + lengthdir_y(offset, 90 * idx);
 				
+			var size = slot.component[? "size"];
+			
 			slot.io[i] = instance_create_layer(x_pos, y_pos, "Components", obj_item_bubble);
 			slot.io[i].queue = slot.buffer[i];
+			slot.io[i].size = size[i];
 			slot.io[i].io = io[i];
 		}
 	}

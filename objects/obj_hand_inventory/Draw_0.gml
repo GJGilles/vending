@@ -4,14 +4,14 @@
 event_inherited();
 
 var h = sprite_get_height(spr_inventory_mid); 
-var top = (CAMERA_HEIGHT / 2) - (max_size / 2) * h;
+var top = (CAMERA_HEIGHT / 2) - (max_size / 2) * h + h / 2;
 for (var i = 0; i < max_size; i++) {
 	if (i == 0) {
-		draw_sprite(spr_inventory_top, -1, x - 6, y + top + h * i);
+		draw_sprite_ext(spr_inventory_top, -1, x - 6, y + top + h * i, 1, 1, 0, selected == i ? c_red : c_white, 1);
 	} else if (i == max_size - 1) {
-		draw_sprite(spr_inventory_bot, -1, x - 6, y + top + h * i);
+		draw_sprite_ext(spr_inventory_bot, -1, x - 6, y + top + h * i, 1, 1, 0, selected == i ? c_red : c_white, 1);
 	} else {
-		draw_sprite(spr_inventory_mid, -1, x - 6, y + top + h * i);
+		draw_sprite_ext(spr_inventory_mid, -1, x - 6, y + top + h * i, 1, 1, 0, selected == i ? c_red : c_white, 1);
 	}
 	
 	if (items[i] != -1) {
