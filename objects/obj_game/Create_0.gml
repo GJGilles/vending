@@ -18,9 +18,11 @@ var length = array_length_1d(all_components);
 var idx = 0;
 for (var i = 0; i < length; i++) {
 	var comp = all_components[i];
-	if (comp[? "id"] == ComponentEnum.item_in) { continue; }
+	var comp_id = comp[? "id"];
+	if (comp_id == ComponentEnum.item_in) { continue; }
+	if (comp_id == ComponentEnum.item_out) { continue; }
 	
-	current_components[idx] = all_components[i];
+	current_components[idx] = comp;
 	idx++;
 }
 

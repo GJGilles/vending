@@ -4,14 +4,11 @@
     "mvc": "1.1",
     "name": "0a975aae-9672-49e2-b922-d0aae45037ad",
     "children": [
-        "a9940fca-c294-4c5f-8e95-584c2e850460",
-        "924ca948-5fa7-409e-962e-b97bbeead2d6",
-        "ffcd65c0-29e3-4a22-8a62-cb8de715c126",
-        "e40280c0-31b8-447f-81fc-3d0957cd0096",
-        "a90b12e1-b27a-4a85-80d3-883292041795",
-        "bfe53b7a-2aa7-4fe2-a7ab-810cce918b29",
-        "5cd35a20-ec84-4703-b9ca-d7b26fc47e61",
-        "d730ebde-d826-47cb-8dfe-5550c353cdff"
+        "298ddfa1-0b36-4dae-ba9b-5f44c08868c0",
+        "31108f0d-c66b-4008-ae9e-c7a3b964338e",
+        "f065ec53-b97e-4b07-a011-26067921de82",
+        "92c0c5e2-0074-4d82-8093-7fb81497dd69",
+        "47f80127-53f5-482d-9b49-18e0e28b2b94"
     ],
     "filterType": "GMSprite",
     "folderName": "components",

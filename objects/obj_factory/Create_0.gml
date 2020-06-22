@@ -11,14 +11,17 @@ for (var i = 0; i < slot_width; i++) {
 	}
 }
 
-instance_destroy(slots[0, 7]);
-slots[0, 7] = instance_create_layer(x + 0 * TILE_SIZE - 16, y + 7 * TILE_SIZE - 16, "Factory", obj_slot_input);
-slots[0, 7].item = ItemEnum.g_tea_leaves;
-slots[0, 7].rotation = 1;
+instance_destroy(slots[1, 0]);
+slots[1, 0] = instance_create_layer(x + 1 * TILE_SIZE - 16, y + 0 * TILE_SIZE - 16, "Factory", obj_slot_input);
+slots[1, 0].item = ItemEnum.water;
 
-instance_destroy(slots[7, 0]);
-slots[7, 0] = instance_create_layer(x + 7 * TILE_SIZE - 16, y + 0 * TILE_SIZE - 16, "Factory", obj_slot_input);
-slots[7, 0].item = ItemEnum.water;
+instance_destroy(slots[2, 0]);
+slots[2, 0] = instance_create_layer(x + 2 * TILE_SIZE - 16, y + 0 * TILE_SIZE - 16, "Factory", obj_slot_input);
+slots[2, 0].item = ItemEnum.milk;
+
+instance_destroy(slots[3, 0]);
+slots[3, 0] = instance_create_layer(x + 3 * TILE_SIZE - 16, y + 0 * TILE_SIZE - 16, "Factory", obj_slot_input);
+slots[3, 0].item = ItemEnum.g_tea_leaves;
 
 for (var i = 0; i < slot_width; i++) {
 	for (var j = 0; j < slot_height; j++) {
