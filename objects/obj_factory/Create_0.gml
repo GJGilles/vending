@@ -23,6 +23,10 @@ instance_destroy(slots[3, 0]);
 slots[3, 0] = instance_create_layer(x + 3 * TILE_SIZE - 16, y + 0 * TILE_SIZE - 16, "Factory", obj_slot_input);
 slots[3, 0].item = ItemEnum.g_tea_leaves;
 
+instance_destroy(slots[6, 3]);
+slots[6, 3] = instance_create_layer(x + 6 * TILE_SIZE - 16, y + 3 * TILE_SIZE - 16, "Factory", obj_slot_output);
+
+
 for (var i = 0; i < slot_width; i++) {
 	for (var j = 0; j < slot_height; j++) {
 		var slot = slots[i, j];

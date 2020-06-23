@@ -1,11 +1,11 @@
 var inputs = array_sort(argument0);
 var result = array_create(4, -1);
 
-var item = inputs[0];
+var item = inputs[3];
 var vend = obj_vending_sidebar;
 
 for (var i = 0; i < array_length_1d(vend.items); i++) {
-	if (vend.items[i] == item && vend.numbers[i] <= vend.stack_size) {
+	if (vend.items[i] == item && vend.numbers[i] < vend.stack_size) {
 		vend.numbers[i]++;
 		return result;
 	}

@@ -314,7 +314,7 @@
             "Key": "69f55b86-eacf-4637-a977-30ad38c99f1b",
             "Value": {
                 "id": "9534e9d2-f189-44d7-9c83-508244f340e3",
-                "resourcePath": "scripts\\scr_draw_elbow\\scr_draw_elbow.yy",
+                "resourcePath": "scripts\\scr_draw_elbow_ccw\\scr_draw_elbow_ccw.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -378,7 +378,7 @@
             "Key": "76259823-3328-42ca-9182-c97e6c051c00",
             "Value": {
                 "id": "546e5a66-2005-4d59-88ab-54a1e013d21d",
-                "resourcePath": "scripts\\scr_process_elbow\\scr_process_elbow.yy",
+                "resourcePath": "scripts\\scr_process_elbow_ccw\\scr_process_elbow_ccw.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -388,6 +388,14 @@
                 "id": "34da16e8-e640-4e87-a740-a4e129e48790",
                 "resourcePath": "views\\776f82b7-214a-4dcf-bcdc-81f6ce4b9c36.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "777434d3-c80d-4c7c-9b1d-742dd5a1a751",
+            "Value": {
+                "id": "62d5f212-d6c8-40e3-a7b6-1e858baaaffa",
+                "resourcePath": "scripts\\scr_draw_elbow_cw\\scr_draw_elbow_cw.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -975,6 +983,22 @@
             }
         },
         {
+            "Key": "e4dba3b5-d8ff-4bb8-b9d1-386dcfe0b7ab",
+            "Value": {
+                "id": "bab24426-114c-4c66-a2f8-3c166e2aa9f6",
+                "resourcePath": "scripts\\scr_process_elbow_cw\\scr_process_elbow_cw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e6350098-49c0-45f9-9062-ad512b7020a4",
+            "Value": {
+                "id": "d6ae9855-72ab-4994-a91e-3b25287b7c74",
+                "resourcePath": "objects\\obj_slot_output\\obj_slot_output.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e6c3d369-1b20-440e-8c0b-a19ea3a7d685",
             "Value": {
                 "id": "9257f7b1-5eb7-4490-b65c-4069f3b66a3d",
@@ -1057,6 +1081,7 @@
         "cc68dd1d-0c79-4680-aacc-9fff844f1096",
         "e893a1dd-7a78-4b14-a02f-290806215fde",
         "69f55b86-eacf-4637-a977-30ad38c99f1b",
+        "777434d3-c80d-4c7c-9b1d-742dd5a1a751",
         "e3020db1-decb-4102-b67a-08b812fc46c4",
         "85308ec9-b9fd-4b94-878f-9ad564a3f67a",
         "6b87394d-cdc3-4737-8dff-1a830526b372",
@@ -1064,6 +1089,7 @@
         "c0f10e36-dd87-4c02-86fc-575bd8959deb",
         "9aaf700d-771c-4f0a-9f39-df1625a26c59",
         "76259823-3328-42ca-9182-c97e6c051c00",
+        "e4dba3b5-d8ff-4bb8-b9d1-386dcfe0b7ab",
         "bbfccd8f-9e1f-4684-8b4a-21f97e416d88",
         "44c27096-bf12-4337-a41f-6d8886920b38",
         "a53b54eb-841e-4499-ad75-cb7596111d7d",

@@ -3,7 +3,7 @@
 
 event_inherited();
 
-items = array_create(6);
-numbers = array_create(6);
+items = array_create(6, -1);
+numbers = array_create(6, -1);
 
 stack_size = 99;
