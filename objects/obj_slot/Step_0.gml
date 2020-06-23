@@ -2,6 +2,8 @@
 // You can write your code in this editor
 	
 event_inherited();
+
+if (instance_exists(obj_timer) && !obj_timer.running) { return; }
 	
 if (component != -1) {
 	var io = component[? "io"];
