@@ -10,6 +10,7 @@ month = 1;
 day = 0;
 
 all_regions = scr_define_all_regions();
+current_region = MapRegionEnum.chugoku;
 
 all_components = scr_define_all_components();
 all_items = scr_define_all_items();

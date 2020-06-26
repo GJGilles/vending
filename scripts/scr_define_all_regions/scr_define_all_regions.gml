@@ -31,3 +31,5 @@ regions[MapRegionEnum.chugoku] = scr_define_region("Chugoku", MapRegionEnum.chug
 regions[MapRegionEnum.shikoku] = scr_define_region("Shikoku", MapRegionEnum.shikoku, [[4, 22], [18, 28], [8, 26], [1, 11]], [0.35, 0.55, 0.4, 0.3,], []);
 regions[MapRegionEnum.kyushu] = scr_define_region("Kyushu", MapRegionEnum.kyushu, [[7, 25], [21, 31], [11, 28], [4, 13]], [0.4, 0.6, 0.4, 0.3,], []);
 regions[MapRegionEnum.okinawa] = scr_define_region("Okinawa", MapRegionEnum.okinawa, [[17, 23], [25, 28], [22, 27], [16, 19]], [0.45, 0.5, 0.4, 0.4,], []);
+
+return regions;
