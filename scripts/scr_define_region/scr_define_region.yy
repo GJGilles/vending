@@ -1,8 +1,8 @@
 {
-    "id": "5bc5e7f4-a81f-4ce3-8d46-ac2aa0eee6d2",
+    "id": "4a403cbb-3cce-46c0-9eb3-7c7b82ed9634",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_create_all_regions",
+    "name": "scr_define_region",
     "IsCompatibility": false,
     "IsDnD": false
 }

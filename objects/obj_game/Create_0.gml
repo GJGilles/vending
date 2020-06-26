@@ -5,6 +5,12 @@ mouse = -1;
 
 max_mana = 100;
 
+year = 1;
+month = 1;
+day = 0;
+
+all_regions = scr_define_all_regions();
+
 all_components = scr_define_all_components();
 all_items = scr_define_all_items();
 

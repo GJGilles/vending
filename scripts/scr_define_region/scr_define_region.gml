@@ -12,5 +12,12 @@ ds_map_add(region, "id", argument1);
 ds_map_add(region, "temp", argument2);
 ds_map_add(region, "percip", argument3);
 ds_map_add(region, "locs", argument4);
+ds_map_add(region, "weather", ds_queue_create());
+
+
+// Test?
+for (var i = 0; i < 7; i++) {
+	ds_queue_enqueue(region[? "weather"], [25, MapWeatherEnum.clear]);
+}
 
 return region;
