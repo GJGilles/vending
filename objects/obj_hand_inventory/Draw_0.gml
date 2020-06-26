@@ -16,7 +16,7 @@ for (var i = 0; i < max_size; i++) {
 	
 	if (items[i] != -1) {
 		var item = items[i];
-		draw_sprite_ext(item[? "sprite"], -1, x - 6, y + top + h * i, 2, 2, 0, c_white, 1);
+		draw_sprite_ext(item[? "sprite"], -1, x - 6, y + top + h * i, 1, 1, 0, c_white, 1);
 		
 		draw_set_font(fnt_ken_mini_8);
 		draw_set_color(c_black);
