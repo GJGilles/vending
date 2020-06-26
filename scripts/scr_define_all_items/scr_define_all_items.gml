@@ -46,13 +46,13 @@ enum ItemEnum {
 
 
 var item_array = array_create(0);
-item_array[ItemEnum.junk] = scr_define_item("Junk", ItemEnum.junk, spr_junk, [ItemColorEnum.black, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
-item_array[ItemEnum.water] = scr_define_item("Water", ItemEnum.water, spr_water, [ItemColorEnum.white, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
-item_array[ItemEnum.g_tea_leaves] = scr_define_item("Green Tea Leaves", ItemEnum.g_tea_leaves, spr_g_tea_leaves, [ItemColorEnum.green, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
-item_array[ItemEnum.g_tea] = scr_define_item("Green Tea", ItemEnum.g_tea, spr_g_tea, [ItemColorEnum.green, ItemTempEnum.warm, ItemFlavorEnum.bitter, ItemPrepEnum.raw], "");
-item_array[ItemEnum.b_tea] = scr_define_item("Black Tea", ItemEnum.b_tea, spr_b_tea, [ItemColorEnum.black, ItemTempEnum.warm, ItemFlavorEnum.bitter, ItemPrepEnum.raw], "");
-item_array[ItemEnum.b_tea_leaves] = scr_define_item("Black Tea Leaves", ItemEnum.b_tea_leaves, spr_b_tea_leaves, [ItemColorEnum.black, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
-item_array[ItemEnum.milk] = scr_define_item("Milk", ItemEnum.milk, spr_milk, [ItemColorEnum.white, ItemTempEnum.cool, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
-item_array[ItemEnum.royal_milk_tea] = scr_define_item("Royal Milk Tea", ItemEnum.royal_milk_tea, spr_royal_milk_tea, [ItemColorEnum.black, ItemTempEnum.warm, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
+item_array[ItemEnum.junk] = scr_define_item("Junk", ItemEnum.junk, 0, spr_junk, [ItemColorEnum.black, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
+item_array[ItemEnum.water] = scr_define_item("Water", ItemEnum.water, 0, spr_water, [ItemColorEnum.white, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
+item_array[ItemEnum.g_tea_leaves] = scr_define_item("Green Tea Leaves", ItemEnum.g_tea_leaves, 0, spr_g_tea_leaves, [ItemColorEnum.green, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
+item_array[ItemEnum.g_tea] = scr_define_item("Green Tea", ItemEnum.g_tea, 100, spr_g_tea, [ItemColorEnum.green, ItemTempEnum.warm, ItemFlavorEnum.bitter, ItemPrepEnum.raw], "");
+item_array[ItemEnum.b_tea] = scr_define_item("Black Tea", ItemEnum.b_tea, 100, spr_b_tea, [ItemColorEnum.black, ItemTempEnum.warm, ItemFlavorEnum.bitter, ItemPrepEnum.raw], "");
+item_array[ItemEnum.b_tea_leaves] = scr_define_item("Black Tea Leaves", ItemEnum.b_tea_leaves, 0, spr_b_tea_leaves, [ItemColorEnum.black, ItemTempEnum.room_temp, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
+item_array[ItemEnum.milk] = scr_define_item("Milk", ItemEnum.milk, 0, spr_milk, [ItemColorEnum.white, ItemTempEnum.cool, ItemFlavorEnum.none, ItemPrepEnum.raw], "");
+item_array[ItemEnum.royal_milk_tea] = scr_define_item("Royal Milk Tea", ItemEnum.royal_milk_tea, 200, spr_royal_milk_tea, [ItemColorEnum.black, ItemTempEnum.warm, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
 
 return item_array;

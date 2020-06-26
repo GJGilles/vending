@@ -21,3 +21,7 @@ for (var i = 0; i < 2; i++) {
 		}
 	}
 }
+
+draw_set_font(fnt_ken_mini_8);
+draw_set_color(c_black);
+draw_text(x + 10, y + 250 , string(obj_game.money));

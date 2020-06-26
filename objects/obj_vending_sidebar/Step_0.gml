@@ -10,6 +10,10 @@ if (count == freq) {
 	var buy_arr = scr_vend_customer(items, 20, 20);
 	for (var i = 0; i < array_length_1d(buy_arr); i++) {
 		var idx = buy_arr[i];
+		var item = items[idx];
+		
+		obj_game.money += item[? "cost"];
+		
 		numbers[idx]--;
 		if (numbers[idx] == 0) {
 			items[idx] = -1;

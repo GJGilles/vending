@@ -3,6 +3,7 @@
 
 mouse = -1;
 
+money = 0;
 max_mana = 100;
 
 year = 1;
