@@ -11,14 +11,15 @@ var b_tea = obj_game.all_items[ItemEnum.b_tea];
 var milk_tea = obj_game.all_items[ItemEnum.royal_milk_tea];
 var junk = obj_game.all_items[ItemEnum.junk];
 
+var item = junk;
 if (array_equals(inputs, array_sort([g_tea_leaves, water, -1, -1]))) {
-	result[3] = g_tea;
+	item = g_tea;
 } else if (array_equals(inputs, array_sort([b_tea_leaves, water, -1, -1]))) {
-	result[3] = b_tea;
+	item = b_tea;
 } else if (array_equals(inputs, array_sort([b_tea_leaves, milk, -1, -1]))) {
-	result[3] = milk_tea;
-}else {
-	result[3] = junk;
+	item = milk_tea;
 }
 
+scr_results_add_created(item);
+result[3] = item;
 return result;

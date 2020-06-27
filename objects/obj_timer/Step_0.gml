@@ -12,6 +12,10 @@ if (tick == rate) {
 	tick = 0;
 	
 	if (time >= day) { 
-		running = false; 
+		running = false;
+		if (instance_exists(obj_room_transition)) {
+			obj_room_transition.alarm[1] = 1;
+			alarm[0] = obj_room_transition.animo_len;
+		}
 	}
 }

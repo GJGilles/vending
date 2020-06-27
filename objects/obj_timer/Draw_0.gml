@@ -7,9 +7,10 @@ draw_self();
 if (running) {
 	var hours = floor(time / 60);
 	var minutes = time % 60;
+	var tens = floor(minutes / 10);
 	
 	var hr = string(hours > 6 ? (hours - 6) : (hours + 6));
-	var m = minutes < 10 ? "0" + string(minutes) : string(minutes);
+	var m = string(tens) + "0";
 	var a = hours >= 6 ? "PM" : "AM";
 	
 	draw_set_font(fnt_ken_mini_8);

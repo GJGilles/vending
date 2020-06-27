@@ -6,10 +6,13 @@ var g_tea_leaves = obj_game.all_items[ItemEnum.g_tea_leaves];
 var b_tea_leaves = obj_game.all_items[ItemEnum.b_tea_leaves];
 var junk = obj_game.all_items[ItemEnum.junk];
 
+var item = junk;
 if (array_equals(inputs, array_sort([g_tea_leaves, -1, -1, -1]))) {
-	result[3] = b_tea_leaves;
+	item = b_tea_leaves;
 } else {
-	result[3] = junk;
+	item = junk;
 }
 
+scr_results_add_created(item);
+result[3] = item;
 return result;

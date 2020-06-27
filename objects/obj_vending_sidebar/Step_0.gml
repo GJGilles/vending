@@ -12,6 +12,7 @@ if (count == freq) {
 		var idx = buy_arr[i];
 		var item = items[idx];
 		
+		scr_results_add_sold(item);
 		obj_game.money += item[? "cost"];
 		
 		numbers[idx]--;
