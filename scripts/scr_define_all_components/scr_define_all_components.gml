@@ -13,7 +13,8 @@ enum ComponentEnum {
 enum IOEnum {
 	none = 0,
 	input = 1, 
-	output = 2
+	output = 2,
+	any = 3
 }
 
 
