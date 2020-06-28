@@ -1,10 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-x_origin = x;
-y_origin = y;
-
-ing = ds_list_create();
-numbers = ds_list_create();
-
-
+if (dragging != -1) {
+	tokens[dragging] = -1;
+	dragging = -1;
+}

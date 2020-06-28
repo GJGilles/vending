@@ -6,7 +6,8 @@
     "children": [
         "4b3fa309-3f3c-4b82-8738-99b3a7f8432d",
         "5697d19b-7e44-4e77-ae82-5631d997bc6b",
-        "0f2b6e86-5224-4bef-aafe-a82098a79a39"
+        "0f2b6e86-5224-4bef-aafe-a82098a79a39",
+        "33ea75c4-17b4-4532-b160-4f09030e3a42"
     ],
     "filterType": "GMObject",
     "folderName": "setup",
