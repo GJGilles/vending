@@ -16,6 +16,7 @@ current_location = 0;
 
 all_components = scr_define_all_components();
 all_items = scr_define_all_items();
+all_recipes = scr_define_all_recipes();
 
 
 current_components = array_create(0);
@@ -36,9 +37,7 @@ for (var i = 0; i < length; i++) {
 	idx++;
 }
 
-current_recipies[0] = all_items[ItemEnum.g_tea];
-current_recipies[1] = all_items[ItemEnum.b_tea];
-current_recipies[2] = all_items[ItemEnum.royal_milk_tea];
+current_recipies = all_recipes;
 
 //room_goto(rm_factory);
 room_goto(rm_setup);

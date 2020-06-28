@@ -7,7 +7,8 @@
         "066e5253-f5b7-484f-9faa-c5d0f720d35c",
         "d8ee0d40-274e-4ad7-90b4-0a4a76f7b902",
         "311031a6-f550-4fcc-b4d4-e484d8c4a6b4",
-        "60e9235b-d2d8-41bd-aced-f301d2384e70"
+        "60e9235b-d2d8-41bd-aced-f301d2384e70",
+        "ede52faa-4c62-4d01-a9a9-617d00b9898b"
     ],
     "filterType": "GMSprite",
     "folderName": "setup",
