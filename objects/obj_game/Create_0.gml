@@ -12,12 +12,14 @@ day = 0;
 
 all_regions = scr_define_all_regions();
 current_region = MapRegionEnum.chugoku;
+current_location = 0;
 
 all_components = scr_define_all_components();
 all_items = scr_define_all_items();
 
 
 current_components = array_create(0);
+current_recipies = array_create(0);
 
 
 // test
@@ -34,4 +36,9 @@ for (var i = 0; i < length; i++) {
 	idx++;
 }
 
-room_goto(rm_factory);
+current_recipies[0] = all_items[ItemEnum.g_tea];
+current_recipies[1] = all_items[ItemEnum.b_tea];
+current_recipies[2] = all_items[ItemEnum.royal_milk_tea];
+
+//room_goto(rm_factory);
+room_goto(rm_setup);

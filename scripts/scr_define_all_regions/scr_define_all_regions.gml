@@ -34,7 +34,7 @@ regions[MapRegionEnum.kansai] = scr_define_region("Kansai", MapRegionEnum.kansai
 
 
 var chugoku = [
-	scr_define_location("Hiroshima", MapLocationEnum.hiroshima, [0, 0], )
+	scr_define_location("Hiroshima", MapLocationEnum.hiroshima, [0, 0], [scr_location_hiroshima_a()])
 ];
 regions[MapRegionEnum.chugoku] = scr_define_region("Chugoku", MapRegionEnum.chugoku, [[4, 23], [18, 30], [8, 27], [2, 11]], [0.4, 0.5, 0.4, 0.3,], chugoku);
 

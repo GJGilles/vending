@@ -14,3 +14,5 @@ for (var i = 1; i < 9; i++) {
 
 elems[1, 0] = [IOEnum.input, 0];
 elems[0, 1] = [IOEnum.input, 1];
+
+return elems;
