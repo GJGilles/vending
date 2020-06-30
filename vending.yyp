@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "0167343a-db3e-437e-9262-f0b91a9ce654",
+            "Value": {
+                "id": "239b6d97-c5d9-4d01-ae11-8a884f6db2c3",
+                "resourcePath": "sprites\\spr_font_vending_p\\spr_font_vending_p.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "01fb1871-0a3d-47e6-bf19-8f1f34d9646a",
             "Value": {
                 "id": "5947cc9f-d254-4d73-89cb-afefbacc71bf",
@@ -51,6 +59,14 @@
             "Value": {
                 "id": "296cdb1e-c590-4ee5-ba6c-8a655d625d89",
                 "resourcePath": "scripts\\scr_results_add_sold\\scr_results_add_sold.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "03d85ff2-c42f-42d0-80c7-1b97a73c483a",
+            "Value": {
+                "id": "10471fc7-6002-4c12-bcbc-606c3bc6d191",
+                "resourcePath": "scripts\\scr_define_all_fonts\\scr_define_all_fonts.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -172,14 +188,6 @@
                 "id": "7755af69-efba-4ae3-8348-355c9022953a",
                 "resourcePath": "scripts\\scr_results_add_created\\scr_results_add_created.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "21a96a28-5c71-4b6b-b00c-339aecb54de2",
-            "Value": {
-                "id": "178c9024-2eec-4a18-ac05-5ed1e02d920b",
-                "resourcePath": "sprites\\spr_trending\\spr_trending.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -455,6 +463,14 @@
             }
         },
         {
+            "Key": "5647de62-9c48-4116-b3af-72720dedc1a8",
+            "Value": {
+                "id": "395ec0f9-fc1b-4953-939e-76de2ca86cee",
+                "resourcePath": "views\\5647de62-9c48-4116-b3af-72720dedc1a8.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "5697d19b-7e44-4e77-ae82-5631d997bc6b",
             "Value": {
                 "id": "4705e863-a60e-44f4-87d9-8dd2e31a772b",
@@ -484,6 +500,14 @@
                 "id": "e8c0c788-b01d-4916-a716-8f87eeb1dd87",
                 "resourcePath": "scripts\\scr_define_all_regions\\scr_define_all_regions.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5c2ce47e-90d3-4c80-a818-c8c73c157fc8",
+            "Value": {
+                "id": "4b35a049-8a35-4e2d-a037-f93f29c0e639",
+                "resourcePath": "sprites\\spr_font_vending_u\\spr_font_vending_u.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -751,6 +775,14 @@
             }
         },
         {
+            "Key": "8137ee3a-f0d4-4a58-99f2-4c2710c8c3d8",
+            "Value": {
+                "id": "8916d0fd-e899-43ca-8242-421433a6137f",
+                "resourcePath": "views\\8137ee3a-f0d4-4a58-99f2-4c2710c8c3d8.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "84238191-4b93-4819-b532-95488cf3e14e",
             "Value": {
                 "id": "20eaff59-7375-4aba-ba01-7961ecf7f402",
@@ -788,6 +820,14 @@
                 "id": "7554f87d-8b9e-45e6-94ff-1dad9e0deabb",
                 "resourcePath": "views\\86d83f98-8a97-4c0c-aba6-0fa5e8fd66f1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "86efecb3-c49c-4e8f-89a6-db7e22c89f8f",
+            "Value": {
+                "id": "43f55660-115f-4459-85a3-0f3c441785c1",
+                "resourcePath": "sprites\\spr_food_blog_banner\\spr_food_blog_banner.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -871,18 +911,18 @@
             }
         },
         {
-            "Key": "92c0c5e2-0074-4d82-8093-7fb81497dd69",
+            "Key": "925ea193-f7e7-4b6f-9814-82c9904008ee",
             "Value": {
-                "id": "a5660ab6-323b-40b0-9981-be88d63d5e54",
-                "resourcePath": "views\\92c0c5e2-0074-4d82-8093-7fb81497dd69.yy",
+                "id": "2995b814-6c53-40c0-bd45-f644c67f44ae",
+                "resourcePath": "views\\925ea193-f7e7-4b6f-9814-82c9904008ee.yy",
                 "resourceType": "GMFolder"
             }
         },
         {
-            "Key": "94f73e06-bea6-440a-9cdb-9cfe7754df13",
+            "Key": "92c0c5e2-0074-4d82-8093-7fb81497dd69",
             "Value": {
-                "id": "27429a21-b87f-4863-8f9e-becd154b9a53",
-                "resourcePath": "views\\94f73e06-bea6-440a-9cdb-9cfe7754df13.yy",
+                "id": "a5660ab6-323b-40b0-9981-be88d63d5e54",
+                "resourcePath": "views\\92c0c5e2-0074-4d82-8093-7fb81497dd69.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -916,6 +956,14 @@
                 "id": "629765b6-c80d-4e9d-a383-029670457ec9",
                 "resourcePath": "scripts\\scr_location_hiroshima_a\\scr_location_hiroshima_a.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9a4ef45c-41d9-494f-927a-5da56b692ac9",
+            "Value": {
+                "id": "c9394409-4b7e-4203-913f-c007889fd423",
+                "resourcePath": "sprites\\spr_vending_item_p\\spr_vending_item_p.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1271,14 +1319,6 @@
             }
         },
         {
-            "Key": "c31aba88-cfa9-46f9-bfc6-570eb40f13ac",
-            "Value": {
-                "id": "d60163ab-48c8-4f2b-ad14-4b33d8e9f1e8",
-                "resourcePath": "sprites\\spr_daily_bonus\\spr_daily_bonus.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c3abc3b7-ef0f-4be0-b131-26d2a310d375",
             "Value": {
                 "id": "4564363d-e1d3-46af-a1f8-6d791c4a4b05",
@@ -1339,6 +1379,14 @@
             "Value": {
                 "id": "618d7ffc-7223-4678-9576-e66c06447f34",
                 "resourcePath": "views\\cff4daef-8f9f-472f-a3bb-77dd74c7d302.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d368ee73-de65-4386-ae5d-9c255c1111f9",
+            "Value": {
+                "id": "4e8f1cb9-7c2c-438f-a8b0-2a409e0084ca",
+                "resourcePath": "views\\d368ee73-de65-4386-ae5d-9c255c1111f9.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1543,6 +1591,14 @@
             }
         },
         {
+            "Key": "f63881c2-2d42-42f2-9b09-bc156d4d4a7b",
+            "Value": {
+                "id": "e6a0ce5c-1df2-4f77-be02-6910fb5499e8",
+                "resourcePath": "sprites\\spr_vending_button_p\\spr_vending_button_p.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f8039f3f-b820-4cd3-9c71-4a9c1cda630a",
             "Value": {
                 "id": "cb4acc32-0e73-4855-9af7-50128aeb4363",
@@ -1561,6 +1617,14 @@
     ],
     "script_order": [
         "0da365ac-a120-43a4-af3d-3b8155576bf7",
+        "eb3b89b8-8c37-4f32-86cc-212a4ab94332",
+        "1df471e7-1b8b-4968-8e3d-0859441eb892",
+        "9176b7ca-413b-4581-a8f7-bb7c9e9c302a",
+        "e6f26e71-8a9c-4dc7-91ef-1565a0d4dfa0",
+        "5dcaf543-1d58-465a-bc0a-da6b7a06475e",
+        "2147b8ef-6c27-40f2-9450-c969020f35b9",
+        "027623c0-6642-4574-8bd1-640351136be5",
+        "03d85ff2-c42f-42d0-80c7-1b97a73c483a",
         "889169ea-26e2-4753-8250-47fd73a64003",
         "7d7d23df-2e6b-41f1-ad79-4d5637637778",
         "498bcb7e-1bba-4b04-b669-9e93c585ac9b",
@@ -1581,17 +1645,10 @@
         "e4dba3b5-d8ff-4bb8-b9d1-386dcfe0b7ab",
         "9aaf700d-771c-4f0a-9f39-df1625a26c59",
         "a53b54eb-841e-4499-ad75-cb7596111d7d",
-        "eb3b89b8-8c37-4f32-86cc-212a4ab94332",
-        "1df471e7-1b8b-4968-8e3d-0859441eb892",
-        "9176b7ca-413b-4581-a8f7-bb7c9e9c302a",
-        "e6f26e71-8a9c-4dc7-91ef-1565a0d4dfa0",
         "5bc5e7f4-a81f-4ce3-8d46-ac2aa0eee6d2",
         "4a403cbb-3cce-46c0-9eb3-7c7b82ed9634",
         "607018a9-a359-470a-be4f-226a66b06388",
         "99ba8af8-df12-4069-b12f-97dadaee500e",
-        "5dcaf543-1d58-465a-bc0a-da6b7a06475e",
-        "2147b8ef-6c27-40f2-9450-c969020f35b9",
-        "027623c0-6642-4574-8bd1-640351136be5",
         "12a5c7e6-3589-4c53-80e4-b537bb509369",
         "2553c9a0-ff53-46dc-9bad-4574b5dff426"
     ],

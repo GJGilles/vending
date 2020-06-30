@@ -16,5 +16,5 @@ for (var i = 0; i < array_length_1d(recipes); i++) {
 	
 	draw_sprite(result[? "sprite"], -1, x_origin + 8, y_origin + (i * 16) + 8);
 	
-	write_text(result[? "name"], x_origin + 16, y_origin + (i * 16) + 4);
+	write_text(result[? "name"], x_origin + 16, y_origin + (i * 16) + 4, FontEnum.silkscreen);
 }

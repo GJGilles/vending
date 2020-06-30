@@ -21,9 +21,9 @@ for (var i = 0; i < array_length_1d(obj_factory_stats.ordered_items); i++) {
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
 	//draw_sprite(spr_item_in, -1, x_pos + margin, y_pos);
 	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	write_text(item[? "name"], x_pos + margin + 32, y_pos);
-	write_text(spd, x_pos + w - 128, y_pos);
-	write_text("xxxxx", x_pos + w - 32, y_pos);
+	write_text(item[? "name"], x_pos + margin + 32, y_pos, FontEnum.silkscreen);
+	write_text(spd, x_pos + w - 128, y_pos, FontEnum.silkscreen);
+	write_text("xxxxx", x_pos + w - 32, y_pos, FontEnum.silkscreen);
 	y_pos += h;
 }
 
@@ -36,9 +36,9 @@ for (var i = 0; i < array_length_1d(obj_factory_stats.created_items); i++) {
 	
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
 	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	write_text(item[? "name"], x_pos + margin + 32, y_pos);
-	write_text(numb, x_pos + w - 128, y_pos);
-	write_text("-", x_pos + w - 32, y_pos);
+	write_text(item[? "name"], x_pos + margin + 32, y_pos, FontEnum.silkscreen);
+	write_text(numb, x_pos + w - 128, y_pos, FontEnum.silkscreen);
+	write_text("-", x_pos + w - 32, y_pos, FontEnum.silkscreen);
 	y_pos += h;
 }
 
@@ -51,9 +51,9 @@ for (var i = 0; i < array_length_1d(obj_factory_stats.sold_items); i++) {
 	
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
 	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	write_text(item[? "name"], x_pos + margin + 32, y_pos);
-	write_text(numb, x_pos + w - 128, y_pos);
-	write_text(item[? "cost"] * numb, x_pos + w - 32, y_pos);
+	write_text(item[? "name"], x_pos + margin + 32, y_pos, FontEnum.silkscreen);
+	write_text(numb, x_pos + w - 128, y_pos, FontEnum.silkscreen);
+	write_text(item[? "cost"] * numb, x_pos + w - 32, y_pos, FontEnum.silkscreen);
 	y_pos += h;
 }
 

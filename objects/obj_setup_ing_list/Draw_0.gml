@@ -9,5 +9,5 @@ for (var i = 0; i < ds_list_size(ing); i++) {
 	
 	draw_sprite(item[? "sprite"], -1, x_origin + 8, y_origin + (i * 16) + 8);
 	
-	write_text(item[? "name"], x_origin + 16, y_origin + (i * 16));
+	write_text(item[? "name"], x_origin + 16, y_origin + (i * 16), FontEnum.silkscreen);
 }

@@ -20,5 +20,5 @@ for (var i = 0; i < array_length_1d(tokens); i++) {
 	}
 	
 	draw_sprite(spr_input_token, -1, x_pos, y_pos);
-	write_text(string(i), x_pos + 5, y_pos + 1);
+	write_text(string(i), x_pos + 5, y_pos + 1, FontEnum.silkscreen);
 }
