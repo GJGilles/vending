@@ -15,13 +15,9 @@ for (var i = 0; i < 2; i++) {
 			var item = items[idx];
 			draw_sprite_ext(item[? "sprite"], -1, x + (j * 46) + 35, y + (i * 74) + 125, 2, 2, 0, c_white, 1);
 			
-			draw_set_font(fnt_ken_mini_8);
-			draw_set_color(c_black);
-			draw_text(x + (j * 46) + 42, y + (i * 74) + 135, (numbers[idx] < 10 ? "0" : "") + string(numbers[idx]));
+			write_text((numbers[idx] < 10 ? "0" : "") + string(numbers[idx]), x + (j * 46) + 42, y + (i * 74) + 135);
 		}
 	}
 }
 
-draw_set_font(fnt_ken_mini_8);
-draw_set_color(c_black);
-draw_text(x + 10, y + 250 , string(obj_game.money));
+write_text(string(obj_game.money), x + 10, y + 250);

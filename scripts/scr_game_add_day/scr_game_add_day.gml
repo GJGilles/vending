@@ -23,8 +23,9 @@ for (var i = 0; i < array_length_1d(all_regions); i++) {
 	var next_season = floor(next_month / 2);
 	
 	var last_weather = ds_queue_tail(weather);
-	var min_temp = temp[next_season, 0];
-	var max_temp = temp[next_season, 1];
+	var season_temps = temp[next_season];
+	var min_temp = season_temps[0];
+	var max_temp = season_temps[1];
 	
 	var new_temp = min(max(irandom_range(last_weather[0] - 5, last_weather[0] + 5), min_temp), max_temp);
 	var new_weather = MapWeatherEnum.clear;

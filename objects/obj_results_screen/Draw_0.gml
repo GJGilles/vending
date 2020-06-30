@@ -11,22 +11,19 @@ var h = sprite_get_height(spr_results_background);
 var margin = h;
 
 
-draw_set_font(fnt_ken_mini_8);
-draw_set_color(c_black);
-
 draw_sprite(spr_results_background, 0, x_pos, y_pos);
 y_pos += h;
 
 for (var i = 0; i < array_length_1d(obj_factory_stats.ordered_items); i++) {
-	var item = obj_factory_stats.ordered_items[i];
+	var item = obj_game.all_items[obj_factory_stats.ordered_items[i]];
 	var spd = obj_factory_stats.ordered_speeds[i];
 	
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
-	draw_sprite(spr_item_in, -1, x_pos + margin, y_pos);
+	//draw_sprite(spr_item_in, -1, x_pos + margin, y_pos);
 	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	draw_text(x_pos + margin + 32, y_pos, item[? "name"]);
-	draw_text(x_pos + w - 128, y_pos, spd);
-	draw_text(x_pos + w - 32, y_pos, "xxxxx");
+	write_text(item[? "name"], x_pos + margin + 32, y_pos);
+	write_text(spd, x_pos + w - 128, y_pos);
+	write_text("xxxxx", x_pos + w - 32, y_pos);
 	y_pos += h;
 }
 
@@ -39,9 +36,9 @@ for (var i = 0; i < array_length_1d(obj_factory_stats.created_items); i++) {
 	
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
 	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	draw_text(x_pos + margin + 32, y_pos, item[? "name"]);
-	draw_text(x_pos + w - 128, y_pos, numb);
-	draw_text(x_pos + w - 32, y_pos, "-");
+	write_text(item[? "name"], x_pos + margin + 32, y_pos);
+	write_text(numb, x_pos + w - 128, y_pos);
+	write_text("-", x_pos + w - 32, y_pos);
 	y_pos += h;
 }
 
@@ -54,9 +51,9 @@ for (var i = 0; i < array_length_1d(obj_factory_stats.sold_items); i++) {
 	
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
 	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	draw_text(x_pos + margin + 32, y_pos, item[? "name"]);
-	draw_text(x_pos + w - 128, y_pos, numb);
-	draw_text(x_pos + w - 32, y_pos, item[? "cost"] * numb);
+	write_text(item[? "name"], x_pos + margin + 32, y_pos);
+	write_text(numb, x_pos + w - 128, y_pos);
+	write_text(item[? "cost"] * numb, x_pos + w - 32, y_pos);
 	y_pos += h;
 }
 

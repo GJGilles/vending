@@ -12,7 +12,12 @@ for (var i = 1; i < 9; i++) {
 	}
 }
 
-elems[1, 0] = [IOEnum.input, 0];
-elems[0, 1] = [IOEnum.input, 1];
+elems[3, 0] = [IOEnum.input, 0];
+elems[4, 0] = [IOEnum.input, 0];
+elems[5, 0] = [IOEnum.input, 0];
+elems[6, 0] = [IOEnum.input, 0];
+
+
+elems[4, 4] = [IOEnum.output, 3];
 
 return elems;

@@ -39,5 +39,9 @@ for (var i = 0; i < length; i++) {
 
 current_recipies = all_recipes;
 
+
+var map_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+global.fnt_pixel = font_add_sprite_ext(spr_font_silkscreen, map_str, true, 1);
+
 //room_goto(rm_factory);
 room_goto(rm_setup);

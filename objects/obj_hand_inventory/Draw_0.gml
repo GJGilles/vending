@@ -19,8 +19,6 @@ for (var i = 0; i < max_size; i++) {
 		var item = items[i];
 		draw_sprite(item[? "sprite"], -1, x - (w / 2), y + top + h * i);
 		
-		draw_set_font(fnt_ken_mini_8);
-		draw_set_color(c_black);
-		draw_text(x - (w / 3), y + 4 + top + h * i, string(numbers[i]));
+		write_text(string(numbers[i]), x - (w / 3), y + 4 + top + h * i);
 	}
 }

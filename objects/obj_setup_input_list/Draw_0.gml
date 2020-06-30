@@ -3,8 +3,7 @@
 
 draw_self();
 
-draw_set_font(fnt_ken_mini_8);
-draw_set_color(c_black);
+var count = array_create(ds_list_size(obj_setup_ing_list.ing), 0);
 for (var i = 0; i < array_length_1d(tokens); i++) {
 	var idx = tokens[i];
 	
@@ -15,10 +14,11 @@ for (var i = 0; i < array_length_1d(tokens); i++) {
 		x_pos = mouse_x - 8; 
 		y_pos = mouse_y - 8;
 	} else if (idx != -1) { 
-		x_pos = obj_setup_ing_list.x;
+		x_pos = obj_setup_ing_list.bbox_right - (8 * (5 - count[idx]));
 		y_pos = obj_setup_ing_list.y_origin + (16 * idx);
+		count[idx]++;
 	}
 	
 	draw_sprite(spr_input_token, -1, x_pos, y_pos);
-	draw_text(x_pos + 5, y_pos + 1, string(i));
+	write_text(string(i), x_pos + 5, y_pos + 1);
 }

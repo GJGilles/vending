@@ -16,7 +16,5 @@ for (var i = 0; i < array_length_1d(recipes); i++) {
 	
 	draw_sprite(result[? "sprite"], -1, x_origin + 8, y_origin + (i * 16) + 8);
 	
-	draw_set_font(fnt_ken_mini_8);
-	draw_set_color(c_black);
-	draw_text(x_origin + 16, y_origin + (i * 16), result[? "name"]);
+	write_text(result[? "name"], x_origin + 16, y_origin + (i * 16) + 4);
 }

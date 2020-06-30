@@ -9,7 +9,5 @@ for (var i = 0; i < ds_list_size(ing); i++) {
 	
 	draw_sprite(item[? "sprite"], -1, x_origin + 8, y_origin + (i * 16) + 8);
 	
-	draw_set_font(fnt_ken_mini_8);
-	draw_set_color(c_black);
-	draw_text(x_origin + 16, y_origin + (i * 16), item[? "name"]);
+	write_text(item[? "name"], x_origin + 16, y_origin + (i * 16));
 }

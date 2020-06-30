@@ -13,9 +13,7 @@ if (running) {
 	var m = string(tens) + "0";
 	var a = hours >= 6 ? "PM" : "AM";
 	
-	draw_set_font(fnt_ken_mini_8);
-	draw_set_color(c_black);
-	draw_text(x + 5, y - 10, string(hr) + ":" + string(m) + " " + a);
+	write_text(string(hr) + ":" + string(m) + " " + a, x + 5, y - 10);
 } else if (time < day) {
 	draw_sprite(spr_start_day, -1, x, y);
 }

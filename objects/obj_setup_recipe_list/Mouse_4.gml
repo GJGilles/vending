@@ -40,6 +40,15 @@ if (obj_game.mouse == id && hovered >= 0) {
 				if (idx != -1) {
 					ds_list_set(num, idx, ds_list_find_value(num, idx) - 1);
 					if (ds_list_find_value(num, idx) < 1) {
+						var inputs = obj_setup_input_list;
+						for (var k = 0; k < array_length_1d(inputs.tokens); k++) {
+							if (inputs.tokens[k] > idx) {
+								inputs.tokens[k]--;
+							} else if (inputs.tokens[k] == idx) {
+								inputs.tokens[k] = -1;
+							}
+						}
+						
 						ds_list_delete(ing, idx);
 						ds_list_delete(num, idx);
 					}
