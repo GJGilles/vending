@@ -43,6 +43,6 @@ switch (obj_game.popular[1]) {
 		break;
 }
 
-write_text("What's hot:", x + 45, y + 13, FontEnum.silkscreen);
-write_text(flavor, x + 50, y + 21, FontEnum.silkscreen);
-write_text(prep, x + 50, y + 29, FontEnum.silkscreen);
+write_text("What's hot:", x + 44, y + 15, FontEnum.silkscreen);
+write_text("-" + flavor, x + 49, y + 22, FontEnum.silkscreen);
+write_text("-" + prep, x + 49, y + 29, FontEnum.silkscreen);

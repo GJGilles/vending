@@ -6,7 +6,8 @@
     "children": [
         "e70f9ffb-a642-41fa-91ec-c996a4b67892",
         "5c2ce47e-90d3-4c80-a818-c8c73c157fc8",
-        "0167343a-db3e-437e-9262-f0b91a9ce654"
+        "0167343a-db3e-437e-9262-f0b91a9ce654",
+        "4882e69f-c3b2-4ffd-ba8b-46a024c759d7"
     ],
     "filterType": "GMSprite",
     "folderName": "fonts",

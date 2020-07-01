@@ -391,6 +391,14 @@
             }
         },
         {
+            "Key": "4882e69f-c3b2-4ffd-ba8b-46a024c759d7",
+            "Value": {
+                "id": "130d4eda-6728-4a6f-af20-44fe7854bc7a",
+                "resourcePath": "sprites\\spr_font_silkscreen_2w\\spr_font_silkscreen_2w.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "498bcb7e-1bba-4b04-b669-9e93c585ac9b",
             "Value": {
                 "id": "fbf1eda9-ec10-4d23-97d9-60969f6dc9a7",
@@ -988,6 +996,14 @@
                 "id": "2622b21d-966a-4253-80d8-12472d80e680",
                 "resourcePath": "views\\9d550e6d-0c23-43c3-9e39-c9970cb8a6e4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9d5be9df-0174-4406-ab1a-b92d795a50a2",
+            "Value": {
+                "id": "73a58c63-7551-4516-829e-f63995cd3941",
+                "resourcePath": "objects\\obj_weather_sidebar\\obj_weather_sidebar.yy",
+                "resourceType": "GMObject"
             }
         },
         {
