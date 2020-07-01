@@ -28,6 +28,3 @@ if (count == freq) {
 	
 	pressed = array_create(6, 0);
 }
-
-animo_frame++;
-if (animo_frame == animo_len) { animo_frame = 0; }

@@ -3,8 +3,11 @@ var stop_chance = argument1; // 0 - 20
 var buy_chance = argument2; // ~20 ?
 
 
-var wanted_flavor = irandom(5);
-var wanted_prep = irandom(5);
+var roll_flavor = irandom(19);
+var roll_prep = irandom(19);
+
+var wanted_flavor = roll_flavor < 15 ? floor(roll_flavor / 3) : obj_game.popular[0];
+var wanted_prep = roll_prep < 15 ? floor(roll_prep / 3) : obj_game.popular[1];
 
 var region = obj_game.all_regions[obj_game.current_region];
 var weather = ds_queue_head(region[? "weather"]);

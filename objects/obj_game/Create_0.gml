@@ -23,6 +23,8 @@ current_components = array_create(0);
 current_recipies = array_create(0);
 
 
+popular = [irandom(4), irandom(4)];
+
 scr_define_all_fonts();
 
 // test

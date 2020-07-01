@@ -30,7 +30,7 @@ enum ItemPrepEnum {
 	simmered = 1,
 	fried = 2,
 	steamed = 3,
-	roasted = 4,
+	roasted = 4
 }
 
 enum ItemEnum {

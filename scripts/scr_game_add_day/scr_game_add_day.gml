@@ -45,3 +45,10 @@ for (var i = 0; i < array_length_1d(all_regions); i++) {
 	
 	ds_queue_enqueue(weather, [new_temp, new_weather]);
 }
+
+
+var roll_flavor = irandom(19);
+var roll_prep = irandom(19);
+
+obj_game.popular[0] = roll_flavor < 15 ? floor(roll_flavor / 3) : obj_game.popular[0];
+obj_game.popular[1] = roll_prep < 15 ? floor(roll_prep / 3) : obj_game.popular[1];

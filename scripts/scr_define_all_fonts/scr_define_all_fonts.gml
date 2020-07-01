@@ -5,7 +5,7 @@ enum FontEnum {
 	vending_p = 2
 }
 
-var map_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+var map_str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 :~";
 var map_num = "0123456789";
 
 global.fonts = array_create(0);

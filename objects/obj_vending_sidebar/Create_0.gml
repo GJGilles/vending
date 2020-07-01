@@ -13,7 +13,3 @@ stack_size = 99;
 freq = 60;
 press = 30;
 count = 0;
-
-
-animo_frame = 0;
-animo_len = 120;
