@@ -17,7 +17,7 @@ ds_map_add(region, "weather", ds_queue_create());
 
 // Test?
 for (var i = 0; i < 7; i++) {
-	ds_queue_enqueue(region[? "weather"], [25, MapWeatherEnum.clear]);
+	ds_queue_enqueue(region[? "weather"], [-44, MapWeatherEnum.snow]);
 }
 
 return region;

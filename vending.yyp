@@ -175,6 +175,14 @@
             }
         },
         {
+            "Key": "1c878318-ac18-4d9f-8b3c-4ea5f106ffc2",
+            "Value": {
+                "id": "95786a4f-93d2-4c54-88d2-64f9481f7f9a",
+                "resourcePath": "sprites\\spr_weather_hotty\\spr_weather_hotty.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1df471e7-1b8b-4968-8e3d-0859441eb892",
             "Value": {
                 "id": "85353f79-496e-45bf-9dd0-2087eaf987f4",
@@ -239,6 +247,14 @@
             }
         },
         {
+            "Key": "26f7aaa5-480d-4e03-aada-7e62b5e31560",
+            "Value": {
+                "id": "2eebe782-464b-414f-92f0-23747cb42c78",
+                "resourcePath": "views\\26f7aaa5-480d-4e03-aada-7e62b5e31560.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "298ddfa1-0b36-4dae-ba9b-5f44c08868c0",
             "Value": {
                 "id": "ef3fcb18-72bc-4c93-a704-b8358094184a",
@@ -252,6 +268,14 @@
                 "id": "789d3d96-2dd0-4533-b659-8d7f2118e870",
                 "resourcePath": "views\\2c14a283-f830-4220-a657-0f66eb0c456f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "30aa662b-b782-49d7-9a9a-156ec0c4334b",
+            "Value": {
+                "id": "948ee1fb-078c-4a35-a597-fced7157b1b8",
+                "resourcePath": "sprites\\spr_weather_rainy\\spr_weather_rainy.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -323,6 +347,14 @@
             "Value": {
                 "id": "219f679c-60ce-4fbd-888f-caa0cba66564",
                 "resourcePath": "sprites\\spr_item_bubble\\spr_item_bubble.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "3b7e3257-bfe1-4c39-a374-7646f127d045",
+            "Value": {
+                "id": "84e068b5-8993-4bd9-a385-d071748e9a0c",
+                "resourcePath": "sprites\\spr_weather_snowy\\spr_weather_snowy.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -516,6 +548,14 @@
                 "id": "e8c0c788-b01d-4916-a716-8f87eeb1dd87",
                 "resourcePath": "scripts\\scr_define_all_regions\\scr_define_all_regions.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5bf10112-ae7a-49c1-839e-0c254022657a",
+            "Value": {
+                "id": "975715ea-8e7d-4c6c-8ab4-d05e1216fe6d",
+                "resourcePath": "sprites\\spr_font_temp\\spr_font_temp.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1423,6 +1463,14 @@
             }
         },
         {
+            "Key": "d45dd603-2c85-4265-afd5-56cedc8a2197",
+            "Value": {
+                "id": "a1f4cab6-68ad-4184-9a66-82d521dae289",
+                "resourcePath": "sprites\\spr_weather_cloudy\\spr_weather_cloudy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "d6bd2016-7e19-4a27-bd05-b81ac643ae16",
             "Value": {
                 "id": "4ef46bb8-47a4-42a4-921b-bcf85a863ef6",
@@ -1516,6 +1564,14 @@
                 "id": "bab24426-114c-4c66-a2f8-3c166e2aa9f6",
                 "resourcePath": "scripts\\scr_process_elbow_cw\\scr_process_elbow_cw.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
+            "Value": {
+                "id": "51da0b5e-1546-4b7b-8998-f38bfa0169a2",
+                "resourcePath": "sprites\\spr_weather_sunny\\spr_weather_sunny.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
