@@ -32,6 +32,6 @@ switch (percip) {
 }
 
 draw_self();
-write_text(name, x + 4, y + 2, FontEnum.silkscreen_2w);
+write_text("Kagoshima", x + 4, y + 2, FontEnum.silkscreen_2w);
 draw_sprite(spr, floor(animo_frame / (animo_len / 4)), x + 1, y + 16);
-write_text(string(temp) + "c", bbox_right - 46, y + 2, FontEnum.temp);
+write_text(string(temp) + "c", bbox_right - 40, y + 30, FontEnum.temp);
