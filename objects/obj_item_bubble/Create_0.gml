@@ -9,3 +9,7 @@ io = -1;
 animo_frame = 0;
 animo_len = 50;
 height = 4;
+
+
+held_frame = -1;
+held_len = 30;
