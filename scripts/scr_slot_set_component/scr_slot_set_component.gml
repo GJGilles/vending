@@ -6,6 +6,30 @@ var rot = argument2;
 slot.component = comp;
 slot.rotation = rot;
 
+
+var tile_id = layer_tilemap_get_id(layer_get_id("collision"));
+for (var i = -4; i <= 4; i += 8) {
+	for (var j = -4; j <= 4; j += 8) {
+		if (comp == -1) {
+			tilemap_set_at_pixel(tile_id, 0, slot.x + i, slot.y + j);
+		} else {
+			tilemap_set_at_pixel(tile_id, 1, slot.x + i, slot.y + j);
+		}
+	}
+}
+
+
+if (comp == -1) {
+	for (var i = 0; i < 4; i++) {
+		var buff = slot.buffer[i];
+		while(!ds_queue_empty(buff)) { ds_queue_dequeue(buff); }
+	}
+	
+	wait = 0;
+	result = -1;
+}
+
+
 var opposite = [2, 3, 0, 1];
 for (var i = 0; i < 4; i++) {
 	var idx = i + slot.rotation;
@@ -22,6 +46,8 @@ for (var i = 0; i < 4; i++) {
 				var offset = (prev_slot.sprite_width / 2);
 				var x_pos = prev_slot.x + lengthdir_x(offset, 90 * opposite[idx]);
 				var y_pos = prev_slot.y + lengthdir_y(offset, 90 * opposite[idx]);
+				
+				if (prev_slot.component[? "id"] == ComponentEnum.item_in) { y_pos = prev_slot.y - 24; }
 				
 				var size = prev_slot.component[? "size"];
 				
