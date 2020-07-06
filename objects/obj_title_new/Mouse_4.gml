@@ -2,6 +2,10 @@
 // You can write your code in this editor
 
 with obj_game {
+	
+	// scr_new_game();
+	
+	//test
 	var length = array_length_1d(all_components);
 	var idx = 0;
 	for (var i = 0; i < length; i++) {
@@ -16,6 +20,5 @@ with obj_game {
 
 	current_recipies = all_recipes;
 
-	//room_goto(rm_factory);
 	room_goto(rm_setup);
 }

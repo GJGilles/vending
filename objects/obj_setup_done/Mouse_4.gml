@@ -17,4 +17,6 @@ for (var i = 0; i < array_length_1d(inputs.tokens); i++) {
 	}
 }
 
+
+scr_save_game(0); // Make an autosave
 room_goto(rm_factory);

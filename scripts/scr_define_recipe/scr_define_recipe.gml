@@ -6,9 +6,10 @@
 
 var recipe = ds_map_create();
 
-ds_map_add(recipe, "result", argument0);
-ds_map_add(recipe, "comp", argument1);
-ds_map_add(recipe, "ing", argument2);
-ds_map_add(recipe, "craft", argument3);
+ds_map_add(recipe, "id", argument0);
+ds_map_add(recipe, "result", argument1);
+ds_map_add(recipe, "comp", argument2);
+ds_map_add(recipe, "ing", argument3);
+ds_map_add(recipe, "craft", argument4);
 
 return recipe;
