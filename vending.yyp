@@ -815,6 +815,14 @@
             }
         },
         {
+            "Key": "6d9cdf47-3c79-4f1e-8be0-b1b07299b08f",
+            "Value": {
+                "id": "3dd7ff1d-f9b2-493f-9627-4f15fa74e8d2",
+                "resourcePath": "objects\\obj_popup_background\\obj_popup_background.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "6ea5ce5a-fa43-4adf-81ae-52304dc94b0e",
             "Value": {
                 "id": "b21400ed-077a-4c3a-9c46-cf49a4003641",

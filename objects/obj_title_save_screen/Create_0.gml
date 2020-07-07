@@ -18,3 +18,5 @@ for (var i = 0; i < 6; i++) {
 		saves[i].datetime = get_date_string(dt[0], dt[1], dt[2], dt[3], dt[4]);
 	}
 }
+
+backdrop = instance_create_depth(0, 0, depth + 1, obj_popup_background);

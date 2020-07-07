@@ -3,8 +3,4 @@
 
 event_inherited();
 
-for (var i = 0; i < 6; i++) {
-	instance_destroy(saves[i]);
-}
-
-instance_destroy(backdrop);
+draw_sprite_ext(sprite_index, -1, x, y, 1, 1, 0, c_white, 0.3);
