@@ -53,6 +53,9 @@ with obj_game {
 	
 	// Datetime
 	ini_write_real("datetime", "write", date_current_datetime());
+	
+	// Stats
+	ini_write_string("stats", "grid", ds_grid_write(item_stats));
 
 	ini_close();
 }

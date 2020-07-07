@@ -13,6 +13,5 @@ if (array_equals(inputs, array_sort([g_tea_leaves, -1, -1, -1]))) {
 	item = junk;
 }
 
-scr_results_add_created(item);
 result[3] = item;
 return result;

@@ -9,11 +9,11 @@ for (var i = 0; i < array_length_1d(inputs.tokens); i++) {
 	if (idx != -1) {
 		var item = ds_list_find_value(ing.ing, idx);
 		
-		obj_factory_stats.ordered_items[i] = item;
-		obj_factory_stats.ordered_speeds[i] = 1;
+		obj_factory_setup.ordered_items[i] = item;
+		obj_factory_setup.ordered_speeds[i] = 1;
 	} else {
-		obj_factory_stats.ordered_items[i] = ItemEnum.junk;
-		obj_factory_stats.ordered_speeds[i] = 1;
+		obj_factory_setup.ordered_items[i] = ItemEnum.junk;
+		obj_factory_setup.ordered_speeds[i] = 1;
 	}
 }
 

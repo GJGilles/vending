@@ -6,8 +6,8 @@ mouse = -1;
 money = 0;
 max_mana = 100;
 
-year = 1;
-month = 1;
+year = 0;
+month = 0;
 day = 0;
 
 all_regions = scr_define_all_regions();
@@ -24,5 +24,11 @@ current_recipies = array_create(0);
 
 
 popular = [irandom(4), irandom(4)];
+
+
+var size = array_length_1d(all_items);
+item_stats = ds_grid_create(size, 4); // Day/Week/Month/Year
+ds_grid_set_region(item_stats, 0, 0, size - 1, 3, 0);
+
 
 scr_define_all_fonts();

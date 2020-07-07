@@ -1,11 +1,11 @@
 
 day++;
-if (day > 28) {
+if (day >= 28) {
 	month++;
-	day = 1;
-	if (month > 8) {
+	day = 0;
+	if (month >= 8) {
 		year++;
-		month = 1;
+		month = 0;
 	}
 }
 
@@ -50,5 +50,14 @@ for (var i = 0; i < array_length_1d(all_regions); i++) {
 var roll_flavor = irandom(19);
 var roll_prep = irandom(19);
 
-obj_game.popular[0] = roll_flavor < 15 ? floor(roll_flavor / 3) : obj_game.popular[0];
-obj_game.popular[1] = roll_prep < 15 ? floor(roll_prep / 3) : obj_game.popular[1];
+popular[0] = roll_flavor < 15 ? floor(roll_flavor / 3) : popular[0];
+popular[1] = roll_prep < 15 ? floor(roll_prep / 3) : popular[1];
+
+
+ds_grid_set_region(item_stats, 0, 0, ds_grid_width(item_stats) - 1, 0, 0);
+if (day % 7 == 0) {
+	ds_grid_set_region(item_stats, 0, 1, ds_grid_width(item_stats) - 1, 1, 0);
+}
+if (day == 0) {
+	ds_grid_set_region(item_stats, 0, 2, ds_grid_width(item_stats) - 1, 2, 0);
+}

@@ -20,6 +20,5 @@ if (array_equals(inputs, array_sort([g_tea_leaves, water, -1, -1]))) {
 	item = milk_tea;
 }
 
-scr_results_add_created(item);
 result[3] = item;
 return result;

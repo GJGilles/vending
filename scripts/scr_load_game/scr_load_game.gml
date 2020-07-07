@@ -55,6 +55,9 @@ with obj_game {
 	// Popular
 	popular[0] = ini_read_real("popular", "0", popular[0]);
 	popular[1] = ini_read_real("popular", "1", popular[1]);
+	
+	// Stats
+	ds_grid_read(item_stats, ini_read_string("stats", "grid", ""));
 
 	ini_close();
 }

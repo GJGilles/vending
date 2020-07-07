@@ -12,7 +12,7 @@ var location = locs[obj_game.current_location];
 var layouts = location[? "layouts"];
 var map = layouts[0];
 
-var inputs = obj_factory_stats.ordered_items;
+var inputs = obj_factory_setup.ordered_items;
 var idx = 0;
 
 for (var i = 0; i < array_height_2d(map); i++) {
