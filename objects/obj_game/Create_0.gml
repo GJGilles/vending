@@ -21,7 +21,9 @@ all_quests = scr_define_all_quests();
 
 
 current_components = array_create(0);
-current_recipies = array_create(0);
+current_ingredients = [all_items[ItemEnum.g_tea_leaves], all_items[ItemEnum.water]];
+// current_recipies = array_create(0);
+current_quests = [all_quests[0]];
 
 
 popular = [irandom(4), irandom(4)];

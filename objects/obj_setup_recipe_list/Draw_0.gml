@@ -3,7 +3,6 @@
 
 draw_self();
 
-var recipes = obj_game.current_recipies;
 for (var i = 0; i < array_length_1d(recipes); i++) {
 	var entry = recipes[i];
 	var result = obj_game.all_items[entry[? "result"]];

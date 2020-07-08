@@ -8,7 +8,7 @@ if (point_in_rectangle(mouse_x, mouse_y, 0, 0, 480, 32)) {
 	var h = 0;
 	if (instance_exists(obj_factory_setup)) { 
 		var inst = obj_factory_setup;
-		h = 32 * ( 4 + array_length_1d(inst.ordered_items) + array_length_1d(inst.created_items) + array_length_1d(inst.sold_items));
+		h = 32 * ( 4 + array_length_1d(inst.sold_items));
 	}
 	
 	y_origin -= 4;

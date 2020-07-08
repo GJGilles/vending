@@ -1,7 +1,7 @@
 /// @desc Create a single quest definition
 /// @param id ID of the quest
 /// @param req 2D Array of requirements, array of [item, day/wk/month, #]
-/// @param and Bool where true ANDs all req and false ORs all req
+/// @param cond Bool where true ANDs all req and false ORs all req
 /// @param quests Array of quests rewarded by the quest
 /// @param msgs Array of messages rewarded by the quest
 /// @param comps Array of components rewarded by the quest
@@ -14,7 +14,7 @@ var quest = ds_map_create();
 
 ds_map_add(quest, "id", argument0);
 ds_map_add(quest, "req", argument1);
-ds_map_add(quest, "and", argument2);
+ds_map_add(quest, "cond", argument2);
 ds_map_add(quest, "quests", argument3);
 ds_map_add(quest, "msgs", argument4);
 ds_map_add(quest, "comps", argument5);
