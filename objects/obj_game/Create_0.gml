@@ -17,6 +17,7 @@ current_location = 0;
 all_components = scr_define_all_components();
 all_items = scr_define_all_items();
 all_recipes = scr_define_all_recipes();
+all_messages = scr_define_all_messages();
 all_quests = scr_define_all_quests();
 
 

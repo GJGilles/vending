@@ -511,6 +511,14 @@
             }
         },
         {
+            "Key": "47bb55d4-3437-4375-b14e-b84d9debcf7f",
+            "Value": {
+                "id": "4fc08aa2-fe24-46e0-8e28-76e69fa78bba",
+                "resourcePath": "views\\47bb55d4-3437-4375-b14e-b84d9debcf7f.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "47f80127-53f5-482d-9b49-18e0e28b2b94",
             "Value": {
                 "id": "688e0338-83b5-413b-8326-3351d9a049f3",
@@ -699,6 +707,14 @@
             "Value": {
                 "id": "35339eb8-d6ea-4682-9459-7d4c96ccebc4",
                 "resourcePath": "scripts\\scr_game_add_day\\scr_game_add_day.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5e9f147c-275b-4cee-989e-61e81f718da5",
+            "Value": {
+                "id": "319b1b73-ee4c-424d-9f07-3f33e56e698e",
+                "resourcePath": "scripts\\scr_define_all_messages\\scr_define_all_messages.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1364,6 +1380,14 @@
                 "id": "3c9647f5-b8aa-455b-a771-15813f3fa476",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "a935b261-1855-4670-ac49-7deb79aaf951",
+            "Value": {
+                "id": "c1e4bdba-aa63-460b-9b21-332f1273db41",
+                "resourcePath": "scripts\\scr_define_message\\scr_define_message.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2081,6 +2105,8 @@
         "03d85ff2-c42f-42d0-80c7-1b97a73c483a",
         "24cafc3b-756d-48a6-9c58-f56ddae2c23f",
         "23039383-e9d2-4bbd-8b01-0062610d2594",
+        "5e9f147c-275b-4cee-989e-61e81f718da5",
+        "a935b261-1855-4670-ac49-7deb79aaf951",
         "cd67d20e-ab21-43b9-939a-41925fdaf6d8",
         "8f2aa82c-ad78-4b6f-b41a-a573736f5bd8",
         "d1a5c695-57ac-4d90-bfeb-3bd211c89824",
