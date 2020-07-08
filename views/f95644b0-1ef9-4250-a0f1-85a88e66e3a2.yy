@@ -10,7 +10,7 @@
         "1428b901-e0c2-411a-9733-58471b3dd6d1"
     ],
     "filterType": "GMScript",
-    "folderName": "map",
+    "folderName": "locations",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
