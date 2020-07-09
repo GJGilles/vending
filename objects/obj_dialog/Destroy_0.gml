@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-inst = obj_title_save_slot;
-
 event_inherited();
+
+instance_destroy(backdrop);
+scr_dialog_remove(result);

@@ -3,8 +3,6 @@
 
 event_inherited();
 
-for (var i = 0; i < 6; i++) {
-	instance_destroy(saves[i]);
-}
+backdrop = instance_create_layer(0, 0, "Dialogs", obj_popup_background);
 
-instance_destroy(backdrop);
+result = -1;

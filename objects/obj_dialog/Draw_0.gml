@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-inst = obj_title_save_slot;
-
+// Inherit the parent event
 event_inherited();
+
+draw_self();

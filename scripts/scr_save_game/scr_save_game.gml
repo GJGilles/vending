@@ -1,5 +1,7 @@
 var slot = string(argument0);
 
+if (scr_save_exists(slot) && !show_question("Are you sure you would like to overwrite this save?")) { return; }
+
 with obj_game {
 	ini_open(slot + "_save.ini");
 

@@ -1,10 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-saves = array_create(6);
 
+if (inst == undefined) { inst = obj_title_load_slot; }
+
+
+saves = array_create(6);
 for (var i = 0; i < 6; i++) {
-	saves[i] = instance_create_depth(x + 16, y + (i * 32) + 16, depth - 1, obj_title_save_slot);
+	saves[i] = instance_create_depth(x + 16, y + (i * 32) + 16, depth - 1, inst);
 	saves[i].exists = scr_save_exists(i);
 	
 	saves[i].idx = i;
