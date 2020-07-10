@@ -3,7 +3,3 @@
 
 event_inherited();
 
-for (var i = 0; i < 6; i++) {
-	instance_destroy(saves[i]);
-}	
-	
