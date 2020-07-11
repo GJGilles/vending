@@ -3,4 +3,7 @@
 
 event_inherited();
 
-scr_load_game(i);
+if (obj_game.mouse == id) {
+	selected = hovered;
+	scr_load_game(selected);
+}

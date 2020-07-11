@@ -199,6 +199,14 @@
             }
         },
         {
+            "Key": "1b5b7855-0fb2-47fe-a035-4525a633d589",
+            "Value": {
+                "id": "083c7802-b0e5-4f0a-953e-af0256b4f7ba",
+                "resourcePath": "sprites\\spr_dialog_no\\spr_dialog_no.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1c878318-ac18-4d9f-8b3c-4ea5f106ffc2",
             "Value": {
                 "id": "95786a4f-93d2-4c54-88d2-64f9481f7f9a",
@@ -324,6 +332,14 @@
                 "id": "ef3fcb18-72bc-4c93-a704-b8358094184a",
                 "resourcePath": "views\\298ddfa1-0b36-4dae-ba9b-5f44c08868c0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2be94742-5994-482c-b6f8-4c5e005d4159",
+            "Value": {
+                "id": "19278cd9-8fe8-4a9f-97d1-37d2d5b2421b",
+                "resourcePath": "objects\\obj_dialog_confirm\\obj_dialog_confirm.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -471,6 +487,14 @@
             }
         },
         {
+            "Key": "3e50d3f5-ce09-4614-a929-092ac01afef6",
+            "Value": {
+                "id": "94cd81d8-2b6b-4be3-aa22-1450a063a7dd",
+                "resourcePath": "sprites\\spr_dialog_exit\\spr_dialog_exit.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3f1c07cc-3fd2-492a-a843-9f9a4cecb077",
             "Value": {
                 "id": "19b844d3-1148-4b68-ac85-e036086e28cd",
@@ -604,6 +628,14 @@
                 "id": "333fb355-f2f2-412a-b1a9-b47a50b298c6",
                 "resourcePath": "views\\4c046424-50f2-464d-9917-a8b73e28ecfe.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4d2c7c04-c65b-4830-8046-df5a0b7088c4",
+            "Value": {
+                "id": "4bc4ee78-c215-47df-8af7-bd105b818699",
+                "resourcePath": "sprites\\spr_dialog_small\\spr_dialog_small.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1839,6 +1871,14 @@
             }
         },
         {
+            "Key": "d9d44bfb-75f3-430f-99d2-6f6592fae782",
+            "Value": {
+                "id": "8fd92b67-f489-4b9f-99ef-6144ec1cd9d1",
+                "resourcePath": "views\\d9d44bfb-75f3-430f-99d2-6f6592fae782.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "db679fee-fcfc-4a6f-9c79-ce20f37dff6b",
             "Value": {
                 "id": "2100eb56-dbc9-40e1-988b-03cac5245e1b",
@@ -1975,6 +2015,14 @@
             }
         },
         {
+            "Key": "e8821024-6560-42fa-823e-429b56902596",
+            "Value": {
+                "id": "e9886b35-d15d-45d9-93e5-5e2658012b51",
+                "resourcePath": "sprites\\spr_dialog_yes\\spr_dialog_yes.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e893a1dd-7a78-4b14-a02f-290806215fde",
             "Value": {
                 "id": "42c314f4-cded-4f6a-9d5c-e014e14ffe1f",
@@ -2092,6 +2140,14 @@
                 "id": "e6a0ce5c-1df2-4f77-be02-6910fb5499e8",
                 "resourcePath": "sprites\\spr_vending_button_p\\spr_vending_button_p.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f67eb53f-de4f-4d17-bf87-c054712ef109",
+            "Value": {
+                "id": "e4ee7857-441e-4b8f-a7a1-a4bad6d74b60",
+                "resourcePath": "views\\f67eb53f-de4f-4d17-bf87-c054712ef109.yy",
+                "resourceType": "GMFolder"
             }
         },
         {

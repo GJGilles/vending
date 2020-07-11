@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+event_inherited();
 
 saves = array_create(6, -1);
 for (var i = 0; i < 6; i++) {
