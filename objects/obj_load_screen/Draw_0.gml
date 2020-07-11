@@ -4,10 +4,8 @@
 event_inherited();
 
 for (var i = 0; i < array_length_1d(saves); i++) {
-	var frame = i == hovered ? 1 : 0;
 	var x_pos = x + 16;
 	var y_pos = y + (32 * i) + 16;
-	draw_sprite(spr_save_slot, frame, x_pos, y_pos);
 	
 	var save = saves[i];
 	if (save != -1) {

@@ -2,3 +2,5 @@
 // You can write your code in this editor
 
 dialogs = ds_stack_create();
+
+result = -1;
