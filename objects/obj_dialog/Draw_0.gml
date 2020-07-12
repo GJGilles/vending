@@ -12,5 +12,6 @@ for (var i = 0; i < array_length_1d(buttons); i++) {
 	var w = sprite_get_width(vals[2]);
 	var h = sprite_get_height(vals[2]);
 	
-	draw_sprite(vals[2], point_in_rectangle(mouse_x, mouse_y, x_pos, y_pos, x_pos + w, y_pos + h), x_pos, y_pos);
+	var frame = (obj_game.mouse == id &&  point_in_rectangle(mouse_x, mouse_y, x_pos, y_pos, x_pos + w, y_pos + h));
+	draw_sprite(vals[2], frame, x_pos, y_pos);
 }

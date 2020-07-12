@@ -5,7 +5,7 @@ event_inherited();
 
 saves = array_create(6, -1);
 for (var i = 0; i < 6; i++) {
-	buttons[i + 1] = [16, (32 * i) + 16, spr_save_slot];
+	buttons[i + 1] = [32, (40 * i) + 16, spr_save_slot];
 	
 	var exists = scr_save_exists(i);
 	if (exists) {
