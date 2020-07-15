@@ -7,7 +7,8 @@ enum ComponentEnum {
 	elbow_cw = 4,
 	soup_pot = 5,
 	tea_roaster = 6,
-	item_out = 7
+	item_out = 7,
+	mochi_maker = 8
 }
 
 enum IOEnum {
@@ -26,6 +27,7 @@ component_array[ComponentEnum.elbow_ccw] = scr_define_component("Elbow", Compone
 component_array[ComponentEnum.elbow_cw] = scr_define_component("Elbow", ComponentEnum.elbow_cw, 30, scr_process_elbow_cw, scr_draw_elbow_cw, [IOEnum.input, IOEnum.output, IOEnum.none, IOEnum.none], [4, 4, 0, 0]);
 component_array[ComponentEnum.soup_pot] = scr_define_component("Soup Pot", ComponentEnum.soup_pot, 30, scr_process_soup_pot, scr_draw_soup_pot, [IOEnum.input, IOEnum.input, IOEnum.input, IOEnum.output], [4, 4, 4, 4]);
 component_array[ComponentEnum.tea_roaster] = scr_define_component("Tea Roaster", ComponentEnum.tea_roaster, 30, scr_process_tea_roaster, scr_draw_tea_roaster, [IOEnum.input, IOEnum.none, IOEnum.none, IOEnum.output], [4, 0, 0, 4]);
-component_array[ComponentEnum.item_out] = scr_define_component("Output", ComponentEnum.item_out, 1, scr_process_item_out, scr_draw_item_out, [IOEnum.none, IOEnum.none, IOEnum.input, IOEnum.none], [0, 0, 10, 0]);
+component_array[ComponentEnum.item_out] = scr_define_component("Output", ComponentEnum.item_out, 1, scr_process_item_out, scr_draw_item_out, [IOEnum.input, IOEnum.none, IOEnum.none, IOEnum.output], [4, 0, 0, 4]);
+component_array[ComponentEnum.mochi_maker] = scr_define_component("Mochi Maker", ComponentEnum.mochi_maker, 30, scr_process_mochi_maker, scr_draw_mochi_maker, [], [])
 
 return component_array;

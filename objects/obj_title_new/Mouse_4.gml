@@ -21,6 +21,7 @@ if (obj_game.mouse == id) {
 
 		current_recipies = all_recipes;
 
+		audio_play_sound(snd_taiko_accept, 1, false);
 		room_goto(rm_setup);
 	}
 }

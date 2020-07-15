@@ -6,7 +6,8 @@
     "children": [
         "e40280c0-31b8-447f-81fc-3d0957cd0096",
         "bfe53b7a-2aa7-4fe2-a7ab-810cce918b29",
-        "d730ebde-d826-47cb-8dfe-5550c353cdff"
+        "d730ebde-d826-47cb-8dfe-5550c353cdff",
+        "fdfb7b38-86ab-46f0-a9ea-d5e96105bec1"
     ],
     "filterType": "GMSprite",
     "folderName": "transformers",
