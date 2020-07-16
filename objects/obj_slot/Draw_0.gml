@@ -4,11 +4,32 @@
 draw_self();
 
 var isBuild = obj_game.mouse == id && instance_exists(obj_build_mode);
-if (component != -1 && isBuild && obj_build_mode.selection == BuildToolsEnum.erase) {
-	script_execute(component[? "draw"], x, y, rotation, 0.5);
-	draw_sprite(spr_eraser, -1, x, y);
-} else if (component != -1) {
-	script_execute(component[? "draw"], x, y, rotation, 1);
+if (component != -1) {
+	if (isBuild && obj_build_mode.selection == BuildToolsEnum.erase) {
+		draw_sprite(component[? "sprite"], -1, x, y);
+		draw_sprite(spr_eraser, -1, x, y);
+	} else {
+		draw_sprite(component[? "sprite"], -1, x, y);
+	}
+
+	if (instance_exists(obj_build_mode)) {
+		var io = component[? "io"];
+		for (var i = 0; i < 4; i++) {
+			if (io[i] == IOEnum.input) {
+				draw_sprite_ext(spr_IO_in, -1, x, y, 1, 1, rotation * 90, c_white, 1);
+			} else if (io[i] == IOEnum.output) {
+				draw_sprite_ext(spr_IO_out, -1, x, y, 1, 1, rotation * 90, c_white, 1);
+			}
+		}
+	}
 } else if (isBuild && obj_build_mode.selection >= BuildToolsEnum.build) {
-	script_execute(obj_build_mode.selection[? "draw"], x, y, obj_build_mode.rotation, 0.5);
+	draw_sprite_ext(obj_build_mode.selection[? "sprite"], -1, x, y, 1, 1, obj_build_mode.rotation * 90, c_white, 0.5);
+	var io = obj_build_mode.selection[? "io"];
+	for (var i = 0; i < 4; i++) {
+		if (io[i] == IOEnum.input) {
+			draw_sprite_ext(spr_IO_in, -1, x, y, 1, 1, obj_build_mode.rotation * 90, c_white, 1);
+		} else if (io[i] == IOEnum.output) {
+			draw_sprite_ext(spr_IO_out, -1, x, y, 1, 1, obj_build_mode.rotation * 90, c_white, 1);
+		}
+	}
 }

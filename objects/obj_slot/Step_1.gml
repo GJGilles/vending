@@ -17,7 +17,7 @@ if (component != -1) {
 			if (prev_idx < 0) { prev_idx += 4; }
 			
 			var buff = prev_slot.buffer[prev_idx];
-			while (ds_queue_size(buff) > 0 && ds_queue_size(buffer[i]) < size[i]) {
+			while (ds_queue_size(buff) > 0 && ds_queue_size(buffer[i]) < size) {
 				var item = ds_queue_dequeue(buff);
 				ds_queue_enqueue(buffer[i], item);
 			}

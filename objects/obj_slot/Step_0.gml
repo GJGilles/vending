@@ -23,7 +23,24 @@ if (component != -1) {
 				}
 			}
 			
-			result = script_execute(component[? "process"], input);
+			var output = -1;
+			for (var i = 0; i < 4; i++) {
+				if (io[i] == IOEnum.output) {
+					output = i;
+				}
+			}
+			
+			var recipes = component[? "recipes"];
+			input = array_sort(input);
+			result = [-1, -1, -1, -1];
+			for (var i = 0; array_length_1d(recipes); i++) {
+				var r = obj_game.all_recipes[recipes[i]];
+				var ing = r[? "ing"];
+				if (array_equals(ing, input)) {
+					result[output] = r[? "result"];
+					break;
+				}
+			}
 		}
 		
 		
@@ -32,7 +49,7 @@ if (component != -1) {
 	} else {
 		var is_output = true;
 		for (var i = 0; i < 4; i++) {
-			if (io[i] == IOEnum.output && ds_queue_size(buffer[i]) >= size[i]) { is_output = false; }
+			if (io[i] == IOEnum.output && ds_queue_size(buffer[i]) >= size) { is_output = false; }
 		}
 		
 		if (is_output) {

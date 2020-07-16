@@ -5,5 +5,5 @@ event_inherited();
 
 
 if (component != -1) {
-	script_execute(component[? "draw"], x, y, 0, 1);
+	draw_sprite(component[? "sprite"], -1, x, y);
 }
