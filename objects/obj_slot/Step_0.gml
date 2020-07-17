@@ -33,13 +33,17 @@ if (component != -1) {
 			var recipes = component[? "recipes"];
 			input = array_sort(input);
 			result = [-1, -1, -1, -1];
-			for (var i = 0; array_length_1d(recipes); i++) {
-				var r = obj_game.all_recipes[recipes[i]];
-				var ing = r[? "ing"];
-				if (array_equals(ing, input)) {
-					result[output] = r[? "result"];
-					break;
+			if (recipes != -1) {
+				for (var i = 0; array_length_1d(recipes); i++) {
+					var r = obj_game.all_recipes[recipes[i]];
+					var ing = r[? "ing"];
+					if (array_equals(ing, input)) {
+						result[output] = r[? "result"];
+						break;
+					}
 				}
+			} else {
+				result[output] = input[3];
 			}
 		}
 		
