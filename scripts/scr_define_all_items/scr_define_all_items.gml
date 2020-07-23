@@ -62,17 +62,17 @@ enum ItemEnum {
 	ice_cream,
 	amazake,
 	yoink,
-	watermelon_parfait,
-	strawberry_parfait,
+	w_parfait,
+	s_parfait,
 	yakitori,
 	flan,
 	milk_bread,
-	castella_cake,
+	castella,
 	katsudon,
-	watermelon_katsu,
+	w_katsudon,
 	toriten,
 	katsu_sando,
-	watermelon_katsu_sando,
+	w_katsu_sando,
 	strawberry_sando,
 	mochi_ice_cream,
 	dorayaki
@@ -109,17 +109,17 @@ item_array[ItemEnum.genmaicha] = scr_define_item("Genmaicha", ItemEnum.genmaicha
 item_array[ItemEnum.ice_cream] = scr_define_item("Ice Cream", ItemEnum.ice_cream, 0, spr_ice_cream, [ItemColorEnum.white, ItemTempEnum.cold, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
 item_array[ItemEnum.amazake] = scr_define_item("Amazake", ItemEnum.amazake, 0, spr_amazake, [ItemColorEnum.white, ItemTempEnum.hot, ItemFlavorEnum.sweet, ItemPrepEnum.simmered], "");
 item_array[ItemEnum.yoink] = scr_define_item("Yoink", ItemEnum.yoink, 0, spr_yoink, [ItemColorEnum.white, ItemTempEnum.cool, ItemFlavorEnum.sour, ItemPrepEnum.raw], "");
-item_array[ItemEnum.watermelon_parfait] = scr_define_item("Watermelon Parfait", ItemEnum.watermelon_parfait, 0, spr_red_fruit_parfait, [ItemColorEnum.red, ItemTempEnum.cold, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
-item_array[ItemEnum.strawberry_parfait] = scr_define_item("Strawberry Parfait", ItemEnum.strawberry_parfait, 0, spr_red_fruit_parfait, [ItemColorEnum.red, ItemTempEnum.cold, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
+item_array[ItemEnum.w_parfait] = scr_define_item("Watermelon Parfait", ItemEnum.w_parfait, 0, spr_red_fruit_parfait, [ItemColorEnum.red, ItemTempEnum.cold, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
+item_array[ItemEnum.s_parfait] = scr_define_item("Strawberry Parfait", ItemEnum.s_parfait, 0, spr_red_fruit_parfait, [ItemColorEnum.red, ItemTempEnum.cold, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
 item_array[ItemEnum.yakitori] = scr_define_item("Yakitori", ItemEnum.yakitori, 0, spr_yakitori, [ItemColorEnum.red, ItemTempEnum.hot, ItemFlavorEnum.umami, ItemPrepEnum.roasted], "");
 item_array[ItemEnum.flan] = scr_define_item("Flan", ItemEnum.flan, 0, spr_flan, [ItemColorEnum.yellow, ItemTempEnum.cool, ItemFlavorEnum.sweet, ItemPrepEnum.roasted], "");
 item_array[ItemEnum.milk_bread] = scr_define_item("Milk Bread", ItemEnum.milk_bread, 0, spr_milk_bread, [ItemColorEnum.white, ItemTempEnum.room_temp, ItemFlavorEnum.sweet, ItemPrepEnum.roasted], "");
-item_array[ItemEnum.castella_cake] = scr_define_item("Castella Cake", ItemEnum.castella_cake, 0, spr_castella_cake, [ItemColorEnum.white, ItemTempEnum.room_temp, ItemFlavorEnum.sweet, ItemPrepEnum.roasted], "");
+item_array[ItemEnum.castella] = scr_define_item("Castella Cake", ItemEnum.castella, 0, spr_castella_cake, [ItemColorEnum.white, ItemTempEnum.room_temp, ItemFlavorEnum.sweet, ItemPrepEnum.roasted], "");
 item_array[ItemEnum.katsudon] = scr_define_item("Katsudon", ItemEnum.katsudon, 0, spr_katsudon, [ItemColorEnum.yellow, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
-item_array[ItemEnum.watermelon_katsu] = scr_define_item("Watermelon Katsudon", ItemEnum.watermelon_katsu, 0, spr_katsudon, [ItemColorEnum.red, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
+item_array[ItemEnum.w_katsudon] = scr_define_item("Watermelon Katsudon", ItemEnum.w_katsudon, 0, spr_katsudon, [ItemColorEnum.red, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
 item_array[ItemEnum.toriten] = scr_define_item("Toriten", ItemEnum.toriten, 0, spr_toriten, [ItemColorEnum.yellow, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
 item_array[ItemEnum.katsu_sando] = scr_define_item("Katsu Sando", ItemEnum.katsu_sando, 0, spr_katsu_sando, [ItemColorEnum.yellow, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
-item_array[ItemEnum.watermelon_katsu_sando] = scr_define_item("Watermelon Katsu Sando", ItemEnum.watermelon_katsu_sando, 0, spr_katsu_sando, [ItemColorEnum.red, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
+item_array[ItemEnum.w_katsu_sando] = scr_define_item("Watermelon Katsu Sando", ItemEnum.w_katsu_sando, 0, spr_katsu_sando, [ItemColorEnum.red, ItemTempEnum.warm, ItemFlavorEnum.umami, ItemPrepEnum.fried], "");
 item_array[ItemEnum.strawberry_sando] = scr_define_item("Strawberry Sando", ItemEnum.strawberry_sando, 0, spr_strawberry_sando, [ItemColorEnum.red, ItemTempEnum.cool, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
 item_array[ItemEnum.mochi_ice_cream] = scr_define_item("Mochi Ice Cream", ItemEnum.mochi_ice_cream, 0, spr_mochi_ice_cream, [ItemColorEnum.white, ItemTempEnum.cold, ItemFlavorEnum.sweet, ItemPrepEnum.raw], "");
 item_array[ItemEnum.dorayaki] = scr_define_item("Dorayaki", ItemEnum.dorayaki, 0, spr_dorayaki, [ItemColorEnum.yellow, ItemTempEnum.room_temp, ItemFlavorEnum.sweet, ItemPrepEnum.fried], "");
