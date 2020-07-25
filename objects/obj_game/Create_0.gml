@@ -10,10 +10,9 @@ year = 0;
 month = 0;
 day = 0;
 
-all_regions = scr_define_all_regions();
-current_region = MapRegionEnum.chugoku;
-current_location = 0;
 
+all_regions = scr_define_all_regions();
+all_locations = scr_define_all_locations();
 all_components = scr_define_all_components();
 all_items = scr_define_all_items();
 all_recipes = scr_define_all_recipes();
@@ -21,6 +20,9 @@ all_messages = scr_define_all_messages();
 all_quests = scr_define_all_quests();
 
 
+current_region = MapRegionEnum.chugoku;
+current_locations = [MapLocationEnum.hiroshima];
+current_location = MapLocationEnum.hiroshima;
 current_components = array_create(0);
 current_ingredients = [all_items[ItemEnum.g_tea_leaves], all_items[ItemEnum.water]];
 // current_recipies = array_create(0);
@@ -36,3 +38,4 @@ ds_grid_set_region(item_stats, 0, 0, size - 1, 3, 0);
 
 
 scr_define_all_fonts();
+

@@ -81,26 +81,26 @@ enum ItemEnum {
 
 var item_array = array_create(0);
 
-item_array[ItemEnum.junk] = scr_define_item("Junk", ItemEnum.junk, 0, spr_junk, [], "");
-item_array[ItemEnum.g_tea_leaves] = scr_define_item("Green Tea Leaves", ItemEnum.g_tea_leaves, 0, spr_g_tea_leaves, [], "");
-item_array[ItemEnum.water] = scr_define_item("Water", ItemEnum.water, 0, spr_water, [], "");
-item_array[ItemEnum.flour] = scr_define_item("Flour", ItemEnum.flour, 0, spr_flour, [], "");
-item_array[ItemEnum.onion] = scr_define_item("Onion", ItemEnum.onion, 0, spr_onion, [], "");
-item_array[ItemEnum.milk] = scr_define_item("Milk", ItemEnum.milk, 0, spr_milk, [], "");
-item_array[ItemEnum.rice] = scr_define_item("Rice", ItemEnum.rice, 0, spr_rice, [], "");
-item_array[ItemEnum.watermelon] = scr_define_item("Watermelon", ItemEnum.watermelon, 0, spr_watermelon, [], "");
-item_array[ItemEnum.strawberries] = scr_define_item("Strawberries", ItemEnum.strawberries, 0, spr_strawberries, [], "");
-item_array[ItemEnum.chicken] = scr_define_item("Chicken", ItemEnum.chicken, 0, spr_chicken, [], "");
-item_array[ItemEnum.eggs] = scr_define_item("Eggs", ItemEnum.eggs, 0, spr_eggs, [], "");
-item_array[ItemEnum.sugar] = scr_define_item("Sugar", ItemEnum.sugar, 0, spr_sugar, [], "");
-item_array[ItemEnum.pork] = scr_define_item("Pork", ItemEnum.pork, 0, spr_pork, [], "");
-item_array[ItemEnum.ginger] = scr_define_item("Ginger", ItemEnum.ginger, 0, spr_ginger, [], "");
+item_array[ItemEnum.junk] = scr_define_item("Junk", ItemEnum.junk, 0, spr_junk, [-1, -1, -1, -1], "");
+item_array[ItemEnum.g_tea_leaves] = scr_define_item("Green Tea Leaves", ItemEnum.g_tea_leaves, 0, spr_g_tea_leaves, [-1, -1, -1, -1], "");
+item_array[ItemEnum.water] = scr_define_item("Water", ItemEnum.water, 0, spr_water, [-1, -1, -1, -1], "");
+item_array[ItemEnum.flour] = scr_define_item("Flour", ItemEnum.flour, 0, spr_flour, [-1, -1, -1, -1], "");
+item_array[ItemEnum.onion] = scr_define_item("Onion", ItemEnum.onion, 0, spr_onion, [-1, -1, -1, -1], "");
+item_array[ItemEnum.milk] = scr_define_item("Milk", ItemEnum.milk, 0, spr_milk, [-1, -1, -1, -1], "");
+item_array[ItemEnum.rice] = scr_define_item("Rice", ItemEnum.rice, 0, spr_rice, [-1, -1, -1, -1], "");
+item_array[ItemEnum.watermelon] = scr_define_item("Watermelon", ItemEnum.watermelon, 0, spr_watermelon, [-1, -1, -1, -1], "");
+item_array[ItemEnum.strawberries] = scr_define_item("Strawberries", ItemEnum.strawberries, 0, spr_strawberries, [-1, -1, -1, -1], "");
+item_array[ItemEnum.chicken] = scr_define_item("Chicken", ItemEnum.chicken, 0, spr_chicken, [-1, -1, -1, -1], "");
+item_array[ItemEnum.eggs] = scr_define_item("Eggs", ItemEnum.eggs, 0, spr_eggs, [-1, -1, -1, -1], "");
+item_array[ItemEnum.sugar] = scr_define_item("Sugar", ItemEnum.sugar, 0, spr_sugar, [-1, -1, -1, -1], "");
+item_array[ItemEnum.pork] = scr_define_item("Pork", ItemEnum.pork, 0, spr_pork, [-1, -1, -1, -1], "");
+item_array[ItemEnum.ginger] = scr_define_item("Ginger", ItemEnum.ginger, 0, spr_ginger, [-1, -1, -1, -1], "");
 
-item_array[ItemEnum.b_tea_leaves] = scr_define_item("Black Tea Leaves", ItemEnum.b_tea_leaves, 0, spr_b_tea_leaves, [], "");
-item_array[ItemEnum.genmai] = scr_define_item("Genmai", ItemEnum.genmai, 0, spr_genmai, [], "");
-item_array[ItemEnum.dough] = scr_define_item("Dough", ItemEnum.dough, 0, spr_dough, [], "");
-item_array[ItemEnum.batter] = scr_define_item("Batter", ItemEnum.batter, 0, spr_batter, [], "");
-item_array[ItemEnum.mochi] = scr_define_item("Mochi", ItemEnum.mochi, 0, spr_mochi, [], "");
+item_array[ItemEnum.b_tea_leaves] = scr_define_item("Black Tea Leaves", ItemEnum.b_tea_leaves, 0, spr_b_tea_leaves, [-1, -1, -1, -1], "");
+item_array[ItemEnum.genmai] = scr_define_item("Genmai", ItemEnum.genmai, 0, spr_genmai, [-1, -1, -1, -1], "");
+item_array[ItemEnum.dough] = scr_define_item("Dough", ItemEnum.dough, 0, spr_dough, [-1, -1, -1, -1], "");
+item_array[ItemEnum.batter] = scr_define_item("Batter", ItemEnum.batter, 0, spr_batter, [-1, -1, -1, -1], "");
+item_array[ItemEnum.mochi] = scr_define_item("Mochi", ItemEnum.mochi, 0, spr_mochi, [-1, -1, -1, -1], "");
 
 item_array[ItemEnum.g_tea] = scr_define_item("Green Tea", ItemEnum.g_tea, 100, spr_g_tea, [ItemColorEnum.green, ItemTempEnum.cool, ItemFlavorEnum.bitter, ItemPrepEnum.simmered], "");
 item_array[ItemEnum.b_tea] = scr_define_item("Black Tea", ItemEnum.b_tea, 100, spr_b_tea, [ItemColorEnum.black, ItemTempEnum.hot, ItemFlavorEnum.bitter, ItemPrepEnum.simmered], "");
