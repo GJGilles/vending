@@ -5,7 +5,8 @@
     "name": "a3fc4420-d44c-45ed-899c-3ab96a11ccbe",
     "children": [
         "9cf89470-bafc-4461-827e-ab225385727d",
-        "1ded0abd-6aa5-46e7-9b61-e318d5c7a37b"
+        "1ded0abd-6aa5-46e7-9b61-e318d5c7a37b",
+        "109ea566-e54d-4298-aa8d-03d2219cb358"
     ],
     "filterType": "GMObject",
     "folderName": "map",

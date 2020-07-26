@@ -21,7 +21,7 @@ all_quests = scr_define_all_quests();
 
 
 current_region = MapRegionEnum.chugoku;
-current_locations = [MapLocationEnum.hiroshima];
+current_locations = [MapLocationEnum.hiroshima, MapLocationEnum.sapporo];
 current_location = MapLocationEnum.hiroshima;
 current_components = array_create(0);
 current_ingredients = [all_items[ItemEnum.g_tea_leaves], all_items[ItemEnum.water]];
@@ -38,4 +38,3 @@ ds_grid_set_region(item_stats, 0, 0, size - 1, 3, 0);
 
 
 scr_define_all_fonts();
-
