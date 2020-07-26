@@ -1255,6 +1255,14 @@
             }
         },
         {
+            "Key": "88d0a9ce-fa32-4734-a798-e3f1c55ec6f6",
+            "Value": {
+                "id": "abb8484c-a4d5-4643-b27f-a9607b6df705",
+                "resourcePath": "sprites\\spr_map_marker\\spr_map_marker.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "88f726a3-aac7-437a-b81c-1742429de39c",
             "Value": {
                 "id": "2ae5e799-1650-4855-b28f-090c186303de",

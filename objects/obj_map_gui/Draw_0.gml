@@ -3,6 +3,11 @@
 
 event_inherited();
 
+var loc = locations[selected];
+var coords = loc[? "coords"];
+draw_sprite(spr_map_marker, -1, coords[0], coords[1]);
+
+
 draw_sprite(spr_map_menu, 0, x, y);
 
 var h = sprite_get_height(spr_map_menu);

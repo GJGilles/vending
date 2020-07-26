@@ -5,8 +5,8 @@ event_inherited();
 
 var region = obj_game.all_regions[obj_game.current_region];
 var weather = ds_queue_head(region[? "weather"]);
-var locs = region[? "locs"];
-var location = locs[obj_game.current_location];
+
+var location = obj_game.all_locations[obj_game.current_location];
 
 var name = location[? "name"];
 var temp = weather[0];

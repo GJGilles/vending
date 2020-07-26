@@ -6,9 +6,7 @@ slot_height = 9;
 
 slots = array_create(0);
 
-var region = obj_game.all_regions[obj_game.current_region];
-var locs = region[? "locs"];
-var location = locs[obj_game.current_location];
+var location = obj_game.all_locations[obj_game.current_location];
 var layouts = location[? "layouts"];
 var map = layouts[0];
 
