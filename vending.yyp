@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "31f7604f-939c-4d3d-baea-9e89ad513632",
+            "Value": {
+                "id": "d9dec3b5-c85f-47c0-9cfe-10f6fc249a65",
+                "resourcePath": "scripts\\scr_define_all_special\\scr_define_all_special.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "32dc0943-9591-4084-8c7c-b76d1f789574",
             "Value": {
                 "id": "56536335-b8c2-48af-9062-b333d2987492",
@@ -884,6 +892,14 @@
                 "id": "e6e16ba3-b599-48b5-b61d-0fb757040ff9",
                 "resourcePath": "objects\\obj_results_done\\obj_results_done.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "595db899-6cc6-441d-91e5-9bba2260cafd",
+            "Value": {
+                "id": "fcaa56a1-cf76-4d3c-b89d-386883e9dd90",
+                "resourcePath": "scripts\\scr_set_item_specials\\scr_set_item_specials.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2327,6 +2343,14 @@
             }
         },
         {
+            "Key": "ea654627-4d67-4811-ba2c-5dff2230a387",
+            "Value": {
+                "id": "9b83c41f-9cff-4b10-a35b-4c2dc6ce5140",
+                "resourcePath": "scripts\\scr_define_special\\scr_define_special.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ea86227e-1a0e-4746-9866-13d2e679408a",
             "Value": {
                 "id": "a3ff7352-adcc-47a2-8bcc-5b198fd13f8c",
@@ -2522,6 +2546,7 @@
         "e6f26e71-8a9c-4dc7-91ef-1565a0d4dfa0",
         "ee58abec-c5c9-4ede-b0bf-8f7ff0f9ac4f",
         "5dcaf543-1d58-465a-bc0a-da6b7a06475e",
+        "595db899-6cc6-441d-91e5-9bba2260cafd",
         "027623c0-6642-4574-8bd1-640351136be5",
         "e5335ad8-2994-4883-86d6-d1afbf0172ec",
         "889169ea-26e2-4753-8250-47fd73a64003",
@@ -2560,7 +2585,9 @@
         "240913be-dc62-4731-a39c-94dbdeddd03b",
         "dcc08d3c-f4b1-4fa1-b97a-f303f498f1be",
         "31782c53-262a-4ef1-ae2e-707add8c428a",
-        "cfa3ede2-08ed-4b0d-942c-5a983bd17670"
+        "cfa3ede2-08ed-4b0d-942c-5a983bd17670",
+        "31f7604f-939c-4d3d-baea-9e89ad513632",
+        "ea654627-4d67-4811-ba2c-5dff2230a387"
     ],
     "tutorial": ""
 }
