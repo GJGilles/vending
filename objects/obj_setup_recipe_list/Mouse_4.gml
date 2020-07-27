@@ -5,15 +5,20 @@ if (obj_game.mouse == id && hovered >= 0) {
 	var ing = obj_setup_ing_list.ing;
 	var num = obj_setup_ing_list.numbers;
 	
-	var recipe = obj_game.current_recipies[hovered];
+	var recipe = recipes[hovered];
 	var vals = recipe[? "ing"];
 	var craftable = recipe[? "craft"];
 	
 	if (!selected[hovered]) {
 		selected[hovered] = 1;
 		
+		var skip = 0;
 		for (var i = 0; i < array_length_1d(vals); i++) {
-			if (craftable[i]) { continue; }
+			if (vals[i] == -1) { 
+				skip++;
+				continue; 
+			}
+			if (craftable[i - skip]) { continue; }
 			
 			var exists = false;
 			for (var j = 0; j < ds_list_size(ing); j++) {
@@ -32,8 +37,13 @@ if (obj_game.mouse == id && hovered >= 0) {
 	} else {
 		selected[hovered] = 0;
 		
+		var skip = 0;
 		for (var i = 0; i < array_length_1d(vals); i++) {
-			if (craftable[i]) { continue; }
+			if (vals[i] == -1) { 
+				skip++;
+				continue; 
+			}
+			if (craftable[i - skip]) { continue; }
 			
 			for (var j = 0; j < ds_list_size(ing); j++) {
 				var idx = ds_list_find_index(ing, vals[i]);

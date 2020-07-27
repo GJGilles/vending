@@ -7,7 +7,7 @@ money = 0;
 max_mana = 100;
 
 year = 0;
-month = 0;
+month = 3;
 day = 0;
 
 
@@ -22,9 +22,9 @@ all_quests = scr_define_all_quests();
 
 
 current_region = MapRegionEnum.chugoku;
-current_locations = [MapLocationEnum.hiroshima, MapLocationEnum.sapporo];
+current_locations = [MapLocationEnum.hiroshima, MapLocationEnum.kyoto];
 current_location = MapLocationEnum.hiroshima;
-current_components = array_create(0);
+current_components = [all_components[ComponentEnum.steeper]];
 current_ingredients = [all_items[ItemEnum.g_tea_leaves], all_items[ItemEnum.water]];
 // current_recipies = array_create(0);
 current_quests = [all_quests[0]];

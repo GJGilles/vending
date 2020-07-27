@@ -42,10 +42,10 @@ with obj_game {
 	}
 
 	// Recipe Unlocks
-	for (var i = 0; i < array_length_1d(current_recipies); i++) {
+	/*for (var i = 0; i < array_length_1d(current_recipies); i++) {
 		var elem = current_recipies[i];
 		ini_write_real("recipe", string(i), elem[? "id"]);
-	}
+	}*/
 
 	// Popular
 	ini_write_real("popular", "0", popular[0]);

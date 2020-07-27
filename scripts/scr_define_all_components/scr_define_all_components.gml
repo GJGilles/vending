@@ -54,7 +54,7 @@ component_array[ComponentEnum.elbow_cw] = scr_define_component("Elbow", Componen
 component_array[ComponentEnum.blender] = scr_define_component("Blender", ComponentEnum.blender, 30, [], spr_blender, io_4_way, 4);
 component_array[ComponentEnum.mochi_maker] = scr_define_component("Mochi Maker", ComponentEnum.mochi_maker, 30, [], spr_mochi_maker, io_2_way_3, 4);
 component_array[ComponentEnum.noodle_puller] = scr_define_component("Noodle Puller", ComponentEnum.noodle_puller, 30, [], spr_noodle_puller, io_3_way_2, 4);
-component_array[ComponentEnum.tea_roaster] = scr_define_component("Tea Roaster", ComponentEnum.tea_roaster, 30, [1], spr_tea_roaster, io_2_way_2, 4);
+component_array[ComponentEnum.tea_roaster] = scr_define_component("Tea Roaster", ComponentEnum.tea_roaster, 30, [RecipeEnum.b_tea_leaves], spr_tea_roaster, io_2_way_2, 4);
 component_array[ComponentEnum.wrapper_press] = scr_define_component("Wrapper Press", ComponentEnum.wrapper_press, 30, [], spr_wrapper_press, io_2_way_1, 4);
 
 component_array[ComponentEnum.big_oven] = scr_define_component("Big Oven", ComponentEnum.big_oven, 30, [], spr_big_oven, io_4_way, 4);
@@ -67,6 +67,6 @@ component_array[ComponentEnum.salad_maker] = scr_define_component("Salad Maker",
 component_array[ComponentEnum.sandwich_maker] = scr_define_component("Sandwich Maker", ComponentEnum.sandwich_maker, 30, [], spr_sandwich_maker, io_3_way_1, 4);
 component_array[ComponentEnum.soup_pot] = scr_define_component("Soup Pot", ComponentEnum.soup_pot, 30, [], spr_soup_pot, io_4_way, 4);
 component_array[ComponentEnum.sushi_maker] = scr_define_component("Sushi Maker", ComponentEnum.sushi_maker, 30, [], spr_sushi_maker, io_4_way, 4);
-component_array[ComponentEnum.steeper] = scr_define_component("Steeper", ComponentEnum.steeper, 30, [0, 2, 3], spr_steeper, io_3_way_1, 4);
+component_array[ComponentEnum.steeper] = scr_define_component("Steeper", ComponentEnum.steeper, 30, [RecipeEnum.g_tea, RecipeEnum.b_tea], spr_steeper, io_3_way_1, 4);
 
 return component_array;

@@ -7,7 +7,7 @@ if (io == IOEnum.output) {
 		var k = 2;
 		var diff = height * (1 - (1 / power(2, 2 * k)) * power((4 * (animo_frame / animo_len) - 2), 2 * k));
 		draw_sprite(spr_item_bubble, -1, x, y - diff);
-		draw_sprite(item[? "sprite"], -1, x, y - diff);
+		scr_item_draw(item, x, y - diff);
 	}
 }
 
@@ -15,7 +15,7 @@ if (io == IOEnum.input) {
 	draw_sprite(spr_item_bubble, -1, x, y);
 	if (!ds_queue_empty(queue)) {
 		var item = ds_queue_head(queue);
-		draw_sprite(item[? "sprite"], -1, x, y);
+		scr_item_draw(item, x, y);
 	}
 }
 

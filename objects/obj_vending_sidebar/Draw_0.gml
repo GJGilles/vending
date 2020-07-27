@@ -16,10 +16,10 @@ for (var i = 0; i < 2; i++) {
 		var idx = 3 * i + j;
 		if (items[idx] != -1) {
 			var item = items[idx];
-			draw_sprite_ext(item[? "sprite"], -1, x + (j * x_offset) + 26, y + (i * y_offset) + 25, 1, 1, 0, c_white, 1);
+			scr_item_draw(item, x + (j * x_offset) + 26, y + (i * y_offset) + 25);
 			write_text((numbers[idx] < 10 ? "0" : "") + string(numbers[idx]), x + (j * x_offset) + 31, y + (i * y_offset) + 34, FontEnum.silkscreen);
 			
-			var cost = string(item[? "cost"]);
+			var cost = string(scr_item_cost(item));
 			while (string_length(cost) < 5) { cost = " " + cost; }
 			
 			if (pressed[idx]) {

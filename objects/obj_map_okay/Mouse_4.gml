@@ -3,4 +3,5 @@
 
 event_inherited();
 
+scr_set_item_specials();
 room_goto(rm_setup);

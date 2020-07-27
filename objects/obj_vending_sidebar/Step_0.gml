@@ -17,7 +17,7 @@ if (count == freq) {
 		if (pressed[i]) {
 			var item = items[i];
 			scr_results_add_sold(item);
-			obj_game.money += item[? "cost"];
+			obj_game.money += scr_item_cost(item);
 		
 			numbers[i]--;
 			if (numbers[i] == 0) {

@@ -11,13 +11,15 @@ for (var i = 0; i < array_length_1d(obj_game.current_components); i++) {
 	var recipe_arr = component[? "recipes"];
 	if (recipe_arr == -1) { continue; }
 	
-	for (var k = 0; k < array_length_1d(recipes); k++) {
-		var recipe = recipe_arr[k];
+	for (var k = 0; k < array_length_1d(recipe_arr); k++) {
+		var recipe = obj_game.all_recipes[recipe_arr[k]];
 		var ing = recipe[? "ing"];
 	
 		var found = true;
 		for (var j = 0; j < array_length_1d(ing); j++) {
-			var a = obj_game.all_items[ing[j]];
+			var idx = ing[j];
+			if (idx == -1) { continue; }
+			var a = obj_game.all_items[idx];
 		
 			var contains = false;
 			for (var k = 0; k < array_length_1d(obj_game.current_ingredients); k++) {

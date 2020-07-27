@@ -18,7 +18,7 @@ for (var i = 0; i < array_length_1d(spec); i++) {
 	var r = s[? "region"];
 	var m = s[? "months"];
 	
-	if (r == region && m[month - 1]) {
+	if (r == region && m[month]) {
 		var it = items[i];
 		var arr = it[? "special"];
 		arr[array_length_1d(arr)] = s;

@@ -17,7 +17,7 @@ for (var i = 0; i < max_size; i++) {
 	
 	if (items[i] != -1) {
 		var item = items[i];
-		draw_sprite(item[? "sprite"], -1, x - (w / 2), y + top + h * i);
+		scr_item_draw(item, x - (w / 2), y + top + h * i);
 		
 		write_text(string(numbers[i]), x - (w / 3), y + 4 + top + h * i, FontEnum.silkscreen);
 	}

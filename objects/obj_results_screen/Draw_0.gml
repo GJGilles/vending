@@ -21,10 +21,10 @@ for (var i = 0; i < array_length_1d(obj_game.all_items); i++) {
 	if (numb < 1) { continue; }
 	
 	draw_sprite(spr_results_background, 1, x_pos, y_pos);
-	draw_sprite(item[? "sprite"], -1, x_pos + margin, y_pos + 16);
-	write_text(item[? "name"], x_pos + margin + 32, y_pos, FontEnum.silkscreen);
+	scr_item_draw(item, x_pos + margin, y_pos + 16);
+	write_text(scr_item_name(item), x_pos + margin + 32, y_pos, FontEnum.silkscreen);
 	write_text(numb, x_pos + w - 128, y_pos, FontEnum.silkscreen);
-	write_text(item[? "cost"] * numb, x_pos + w - 32, y_pos, FontEnum.silkscreen);
+	write_text(scr_item_cost(item) * numb, x_pos + w - 32, y_pos, FontEnum.silkscreen);
 	y_pos += h;
 }
 
