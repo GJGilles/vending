@@ -22,6 +22,7 @@ for (var i = 0; i < array_length_1d(spec); i++) {
 		var it = items[i];
 		var arr = it[? "special"];
 		arr[array_length_1d(arr)] = s;
+		it[? "special"] = arr;
 	}
 }
 
@@ -39,5 +40,6 @@ for (var i = 0; i < array_length_1d(recipes); i++) {
 		for (var k = 0; k < array_length_1d(arr); k++) {
 			s[array_length_1d(s)] = arr[k];
 		}
+		it[? "special"] = s;
 	}
 }

@@ -15,5 +15,5 @@ for (var i = 0; i < array_length_1d(recipes); i++) {
 	
 	scr_item_draw(result, x_origin + 8, y_origin + (i * 16) + 8);
 	
-	write_text(result[? "name"], x_origin + 16, y_origin + (i * 16) + 4, FontEnum.silkscreen);
+	write_text(scr_item_name(result), x_origin + 16, y_origin + (i * 16) + 4, FontEnum.silkscreen);
 }

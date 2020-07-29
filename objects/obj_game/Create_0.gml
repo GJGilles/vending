@@ -7,7 +7,7 @@ money = 0;
 max_mana = 100;
 
 year = 0;
-month = 3;
+month = 0;
 day = 0;
 
 

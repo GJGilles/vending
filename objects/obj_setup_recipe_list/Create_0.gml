@@ -4,6 +4,7 @@
 x_origin = x;
 y_origin = y;
 
+scr_set_item_specials();
 
 recipes = array_create(0);
 for (var i = 0; i < array_length_1d(obj_game.current_components); i++) {

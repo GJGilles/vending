@@ -16,6 +16,7 @@ if (point_in_rectangle(mouse_x, mouse_y, x, y + h, x + w, y + (h * (array_length
 		
 		var loc = locations[i];
 		obj_game.current_location = loc[? "id"];
+		obj_game.current_region = loc[? "region"];
 	} else {
 		hovered = i;
 	}

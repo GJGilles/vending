@@ -112,6 +112,3 @@ if (day % 7 == 0) {
 if (day == 0) {
 	ds_grid_set_region(item_stats, 0, 2, ds_grid_width(item_stats) - 1, 2, 0);
 }
-
-
-scr_set_item_specials();
