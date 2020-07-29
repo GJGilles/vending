@@ -62,14 +62,26 @@ for (var i = 0; i < array_length_1d(current_quests); i++) {
 	var cond = quest[? "cond"];
 	for (var j = 0; j < array_length_1d(req); j++) {
 		var r = req[j];
-		var res = item_stats[# r[0], r[1]] >= r[2];
-		if (cond) {
-			done = done && res;
-		} else if (res) {
+		if (is_array(r)) {
+			var res = item_stats[# r[0], r[2]] >= r[3];
+			
+			// This has some major drawbacks but avoids a great deal of pain
+			if (r[1] != -1) {
+				var item = all_items[r[1]];
+				var special = item[? "special"];
+				res = res && array_length_1d(special);
+			}
+			
+			if (cond) {
+				done = done && res;
+			} else if (res) {
+				done = true;
+				break;
+			} else {
+				done = false;
+			}
+		} else if (obj_game.current_location == r) {
 			done = true;
-			break;
-		} else {
-			done = false;
 		}
 	}
 	

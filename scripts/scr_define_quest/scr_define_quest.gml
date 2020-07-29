@@ -1,6 +1,6 @@
 /// @desc Create a single quest definition
 /// @param id ID of the quest
-/// @param req 2D Array of requirements, array of [item, day/wk/month, #] OR A single location enum for arrival quests
+/// @param req 2D Array of requirements, array of [item, special, day/wk/month, #] OR A single location enum for arrival quests
 /// @param cond Bool where true ANDs all req and false ORs all req
 /// @param quests Array of quests rewarded by the quest
 /// @param msgs Array of messages rewarded by the quest
