@@ -15,7 +15,7 @@
         "21bdc439-831a-4182-a108-5fe4482b3513"
     ],
     "filterType": "GMSprite",
-    "folderName": "setup",
+    "folderName": "setup_old",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

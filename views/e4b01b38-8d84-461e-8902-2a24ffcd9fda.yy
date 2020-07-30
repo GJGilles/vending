@@ -13,7 +13,7 @@
         "bb1cd729-95c1-43aa-9503-05d39d5973cd"
     ],
     "filterType": "GMObject",
-    "folderName": "setup",
+    "folderName": "setup_old",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
