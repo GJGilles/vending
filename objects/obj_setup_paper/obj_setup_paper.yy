@@ -2,7 +2,7 @@
     "id": "8d16bf94-8460-425c-96fa-17ac47ed9f7f",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_setup_screen_move",
+    "name": "obj_setup_paper",
     "eventList": [
         
     ],
