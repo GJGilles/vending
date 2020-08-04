@@ -38,7 +38,8 @@ for (var i = 0; i < array_length_1d(obj_game.current_components); i++) {
 		}
 	
 		if (found) {
-			recipes[array_length_1d(recipes)] = recipe;
+			recipes[array_length_1d(recipes)] = instance_create_layer(x + 32, y + (array_length_1d(recipes) * 32), "Instances", obj_setup_recipe_item);
+			recipes[array_length_1d(recipes)].recipe = recipe;
 		}
 	}
 }

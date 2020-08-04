@@ -858,7 +858,7 @@
             "Key": "4b3fa309-3f3c-4b82-8738-99b3a7f8432d",
             "Value": {
                 "id": "d7f49a74-f935-4bd0-8891-677a5f9a43c5",
-                "resourcePath": "objects\\obj_setup_recipe_list_old\\obj_setup_recipe_list_old.yy",
+                "resourcePath": "objects\\obj_setup_recipe_list\\obj_setup_recipe_list.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -991,14 +991,6 @@
             }
         },
         {
-            "Key": "59804670-f764-4eba-882e-53c67245b5da",
-            "Value": {
-                "id": "07855077-75f0-4afe-9c5f-90f64fd8a1fb",
-                "resourcePath": "objects\\obj_setup_recipe_list\\obj_setup_recipe_list.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "5bc5e7f4-a81f-4ce3-8d46-ac2aa0eee6d2",
             "Value": {
                 "id": "e8c0c788-b01d-4916-a716-8f87eeb1dd87",
@@ -1083,6 +1075,14 @@
             "Value": {
                 "id": "0736d343-d8f1-4831-80ef-400e38baf956",
                 "resourcePath": "objects\\obj_setup_done\\obj_setup_done.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6571b249-e603-48c9-a417-b201cff523ed",
+            "Value": {
+                "id": "aa0ea542-0765-428a-9593-9a5dac91bef1",
+                "resourcePath": "objects\\obj_setup_scroll_border\\obj_setup_scroll_border.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -1228,6 +1228,14 @@
                 "id": "2d099197-1d83-42c6-ac66-0ab5877e12ed",
                 "resourcePath": "objects\\obj_setup_filter_list\\obj_setup_filter_list.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "7909db33-2e6e-4295-92aa-331b78f1b6b0",
+            "Value": {
+                "id": "de0b264d-58ab-42d1-9f78-163cb76d6b58",
+                "resourcePath": "sprites\\spr_setup_scroll_border\\spr_setup_scroll_border.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

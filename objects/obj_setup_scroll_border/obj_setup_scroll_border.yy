@@ -1,8 +1,8 @@
 {
-    "id": "cd0f508b-57d6-4a11-960f-5c26446b26ac",
+    "id": "6571b249-e603-48c9-a417-b201cff523ed",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_setup_recipe_item",
+    "name": "obj_setup_scroll_border",
     "eventList": [
         
     ],
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "1d7e0bdd-037a-4441-b737-211cb59c98a1",
+    "spriteId": "7909db33-2e6e-4295-92aa-331b78f1b6b0",
     "visible": true
 }

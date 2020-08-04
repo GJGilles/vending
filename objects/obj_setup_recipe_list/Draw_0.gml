@@ -3,6 +3,7 @@
 
 draw_self();
 
+/*
 for (var i = 0; i < array_length_1d(recipes); i++) {
 	var entry = recipes[i];
 	var result = obj_game.all_items[entry[? "result"]];
@@ -17,3 +18,4 @@ for (var i = 0; i < array_length_1d(recipes); i++) {
 	
 	write_text(scr_item_name(result), x_origin + 16, y_origin + (i * 16) + 4, FontEnum.silkscreen);
 }
+*/
