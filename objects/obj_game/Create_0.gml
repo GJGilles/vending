@@ -24,8 +24,8 @@ all_quests = scr_define_all_quests();
 current_region = MapRegionEnum.chugoku;
 current_locations = [MapLocationEnum.hiroshima, MapLocationEnum.kyoto];
 current_location = MapLocationEnum.hiroshima;
-current_components = [all_components[ComponentEnum.steeper]];
-current_ingredients = [all_items[ItemEnum.g_tea_leaves], all_items[ItemEnum.water]];
+current_components = all_components; //[all_components[ComponentEnum.steeper]];
+current_ingredients = all_items; //[all_items[ItemEnum.g_tea_leaves], all_items[ItemEnum.water]];
 // current_recipies = array_create(0);
 current_quests = [all_quests[0]];
 

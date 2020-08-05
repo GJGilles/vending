@@ -778,7 +778,7 @@
             "Key": "477c7038-3a63-4f00-a2f7-fb9831e5987f",
             "Value": {
                 "id": "e0b2fefc-f24e-4420-9bdb-3146f2d84b1d",
-                "resourcePath": "rooms\\rm_setup_2\\rm_setup_2.yy",
+                "resourcePath": "rooms\\rm_setup\\rm_setup.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -1842,7 +1842,7 @@
             "Key": "abe5497c-fe5c-43e6-aa3e-c997d09555b8",
             "Value": {
                 "id": "1f9d49b4-912a-4650-ac5c-7236f4d6ec9a",
-                "resourcePath": "rooms\\rm_setup\\rm_setup.yy",
+                "resourcePath": "rooms\\rm_setup_old\\rm_setup_old.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -2700,6 +2700,14 @@
                 "id": "a45fbe84-43e1-440f-8f8c-5bbf18a8697c",
                 "resourcePath": "views\\f46aa05f-c77b-4dc5-96d3-dbf5e12b1f83.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f49a2c37-57cc-469c-9be6-a03b5488d7fc",
+            "Value": {
+                "id": "1a435a72-3dce-439a-a1a4-d6c42c9678eb",
+                "resourcePath": "sprites\\spr_setup_scrollhead\\spr_setup_scrollhead.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

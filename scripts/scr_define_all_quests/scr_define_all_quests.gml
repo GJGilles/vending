@@ -1,6 +1,6 @@
 
 enum QuestEnum {
-	Hiro0,
+	//Hiro0,
 	Hiro1,
 	Hiro2,
 	Hiro3,

@@ -1,8 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-x_origin = x;
-y_origin = y;
+y_off = 0;
 
 scr_set_item_specials();
 
@@ -38,11 +37,11 @@ for (var i = 0; i < array_length_1d(obj_game.current_components); i++) {
 		}
 	
 		if (found) {
-			recipes[array_length_1d(recipes)] = instance_create_layer(x + 32, y + (array_length_1d(recipes) * 32), "Instances", obj_setup_recipe_item);
-			recipes[array_length_1d(recipes)].recipe = recipe;
+			recipes[array_length_1d(recipes)] = instance_create_layer(x + 5, y + (array_length_1d(recipes) * 32), "Instances", obj_setup_recipe_item);
+			recipes[array_length_1d(recipes) - 1].recipe = recipe;
 		}
 	}
 }
 
-hovered = -1;
-selected = array_create(array_length_1d(recipes), 0);
+
+height = array_length_1d(recipes) * 32;

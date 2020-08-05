@@ -44,7 +44,7 @@ enum RecipeEnum {
 var recipes = array_create(0);
 
 recipes[RecipeEnum.b_tea_leaves] = scr_define_recipe(RecipeEnum.b_tea_leaves, ItemEnum.b_tea_leaves, ComponentEnum.tea_roaster, array_sort([ItemEnum.g_tea_leaves, -1, -1, -1]), [0]);
-recipes[RecipeEnum.genmai] = scr_define_recipe(RecipeEnum.b_tea_leaves, ItemEnum.b_tea_leaves, ComponentEnum.tea_roaster, array_sort([ItemEnum.rice, -1, -1, -1]), [0]);
+recipes[RecipeEnum.genmai] = scr_define_recipe(RecipeEnum.genmai, ItemEnum.genmai, ComponentEnum.tea_roaster, array_sort([ItemEnum.rice, -1, -1, -1]), [0]);
 recipes[RecipeEnum.dough] = scr_define_recipe(RecipeEnum.dough, ItemEnum.dough, ComponentEnum.blender, array_sort([ItemEnum.flour, ItemEnum.eggs, ItemEnum.sugar, -1]), [0, 0, 0]);
 recipes[RecipeEnum.batter] = scr_define_recipe(RecipeEnum.batter, ItemEnum.batter, ComponentEnum.blender, array_sort([ItemEnum.flour, ItemEnum.eggs, ItemEnum.water, -1]), [0, 0, 0]);
 recipes[RecipeEnum.mochi] = scr_define_recipe(RecipeEnum.mochi, ItemEnum.mochi, ComponentEnum.mochi_maker, array_sort([ItemEnum.rice, ItemEnum.water, -1, -1]), [0, 0]);
