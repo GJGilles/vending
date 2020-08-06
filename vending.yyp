@@ -2442,7 +2442,7 @@
             "Key": "deeb3dcf-83bc-4102-87d3-366cb3f158dd",
             "Value": {
                 "id": "3a88ba1a-d4c7-411c-8729-039781b642bc",
-                "resourcePath": "objects\\obj_setup_recipe_tabs\\obj_setup_recipe_tabs.yy",
+                "resourcePath": "objects\\obj_setup_recipe_tab\\obj_setup_recipe_tab.yy",
                 "resourceType": "GMObject"
             }
         },

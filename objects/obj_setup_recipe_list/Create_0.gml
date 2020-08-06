@@ -5,9 +5,14 @@ y_off = 0;
 
 scr_set_item_specials();
 
+sel_tab = -1;
+
 recipes = array_create(0);
 for (var i = 0; i < array_length_1d(obj_game.current_components); i++) {
 	var component = obj_game.current_components[i];
+	var tab = instance_create_layer(x + i * sprite_get_width(spr_setup_tab), y - sprite_get_height(spr_setup_tab), "Borders", obj_setup_recipe_tab);
+	tab.component = component;
+	
 	var recipe_arr = component[? "recipes"];
 	if (recipe_arr == -1) { continue; }
 	
