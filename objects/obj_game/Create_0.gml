@@ -19,6 +19,7 @@ all_special = scr_define_all_special();
 all_recipes = scr_define_all_recipes();
 all_messages = scr_define_all_messages();
 all_quests = scr_define_all_quests();
+all_categories = scr_define_all_categories();
 
 
 current_region = MapRegionEnum.chugoku;

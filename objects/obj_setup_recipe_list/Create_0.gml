@@ -5,48 +5,18 @@ y_off = 0;
 
 scr_set_item_specials();
 
-sel_tab = -1;
+sel_tab = obj_game.all_categories[CategoryEnum.full];
 
 recipes = array_create(0);
-for (var i = 0; i < array_length_1d(obj_game.current_components); i++) {
-	var component = obj_game.current_components[i];
-	var tab = instance_create_layer(x + i * sprite_get_width(spr_setup_tab), y - sprite_get_height(spr_setup_tab), "Borders", obj_setup_recipe_tab);
-	tab.component = component;
-	
-	var recipe_arr = component[? "recipes"];
-	if (recipe_arr == -1) { continue; }
-	
-	for (var k = 0; k < array_length_1d(recipe_arr); k++) {
-		var recipe = obj_game.all_recipes[recipe_arr[k]];
-		var ing = recipe[? "ing"];
-	
-		var found = true;
-		for (var j = 0; j < array_length_1d(ing); j++) {
-			var idx = ing[j];
-			if (idx == -1) { continue; }
-			var a = obj_game.all_items[idx];
-		
-			var contains = false;
-			for (var k = 0; k < array_length_1d(obj_game.current_ingredients); k++) {
-				var b = obj_game.current_ingredients[k];
-				if (a[? "id"] == b[? "id"]) {
-					contains = true;
-					break;
-				}
-			}
-		
-			if (!contains) {
-				found = false;
-				break;
-			}
-		}
-	
-		if (found) {
-			recipes[array_length_1d(recipes)] = instance_create_layer(x + 5, y + (array_length_1d(recipes) * 32), "Instances", obj_setup_recipe_item);
-			recipes[array_length_1d(recipes) - 1].recipe = recipe;
-		}
-	}
+height = 0;
+
+var categories = obj_game.all_categories;
+var cols = 3;
+for (var i = 0; i < array_length_1d(categories); i++) {
+	var tab = instance_create_layer(x + (i % cols) * sprite_get_width(spr_setup_tab), y - (floor(i / cols) + 1) * sprite_get_height(spr_setup_tab), "Borders", obj_setup_recipe_tab);
+	tab.category = categories[i];
+	tab.depth -= 1;
 }
 
+scr_create_recipe_list();
 
-height = array_length_1d(recipes) * 32;

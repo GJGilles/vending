@@ -13,7 +13,8 @@
         "c6d2432a-2761-4695-94a2-caf00479ab26",
         "47bb55d4-3437-4375-b14e-b84d9debcf7f",
         "e7bd78fe-b68d-4e0e-8ab9-26d743aa3e1f",
-        "22a1059f-7586-483a-95da-fc3f1196e631"
+        "22a1059f-7586-483a-95da-fc3f1196e631",
+        "1b946aa3-2b69-469c-9561-b9bff76218f4"
     ],
     "filterType": "GMScript",
     "folderName": "defines",
