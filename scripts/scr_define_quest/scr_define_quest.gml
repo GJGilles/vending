@@ -8,18 +8,22 @@
 /// @param ings Array of ingredients rewarded by the quest
 /// @param locs Array of locations rewarded by the quest
 /// @param bonus Array of bonus rewarded by the quest
+function scr_define_quest(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8) {
 
 
-var quest = ds_map_create();
+	var quest = ds_map_create();
 
-ds_map_add(quest, "id", argument0);
-ds_map_add(quest, "req", argument1);
-ds_map_add(quest, "cond", argument2);
-ds_map_add(quest, "quests", argument3);
-ds_map_add(quest, "msgs", argument4);
-ds_map_add(quest, "comps", argument5);
-ds_map_add(quest, "ings", argument6);
-ds_map_add(quest, "locs", argument7);
-ds_map_add(quest, "bonus", argument8);
+	ds_map_add(quest, "id", argument0);
+	ds_map_add(quest, "req", argument1);
+	ds_map_add(quest, "cond", argument2);
+	ds_map_add(quest, "quests", argument3);
+	ds_map_add(quest, "msgs", argument4);
+	ds_map_add(quest, "comps", argument5);
+	ds_map_add(quest, "ings", argument6);
+	ds_map_add(quest, "locs", argument7);
+	ds_map_add(quest, "bonus", argument8);
 
-return quest;
+	return quest;
+
+
+}

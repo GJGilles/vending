@@ -1,8 +1,12 @@
 {
-    "id": "7afb4529-9815-4881-a493-09aa653bc0fb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_location_sendai_a",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "scripts",
+    "path": "folders/Scripts/defines/locations/scripts.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_location_sendai_a",
+  "tags": [],
+  "resourceType": "GMScript",
 }

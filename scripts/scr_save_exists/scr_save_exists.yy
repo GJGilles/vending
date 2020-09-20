@@ -1,8 +1,12 @@
 {
-    "id": "240913be-dc62-4731-a39c-94dbdeddd03b",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_save_exists",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "game",
+    "path": "folders/Scripts/game.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_save_exists",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "dcc08d3c-f4b1-4fa1-b97a-f303f498f1be",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_dialog_create",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "dialog",
+    "path": "folders/Scripts/dialog.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_dialog_create",
+  "tags": [],
+  "resourceType": "GMScript",
 }

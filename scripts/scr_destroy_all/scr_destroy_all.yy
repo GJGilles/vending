@@ -1,8 +1,12 @@
 {
-    "id": "e5335ad8-2994-4883-86d6-d1afbf0172ec",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_destroy_all",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "defines",
+    "path": "folders/Scripts/defines.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_destroy_all",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -4,13 +4,18 @@
 /// @param coords Array containing the x, y coords of the location
 /// @param region An enum value representing the region to which the location belongs
 /// @param layout Array containing the layouts for different levels of the location room
+function scr_define_location(argument0, argument1, argument2, argument3, argument4) {
 
-var location = ds_map_create();
+	var location = ds_map_create();
 
-ds_map_add(location, "name", argument0);
-ds_map_add(location, "id", argument1);
-ds_map_add(location, "coords", argument2);
-ds_map_add(location, "region", argument3);
-ds_map_add(location, "layouts", argument4);
+	ds_map_add(location, "name", argument0);
+	ds_map_add(location, "id", argument1);
+	ds_map_add(location, "coords", argument2);
+	ds_map_add(location, "region", argument3);
+	ds_map_add(location, "layouts", argument4);
 
-return location;
+	return location;
+
+
+
+}

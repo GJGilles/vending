@@ -14,6 +14,7 @@ day = 0;
 all_regions = scr_define_all_regions();
 all_locations = scr_define_all_locations();
 all_components = scr_define_all_components();
+all_traits = scr_define_all_traits();
 all_items = scr_define_all_items();
 all_special = scr_define_all_special();
 all_recipes = scr_define_all_recipes();

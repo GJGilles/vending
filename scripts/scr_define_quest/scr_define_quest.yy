@@ -1,8 +1,12 @@
 {
-    "id": "23039383-e9d2-4bbd-8b01-0062610d2594",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_define_quest",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "quests",
+    "path": "folders/Scripts/defines/quests.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_define_quest",
+  "tags": [],
+  "resourceType": "GMScript",
 }

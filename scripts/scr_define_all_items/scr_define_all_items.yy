@@ -1,8 +1,12 @@
 {
-    "id": "889169ea-26e2-4753-8250-47fd73a64003",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_define_all_items",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "items",
+    "path": "folders/Scripts/defines/items.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_define_all_items",
+  "tags": [],
+  "resourceType": "GMScript",
 }

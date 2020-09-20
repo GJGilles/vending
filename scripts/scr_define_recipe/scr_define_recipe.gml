@@ -3,13 +3,18 @@
 /// @param comp Component used to create the recipe
 /// @param ing Array of ingredients consumed in the recipe
 /// @param craft Array of which ingredients are craftable
+function scr_define_recipe(argument0, argument1, argument2, argument3, argument4) {
 
-var recipe = ds_map_create();
+	var recipe = ds_map_create();
 
-ds_map_add(recipe, "id", argument0);
-ds_map_add(recipe, "result", argument1);
-ds_map_add(recipe, "comp", argument2);
-ds_map_add(recipe, "ing", argument3);
-ds_map_add(recipe, "craft", argument4);
+	ds_map_add(recipe, "id", argument0);
+	ds_map_add(recipe, "result", argument1);
+	ds_map_add(recipe, "comp", argument2);
+	ds_map_add(recipe, "ing", argument3);
+	ds_map_add(recipe, "craft", argument4);
 
-return recipe;
+	return recipe;
+
+
+
+}

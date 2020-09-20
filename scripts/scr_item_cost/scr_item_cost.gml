@@ -1,11 +1,16 @@
-var item = argument0;
+function scr_item_cost(argument0) {
+	var item = argument0;
 
-var cost = item[? "cost"];
-var s = item[? "special"];
+	var cost = item[? "cost"];
+	var s = item[? "special"];
 
-for (var i = 0; i < array_length_1d(s); i++) {
-	var special = s[i];
-	cost *= special[? "multi"];
+	for (var i = 0; i < array_length_1d(s); i++) {
+		var special = s[i];
+		cost *= special[? "multi"];
+	}
+
+	return cost;
+
+
+
 }
-
-return cost;

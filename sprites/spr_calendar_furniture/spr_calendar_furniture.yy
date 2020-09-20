@@ -1,92 +1,82 @@
 {
-    "id": "71d6e277-bddd-48fc-89ad-c54e13d03d51",
-    "modelName": "GMSprite",
-    "mvc": "1.12",
-    "name": "spr_calendar_furniture",
-    "For3D": false,
-    "HTile": false,
-    "VTile": false,
-    "bbox_bottom": 15,
-    "bbox_left": 0,
-    "bbox_right": 15,
-    "bbox_top": 0,
-    "bboxmode": 0,
-    "colkind": 1,
-    "coltolerance": 0,
-    "edgeFiltering": false,
-    "frames": [
-        {
-            "id": "c0968ba6-7704-4cc5-97e5-678b66ef7822",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "71d6e277-bddd-48fc-89ad-c54e13d03d51",
-            "compositeImage": {
-                "id": "402aefe8-946b-434d-becc-285ffe2c7e72",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "c0968ba6-7704-4cc5-97e5-678b66ef7822",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "e0cc1618-a7e6-4a5a-be0c-cf524062c782",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c0968ba6-7704-4cc5-97e5-678b66ef7822",
-                    "LayerId": "cb55cbe0-3b68-4d2b-b355-db7e3b2c1657"
-                }
-            ]
-        },
-        {
-            "id": "eae13cf2-9901-446b-a10d-c85636543b93",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "71d6e277-bddd-48fc-89ad-c54e13d03d51",
-            "compositeImage": {
-                "id": "349f065d-3bfe-4e90-bf34-6c5e06fffa08",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "eae13cf2-9901-446b-a10d-c85636543b93",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "50c253a3-5b37-4d4f-b076-783aeaa1c7a1",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "eae13cf2-9901-446b-a10d-c85636543b93",
-                    "LayerId": "cb55cbe0-3b68-4d2b-b355-db7e3b2c1657"
-                }
-            ]
-        }
-    ],
-    "gridX": 0,
-    "gridY": 0,
-    "height": 16,
-    "layers": [
-        {
-            "id": "cb55cbe0-3b68-4d2b-b355-db7e3b2c1657",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "71d6e277-bddd-48fc-89ad-c54e13d03d51",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
-            "opacity": 100,
-            "visible": true
-        }
-    ],
-    "origin": 0,
-    "originLocked": false,
-    "playbackSpeed": 15,
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "type": 0,
+  "origin": 0,
+  "preMultiplyAlpha": false,
+  "edgeFiltering": false,
+  "collisionTolerance": 0,
+  "swfPrecision": 2.525,
+  "bbox_left": 0,
+  "bbox_right": 15,
+  "bbox_top": 0,
+  "bbox_bottom": 15,
+  "HTile": false,
+  "VTile": false,
+  "For3D": false,
+  "width": 16,
+  "height": 16,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "swatchColours": null,
+  "gridX": 0,
+  "gridY": 0,
+  "frames": [
+    {"compositeImage":{"FrameId":{"name":"c0968ba6-7704-4cc5-97e5-678b66ef7822","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c0968ba6-7704-4cc5-97e5-678b66ef7822","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"LayerId":{"name":"cb55cbe0-3b68-4d2b-b355-db7e3b2c1657","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_calendar_furniture","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"resourceVersion":"1.0","name":"c0968ba6-7704-4cc5-97e5-678b66ef7822","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"eae13cf2-9901-446b-a10d-c85636543b93","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"eae13cf2-9901-446b-a10d-c85636543b93","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"LayerId":{"name":"cb55cbe0-3b68-4d2b-b355-db7e3b2c1657","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_calendar_furniture","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"resourceVersion":"1.0","name":"eae13cf2-9901-446b-a10d-c85636543b93","tags":[],"resourceType":"GMSpriteFrame",},
+  ],
+  "sequence": {
+    "spriteId": {"name":"spr_calendar_furniture","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},
+    "timeUnits": 1,
+    "playback": 1,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
-    "premultiplyAlpha": false,
-    "sepmasks": false,
-    "swatchColours": null,
-    "swfPrecision": 2.525,
-    "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
-    "type": 0,
-    "width": 16,
-    "xorig": 0,
-    "yorig": 0
+    "autoRecord": true,
+    "volume": 1.0,
+    "length": 2.0,
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
+    "tracks": [
+      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"4789b411-3ee9-4184-8d26-0e28006f2b6e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c0968ba6-7704-4cc5-97e5-678b66ef7822","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"dfe2813d-529a-44ab-a44b-417282c23de8","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"eae13cf2-9901-446b-a10d-c85636543b93","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+    ],
+    "visibleRange": {"x":0.0,"y":0.0,},
+    "lockOrigin": false,
+    "showBackdrop": true,
+    "showBackdropImage": false,
+    "backdropImagePath": "",
+    "backdropImageOpacity": 0.5,
+    "backdropWidth": 1920,
+    "backdropHeight": 1080,
+    "backdropXOffset": 0.0,
+    "backdropYOffset": 0.0,
+    "xorigin": 0,
+    "yorigin": 0,
+    "eventToFunction": {},
+    "eventStubScript": null,
+    "parent": {"name":"spr_calendar_furniture","path":"sprites/spr_calendar_furniture/spr_calendar_furniture.yy",},
+    "resourceVersion": "1.3",
+    "name": "",
+    "tags": [],
+    "resourceType": "GMSequence",
+  },
+  "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cb55cbe0-3b68-4d2b-b355-db7e3b2c1657","tags":[],"resourceType":"GMImageLayer",},
+  ],
+  "parent": {
+    "name": "calendar",
+    "path": "folders/Sprites/rooms/factory/calendar.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "spr_calendar_furniture",
+  "tags": [],
+  "resourceType": "GMSprite",
 }

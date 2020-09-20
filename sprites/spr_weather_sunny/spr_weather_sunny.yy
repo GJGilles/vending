@@ -1,136 +1,90 @@
 {
-    "id": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
-    "modelName": "GMSprite",
-    "mvc": "1.12",
-    "name": "spr_weather_sunny",
-    "For3D": false,
-    "HTile": false,
-    "VTile": false,
-    "bbox_bottom": 28,
-    "bbox_left": 2,
-    "bbox_right": 28,
-    "bbox_top": 2,
-    "bboxmode": 0,
-    "colkind": 1,
-    "coltolerance": 0,
-    "edgeFiltering": false,
-    "frames": [
-        {
-            "id": "c5e5f270-c6ce-46f0-b9ae-03aeb1876b99",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
-            "compositeImage": {
-                "id": "2440322c-fc1c-4816-b1dd-f054a5d4f23e",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "c5e5f270-c6ce-46f0-b9ae-03aeb1876b99",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "23140cb8-bd22-4fe8-bed2-1b52d85faeb1",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c5e5f270-c6ce-46f0-b9ae-03aeb1876b99",
-                    "LayerId": "2df4f119-7fe4-4f25-9d73-d4acf091edb5"
-                }
-            ]
-        },
-        {
-            "id": "5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
-            "compositeImage": {
-                "id": "4662e7fb-afa3-4c54-b50f-43d1ca6aaf57",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "aa0954ff-7ea3-4007-9935-b8122664a2be",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552",
-                    "LayerId": "2df4f119-7fe4-4f25-9d73-d4acf091edb5"
-                }
-            ]
-        },
-        {
-            "id": "c979b645-bdeb-4869-8483-d9aaa1b167b4",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
-            "compositeImage": {
-                "id": "307dc449-6e54-4831-a717-72d61a1d7fec",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "c979b645-bdeb-4869-8483-d9aaa1b167b4",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "1eabdc93-9415-44a0-99c8-2f0f98f7476a",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "c979b645-bdeb-4869-8483-d9aaa1b167b4",
-                    "LayerId": "2df4f119-7fe4-4f25-9d73-d4acf091edb5"
-                }
-            ]
-        },
-        {
-            "id": "4541013b-fc27-4044-82d9-a2c66d89fb26",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
-            "compositeImage": {
-                "id": "ea31fb75-cb3a-4841-bba3-9b9889edf20c",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "4541013b-fc27-4044-82d9-a2c66d89fb26",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "91e66ef1-2e97-4a2c-b6a4-531fda09f6d9",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "4541013b-fc27-4044-82d9-a2c66d89fb26",
-                    "LayerId": "2df4f119-7fe4-4f25-9d73-d4acf091edb5"
-                }
-            ]
-        }
-    ],
-    "gridX": 0,
-    "gridY": 0,
-    "height": 32,
-    "layers": [
-        {
-            "id": "2df4f119-7fe4-4f25-9d73-d4acf091edb5",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "e5165e86-75f6-4cf2-9995-ecfaf5e5bda6",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
-            "opacity": 100,
-            "visible": true
-        }
-    ],
-    "origin": 0,
-    "originLocked": false,
-    "playbackSpeed": 15,
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "type": 0,
+  "origin": 0,
+  "preMultiplyAlpha": false,
+  "edgeFiltering": false,
+  "collisionTolerance": 0,
+  "swfPrecision": 2.525,
+  "bbox_left": 2,
+  "bbox_right": 28,
+  "bbox_top": 2,
+  "bbox_bottom": 28,
+  "HTile": false,
+  "VTile": false,
+  "For3D": false,
+  "width": 32,
+  "height": 32,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "swatchColours": null,
+  "gridX": 0,
+  "gridY": 0,
+  "frames": [
+    {"compositeImage":{"FrameId":{"name":"c5e5f270-c6ce-46f0-b9ae-03aeb1876b99","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c5e5f270-c6ce-46f0-b9ae-03aeb1876b99","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":{"name":"2df4f119-7fe4-4f25-9d73-d4acf091edb5","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_weather_sunny","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"c5e5f270-c6ce-46f0-b9ae-03aeb1876b99","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":{"name":"2df4f119-7fe4-4f25-9d73-d4acf091edb5","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_weather_sunny","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"c979b645-bdeb-4869-8483-d9aaa1b167b4","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"c979b645-bdeb-4869-8483-d9aaa1b167b4","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":{"name":"2df4f119-7fe4-4f25-9d73-d4acf091edb5","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_weather_sunny","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"c979b645-bdeb-4869-8483-d9aaa1b167b4","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4541013b-fc27-4044-82d9-a2c66d89fb26","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4541013b-fc27-4044-82d9-a2c66d89fb26","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"LayerId":{"name":"2df4f119-7fe4-4f25-9d73-d4acf091edb5","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_weather_sunny","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","name":"4541013b-fc27-4044-82d9-a2c66d89fb26","tags":[],"resourceType":"GMSpriteFrame",},
+  ],
+  "sequence": {
+    "spriteId": {"name":"spr_weather_sunny","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},
+    "timeUnits": 1,
+    "playback": 1,
+    "playbackSpeed": 15.0,
     "playbackSpeedType": 0,
-    "premultiplyAlpha": false,
-    "sepmasks": false,
-    "swatchColours": null,
-    "swfPrecision": 2.525,
-    "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
-    "type": 0,
-    "width": 32,
-    "xorig": 0,
-    "yorig": 0
+    "autoRecord": true,
+    "volume": 1.0,
+    "length": 4.0,
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
+    "tracks": [
+      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"eb53ce4f-037d-4d73-b032-399d5c1b7c49","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c5e5f270-c6ce-46f0-b9ae-03aeb1876b99","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"fb34b4f6-cc14-4c8c-9ab0-a853dda99eab","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5b04ae4e-8ac8-46ff-9cc3-82e5f88b5552","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b93b6b72-cfbb-4a64-a28a-34297f4641a3","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c979b645-bdeb-4869-8483-d9aaa1b167b4","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1d7958d3-e1cb-40de-a56d-d176ba83e4dd","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4541013b-fc27-4044-82d9-a2c66d89fb26","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+    ],
+    "visibleRange": {"x":0.0,"y":0.0,},
+    "lockOrigin": false,
+    "showBackdrop": true,
+    "showBackdropImage": false,
+    "backdropImagePath": "",
+    "backdropImageOpacity": 0.5,
+    "backdropWidth": 1920,
+    "backdropHeight": 1080,
+    "backdropXOffset": 0.0,
+    "backdropYOffset": 0.0,
+    "xorigin": 0,
+    "yorigin": 0,
+    "eventToFunction": {},
+    "eventStubScript": null,
+    "parent": {"name":"spr_weather_sunny","path":"sprites/spr_weather_sunny/spr_weather_sunny.yy",},
+    "resourceVersion": "1.3",
+    "name": "",
+    "tags": [],
+    "resourceType": "GMSequence",
+  },
+  "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2df4f119-7fe4-4f25-9d73-d4acf091edb5","tags":[],"resourceType":"GMImageLayer",},
+  ],
+  "parent": {
+    "name": "weather",
+    "path": "folders/Sprites/rooms/factory/vending/weather.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "spr_weather_sunny",
+  "tags": [],
+  "resourceType": "GMSprite",
 }

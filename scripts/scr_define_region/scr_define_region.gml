@@ -3,19 +3,24 @@
 /// @param id ID of the region
 /// @param temp 2D Array containing (Spring, Summer, Autumn, Winter) rows and (min, max temp) columns 
 /// @param percip Array containing the average percipitation for each season
+function scr_define_region(argument0, argument1, argument2, argument3) {
 
-var region = ds_map_create();
+	var region = ds_map_create();
 
-ds_map_add(region, "name", argument0);
-ds_map_add(region, "id", argument1);
-ds_map_add(region, "temp", argument2);
-ds_map_add(region, "percip", argument3);
-ds_map_add(region, "weather", ds_queue_create());
+	ds_map_add(region, "name", argument0);
+	ds_map_add(region, "id", argument1);
+	ds_map_add(region, "temp", argument2);
+	ds_map_add(region, "percip", argument3);
+	ds_map_add(region, "weather", ds_queue_create());
 
 
-// Test?
-for (var i = 0; i < 7; i++) {
-	ds_queue_enqueue(region[? "weather"], [-44, MapWeatherEnum.snow]);
+	// Test?
+	for (var i = 0; i < 7; i++) {
+		ds_queue_enqueue(region[? "weather"], [-44, MapWeatherEnum.snow]);
+	}
+
+	return region;
+
+
+
 }
-
-return region;
