@@ -1,7 +1,12 @@
 function scr_create_recipe_list() {
 
-	var tab = sel_tab[? "recipes"];
-	recipes = [];
+	instance_destroy(obj_setup_recipe_item);
+	
+	var rl = obj_setup_recipe_list;
+	var fl = obj_setup_filter_list;
+	
+	var tab = rl.sel_tab[? "recipes"];
+	rl.recipes = [];
 
 	for (var i = 0; i < array_length(obj_game.current_components); i++) {
 		var component = obj_game.current_components[i];
@@ -22,6 +27,21 @@ function scr_create_recipe_list() {
 			}
 		
 			if (!found) {
+				continue;
+			}
+			
+			
+			var filtered = false;
+			var res = obj_game.all_items[recipe[? "result"]];
+			var traits = [res[? "color"], res[? "temp"], res[? "flavor"], res[? "prep"]];
+			for (var j = 0; j < array_length(traits); j++) {
+				if (fl.filters[j] != -1 && fl.filters[j] != traits[j]) {
+					filtered = true;
+					break;
+				} 
+			}
+			
+			if (filtered) {
 				continue;
 			}
 		
@@ -47,15 +67,13 @@ function scr_create_recipe_list() {
 			}
 	
 			if (found) {
-				recipes[array_length(recipes)] = instance_create_layer(x + 5, y + (array_length(recipes) * 32), "Instances", obj_setup_recipe_item);
-				recipes[array_length(recipes) - 1].recipe = recipe;
-				recipes[array_length(recipes) - 1].depth -=1;
+				rl.recipes[array_length(rl.recipes)] = instance_create_layer(rl.x + 5, rl.y + (array_length(rl.recipes) * 32), "Instances", obj_setup_recipe_item);
+				rl.recipes[array_length(rl.recipes) - 1].recipe = recipe;
+				rl.recipes[array_length(rl.recipes) - 1].depth -=1;
 			}
 		}
 	}
 
-	height = array_length(recipes) * 32;
-
-
+	rl.height = array_length(rl.recipes) * 32;
 
 }
