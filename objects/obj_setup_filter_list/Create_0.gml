@@ -21,7 +21,7 @@ radios = array_create(0);
 var cols = 3;
 for (var i = 0; i < 6; i++) {
 	var x_pos = x + (i % cols) * sprite_get_width(spr_setup_filter_trait) + (floor(i / cols) % 2) * (sprite_width % sprite_get_width(spr_setup_filter_trait));
-	var y_pos = y + floor(i / cols) * sprite_get_height(spr_setup_filter_trait);
+	var y_pos = y + 8 + floor(i / cols) * (sprite_get_height(spr_setup_filter_trait) + 4);
 	var r = instance_create_layer(x_pos, y_pos, "Borders", obj_setup_filter_trait);
 	r.idx = i - 1;
 	r.name = (i == 0) ? "All" : traits[0][i - 1].name;

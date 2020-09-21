@@ -49,7 +49,7 @@ function scr_define_all_items() {
 	var item_array = array_create(0);
 
 	item_array[ItemEnum.junk] = scr_define_item("Junk", ItemEnum.junk, 0, spr_junk, [-1, -1, -1, -1], "");
-	item_array[ItemEnum.g_tea_leaves] = scr_define_item("Green Tea Leaves", ItemEnum.g_tea_leaves, 0, spr_g_tea_leaves, [-1, -1, -1, -1], "");
+	item_array[ItemEnum.g_tea_leaves] = scr_define_item("Green Tea Leaves", ItemEnum.g_tea_leaves, 0, spr_g_tea_leaves, [-1, -1, -1, -1], "Tea leaves that are green and very very tasty. I would recommend.");
 	item_array[ItemEnum.water] = scr_define_item("Water", ItemEnum.water, 0, spr_water, [-1, -1, -1, -1], "");
 	item_array[ItemEnum.flour] = scr_define_item("Flour", ItemEnum.flour, 0, spr_flour, [-1, -1, -1, -1], "");
 	item_array[ItemEnum.onion] = scr_define_item("Onion", ItemEnum.onion, 0, spr_onion, [-1, -1, -1, -1], "");

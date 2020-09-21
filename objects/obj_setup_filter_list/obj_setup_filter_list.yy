@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_setup_scroll_area",
-    "path": "sprites/spr_setup_scroll_area/spr_setup_scroll_area.yy",
+    "name": "spr_setup_filter_area",
+    "path": "sprites/spr_setup_filter_area/spr_setup_filter_area.yy",
   },
   "solid": false,
   "visible": true,
