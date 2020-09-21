@@ -69,7 +69,7 @@ function scr_define_all_items() {
 	item_array[ItemEnum.batter] = scr_define_item("Batter", ItemEnum.batter, 0, spr_batter, [-1, -1, -1, -1], "");
 	item_array[ItemEnum.mochi] = scr_define_item("Mochi", ItemEnum.mochi, 0, spr_mochi, [-1, -1, -1, -1], "");
 
-	item_array[ItemEnum.g_tea] = scr_define_item("Green Tea", ItemEnum.g_tea, 100, spr_g_tea, [ItemColorEnum.green, ItemTempEnum.cool, ItemFlavorEnum.bitter, ItemPrepEnum.simmered], "");
+	item_array[ItemEnum.g_tea] = scr_define_item("Green Tea", ItemEnum.g_tea, 100, spr_g_tea, [ItemColorEnum.green, ItemTempEnum.cool, ItemFlavorEnum.bitter, ItemPrepEnum.simmered], "A grassy and refreshing tea that is delicious served hot or cold \n\nYokai prefer it cold so that they don't burn their tongues.");
 	item_array[ItemEnum.b_tea] = scr_define_item("Black Tea", ItemEnum.b_tea, 100, spr_b_tea, [ItemColorEnum.black, ItemTempEnum.hot, ItemFlavorEnum.bitter, ItemPrepEnum.simmered], "");
 	item_array[ItemEnum.royal_milk_tea] = scr_define_item("Royal Milk Tea", ItemEnum.royal_milk_tea, 200, spr_royal_milk_tea, [ItemColorEnum.black, ItemTempEnum.hot, ItemFlavorEnum.sweet, ItemPrepEnum.simmered], "");
 	item_array[ItemEnum.genmaicha] = scr_define_item("Genmaicha", ItemEnum.genmaicha, 0, spr_genmaicha, [ItemColorEnum.green, ItemTempEnum.hot, ItemFlavorEnum.bitter, ItemPrepEnum.simmered], "");
