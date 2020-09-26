@@ -3,3 +3,5 @@
 
 animo_frame = 0;
 animo_len = 60;
+
+recipes = ds_list_create();

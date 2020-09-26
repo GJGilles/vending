@@ -160,6 +160,7 @@
     {"id":{"name":"scr_define_all_items","path":"scripts/scr_define_all_items/scr_define_all_items.yy",},"order":0,},
     {"id":{"name":"scr_define_item","path":"scripts/scr_define_item/scr_define_item.yy",},"order":1,},
     {"id":{"name":"scr_define_component","path":"scripts/scr_define_component/scr_define_component.yy",},"order":0,},
+    {"id":{"name":"obj_setup_selected_item","path":"objects/obj_setup_selected_item/obj_setup_selected_item.yy",},"order":1,},
     {"id":{"name":"scr_define_all_components","path":"scripts/scr_define_all_components/scr_define_all_components.yy",},"order":1,},
     {"id":{"name":"scr_define_location","path":"scripts/scr_define_location/scr_define_location.yy",},"order":0,},
     {"id":{"name":"scr_define_all_locations","path":"scripts/scr_define_all_locations/scr_define_all_locations.yy",},"order":1,},
