@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_self();
-event_inherited();
-
+var diff = max(y_off - 10, 0) - y_off;
+y_off += diff;
+	
+scr_update_scroll_items();

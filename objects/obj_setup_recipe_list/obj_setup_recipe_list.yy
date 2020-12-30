@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "obj_mouse_interact",
-    "path": "objects/obj_mouse_interact/obj_mouse_interact.yy",
+    "name": "obj_scroll_area",
+    "path": "objects/obj_scroll_area/obj_scroll_area.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,8 +26,6 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_setup_recipe_list","path":"objects/obj_setup_recipe_list/obj_setup_recipe_list.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_setup_recipe_list","path":"objects/obj_setup_recipe_list/obj_setup_recipe_list.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":60,"eventType":6,"collisionObjectId":null,"parent":{"name":"obj_setup_recipe_list","path":"objects/obj_setup_recipe_list/obj_setup_recipe_list.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":61,"eventType":6,"collisionObjectId":null,"parent":{"name":"obj_setup_recipe_list","path":"objects/obj_setup_recipe_list/obj_setup_recipe_list.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

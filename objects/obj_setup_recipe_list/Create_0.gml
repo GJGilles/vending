@@ -1,14 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-y_off = 0;
-
+event_inherited();
 scr_set_item_specials();
 
 sel_tab = obj_game.all_categories[CategoryEnum.full];
-
-recipes = array_create(0);
-height = 0;
 
 var categories = obj_game.all_categories;
 var cols = 3;
@@ -27,5 +23,5 @@ for (var i = 0; i < array_length(categories) / cols; i++) {
 	tab.depth -= 1;
 }
 
-scr_create_recipe_list();
+scr_set_scroll_items(scr_create_recipe_list());
 
