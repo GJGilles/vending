@@ -20,6 +20,7 @@ function scr_update_scroll_items() {
 
 function scr_set_scroll_items(new_items) {
 	items = new_items;
+	y_off = 0;
 	y_size = 0;
 	for (var i = 0; i < array_length(items); i++) {
 		y_size += items[i].sprite_height;

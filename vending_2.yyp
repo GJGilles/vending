@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"spr_tanuki","path":"sprites/spr_tanuki/spr_tanuki.yy",},"order":0,},
     {"id":{"name":"spr_g_tea_leaves","path":"sprites/spr_g_tea_leaves/spr_g_tea_leaves.yy",},"order":0,},
+    {"id":{"name":"array_sort_in","path":"scripts/array_sort_in/array_sort_in.yy",},"order":6,},
     {"id":{"name":"spr_water","path":"sprites/spr_water/spr_water.yy",},"order":1,},
     {"id":{"name":"spr_junk","path":"sprites/spr_junk/spr_junk.yy",},"order":2,},
     {"id":{"name":"spr_milk","path":"sprites/spr_milk/spr_milk.yy",},"order":3,},

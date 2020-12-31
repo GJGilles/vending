@@ -1,8 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if (obj_game.mouse != id) return;
 
-if (point_in_rectangle(mouse_x, mouse_y, x + 135, y + 10, x + 145, y + 20)) {
+if (point_in_rectangle(mouse_x, mouse_y, x + 135, bbox_top, x + 145, bbox_bottom)) {
 	var sl = obj_setup_selected_list.recipes;
 	var num = ds_list_size(sl);
 	if (sel == -1) {
@@ -19,7 +20,7 @@ if (point_in_rectangle(mouse_x, mouse_y, x + 135, y + 10, x + 145, y + 20)) {
 			ds_list_find_value(sl, i).y -= 40;
 		}
 	}
-} else if (point_in_rectangle(mouse_x, mouse_y, x + 10, y + 10, x + 90, y + 30) && (mouse_x - (x + 10)) % 30 <= 20) {
+} else if (point_in_rectangle(mouse_x, mouse_y, x + 10, bbox_top, x + 90, bbox_bottom) && (mouse_x - (x + 10)) % 30 <= 20) {
 	var idx = floor((mouse_x - (x + 10)) / 30);
 	var ing = recipe[? "ing"];
 	for (var i = 0; i < array_length(ing); i++) {

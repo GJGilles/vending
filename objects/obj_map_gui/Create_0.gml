@@ -9,7 +9,7 @@ hovered = -1;
 animo_frame = 0;
 animo_len = 60;
 
-locations = array_sort(obj_game.current_locations, true);
+locations = array_sort_in(obj_game.current_locations, true);
 for (var i = 0; i < array_length_1d(locations); i++) {
 	if (locations[i] == obj_game.current_location) {
 		selected = i;

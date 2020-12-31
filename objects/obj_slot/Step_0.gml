@@ -31,7 +31,7 @@ if (component != -1) {
 			}
 			
 			var recipes = component[? "recipes"];
-			input = array_sort(input, true);
+			input = array_sort_in(input, true);
 			result = [-1, -1, -1, -1];
 			if (recipes != -1) {
 				for (var i = 0; array_length_1d(recipes); i++) {

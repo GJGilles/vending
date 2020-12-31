@@ -3,4 +3,6 @@
 
 obj_setup_recipe_list.sel_tab = category;
 
-scr_create_recipe_list();
+with obj_setup_recipe_list {
+	scr_set_scroll_items(scr_create_recipe_list());
+}
