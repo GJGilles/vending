@@ -7,9 +7,9 @@ namespace Assets.Scripts.Controllers.Game
     {
         protected enum CharacterDirectionEnum
         {
-            Up,
-            Right,
             Down,
+            Right,
+            Up,
             Left
         }
 
@@ -21,18 +21,6 @@ namespace Assets.Scripts.Controllers.Game
         protected CharacterDirectionEnum direction = CharacterDirectionEnum.Down;
         protected bool isDirty = true;
 
-        protected Vector2 GetPosition()
-        {
-            int width = map.GetMap().width;
-            int height = map.GetMap().height;
-            Vector2 pos = (Vector2)map.transform.position + new Vector2(-width / 2f, height / 2f);
-
-            pos.x += (location % width);
-            pos.y += -(location / width);
-
-            return pos;
-        }
-
         protected void TryMove(int next)
         {
             int width = map.GetMap().width;
@@ -43,7 +31,7 @@ namespace Assets.Scripts.Controllers.Game
                 location = next;
                 isDirty = true;
             }
-            else if (next >= 0 && next < width * height)
+            else if (next >= 0 && next < width * height && next % width == location % width)
             {
                 direction = (next > location) ? CharacterDirectionEnum.Up : CharacterDirectionEnum.Down;
                 location = next;
@@ -57,12 +45,12 @@ namespace Assets.Scripts.Controllers.Game
             }
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             if (isDirty)
             {
                 Vector2 a = transform.position;
-                Vector2 b = GetPosition();
+                Vector2 b = map.GetPosition(location);
                 Vector2 c = new Vector2();
                 isDirty = !CommonAnimation.LinearMove(a, b, out c, speed);
                 transform.position = c;

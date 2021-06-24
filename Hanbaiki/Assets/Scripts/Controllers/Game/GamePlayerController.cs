@@ -5,19 +5,24 @@ namespace Assets.Scripts.Controllers.Game
 {
     public class GamePlayerController : GameCharacterController
     {
-        private void Update()
+        protected override void Update()
         {
-            Vector2 input = InputManager.GetMovement();
-            if (input.x != 0)
+            if (!isDirty)
             {
-                int next = location + Mathf.FloorToInt(input.x);
-                TryMove(next);
+                Vector2 input = InputManager.GetMovement();
+                if (input.x != 0)
+                {
+                    int next = location + Mathf.FloorToInt(input.x);
+                    TryMove(next);
+                }
+                else if (input.y != 0)
+                {
+                    int next = location - Mathf.FloorToInt(input.y) * map.GetMap().width;
+                    TryMove(next);
+                }
             }
-            else if (input.y != 0)
-            {
-                int next = location - Mathf.FloorToInt(input.y) * map.GetMap().width;
-                TryMove(next);
-            }
+
+            base.Update();
         }
     }
 }
