@@ -8,6 +8,7 @@ namespace Assets.Scripts.Controllers.Game
     public class GameMapController : MonoBehaviour
     {
         public GameObject stationObj;
+        public StationSpriteLoader stationSpr;
         public List<GameMap> maps = new List<GameMap>();
         private GameMap current;
 
@@ -29,8 +30,9 @@ namespace Assets.Scripts.Controllers.Game
                     switch (data[i].type)
                     {
                         case TileTypeEnum.Station:
-                            var inst = Instantiate(stationObj, GetPosition(i), new Quaternion()).GetComponent<GameStationController>();
+                            var inst = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
                             inst.station = (StationEnum)data[i].data;
+                            inst.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(inst.station);
                             tiles.Add(inst);
                             break;
                         default:
@@ -70,6 +72,23 @@ namespace Assets.Scripts.Controllers.Game
             pos.y += -(location / width);
 
             return pos;
+        }
+
+        public bool IsOccupied(int location)
+        {
+            return tiles[location] != null;
+        }
+
+        public void Select(int location)
+        {
+            if (tiles[location] is GameTileController)
+                tiles[location].Select();
+        }
+
+        public void Deselect(int location)
+        {
+            if (tiles[location] is GameTileController)
+                tiles[location].Deselect();
         }
     }
 }

@@ -5,8 +5,12 @@ namespace Assets.Scripts.Controllers.Game
 {
     public class GamePlayerController : GameCharacterController
     {
+        public GameSelectionController select;
+
         protected override void Update()
         {
+            base.Update();
+
             if (!isDirty)
             {
                 Vector2 input = InputManager.GetMovement();
@@ -20,9 +24,10 @@ namespace Assets.Scripts.Controllers.Game
                     int next = location - Mathf.FloorToInt(input.y) * map.GetMap().width;
                     TryMove(next);
                 }
-            }
 
-            base.Update();
+                if (isDirty)
+                    select.UpdateSelection(location, direction);
+            }
         }
     }
 }

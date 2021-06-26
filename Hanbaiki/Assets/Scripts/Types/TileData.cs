@@ -13,7 +13,7 @@ namespace Assets.Scripts.Types
 
     public class TileData
     {
-        public TileTypeEnum type;
+        public TileTypeEnum type = TileTypeEnum.None;
         public int data;
     }
 }

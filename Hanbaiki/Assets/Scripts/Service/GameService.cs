@@ -9,6 +9,16 @@ namespace Assets.Scripts.Service
         private static GameMapEnum map = GameMapEnum.Basic;
         private static List<TileData> tiles = new List<TileData>();
 
+        static GameService()
+        {
+            // TODO: remove tests
+            for (int i = 0; i < 11; i++)
+            {
+                tiles.Add(new TileData());
+            }
+            tiles.Add(new TileData() { type = TileTypeEnum.Station, data = (int)StationEnum.Steeper });
+        }
+
         public static GameMapEnum GetMap()
         {
             return map;

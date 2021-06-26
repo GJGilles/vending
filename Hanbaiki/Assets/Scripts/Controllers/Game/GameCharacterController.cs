@@ -3,16 +3,16 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
+    public enum CharacterDirectionEnum
+    {
+        Up,
+        Right,
+        Down,
+        Left
+    }
+
     public class GameCharacterController : MonoBehaviour
     {
-        protected enum CharacterDirectionEnum
-        {
-            Down,
-            Right,
-            Up,
-            Left
-        }
-
         public float speed = 0.5f;
         public GameMapController map;
         public CharacterAnimationController anim;
@@ -28,14 +28,16 @@ namespace Assets.Scripts.Controllers.Game
             if (next / width == location / width && next >= 0)
             {
                 direction = (next > location) ? CharacterDirectionEnum.Right : CharacterDirectionEnum.Left;
-                location = next;
                 isDirty = true;
+                if (!map.IsOccupied(next))
+                    location = next;
             }
             else if (next >= 0 && next < width * height && next % width == location % width)
             {
-                direction = (next > location) ? CharacterDirectionEnum.Up : CharacterDirectionEnum.Down;
-                location = next;
+                direction = (next > location) ? CharacterDirectionEnum.Down : CharacterDirectionEnum.Up;
                 isDirty = true;
+                if (!map.IsOccupied(next))
+                    location = next;
             }
 
             if (isDirty)

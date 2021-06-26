@@ -10,5 +10,14 @@ namespace Assets.Scripts.Controllers.Game
 
         private List<ItemData> input = new List<ItemData>();
         private List<ItemData> output = new List<ItemData>();
+
+        public override void Select()
+        {
+            Debug.Log(station);
+        }
+
+        public override void Deselect()
+        {
+        }
     }
 }

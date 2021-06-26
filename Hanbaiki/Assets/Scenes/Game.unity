@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 84310084}
   - component: {fileID: 84310086}
   - component: {fileID: 84310085}
+  - component: {fileID: 84310087}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -172,6 +173,7 @@ MonoBehaviour:
   speed: 0.005
   map: {fileID: 882980517}
   anim: {fileID: 84310086}
+  select: {fileID: 84310087}
 --- !u!212 &84310084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -252,6 +254,87 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f8313bd6dc6b8246a8593ddc486c601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &84310087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84310081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62a7e9c0aefc3047979f57da744fd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 882980517}
+--- !u!1001 &129463144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1581378472626745308, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_Name
+      value: StationSprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141131992905704709, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+--- !u!114 &129463145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6680801359353017791, guid: 8975a634475b0fe4a8ffe6d6488adcfc, type: 3}
+  m_PrefabInstance: {fileID: 129463144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efac576e48b6e444f83472681acec98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -417,7 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d8f7055742fdd47ac541cbf024d0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationObj: {fileID: 0}
+  stationObj: {fileID: 448360102519105463, guid: 3663655c8c0cb8c49b9345c7978fc229, type: 3}
+  stationSpr: {fileID: 129463145}
   maps:
   - id: 0
     origin: {x: -4.5, y: 4}
