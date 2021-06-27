@@ -5,7 +5,7 @@ namespace Assets.Scripts.Controllers.Game
 {
     public class GameTileController : MonoBehaviour
     {
-        public virtual void Select()
+        public virtual void Select(GameSelectionController selecter)
         {
 
         }

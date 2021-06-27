@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Types;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
@@ -9,30 +10,47 @@ namespace Assets.Scripts.Controllers.Game
 
         private int location = 0;
         private bool selected = false;
+        private ItemData held;
 
         private void Update()
         {
-            if (InputManager.GetFireA())
+            if (InputManager.GetFireA() && !selected)
             {
-                if (selected)
-                    Deselect();
-                else
-                    Select();
+                Select();
+            }
+
+            if (InputManager.GetFireB() && selected)
+            {
+                Deselect();
             }
         }
 
         public bool IsSelected() { return selected; }
 
-        private void Select()
+        public void Select()
         {
             selected = true;
-            map.Select(location);
+            map.Select(this, location);
         }
 
-        private void Deselect()
+        public void Deselect()
         {
             selected = false;
             map.Deselect(location);
+        }
+
+        public bool IsHolding() { return held != null; }
+
+        public ItemData Give()
+        {
+            var item = held;
+            held = null;
+            return item;
+        }
+
+        public void Take(ItemData item)
+        {
+
         }
 
         public void UpdateSelection(int player, CharacterDirectionEnum direction)

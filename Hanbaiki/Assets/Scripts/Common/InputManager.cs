@@ -8,12 +8,12 @@ namespace Assets.Scripts
     {
         public static float GetHorzAxis()
         {
-            return Input.GetAxisRaw("Horizontal");
+            return Mathf.Round(Input.GetAxisRaw("Horizontal"));
         }
 
         public static float GetVertAxis()
         {
-            return Input.GetAxisRaw("Vertical");
+            return Mathf.Round(Input.GetAxisRaw("Vertical"));
         }
 
         public static Vector2 GetMovement()

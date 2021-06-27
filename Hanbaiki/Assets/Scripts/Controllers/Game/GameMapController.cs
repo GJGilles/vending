@@ -9,6 +9,7 @@ namespace Assets.Scripts.Controllers.Game
     {
         public GameObject stationObj;
         public StationSpriteLoader stationSpr;
+        public ItemSpriteLoader itemSpr;
         public List<GameMap> maps = new List<GameMap>();
         private GameMap current;
 
@@ -33,6 +34,7 @@ namespace Assets.Scripts.Controllers.Game
                             var inst = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
                             inst.station = (StationEnum)data[i].data;
                             inst.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(inst.station);
+                            inst.itemSprites = itemSpr;
                             tiles.Add(inst);
                             break;
                         default:
@@ -79,10 +81,10 @@ namespace Assets.Scripts.Controllers.Game
             return tiles[location] != null;
         }
 
-        public void Select(int location)
+        public void Select(GameSelectionController selecter, int location)
         {
             if (tiles[location] is GameTileController)
-                tiles[location].Select();
+                tiles[location].Select(selecter);
         }
 
         public void Deselect(int location)

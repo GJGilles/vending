@@ -13,6 +13,16 @@ namespace Assets.Scripts.Controllers
             public Sprite spr;
         }
 
-        public List<ItemSprite> sprites = new List<ItemSprite>();
+        public List<ItemSprite> sprites = new List<ItemSprite>(); 
+        
+        public Sprite GetSprite(ItemEnum id)
+        {
+            foreach (var obj in sprites)
+            {
+                if (obj.id == id)
+                    return obj.spr;
+            }
+            return null;
+        }
     }
 }

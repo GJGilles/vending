@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   station: 0
+  itemSprites: {fileID: 0}
+  menuObject: {fileID: 8133251582122647342, guid: f5958402819a99b4f9215b0a918b5bc1, type: 3}
 --- !u!212 &2640812955167906172
 SpriteRenderer:
   m_ObjectHideFlags: 0
