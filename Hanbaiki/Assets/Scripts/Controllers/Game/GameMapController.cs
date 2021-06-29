@@ -64,6 +64,21 @@ namespace Assets.Scripts.Controllers.Game
             throw new System.Exception("No Map for ID");
         }
 
+        public void SetTile(int location, StationEnum station)
+        {
+            if (tiles[location] != null)
+                Destroy(tiles[location]);
+
+            if (station != StationEnum.None)
+            {
+                var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
+                inst.station = station;
+                inst.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(inst.station);
+                inst.itemSprites = itemSpr;
+                tiles[location] = inst;
+            }
+        }
+
         public Vector2 GetPosition(int location)
         {
             int width = current.width;

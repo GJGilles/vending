@@ -7,7 +7,7 @@ namespace Assets.Scripts.Service
     public static class StationService
     {
         private static Dictionary<StationEnum, StationData> stations = new Dictionary<StationEnum, StationData>();
-
+        private static List<StationEnum> current = new List<StationEnum>() { StationEnum.TeaRoaster };
         /*
         BigOven,
         DeepFryer,
@@ -55,9 +55,19 @@ namespace Assets.Scripts.Service
             Add(StationEnum.SoupPot, "Soup Pot", new List<RecipeData>());
         }
 
+        public static StationData Get(StationEnum id)
+        {
+            return stations[id];
+        }
+
         public static Dictionary<StationEnum, StationData> GetAll() 
         {
             return stations;
+        }
+
+        public static List<StationEnum> GetCurrent()
+        {
+            return current;
         }
 
         private static void Add(StationEnum id, string name, List<RecipeData> recipes)

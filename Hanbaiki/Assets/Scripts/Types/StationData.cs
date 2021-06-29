@@ -5,6 +5,7 @@ namespace Assets.Scripts.Types
 {
     public enum StationEnum
     {
+        None,
         ItemIn,
         ItemOut,
 

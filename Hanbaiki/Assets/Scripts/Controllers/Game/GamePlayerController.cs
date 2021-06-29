@@ -14,12 +14,12 @@ namespace Assets.Scripts.Controllers.Game
             if (!isDirty)
             {
                 Vector2 input = InputManager.GetMovement();
-                if (input.x != 0)
+                if (input.x != 0 && !select.IsSelected())
                 {
                     int next = location + Mathf.FloorToInt(input.x);
                     TryMove(next);
                 }
-                else if (input.y != 0)
+                else if (input.y != 0 && !select.IsSelected())
                 {
                     int next = location - Mathf.FloorToInt(input.y) * map.GetMap().width;
                     TryMove(next);
