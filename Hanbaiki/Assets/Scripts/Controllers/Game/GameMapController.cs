@@ -8,6 +8,8 @@ namespace Assets.Scripts.Controllers.Game
     public class GameMapController : MonoBehaviour
     {
         public GameObject stationObj;
+        public GameObject buildDeskObj;
+
         public StationSpriteLoader stationSpr;
         public ItemSpriteLoader itemSpr;
         public List<GameMap> maps = new List<GameMap>();
@@ -31,11 +33,15 @@ namespace Assets.Scripts.Controllers.Game
                     switch (data[i].type)
                     {
                         case TileTypeEnum.Station:
-                            var inst = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
-                            inst.station = (StationEnum)data[i].data;
-                            inst.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(inst.station);
-                            inst.itemSprites = itemSpr;
-                            tiles.Add(inst);
+                            var station = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
+                            station.station = (StationEnum)data[i].data;
+                            station.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(station.station);
+                            station.itemSprites = itemSpr;
+                            tiles.Add(station);
+                            break;
+                        case TileTypeEnum.BuildDesk:
+                            var build = Instantiate(buildDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameBuildDeskController>();
+                            tiles.Add(build);
                             break;
                         default:
                             tiles.Add(null);
@@ -62,6 +68,11 @@ namespace Assets.Scripts.Controllers.Game
                 }
             }
             throw new System.Exception("No Map for ID");
+        }
+
+        public GameTileController GetTile(int location)
+        {
+            return tiles[location];
         }
 
         public void SetTile(int location, StationEnum station)

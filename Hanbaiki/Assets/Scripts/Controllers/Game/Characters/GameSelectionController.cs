@@ -6,6 +6,7 @@ namespace Assets.Scripts.Controllers.Game
 {
     public class GameSelectionController : MonoBehaviour
     {
+        public GameBuildController build;
         public GameMapController map;
 
         private int location = 0;

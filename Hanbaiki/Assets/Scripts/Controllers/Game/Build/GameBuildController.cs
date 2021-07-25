@@ -50,6 +50,7 @@ namespace Assets.Scripts.Controllers.Game
 
                     gameObject.SetActive(false);
                     selecter.Deselect();
+                    cam.target = selecter.transform;
                     return;
                 }
 
@@ -73,7 +74,8 @@ namespace Assets.Scripts.Controllers.Game
 
         private void UpdateSelected(int loc)
         {
-
+            location = loc;
+            cam.target = map.GetTile(loc).transform;
         }
     }
 }

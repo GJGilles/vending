@@ -7,8 +7,10 @@ namespace Assets.Scripts.Types
     {
         None,
         Empty,
-        Object,
-        Station
+        Station,
+        BuildDesk,
+        RecipeDesk,
+        WorkerDesk
     }
 
     public class TileData

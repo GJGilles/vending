@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
-    public class GameObjectController : GameTileController
+    public class GameBuildDeskController : GameTileController
     {
         public override void Select(GameSelectionController selecter)
         {
-            base.Select(selecter);
+            selecter.build.gameObject.SetActive(true);
         }
     }
 }
