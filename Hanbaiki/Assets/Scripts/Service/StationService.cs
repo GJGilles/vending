@@ -15,6 +15,9 @@ namespace Assets.Scripts.Service
         static StationService()
         {
             stations = AssetLoader.LoadObjects<StationObject>();
+
+            // TODO: Fix this
+            current = stations;
         }
 
         public static StationObject Get(int id)

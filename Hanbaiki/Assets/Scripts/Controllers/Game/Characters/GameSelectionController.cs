@@ -16,12 +16,12 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Update()
         {
-            if (InputManager.GetFireA() && !selected)
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1) && !selected)
             {
                 Select();
             }
 
-            if (InputManager.GetFireB() && selected)
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2) && selected)
             {
                 Deselect();
             }

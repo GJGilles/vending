@@ -9,7 +9,7 @@ namespace Assets.Scripts
         {
             List<T> result = new List<T>();
 
-            string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).ToString(), new string[] { "Objects" });
+            string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).ToString(), new string[] { "Assets/Objects" });
             foreach (string g in guids)
             {
                 string path = AssetDatabase.GUIDToAssetPath(g);

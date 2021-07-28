@@ -37,7 +37,7 @@ namespace Assets.Scripts.Controllers
 
         private void Update()
         {
-            if (InputManager.GetFireA())
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
                 selected.Invoke(selection);
 
             Vector2 input = InputManager.GetMovement();

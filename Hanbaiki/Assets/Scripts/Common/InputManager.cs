@@ -4,6 +4,13 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
+    public enum ButtonEnum
+    {
+        Jump,
+        Fire1,
+        Fire2
+    }
+
     public static class InputManager
     {
         public static float GetHorzAxis()
@@ -21,19 +28,14 @@ namespace Assets.Scripts
             return new Vector2(GetHorzAxis(), GetVertAxis());
         }
 
-        public static bool GetJump()
+        public static bool GetButtonHeld(ButtonEnum button)
         {
-            return Input.GetAxisRaw("Jump") != 0f;
+            return Input.GetButton(button.ToString());
         }
 
-        public static bool GetFireA()
+        public static bool GetButtonTrigger(ButtonEnum button)
         {
-            return Input.GetAxisRaw("Fire1") != 0f;
-        }
-
-        public static bool GetFireB()
-        {
-            return Input.GetAxisRaw("Fire2") != 0f;
+            return Input.GetButtonDown(button.ToString());
         }
     }
 }

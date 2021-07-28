@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Common
+namespace Assets.Scripts
 {
     public class ScrollListController : MonoBehaviour
     {
@@ -16,6 +16,11 @@ namespace Assets.Scripts.Common
             return selected;
         }
 
+        public GameObject GetItem(int i)
+        {
+            return items[i];
+        }
+
         public void UpdateSelect(int diff)
         {
             if (selected + diff < 0) { diff += items.Count; }
@@ -26,7 +31,10 @@ namespace Assets.Scripts.Common
 
         public GameObject Add()
         {
-            return Instantiate(itemObj, new Vector2(0, GetHeight() / 2 - items.Count * GetSize()), new Quaternion(), transform);
+            var inst = Instantiate(itemObj, transform);
+            inst.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, GetHeight() / 2f - items.Count * GetSize());
+            items.Add(inst);
+            return inst;
         }
 
         private float GetHeight()

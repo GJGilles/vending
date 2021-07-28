@@ -12,6 +12,11 @@ namespace Assets.Scripts.Service
         static GameService()
         {
             // TODO: remove tests
+            for (int i = 0; i < 4; i++)
+            {
+                tiles.Add(new TileData());
+            }
+            tiles.Add(new TileData() { type = TileTypeEnum.BuildDesk });
             for (int i = 0; i < 11; i++)
             {
                 tiles.Add(new TileData());

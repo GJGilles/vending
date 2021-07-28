@@ -15,6 +15,8 @@ namespace Assets.Scripts.Controllers.Game
         public GameBuildItemListController iList;
         public GameBuildMapController mCtrl;
 
+        public GameMapController map;
+
         private StationObject station;
         private int tile = 0;
         private ItemObject item;
@@ -138,6 +140,7 @@ namespace Assets.Scripts.Controllers.Game
         public void DoneRecipe(int r)
         {
             recipe = r;
+            map.SetTile(location, station);
             Submit();
         }
 
