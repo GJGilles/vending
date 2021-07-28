@@ -3,20 +3,20 @@ using Assets.Scripts.Types;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts.Objects;
 
 namespace Assets.Scripts.Controllers.Game
 {
     public class GameStationController : GameTileController
     {
-        public StationEnum station = StationEnum.ItemIn;
+        public StationObject station;
         public int recipe = 0;
-        public ItemSpriteLoader itemSprites;
 
         public int size = 4;
         public GameObject menuObject;
 
         private GameSelectionController selecter;
-        private List<ItemData> items = new List<ItemData>();
+        private List<ItemObject> items = new List<ItemObject>();
         private InventorySelectController menu;
 
         private float cooldown = 0f;
@@ -24,31 +24,31 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Update()
         {
-            RecipeData current = StationService.Get(station).recipes[recipe];
+            RecipeObject current = station.recipes[recipe];
 
             cooldown -= Time.deltaTime;
             if (input && cooldown <= 0)
             {
                 if (items.Count + current.output.Count <= size)
                 {
-                    foreach (var id in current.output)
-                        items.Add(ItemService.Get(id));
+                    foreach (var i in current.output)
+                        items.Add(i);
                     input = false;
                 }
             }
             else if (cooldown <= 0)
             {
                 input = true;
-                foreach (var id in current.input)
+                foreach (var i in current.input)
                 {
-                    input = input && items.Select(i => i.id).Contains(id);
+                    input = input && items.Contains(i);
                 }
 
                 if (input)
                 {
-                    foreach (var id in current.input)
+                    foreach (var i in current.input)
                     {
-                        items.Remove(items.Where(i => i.id == id).First());
+                        items.Remove(items.Where(it => it == i).First());
                     }
                     cooldown = current.time;
                 }
@@ -59,7 +59,6 @@ namespace Assets.Scripts.Controllers.Game
         {
             this.selecter = selecter;
             menu = Instantiate(menuObject, transform).GetComponent<InventorySelectController>();
-            menu.sprites = itemSprites;
             menu.selected.AddListener(Selected);
             menu.SetItems(items);
         }
@@ -89,7 +88,7 @@ namespace Assets.Scripts.Controllers.Game
             return items.Count < size;
         }
 
-        public void Add(ItemData item)
+        public void Add(ItemObject item)
         {
             items.Add(item);
             if (menu != null)

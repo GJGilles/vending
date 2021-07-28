@@ -16,7 +16,7 @@ namespace Assets.Scripts.Service
             {
                 tiles.Add(new TileData());
             }
-            tiles.Add(new TileData() { type = TileTypeEnum.Station, data = (int)StationEnum.Steeper });
+            tiles.Add(new TileData() { type = TileTypeEnum.Station, data = 0 });
         }
 
         public static GameMapEnum GetMap()

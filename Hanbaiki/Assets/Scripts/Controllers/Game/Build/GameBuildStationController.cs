@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Types;
 using System.Collections;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Assets.Scripts.Controllers.Game
         public UnityEngine.UI.Image image;
         public TMPro.TMP_Text text;
 
-        public void Set(StationData data, Sprite spr)
+        public void Set(StationObject data, Sprite spr)
         {
             image.sprite = spr;
             text.text = data.name;

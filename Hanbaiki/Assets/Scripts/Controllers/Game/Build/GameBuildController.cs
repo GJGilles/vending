@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Service;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System;
 using System.Collections;
@@ -14,32 +15,25 @@ namespace Assets.Scripts.Controllers.Game
         public GameBuildItemListController iList;
         public GameBuildMapController mCtrl;
 
-        private StationEnum station;
+        private StationObject station;
         private int tile = 0;
-        private ItemEnum item;
+        private ItemObject item;
         private int location = 0;
         private int recipe = 0;
 
         private GameObject Current;
         public Action Prev;
 
-        public StationData GetStation()
+        public StationObject GetStation()
         {
-            if (station == StationEnum.None)
-            {
-                return null;
-            }
-            else
-            {
-                return StationService.Get(station);
-            }
+            return station;
         }
 
         private void Awake()
         {
-            station = StationEnum.None;
+            station = null;
             tile = -1;
-            item = ItemEnum.None;
+            item = null;
             location = -1;
             recipe = -1;
 
@@ -57,12 +51,12 @@ namespace Assets.Scripts.Controllers.Game
             Current = sList.gameObject;
             Current.SetActive(true);
 
-            station = StationEnum.None;
+            station = null;
 
             Prev = Cancel;
         }
 
-        public void DoneStation(StationEnum s) 
+        public void DoneStation(StationObject s) 
         {
             station = s;
             StartTile();
@@ -82,11 +76,11 @@ namespace Assets.Scripts.Controllers.Game
         public void DoneTile(int t)
         {
             tile = t;
-            if (station == StationEnum.ItemIn)
+            if (StationService.IsInput(station))
             {
                 StartItem();
             }
-            else if (station == StationEnum.ItemOut)
+            else if (StationService.IsOutput(station))
             {
                 StartMap();
             }
@@ -102,12 +96,12 @@ namespace Assets.Scripts.Controllers.Game
             Current = iList.gameObject;
             Current.SetActive(true);
 
-            item = ItemEnum.None;
+            item = null;
 
             Prev = StartTile;
         }
 
-        public void DoneItem(ItemEnum i)
+        public void DoneItem(ItemObject i)
         {
             item = i;
             Submit();

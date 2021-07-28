@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Types;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,73 +7,37 @@ namespace Assets.Scripts.Service
 {
     public static class StationService
     {
-        private static Dictionary<StationEnum, StationData> stations = new Dictionary<StationEnum, StationData>();
-        private static List<StationEnum> current = new List<StationEnum>() { StationEnum.TeaRoaster };
-        /*
-        BigOven,
-        DeepFryer,
-        Fermenter,
-        Freezer,
-        FryTop,
-        Oven,
-        SaladMaker,
-        SandwichMaker,
-        SoupPot,
-        SushiMaker,
-        Steeper*/
+        private static List<StationObject> stations = new List<StationObject>();
+        private static List<StationObject> current = new List<StationObject>();
 
-        static StationService()
-        {
-            Add(StationEnum.Blender, "Blender", new List<RecipeData>() {
-                new RecipeData(new List<ItemEnum>() { ItemEnum.Flour, ItemEnum.Eggs, ItemEnum.Sugar }, new List<ItemEnum>() { ItemEnum.Dough }, 1),
-                new RecipeData(new List<ItemEnum>() { ItemEnum.Flour, ItemEnum.Eggs, ItemEnum.Water }, new List<ItemEnum>() { ItemEnum.Batter }, 1)
-            });
+        private static StationObject itemIn;
+        private static StationObject itemOut;
 
-            Add(StationEnum.MochiMaker, "Mochi Maker", new List<RecipeData>());
+        public static void Load() { }
 
-            Add(StationEnum.NoodlePuller, "Noodle Puller", new List<RecipeData>());
-
-            Add(StationEnum.TeaRoaster, "Tea Roaster", new List<RecipeData>());
-
-            Add(StationEnum.WrapperPress, "Wrapper Press", new List<RecipeData>());
-
-            Add(StationEnum.BigOven, "Big Oven", new List<RecipeData>());
-
-            Add(StationEnum.DeepFryer, "Deep Fryer", new List<RecipeData>());
-
-            Add(StationEnum.Fermenter, "Fermenter", new List<RecipeData>());
-
-            Add(StationEnum.Freezer, "Freezer", new List<RecipeData>());
-
-            Add(StationEnum.FryTop, "Fry Top", new List<RecipeData>());
-
-            Add(StationEnum.Oven, "Oven", new List<RecipeData>());
-
-            Add(StationEnum.SaladMaker, "Salad Maker", new List<RecipeData>());
-
-            Add(StationEnum.SandwichMaker, "Sandwich Maker", new List<RecipeData>());
-
-            Add(StationEnum.SoupPot, "Soup Pot", new List<RecipeData>());
-        }
-
-        public static StationData Get(StationEnum id)
+        public static StationObject Get(int id)
         {
             return stations[id];
         }
 
-        public static Dictionary<StationEnum, StationData> GetAll() 
+        public static List<StationObject> GetAll() 
         {
             return stations;
         }
 
-        public static List<StationEnum> GetCurrent()
+        public static List<StationObject> GetCurrent()
         {
             return current;
         }
 
-        private static void Add(StationEnum id, string name, List<RecipeData> recipes)
+        public static bool IsInput(StationObject s)
         {
-            stations.Add(id, new StationData() { id = id, name = name, recipes = recipes });
+            return s == itemIn;
+        }
+
+        public static bool IsOutput(StationObject s)
+        {
+            return s == itemOut;
         }
     }
 }

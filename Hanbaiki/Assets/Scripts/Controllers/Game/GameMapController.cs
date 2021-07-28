@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Service;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,6 @@ namespace Assets.Scripts.Controllers.Game
         public GameObject stationObj;
         public GameObject buildDeskObj;
 
-        public StationSpriteLoader stationSpr;
-        public ItemSpriteLoader itemSpr;
         public List<GameMap> maps = new List<GameMap>();
         private GameMap current;
 
@@ -33,11 +32,10 @@ namespace Assets.Scripts.Controllers.Game
                     switch (data[i].type)
                     {
                         case TileTypeEnum.Station:
-                            var station = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
-                            station.station = (StationEnum)data[i].data;
-                            station.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(station.station);
-                            station.itemSprites = itemSpr;
-                            tiles.Add(station);
+                            var obj = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
+                            obj.station = StationService.Get(data[i].data);
+                            obj.GetComponent<SpriteRenderer>().sprite = obj.station.spr;
+                            tiles.Add(obj);
                             break;
                         case TileTypeEnum.BuildDesk:
                             var build = Instantiate(buildDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameBuildDeskController>();
@@ -75,17 +73,16 @@ namespace Assets.Scripts.Controllers.Game
             return tiles[location];
         }
 
-        public void SetTile(int location, StationEnum station)
+        public void SetTile(int location, StationObject station)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location]);
 
-            if (station != StationEnum.None)
+            if (station != null)
             {
                 var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
                 inst.station = station;
-                inst.GetComponent<SpriteRenderer>().sprite = stationSpr.GetSprite(inst.station);
-                inst.itemSprites = itemSpr;
+                inst.GetComponent<SpriteRenderer>().sprite = inst.station.spr;
                 tiles[location] = inst;
             }
         }

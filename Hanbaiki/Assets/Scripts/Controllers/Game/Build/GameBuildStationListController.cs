@@ -10,7 +10,6 @@ namespace Assets.Scripts.Controllers.Game
     public class GameBuildStationListController : MonoBehaviour
     {
         public GameBuildController build;
-        public StationSpriteLoader sprites;
         public ScrollListController list;
 
         private void Start()
@@ -19,7 +18,7 @@ namespace Assets.Scripts.Controllers.Game
             for (int i = 0; i < stations.Count; i++)
             {
                 var inst = list.Add().GetComponent<GameBuildItemController>();
-                inst.Set(StationService.Get(stations[i]), sprites.GetSprite(stations[i]));
+                inst.Set(stations[i], stations[i].spr);
             }
         }
 

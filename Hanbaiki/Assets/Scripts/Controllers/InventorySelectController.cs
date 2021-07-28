@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,7 +7,6 @@ namespace Assets.Scripts.Controllers
 {
     public class InventorySelectController : MonoBehaviour
     {
-        public ItemSpriteLoader sprites;
         public UnityEvent<int> selected = new UnityEvent<int>();
 
         public int width = 2;
@@ -15,7 +14,7 @@ namespace Assets.Scripts.Controllers
 
         private int selection = 0;
 
-        public void SetItems(List<ItemData> it)
+        public void SetItems(List<ItemObject> it)
         {
             for (int i = 0; i < slots.Count; i++)
             {
@@ -23,7 +22,7 @@ namespace Assets.Scripts.Controllers
                     slots[i].sprite = null;
                 else
                 {
-                    slots[i].sprite = sprites.GetSprite(it[i].id);
+                    slots[i].sprite = it[i].spr;
                 }
             }
 

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Types;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,14 +7,14 @@ namespace Assets.Scripts.Service
 {
     public static class ItemService
     {
-        private static Dictionary<ItemEnum, ItemData> items = new Dictionary<ItemEnum, ItemData>();
+        private static List<ItemObject> items = new List<ItemObject>();
 
-        static ItemService()
+        public static void Load(List<ItemObject> i)
         {
-            items.Add(ItemEnum.GTeaLeaves, new ItemData());
+            items = i;
         }
 
-        public static ItemData Get(ItemEnum id)
+        public static ItemObject Get(int id)
         {
             return items[id];
         }

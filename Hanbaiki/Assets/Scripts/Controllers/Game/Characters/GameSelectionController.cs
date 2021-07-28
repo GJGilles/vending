@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Types;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace Assets.Scripts.Controllers.Game
 
         private int location = 0;
         private bool selected = false;
-        private ItemData held;
+        private ItemObject held;
 
         private void Update()
         {
@@ -42,14 +43,14 @@ namespace Assets.Scripts.Controllers.Game
 
         public bool IsHolding() { return held != null; }
 
-        public ItemData Give()
+        public ItemObject Give()
         {
             var item = held;
             held = null;
             return item;
         }
 
-        public void Take(ItemData item)
+        public void Take(ItemObject item)
         {
 
         }
