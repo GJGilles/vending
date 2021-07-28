@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers.Game.Build
+namespace Assets.Scripts.Controllers.Game
 {
     public class GameBuildItemListController : MonoBehaviour
     {

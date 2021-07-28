@@ -4,6 +4,8 @@ namespace Assets.Scripts.Types
 {
 	public enum ItemEnum
     {
+		None,
+
 		GTeaLeaves,
 		Water,
 		Flour,

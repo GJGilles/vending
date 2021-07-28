@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
-    public class GameBuildRecipeListController : MonoBehaviour
+    public class GameBuildMapController : MonoBehaviour
     {
 
         // Use this for initialization
