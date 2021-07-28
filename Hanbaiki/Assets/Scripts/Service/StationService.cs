@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Objects;
-using Assets.Scripts.Types;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +12,10 @@ namespace Assets.Scripts.Service
         private static StationObject itemIn;
         private static StationObject itemOut;
 
-        public static void Load() { }
+        static StationService()
+        {
+            stations = AssetLoader.LoadObjects<StationObject>();
+        }
 
         public static StationObject Get(int id)
         {

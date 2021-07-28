@@ -25,12 +25,11 @@ namespace Assets.Scripts.Service
             JSONData data = new JSONData()
             {
             };
-
             try
             {
                 Save(JsonUtility.ToJson(data));
             }
-            catch (Exception e) { }
+            catch (Exception) { }
         }
 
         public static void LoadData()
@@ -50,7 +49,7 @@ namespace Assets.Scripts.Service
                 JsonUtility.FromJson<JSONData>(Load());
                 return true;
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return false;
             }

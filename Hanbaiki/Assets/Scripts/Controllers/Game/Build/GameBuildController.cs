@@ -29,7 +29,7 @@ namespace Assets.Scripts.Controllers.Game
             return station;
         }
 
-        private void Awake()
+        private void OnEnable()
         {
             station = null;
             tile = -1;

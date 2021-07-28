@@ -9,9 +9,9 @@ namespace Assets.Scripts.Service
     {
         private static List<ItemObject> items = new List<ItemObject>();
 
-        public static void Load(List<ItemObject> i)
+        static ItemService()
         {
-            items = i;
+            items = AssetLoader.LoadObjects<ItemObject>();
         }
 
         public static ItemObject Get(int id)
