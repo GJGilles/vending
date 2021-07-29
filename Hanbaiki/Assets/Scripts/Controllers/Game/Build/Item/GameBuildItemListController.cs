@@ -20,7 +20,7 @@ namespace Assets.Scripts.Controllers.Game
             for (int i = 0; i < items.Count; i++)
             {
                 var inst = list.Add().GetComponent<GameBuildItemController>();
-                inst.Set(items[i].name, items[i].spr);
+                inst.Set(items[i].title, items[i].spr);
             }
             list.GetItem(list.GetSelected()).GetComponent<GameBuildItemController>().SetHighlight(true);
         }

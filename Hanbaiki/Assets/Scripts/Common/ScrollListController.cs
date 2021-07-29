@@ -23,9 +23,9 @@ namespace Assets.Scripts
 
         public void UpdateSelect(int diff)
         {
-            if (selected + diff < 0) { diff += items.Count; }
-            if (selected + diff >= items.Count) { diff -= items.Count; }
-            selected += diff;
+            if (selected - diff < 0) { diff -= items.Count; }
+            if (selected - diff >= items.Count) { diff += items.Count; }
+            selected -= diff;
             isDirty = true;
         }
 

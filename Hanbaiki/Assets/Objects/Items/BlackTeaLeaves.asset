@@ -20,4 +20,5 @@ MonoBehaviour:
   flavor: 3
   prep: 0
   description: 
-  special: []
+  input: 0
+  unlocked: 1

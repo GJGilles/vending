@@ -22,7 +22,7 @@ namespace Assets.Scripts.Service
 
         public static List<ItemObject> GetCurrent()
         {
-            return items.Where(i => i.unlocked).ToList();
+            return items.Where(i => i.unlocked && i.input).ToList();
         }
     }
 }
