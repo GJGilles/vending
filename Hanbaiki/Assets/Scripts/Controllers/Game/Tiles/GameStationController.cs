@@ -33,6 +33,10 @@ namespace Assets.Scripts.Controllers.Game
                 {
                     foreach (var i in current.output)
                         items.Add(i);
+
+                    if (menu != null)
+                        menu.SetItems(items);
+
                     input = false;
                 }
             }
@@ -65,7 +69,11 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Selected(int idx)
         {
-            if (idx < items.Count)
+            if (idx < 0)
+            {
+                selecter.Deselect();
+            }
+            else if (!selecter.IsHolding() && idx < items.Count)
             {
                 selecter.Take(items[idx]);
                 items.RemoveAt(idx);
@@ -79,7 +87,7 @@ namespace Assets.Scripts.Controllers.Game
 
         public override void Deselect()
         {
-            Destroy(menu);
+            Destroy(menu.gameObject);
             menu = null;
         }
 
@@ -93,16 +101,6 @@ namespace Assets.Scripts.Controllers.Game
             items.Add(item);
             if (menu != null)
                 menu.SetItems(items);
-        }
-
-        public void Remove()
-        {
-
-        }
-
-        public void RemoveAt(int idx)
-        {
-
         }
     }
 }

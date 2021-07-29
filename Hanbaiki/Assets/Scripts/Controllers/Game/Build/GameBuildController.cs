@@ -28,6 +28,7 @@ namespace Assets.Scripts.Controllers.Game
 
         private GameObject Current;
         public Action Prev;
+        public Action Close;
 
         private void OnEnable()
         {
@@ -44,29 +45,30 @@ namespace Assets.Scripts.Controllers.Game
         private void Cancel()
         {
             gameObject.SetActive(false);
+            Close();
         }
 
         private void StartType()
         {
             if (Current) Current.SetActive(false);
-            Current = sList.gameObject;
+            Current = tyCtrl.gameObject;
             Current.SetActive(true);
+
+            type = TileTypeEnum.Slot;
+
+            Prev = Cancel;
         }
 
         public void DoneType(TileTypeEnum t)
         {
             type = t; 
-            if (type == TileTypeEnum.Input)
+            if (type == TileTypeEnum.Station)
             {
-                StartTile();
-            }
-            else if (type == TileTypeEnum.Output)
-            {
-                StartTile();
+                StartStation();
             }
             else
             {
-                StartStation();
+                StartTile();
             }
         }
 
@@ -78,7 +80,7 @@ namespace Assets.Scripts.Controllers.Game
 
             station = null;
 
-            Prev = Cancel;
+            Prev = StartType;
         }
 
         public void DoneStation(StationObject s) 
@@ -121,6 +123,11 @@ namespace Assets.Scripts.Controllers.Game
             else if (type == TileTypeEnum.Output)
             {
                 StartMap();
+            }
+            else if (type == TileTypeEnum.Slot)
+            {
+                map.SetTile(tile);
+                StartTile();
             }
             else
             {

@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Types;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
@@ -7,18 +8,47 @@ namespace Assets.Scripts.Controllers.Game
     public class GameBuildTypeController : MonoBehaviour
     {
         public GameBuildController build;
+        public List<UnityEngine.UI.Image> options = new List<UnityEngine.UI.Image>();
 
-        public void SelectStation()
+        public float coolTime = 0.2f;
+        private float coolRemain = 0f;
+
+        private List<TileTypeEnum> choices = new List<TileTypeEnum>() { TileTypeEnum.Station, TileTypeEnum.Input, TileTypeEnum.Output, TileTypeEnum.Slot };
+        private int selection = 0;
+
+        private void Start()
         {
-            build.DoneType(TileTypeEnum.Station);
+            options[selection].color = new Color(100, 100, 0);
         }
-        public void SelectInput()
+
+        private void Update()
         {
-            build.DoneType(TileTypeEnum.Input);
-        }
-        public void SelectOutput()
-        {
-            build.DoneType(TileTypeEnum.Output);
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
+            {
+                build.DoneType(choices[selection]);
+                return;
+            }
+
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+            {
+                build.Prev();
+                return;
+            }
+
+            float diff = InputManager.GetVertAxis();
+            coolRemain -= Time.deltaTime;
+            if (diff != 0 && coolRemain <= 0)
+            {
+                options[selection].color = new Color(255, 255, 255);
+
+                selection -= Mathf.RoundToInt(diff);
+                if (selection < 0) selection += options.Count;
+                if (selection >= options.Count) selection -= options.Count;
+
+                options[selection].color = new Color(100, 100, 0);
+
+                coolRemain = coolTime;
+            }
         }
     }
 }

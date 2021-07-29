@@ -11,6 +11,8 @@ namespace Assets.Scripts.Controllers.Game
         public GameBuildController build;
         public GameMapController map;
 
+        public SpriteRenderer spr;
+
         private int location = 0;
         private bool selected = false;
         private ItemObject held;
@@ -20,11 +22,6 @@ namespace Assets.Scripts.Controllers.Game
             if (InputManager.GetButtonTrigger(ButtonEnum.Fire1) && !selected)
             {
                 Select();
-            }
-
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2) && selected)
-            {
-                Deselect();
             }
         }
 
@@ -48,12 +45,14 @@ namespace Assets.Scripts.Controllers.Game
         {
             var item = held;
             held = null;
+            spr.sprite = null;
             return item;
         }
 
         public void Take(ItemObject item)
         {
-
+            held = item;
+            spr.sprite = item.spr;
         }
 
         public void UpdateSelection(int player, CharacterDirectionEnum direction)

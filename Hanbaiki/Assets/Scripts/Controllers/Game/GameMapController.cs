@@ -85,6 +85,15 @@ namespace Assets.Scripts.Controllers.Game
                 type == TileTypeEnum.Station;
         }
 
+        public void SetTile(int location)
+        {
+            if (!IsSettable(location))
+                return;
+
+            if (tiles[location] != null)
+                Destroy(tiles[location].gameObject);
+        }
+
         public void SetTile(int location, StationObject station, int recipe)
         {
             if (!IsSettable(location))
@@ -139,12 +148,18 @@ namespace Assets.Scripts.Controllers.Game
 
         public void Select(GameSelectionController selecter, int location)
         {
+            if (location < 0 || location >= tiles.Count)
+                return;
+
             if (tiles[location] is GameTileController)
                 tiles[location].Select(selecter);
         }
 
         public void Deselect(int location)
         {
+            if (location < 0 || location >= tiles.Count)
+                return;
+
             if (tiles[location] is GameTileController)
                 tiles[location].Deselect();
         }

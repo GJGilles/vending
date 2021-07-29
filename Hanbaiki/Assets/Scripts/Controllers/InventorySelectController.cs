@@ -12,7 +12,15 @@ namespace Assets.Scripts.Controllers
         public int width = 2;
         public List<SpriteRenderer> slots = new List<SpriteRenderer>();
 
+        public float coolTime = 0.2f;
+        private float coolRemain = 0f;
+
         private int selection = 0;
+
+        private void Start()
+        {
+            UpdateSelected(selection);
+        }
 
         public void SetItems(List<ItemObject> it)
         {
@@ -30,31 +38,40 @@ namespace Assets.Scripts.Controllers
 
         public void UpdateSelected(int location)
         {
-            slots[selection].color = new Color(0, 0, 0);
-            slots[location].color = new Color(100, 0, 0);
+            slots[selection].transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
+            slots[location].transform.parent.GetComponent<SpriteRenderer>().color = Color.yellow;
             selection = location;
         }
 
         private void Update()
         {
             if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
-                selected.Invoke(selection);
+                selected.Invoke(selection); 
+            
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+                selected.Invoke(-1);
 
             Vector2 input = InputManager.GetMovement();
+            int next = selection;
             if (input.x != 0)
             {
-                int next = selection + Mathf.FloorToInt(input.x);
+                next += Mathf.FloorToInt(input.x);
                 if (next / width > selection / width) next -= width;
-                if (next / width < selection / width) next += width;
-                UpdateSelected(next);
+                if (next < 0 || next / width < selection / width) next += width;
 
             }
             else if (input.y != 0)
             {
-                int next = selection + Mathf.FloorToInt(input.y) * width;
+                next += Mathf.FloorToInt(input.y) * width;
                 if (next >= slots.Count) next -= slots.Count;
                 if (next < 0) next += slots.Count;
+            }
+
+            coolRemain -= Time.deltaTime;
+            if (coolRemain <= 0 && next != selection)
+            {
                 UpdateSelected(next);
+                coolRemain = coolTime;
             }
         }
     }
