@@ -10,5 +10,6 @@ namespace Assets.Scripts.Objects
         public List<ItemObject> input;
         public List<ItemObject> output;
         public float time;
+        public bool unlocked = true;
     }
 }

@@ -9,63 +9,60 @@ namespace Assets.Scripts.Controllers.Game
     public class GameMapController : MonoBehaviour
     {
         public GameObject stationObj;
+        public GameObject inputObj;
+        public GameObject outputObj;
         public GameObject buildDeskObj;
+        public GameObject workerDeskObj;
 
-        public List<GameMap> maps = new List<GameMap>();
-        private GameMap current;
+        public SpriteRenderer background;
 
         private List<GameTileController> tiles = new List<GameTileController>();
 
         private void Start()
         {
-            SetMap(GameService.GetMap());
-
-            var data = GameService.GetTiles();
-            for (int i = 0; i < current.width * current.height; i++)
-            {
-                if (i >= data.Count)
-                {
-                    tiles.Add(null);
-                }
-                else
-                {
-                    switch (data[i].type)
-                    {
-                        case TileTypeEnum.Station:
-                            var obj = Instantiate(stationObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
-                            obj.station = StationService.Get(data[i].data);
-                            obj.GetComponent<SpriteRenderer>().sprite = obj.station.spr;
-                            tiles.Add(obj);
-                            break;
-                        case TileTypeEnum.BuildDesk:
-                            var build = Instantiate(buildDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameBuildDeskController>();
-                            tiles.Add(build);
-                            break;
-                        default:
-                            tiles.Add(null);
-                            break;
-                    }
-                }
-            }
+            SetMap();
         }
 
-        public GameMap GetMap()
+        private void SetMap()
         {
-            return current;
-        }
+            var map = GameService.GetMap();
+            background.sprite = map.background;
+            tiles = new List<GameTileController>(new GameTileController[map.tiles.Count]);
 
-        public void SetMap(GameMapEnum id)
-        {
-            foreach (var map in maps)
+            for (int i = 0; i < map.tiles.Count; i++)
             {
-                if (map.id == id)
+                TileData tile = map.tiles[i];
+                switch (tile.type)
                 {
-                    current = map;
-                    GameService.SetMap(id);
-                    return;
+                    case TileTypeEnum.Station:
+                        SetTile(i, tile.station, tile.recipe);
+                        break;
+
+                    case TileTypeEnum.Input:
+                        SetTile(i, tile.item);
+                        break;
+
+                    case TileTypeEnum.Output:
+                        SetTile(i, tile.loc);
+                        break;
+
+                    case TileTypeEnum.BuildDesk:
+                        var build = Instantiate(buildDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameBuildDeskController>();
+                        tiles[i] = build;
+                        break;
+
+                    case TileTypeEnum.WorkerDesk:
+                        var work = Instantiate(workerDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform);
+                        //tiles[i] = work;
+                        break;
+
+                    case TileTypeEnum.None:
+                    case TileTypeEnum.Slot:
+                    default:
+                        tiles.Add(null);
+                        break;
                 }
             }
-            throw new System.Exception("No Map for ID");
         }
 
         public GameTileController GetTile(int location)
@@ -73,35 +70,71 @@ namespace Assets.Scripts.Controllers.Game
             return tiles[location];
         }
 
-        public void SetTile(int location, StationObject station)
+        public bool IsOccupied(int location)
         {
-            if (tiles[location] != null)
-                Destroy(tiles[location]);
+            return tiles[location] != null;
+        }
 
-            if (station != null)
-            {
-                var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
-                inst.station = station;
-                inst.GetComponent<SpriteRenderer>().sprite = inst.station.spr;
-                tiles[location] = inst;
-            }
+        public bool IsSettable(int location)
+        {
+            TileTypeEnum type = GameService.GetMap().tiles[location].type;
+            return 
+                type == TileTypeEnum.Slot ||
+                type == TileTypeEnum.Input ||
+                type == TileTypeEnum.Output ||
+                type == TileTypeEnum.Station;
+        }
+
+        public void SetTile(int location, StationObject station, int recipe)
+        {
+            if (!IsSettable(location))
+                return;
+
+            if (tiles[location] != null)
+                Destroy(tiles[location].gameObject);
+
+            var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
+            inst.station = station;
+            inst.recipe = recipe;
+            inst.GetComponent<SpriteRenderer>().sprite = inst.station.spr;
+            tiles[location] = inst;
+        }
+
+        public void SetTile(int location, ItemObject item)
+        {
+            if (!IsSettable(location))
+                return;
+
+            if (tiles[location] != null)
+                Destroy(tiles[location].gameObject);
+
+            var inst = Instantiate(inputObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameInputController>();
+            inst.item = item;
+            tiles[location] = inst;
+        }
+
+        public void SetTile(int location, LocationObject loc)
+        {
+            if (!IsSettable(location))
+                return;
+
+            if (tiles[location] != null)
+                Destroy(tiles[location].gameObject);
+
+            var inst = Instantiate(outputObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameOutputController>();
+            inst.location = loc;
+            tiles[location] = inst;
         }
 
         public Vector2 GetPosition(int location)
         {
-            int width = current.width;
-            int height = current.height;
-            Vector2 pos = (Vector2)transform.position + current.origin;
+            var map = GameService.GetMap();
+            Vector2 pos = (Vector2)transform.position + map.origin;
 
-            pos.x += (location % width);
-            pos.y += -(location / width);
+            pos.x += (location % map.width);
+            pos.y += -(location / map.width);
 
             return pos;
-        }
-
-        public bool IsOccupied(int location)
-        {
-            return tiles[location] != null;
         }
 
         public void Select(GameSelectionController selecter, int location)

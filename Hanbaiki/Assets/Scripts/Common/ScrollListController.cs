@@ -29,6 +29,15 @@ namespace Assets.Scripts
             isDirty = true;
         }
 
+        public void Clean()
+        {
+            while(items.Count > 0)
+            {
+                Destroy(items[0].gameObject);
+                items.RemoveAt(0);
+            }
+        }
+
         public GameObject Add()
         {
             var inst = Instantiate(itemObj, transform);

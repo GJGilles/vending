@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Service;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
@@ -19,7 +20,6 @@ namespace Assets.Scripts.Controllers.Game
 
         private void OnEnable()
         {
-            target.sprite = build.GetStation().spr;
             target.gameObject.SetActive(true);
             prev = cam.target;
             cam.target = target.transform;
@@ -35,10 +35,10 @@ namespace Assets.Scripts.Controllers.Game
         private void Update()
         {
             Vector2 input = InputManager.GetMovement();
-            int width = map.GetMap().width;
-            int size = width * map.GetMap().height;
+            int width = GameService.Width();
+            int size = width * GameService.Height();
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1) && map.IsSettable(location))
             {
                 build.DoneTile(location);
                 return;
@@ -57,7 +57,7 @@ namespace Assets.Scripts.Controllers.Game
             }
             else if (input.y != 0)
             {
-                next = location - Mathf.RoundToInt(input.y) * map.GetMap().width;
+                next = location - Mathf.RoundToInt(input.y) * width;
             }
 
             coolRemain -= Time.deltaTime;
@@ -70,10 +70,15 @@ namespace Assets.Scripts.Controllers.Game
             }
         }
 
+        public void SetSprite(Sprite spr)
+        {
+            target.sprite = spr;
+        }
+
         private void UpdateSelected(int loc)
         {
             location = loc;
-            target.transform.position = map.GetPosition(loc);
+            target.transform.position = map.GetPosition(loc) - new Vector2(0, 0.5f);
         }
     }
 }

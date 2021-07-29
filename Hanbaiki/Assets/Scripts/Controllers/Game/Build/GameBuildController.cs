@@ -3,12 +3,14 @@ using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
     public class GameBuildController : MonoBehaviour
     {
+        public GameBuildTypeController tyCtrl;
         public GameBuildStationListController sList;
         public GameBuildTileController tCtrl;
         public GameBuildRecipeListController rList;
@@ -17,34 +19,55 @@ namespace Assets.Scripts.Controllers.Game
 
         public GameMapController map;
 
+        private TileTypeEnum type = TileTypeEnum.Slot;
         private StationObject station;
         private int tile = 0;
         private ItemObject item;
-        private int location = 0;
+        private LocationObject location;
         private int recipe = 0;
 
         private GameObject Current;
         public Action Prev;
 
-        public StationObject GetStation()
-        {
-            return station;
-        }
-
         private void OnEnable()
         {
+            type = TileTypeEnum.Slot;
             station = null;
             tile = -1;
             item = null;
-            location = -1;
+            location = null;
             recipe = -1;
 
-            StartStation();
+            StartType();
         }
 
         private void Cancel()
         {
+            gameObject.SetActive(false);
+        }
 
+        private void StartType()
+        {
+            if (Current) Current.SetActive(false);
+            Current = sList.gameObject;
+            Current.SetActive(true);
+        }
+
+        public void DoneType(TileTypeEnum t)
+        {
+            type = t; 
+            if (type == TileTypeEnum.Input)
+            {
+                StartTile();
+            }
+            else if (type == TileTypeEnum.Output)
+            {
+                StartTile();
+            }
+            else
+            {
+                StartStation();
+            }
         }
 
         private void StartStation()
@@ -71,18 +94,31 @@ namespace Assets.Scripts.Controllers.Game
             Current.SetActive(true);
 
             tile = -1;
-
-            Prev = StartStation;
+            if (type == TileTypeEnum.Input)
+            {
+                tCtrl.SetSprite(map.inputObj.GetComponent<SpriteRenderer>().sprite);
+                Prev = StartType;
+            }
+            else if (type == TileTypeEnum.Output)
+            {
+                tCtrl.SetSprite(map.outputObj.GetComponent<SpriteRenderer>().sprite);
+                Prev = StartType;
+            }
+            else
+            {
+                tCtrl.SetSprite(station.spr);
+                Prev = StartStation;
+            }
         }
 
         public void DoneTile(int t)
         {
             tile = t;
-            if (StationService.IsInput(station))
+            if (type == TileTypeEnum.Input)
             {
                 StartItem();
             }
-            else if (StationService.IsOutput(station))
+            else if (type == TileTypeEnum.Output)
             {
                 StartMap();
             }
@@ -106,7 +142,10 @@ namespace Assets.Scripts.Controllers.Game
         public void DoneItem(ItemObject i)
         {
             item = i;
-            Submit();
+
+            map.SetTile(tile, item);
+
+            StartTile();
         }
 
         private void StartMap()
@@ -115,15 +154,18 @@ namespace Assets.Scripts.Controllers.Game
             Current = mCtrl.gameObject;
             Current.SetActive(true);
 
-            location = -1;
+            location = null;
 
             Prev = StartTile;
         }
 
-        public void DoneMap(int l)
+        public void DoneMap(LocationObject l)
         {
             location = l;
-            Submit();
+
+            map.SetTile(tile, location);
+
+            StartTile();
         }
 
         private void StartRecipe()
@@ -132,6 +174,7 @@ namespace Assets.Scripts.Controllers.Game
             Current = rList.gameObject;
             Current.SetActive(true);
 
+            rList.SetRecipes(station.recipes.Where(r => r.unlocked).ToList());
             recipe = -1;
 
             Prev = StartTile;
@@ -140,13 +183,10 @@ namespace Assets.Scripts.Controllers.Game
         public void DoneRecipe(int r)
         {
             recipe = r;
-            map.SetTile(location, station);
-            Submit();
-        }
 
-        private void Submit()
-        {
+            map.SetTile(tile, station, recipe);
 
+            StartStation();
         }
     }
 }

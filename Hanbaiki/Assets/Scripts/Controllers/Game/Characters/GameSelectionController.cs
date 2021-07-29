@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System.Collections;
 using UnityEngine;
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Controllers.Game
 
         public void UpdateSelection(int player, CharacterDirectionEnum direction)
         {
-            int width = map.GetMap().width;
+            int width = GameService.Width();
             int next = player + GetDiff(direction);
 
             if (player / width != next / width && player % width != next % width)
@@ -75,10 +76,10 @@ namespace Assets.Scripts.Controllers.Game
             switch (direction)
             {
                 case CharacterDirectionEnum.Down:
-                    return map.GetMap().width;
+                    return GameService.Width();
 
                 case CharacterDirectionEnum.Up:
-                    return -map.GetMap().width;
+                    return -GameService.Width();
 
                 case CharacterDirectionEnum.Left:
                     return -1;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Service;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Controllers.Game
                 }
                 else if (input.y != 0 && !select.IsSelected())
                 {
-                    int next = location - Mathf.FloorToInt(input.y) * map.GetMap().width;
+                    int next = location - Mathf.FloorToInt(input.y) * GameService.Width();
                     TryMove(next);
                 }
 

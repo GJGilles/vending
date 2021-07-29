@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Types;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,37 +7,30 @@ namespace Assets.Scripts.Service
 {
     public static class GameService
     {
-        private static GameMapEnum map = GameMapEnum.Basic;
-        private static List<TileData> tiles = new List<TileData>();
+        private static List<GameMapObject> maps = new List<GameMapObject>();
+        private static int current = 0;
 
         static GameService()
         {
-            // TODO: remove tests
-            for (int i = 0; i < 4; i++)
-            {
-                tiles.Add(new TileData());
-            }
-            tiles.Add(new TileData() { type = TileTypeEnum.BuildDesk });
-            for (int i = 0; i < 11; i++)
-            {
-                tiles.Add(new TileData());
-            }
-            tiles.Add(new TileData() { type = TileTypeEnum.Station, data = 0 });
+            maps = AssetLoader.LoadObjects<GameMapObject>();
         }
 
-        public static GameMapEnum GetMap()
+        public static int Width() { return maps[current].width; }
+        public static int Height() { return maps[current].height;  }
+
+        public static List<GameMapObject> GetAll()
         {
-            return map;
+            return maps;
         }
 
-        public static void SetMap(GameMapEnum map)
+        public static GameMapObject GetMap()
         {
-            GameService.map = map;
+            return maps[current];
         }
 
-        public static List<TileData> GetTiles()
+        public static void SetMap(int idx)
         {
-            return tiles;
+            current = idx;
         }
     }
 }

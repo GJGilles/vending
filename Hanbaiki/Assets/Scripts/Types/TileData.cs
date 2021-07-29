@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Objects;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Types
@@ -6,16 +7,24 @@ namespace Assets.Scripts.Types
     public enum TileTypeEnum
     {
         None,
-        Empty,
+        Slot,
         Station,
+        Input,
+        Output,
         BuildDesk,
-        RecipeDesk,
         WorkerDesk
     }
 
+    [Serializable]
     public class TileData
     {
         public TileTypeEnum type = TileTypeEnum.None;
-        public int data;
+
+        public StationObject station;
+        public int recipe;
+
+        public ItemObject item;
+
+        public LocationObject loc;
     }
 }

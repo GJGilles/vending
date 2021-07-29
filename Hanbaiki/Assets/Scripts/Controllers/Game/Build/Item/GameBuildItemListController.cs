@@ -1,12 +1,10 @@
 ﻿using Assets.Scripts.Service;
-using Assets.Scripts.Types;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Scripts.Controllers.Game
 {
-    public class GameBuildStationListController : MonoBehaviour
+    public class GameBuildItemListController : MonoBehaviour
     {
         public GameBuildController build;
         public ScrollListController list;
@@ -16,20 +14,22 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Start()
         {
-            var stations = StationService.GetCurrent();
-            for (int i = 0; i < stations.Count; i++)
+            list.Clean();
+
+            var items = ItemService.GetCurrent();
+            for (int i = 0; i < items.Count; i++)
             {
-                var inst = list.Add().GetComponent<GameBuildStationController>();
-                inst.Set(stations[i], stations[i].spr);
+                var inst = list.Add().GetComponent<GameBuildItemController>();
+                inst.Set(items[i].name, items[i].spr);
             }
-            list.GetItem(list.GetSelected()).GetComponent<GameBuildStationController>().SetHighlight(true);
+            list.GetItem(list.GetSelected()).GetComponent<GameBuildItemController>().SetHighlight(true);
         }
 
         private void Update()
         {
             if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
             {
-                build.DoneStation(StationService.GetCurrent()[list.GetSelected()]);
+                build.DoneItem(ItemService.GetCurrent()[list.GetSelected()]);
                 return;
             }
 
@@ -43,9 +43,9 @@ namespace Assets.Scripts.Controllers.Game
             coolRemain -= Time.deltaTime;
             if (diff != 0 && coolRemain <= 0)
             {
-                list.GetItem(list.GetSelected()).GetComponent<GameBuildStationController>().SetHighlight(false);
+                list.GetItem(list.GetSelected()).GetComponent<GameBuildItemController>().SetHighlight(false);
                 list.UpdateSelect(Mathf.RoundToInt(diff));
-                list.GetItem(list.GetSelected()).GetComponent<GameBuildStationController>().SetHighlight(true);
+                list.GetItem(list.GetSelected()).GetComponent<GameBuildItemController>().SetHighlight(true);
 
                 coolRemain = coolTime;
             }

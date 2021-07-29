@@ -16,6 +16,7 @@ namespace Assets.Scripts.Objects
 		public ItemFlavorEnum flavor;
 		public ItemPrepEnum prep;
 		public string description;
-		public List<string> special;
+		public bool input = true;
+		public bool unlocked = true;
 	}
 }

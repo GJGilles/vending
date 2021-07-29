@@ -1,0 +1,450 @@
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 1
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}
+  - type: 0
+    station: {fileID: 0}
+    recipe: 0
+    item: {fileID: 0}
+    loc: {fileID: 0}

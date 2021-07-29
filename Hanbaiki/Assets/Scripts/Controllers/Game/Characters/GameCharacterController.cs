@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Service;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
@@ -23,8 +24,8 @@ namespace Assets.Scripts.Controllers.Game
 
         protected void TryMove(int next)
         {
-            int width = map.GetMap().width;
-            int height = map.GetMap().height;
+            int width = GameService.Width();
+            int height = GameService.Height();
             if (next / width == location / width && next >= 0)
             {
                 direction = (next > location) ? CharacterDirectionEnum.Right : CharacterDirectionEnum.Left;

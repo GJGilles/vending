@@ -11,5 +11,6 @@ namespace Assets.Scripts.Objects
         public string title;
         public Sprite spr;
         public List<RecipeObject> recipes;
+        public bool unlocked = true;
     }
 }
