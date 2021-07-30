@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc2360050c8f6d84d8a46ef52590a066, type: 3}
-  m_Name: TeaRoaster
+  m_Name: MochiMaker
   m_EditorClassIdentifier: 
-  title: Tea Roaster
-  spr: {fileID: 21300000, guid: 007cde49c2df41248b095cb646bc674a, type: 3}
-  recipes:
-  - {fileID: 11400000, guid: ec0b65431522cd54c8d087c084d59231, type: 2}
+  title: Mochi Maker
+  spr: {fileID: 21300000, guid: b5f584b2f1b38d74c8036b4f67f05581, type: 3}
+  recipes: []
   unlocked: 1

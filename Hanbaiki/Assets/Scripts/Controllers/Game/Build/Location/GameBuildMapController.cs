@@ -1,21 +1,71 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Service;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
     public class GameBuildMapController : MonoBehaviour
     {
+        public GameBuildController build;
+        public RectTransform map;
+        public GameObject locObj;
 
-        // Use this for initialization
-        void Start()
+        private int selected = 0;
+        private List<GameBuildLocationController> objects = new List<GameBuildLocationController>();
+
+        public float coolTime = 0.2f;
+        private float coolRemain = 0f;
+
+        private void OnEnable()
         {
+            Clean();
 
+            var locs = MapService.GetCurrent();
+            for (int i = 0; i < locs.Count; i++)
+            {
+                var inst = Instantiate(locObj, locs[i].coords, new Quaternion(), map.transform).GetComponent<GameBuildLocationController>();
+                inst.location = locs[i];
+                objects.Add(inst);
+            }
+
+            map.anchoredPosition = -objects[0].location.coords;
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
+            {
+                build.DoneMap(objects[selected].location);
+                return;
+            }
 
+            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+            {
+                build.Prev();
+                return;
+            }
+
+            float diff = InputManager.GetVertAxis();
+            coolRemain -= Time.deltaTime;
+            if (diff != 0 && coolRemain <= 0)
+            {
+                selected -= Mathf.RoundToInt(diff);
+                if (selected < 0) selected += objects.Count;
+                if (selected >= objects.Count) selected -= objects.Count;
+
+                map.anchoredPosition = -objects[selected].location.coords;
+
+                coolRemain = coolTime;
+            }
+        }
+
+        private void Clean()
+        {
+            while (objects.Count > 0)
+            {
+                Destroy(objects[0].gameObject);
+                objects.RemoveAt(0);
+            }
         }
     }
 }

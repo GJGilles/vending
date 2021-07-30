@@ -155,6 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66841ea7d30ae6e489b977c5260cceea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  build: {fileID: 990495674}
+  map: {fileID: 234392935}
+  locObj: {fileID: 1203068803586340694, guid: 1c9aaad08deb46c48b8d4e40d83f4bda, type: 3}
+  coolTime: 0.2
 --- !u!224 &61749317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -403,7 +407,7 @@ RectTransform:
   m_GameObject: {fileID: 234392934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 61749317}
   m_RootOrder: 1
@@ -1488,7 +1492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stationObj: {fileID: 448360102519105463, guid: 3663655c8c0cb8c49b9345c7978fc229, type: 3}
   inputObj: {fileID: 2495991067406467644, guid: 22011b6e98b55aa42b9f5f10cfa696c6, type: 3}
-  outputObj: {fileID: 0}
+  outputObj: {fileID: 5021310838595936444, guid: 3149cd16a9b5eac4fba4603771b1fd74, type: 3}
   buildDeskObj: {fileID: 32436973566196872, guid: 8905885465ed5864b909c7ee4bd210c9, type: 3}
   workerDeskObj: {fileID: 0}
   background: {fileID: 882980518}
