@@ -7,11 +7,16 @@ namespace Assets.Scripts.Controllers.Game
     public class GameBuildMapController : MonoBehaviour
     {
         public GameBuildController build;
+
         public RectTransform map;
+        public TMPro.TMP_Text text;
         public GameObject locObj;
 
         private int selected = 0;
         private List<GameBuildLocationController> objects = new List<GameBuildLocationController>();
+
+        private bool isDirty = false;
+        private Vector2 dest = new Vector2();
 
         public float coolTime = 0.2f;
         private float coolRemain = 0f;
@@ -23,12 +28,14 @@ namespace Assets.Scripts.Controllers.Game
             var locs = MapService.GetCurrent();
             for (int i = 0; i < locs.Count; i++)
             {
-                var inst = Instantiate(locObj, locs[i].coords, new Quaternion(), map.transform).GetComponent<GameBuildLocationController>();
+                var inst = Instantiate(locObj, map.transform).GetComponent<GameBuildLocationController>();
+                inst.GetComponent<RectTransform>().anchoredPosition = locs[i].coords;
                 inst.location = locs[i];
                 objects.Add(inst);
             }
 
-            map.anchoredPosition = -objects[0].location.coords;
+            dest = -objects[0].location.coords * map.localScale.x;
+            isDirty = true;
         }
 
         private void Update()
@@ -53,9 +60,23 @@ namespace Assets.Scripts.Controllers.Game
                 if (selected < 0) selected += objects.Count;
                 if (selected >= objects.Count) selected -= objects.Count;
 
-                map.anchoredPosition = -objects[selected].location.coords;
+                dest = -objects[selected].location.coords * map.localScale.x;
+                text.text = "";
+                isDirty = true;
 
                 coolRemain = coolTime;
+            }
+
+            if (isDirty)
+            {
+                Vector2 next = new Vector2();
+                isDirty = !CommonAnimation.DampedMove(map.anchoredPosition, dest, out next);
+                map.anchoredPosition = next;
+
+                if (!isDirty)
+                {
+                    text.text = objects[selected].location.name;
+                }
             }
         }
 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Osaka
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 5f9400cd1e95cfe44a392cc920b03f18, type: 2}
-  coords: {x: -98, y: 224}
+  coords: {x: -98, y: -224}
   population: 2700000
   unlocked: 1

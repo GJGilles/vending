@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Okayama
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: bd092203aa811094eaf8cfaefd12b399, type: 2}
-  coords: {x: -170, y: 224}
+  coords: {x: -170, y: -224}
   population: 700000
   unlocked: 1

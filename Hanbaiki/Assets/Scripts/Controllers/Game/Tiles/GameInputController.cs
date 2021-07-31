@@ -19,8 +19,8 @@ namespace Assets.Scripts.Controllers.Game
             if (!selecter.IsHolding())
             {
                 selecter.Take(item);
-                selecter.Deselect();
             }
+            selecter.Deselect();
         }
     }
 }

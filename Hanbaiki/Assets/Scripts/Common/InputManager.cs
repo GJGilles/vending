@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Assets.Scripts
 {
@@ -13,8 +13,24 @@ namespace Assets.Scripts
 
     public static class InputManager
     {
+        private static T ReadInput<T>(List<InputControl<T>> inputs) where T : struct
+        {
+            foreach (var input in inputs)
+            {
+                if (input)
+            }
+        }
+
         public static float GetHorzAxis()
         {
+            if (Gamepad.current != null)
+            {
+                if (Gamepad.current.leftStick.ReadValue().x != 0)
+            }
+            else
+            {
+                return Keyboard.current;
+            }
             return Mathf.Round(Input.GetAxisRaw("Horizontal"));
         }
 

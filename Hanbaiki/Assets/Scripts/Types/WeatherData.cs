@@ -6,8 +6,12 @@ namespace Assets.Scripts.Types
     [Serializable]
     public class WeatherData
     {
-        public float minTemp;
-        public float maxTemp;
-        public float percip;
+        public int minTemp;
+        public int maxTemp;
+
+        public int sunup;
+        public int sundown;
+
+        public float precip;
     }
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hiroshima
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: bd092203aa811094eaf8cfaefd12b399, type: 2}
-  coords: {x: -234, y: 238}
+  coords: {x: -234, y: -238}
   population: 1100000
   unlocked: 1

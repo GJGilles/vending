@@ -5,8 +5,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Service
 {
-    [Serializable]
     public static class PlayerService
     {
+        private static int money = 0;
+
+        public static void AddMoney(int amount)
+        {
+            money += amount;
+        }
     }
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Kyoto
   m_EditorClassIdentifier: 
   region: {fileID: 11400000, guid: 5f9400cd1e95cfe44a392cc920b03f18, type: 2}
-  coords: {x: -90, y: 204}
+  coords: {x: -90, y: -204}
   population: 1500000
   unlocked: 1

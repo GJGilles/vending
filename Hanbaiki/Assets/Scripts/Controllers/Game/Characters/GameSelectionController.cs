@@ -41,6 +41,11 @@ namespace Assets.Scripts.Controllers.Game
 
         public bool IsHolding() { return held != null; }
 
+        public ItemObject GetItem()
+        {
+            return held;
+        }
+
         public ItemObject Give()
         {
             var item = held;
