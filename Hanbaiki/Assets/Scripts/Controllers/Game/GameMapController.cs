@@ -103,7 +103,7 @@ namespace Assets.Scripts.Controllers.Game
             Vector2 pos = (Vector2)transform.position + map.origin;
 
             pos.x += (location % map.width);
-            pos.y += -(location / map.width);
+            pos.y += (location / map.width);
 
             return pos;
         }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Character
 {
-
     public class CharacterController : MonoBehaviour
     {
         public float speed = 0.5f;
@@ -12,6 +11,7 @@ namespace Assets.Scripts.Controllers.Character
 
         public CharacterAnimationController anim;
         public Rigidbody2D rb;
+        public Collider2D col;
 
         protected void SetMove(int dir)
         {
