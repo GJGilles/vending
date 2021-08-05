@@ -4,10 +4,11 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Objects;
+using Assets.Scripts.Controllers.Character;
 
 namespace Assets.Scripts.Controllers.Game
 {
-    public class GameStationController : GameTileController
+    public class GameStationController : SelectableController
     {
         public StationObject station;
         public int recipe = 0;
@@ -15,8 +16,8 @@ namespace Assets.Scripts.Controllers.Game
         public int size = 4;
         public GameObject menuObject;
 
-        private GameSelectionController selecter;
         private List<ItemObject> items = new List<ItemObject>();
+        private PlayerController player;
         private InventorySelectController menu;
 
         private float cooldown = 0f;
@@ -59,9 +60,9 @@ namespace Assets.Scripts.Controllers.Game
             }
         }
 
-        public override void Select(GameSelectionController selecter)
+        public override void Select(PlayerController p)
         {
-            this.selecter = selecter;
+            player = p;
             menu = Instantiate(menuObject, transform).GetComponent<InventorySelectController>();
             menu.selected.AddListener(Selected);
             menu.SetItems(items);
@@ -69,26 +70,15 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Selected(int idx)
         {
-            if (idx < 0)
+            if (!player.inventory.IsFull() && 0 <= idx && idx < items.Count)
             {
-                selecter.Deselect();
-            }
-            else if (!selecter.IsHolding() && idx < items.Count)
-            {
-                selecter.Take(items[idx]);
+                player.inventory.TryPush(items[idx]);
                 items.RemoveAt(idx);
-                selecter.Deselect();
             }
-            else if (selecter.IsHolding() && CanAdd())
+            else if (player.inventory.Peek() != null && CanAdd())
             {
-                Add(selecter.Give());
+                Add(player.inventory.TryPop());
             }
-        }
-
-        public override void Deselect()
-        {
-            Destroy(menu.gameObject);
-            menu = null;
         }
 
         public bool CanAdd()

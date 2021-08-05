@@ -16,7 +16,7 @@ namespace Assets.Scripts.Controllers.Game
 
         public SpriteRenderer background;
 
-        private List<GameTileController> tiles = new List<GameTileController>();
+        private List<SelectableController> tiles = new List<SelectableController>();
 
         private void Start()
         {
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Controllers.Game
         {
             var map = GameService.GetMap();
             background.sprite = map.background;
-            tiles = new List<GameTileController>(new GameTileController[map.tiles.Count]);
+            tiles = new List<SelectableController>(new SelectableController[map.tiles.Count]);
 
             for (int i = 0; i < map.tiles.Count; i++)
             {
@@ -46,18 +46,7 @@ namespace Assets.Scripts.Controllers.Game
                         SetTile(i, tile.loc);
                         break;
 
-                    case TileTypeEnum.BuildDesk:
-                        var build = Instantiate(buildDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameBuildDeskController>();
-                        tiles[i] = build;
-                        break;
-
-                    case TileTypeEnum.WorkerDesk:
-                        var work = Instantiate(workerDeskObj, GetPosition(i) - new Vector2(0, 0.5f), new Quaternion(), transform);
-                        //tiles[i] = work;
-                        break;
-
                     case TileTypeEnum.None:
-                    case TileTypeEnum.Slot:
                     default:
                         tiles.Add(null);
                         break;
@@ -65,40 +54,19 @@ namespace Assets.Scripts.Controllers.Game
             }
         }
 
-        public GameTileController GetTile(int location)
+        public SelectableController GetTile(int location)
         {
             return tiles[location];
         }
 
-        public bool IsOccupied(int location)
-        {
-            return tiles[location] != null;
-        }
-
-        public bool IsSettable(int location)
-        {
-            TileTypeEnum type = GameService.GetMap().tiles[location].type;
-            return 
-                type == TileTypeEnum.Slot ||
-                type == TileTypeEnum.Input ||
-                type == TileTypeEnum.Output ||
-                type == TileTypeEnum.Station;
-        }
-
         public void SetTile(int location)
         {
-            if (!IsSettable(location))
-                return;
-
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
         }
 
         public void SetTile(int location, StationObject station, int recipe)
         {
-            if (!IsSettable(location))
-                return;
-
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
@@ -111,9 +79,6 @@ namespace Assets.Scripts.Controllers.Game
 
         public void SetTile(int location, ItemObject item)
         {
-            if (!IsSettable(location))
-                return;
-
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
@@ -124,9 +89,6 @@ namespace Assets.Scripts.Controllers.Game
 
         public void SetTile(int location, LocationObject loc)
         {
-            if (!IsSettable(location))
-                return;
-
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
@@ -144,24 +106,6 @@ namespace Assets.Scripts.Controllers.Game
             pos.y += -(location / map.width);
 
             return pos;
-        }
-
-        public void Select(GameSelectionController selecter, int location)
-        {
-            if (location < 0 || location >= tiles.Count)
-                return;
-
-            if (tiles[location] is GameTileController)
-                tiles[location].Select(selecter);
-        }
-
-        public void Deselect(int location)
-        {
-            if (location < 0 || location >= tiles.Count)
-                return;
-
-            if (tiles[location] is GameTileController)
-                tiles[location].Deselect();
         }
     }
 }

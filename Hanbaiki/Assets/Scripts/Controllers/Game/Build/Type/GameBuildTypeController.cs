@@ -13,7 +13,7 @@ namespace Assets.Scripts.Controllers.Game
         public float coolTime = 0.2f;
         private float coolRemain = 0f;
 
-        private List<TileTypeEnum> choices = new List<TileTypeEnum>() { TileTypeEnum.Station, TileTypeEnum.Input, TileTypeEnum.Output, TileTypeEnum.Slot };
+        private List<TileTypeEnum> choices = new List<TileTypeEnum>() { TileTypeEnum.Station, TileTypeEnum.Input, TileTypeEnum.Output, TileTypeEnum.None };
         private int selection = 0;
 
         private void Start()
@@ -23,13 +23,13 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Update()
         {
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
+            if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
                 build.DoneType(choices[selection]);
                 return;
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+            if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
                 build.Prev();
                 return;

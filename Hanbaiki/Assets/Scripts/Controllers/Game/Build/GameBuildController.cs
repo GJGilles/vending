@@ -19,7 +19,7 @@ namespace Assets.Scripts.Controllers.Game
 
         public GameMapController map;
 
-        private TileTypeEnum type = TileTypeEnum.Slot;
+        private TileTypeEnum type = TileTypeEnum.None;
         private StationObject station;
         private int tile = 0;
         private ItemObject item;
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Controllers.Game
 
         private void OnEnable()
         {
-            type = TileTypeEnum.Slot;
+            type = TileTypeEnum.None;
             station = null;
             tile = -1;
             item = null;
@@ -54,7 +54,7 @@ namespace Assets.Scripts.Controllers.Game
             Current = tyCtrl.gameObject;
             Current.SetActive(true);
 
-            type = TileTypeEnum.Slot;
+            type = TileTypeEnum.None;
 
             Prev = Cancel;
         }
@@ -124,7 +124,7 @@ namespace Assets.Scripts.Controllers.Game
             {
                 StartMap();
             }
-            else if (type == TileTypeEnum.Slot)
+            else if (type == TileTypeEnum.None)
             {
                 map.SetTile(tile);
                 StartTile();

@@ -27,13 +27,13 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Update()
         {
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
+            if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
                 build.DoneItem(ItemService.GetCurrent()[list.GetSelected()]);
                 return;
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+            if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
                 build.Prev();
                 return;

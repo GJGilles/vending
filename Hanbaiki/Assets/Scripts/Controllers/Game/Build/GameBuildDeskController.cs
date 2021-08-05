@@ -1,14 +1,17 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Controllers.Character;
+using Assets.Scripts.Types;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
-    public class GameBuildDeskController : GameTileController
+    public class GameBuildDeskController : SelectableController
     {
-        public override void Select(GameSelectionController selecter)
+        public GameBuildController build;
+
+        public override void Select(PlayerController player)
         {
-            selecter.build.gameObject.SetActive(true);
-            selecter.build.Close = selecter.Deselect;
+            build.gameObject.SetActive(true);
         }
     }
 }

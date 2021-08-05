@@ -7,12 +7,9 @@ namespace Assets.Scripts.Types
     public enum TileTypeEnum
     {
         None,
-        Slot,
         Station,
         Input,
-        Output,
-        BuildDesk,
-        WorkerDesk
+        Output
     }
 
     [Serializable]

@@ -8,7 +8,6 @@ namespace Assets.Scripts.Controllers.Game
     {
         public CameraFollow cam;
         public GameMapController map;
-        public GameSelectionController selecter;
         public GameBuildController build;
 
         public SpriteRenderer target;
@@ -38,13 +37,13 @@ namespace Assets.Scripts.Controllers.Game
             int width = GameService.Width();
             int size = width * GameService.Height();
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1) && map.IsSettable(location))
+            if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
                 build.DoneTile(location);
                 return;
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+            if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
                 build.Prev();
                 return;

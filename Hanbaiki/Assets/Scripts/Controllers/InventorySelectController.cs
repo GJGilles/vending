@@ -45,10 +45,10 @@ namespace Assets.Scripts.Controllers
 
         private void Update()
         {
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire1))
+            if (InputManager.GetButtonTrigger(ButtonEnum.A))
                 selected.Invoke(selection); 
             
-            if (InputManager.GetButtonTrigger(ButtonEnum.Fire2))
+            if (InputManager.GetButtonTrigger(ButtonEnum.B))
                 selected.Invoke(-1);
 
             Vector2 input = InputManager.GetMovement();

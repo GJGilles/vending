@@ -1,10 +1,12 @@
-﻿using Assets.Scripts.Objects;
+﻿using Assets.Scripts.Controllers.Character;
+using Assets.Scripts.Objects;
+using Assets.Scripts.Types;
 using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
-    public class GameInputController : GameTileController
+    public class GameInputController : SelectableController
     {
         public SpriteRenderer spr;
         public ItemObject item;
@@ -14,13 +16,12 @@ namespace Assets.Scripts.Controllers.Game
             spr.sprite = item.spr;
         }
 
-        public override void Select(GameSelectionController selecter)
+        public override void Select(PlayerController player)
         {
-            if (!selecter.IsHolding())
+            if (!player.inventory.IsFull())
             {
-                selecter.Take(item);
+                player.inventory.TryPush(item);
             }
-            selecter.Deselect();
         }
     }
 }
