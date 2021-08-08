@@ -18,7 +18,6 @@ namespace Assets.Scripts.Types
         public TileTypeEnum type = TileTypeEnum.None;
 
         public StationObject station;
-        public int recipe;
 
         public ItemObject item;
 

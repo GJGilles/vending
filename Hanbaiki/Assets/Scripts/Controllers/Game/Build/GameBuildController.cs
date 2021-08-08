@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Objects;
+﻿using Assets.Scripts.Controllers.Character;
+using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System;
@@ -13,10 +14,10 @@ namespace Assets.Scripts.Controllers.Game
         public GameBuildTypeController tyCtrl;
         public GameBuildStationListController sList;
         public GameBuildTileController tCtrl;
-        public GameBuildRecipeListController rList;
         public GameBuildItemListController iList;
         public GameBuildMapController mCtrl;
 
+        public PlayerController player;
         public GameMapController map;
 
         private TileTypeEnum type = TileTypeEnum.None;
@@ -24,11 +25,9 @@ namespace Assets.Scripts.Controllers.Game
         private int tile = 0;
         private ItemObject item;
         private LocationObject location;
-        private int recipe = 0;
 
         private GameObject Current;
         public Action Prev;
-        public Action Close;
 
         private void OnEnable()
         {
@@ -37,15 +36,20 @@ namespace Assets.Scripts.Controllers.Game
             tile = -1;
             item = null;
             location = null;
-            recipe = -1;
 
             StartType();
+
+            player.gameObject.SetActive(false);
+        }
+
+        private void OnDisable()
+        {
+            player.gameObject.SetActive(true);
         }
 
         private void Cancel()
         {
             gameObject.SetActive(false);
-            Close();
         }
 
         private void StartType()
@@ -131,7 +135,8 @@ namespace Assets.Scripts.Controllers.Game
             }
             else
             {
-                StartRecipe();
+                map.SetTile(tile, station);
+                StartTile();
             }
         }
 
@@ -173,27 +178,6 @@ namespace Assets.Scripts.Controllers.Game
             map.SetTile(tile, location);
 
             StartTile();
-        }
-
-        private void StartRecipe()
-        {
-            if (Current) Current.SetActive(false);
-            Current = rList.gameObject;
-            Current.SetActive(true);
-
-            rList.SetRecipes(station.recipes.Where(r => r.unlocked).ToList());
-            recipe = -1;
-
-            Prev = StartTile;
-        }
-
-        public void DoneRecipe(int r)
-        {
-            recipe = r;
-
-            map.SetTile(tile, station, recipe);
-
-            StartStation();
         }
     }
 }

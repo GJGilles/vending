@@ -56,7 +56,7 @@ namespace Assets.Scripts.Controllers.Game
             }
             else if (input.y != 0)
             {
-                next = location - Mathf.RoundToInt(input.y) * width;
+                next = location + Mathf.RoundToInt(input.y) * width;
             }
 
             coolRemain -= Time.deltaTime;

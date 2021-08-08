@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Character
 {
-    public class CharacterController : MonoBehaviour
+    public class CharacterMovementController : MonoBehaviour
     {
         public float speed = 0.5f;
         public float jump = 5f;

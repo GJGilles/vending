@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7022250517949156424}
   - component: {fileID: 8690153951274608957}
   - component: {fileID: 2640812955167906172}
+  - component: {fileID: 2929790279536487984}
   m_Layer: 0
   m_Name: StationObject
   m_TagString: Untagged
@@ -44,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd82134114153e4e8c6ce706a05dd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  station: 0
-  itemSprites: {fileID: 0}
+  station: {fileID: 0}
+  size: 4
   menuObject: {fileID: 8133251582122647342, guid: f5958402819a99b4f9215b0a918b5bc1, type: 3}
 --- !u!212 &2640812955167906172
 SpriteRenderer:
@@ -98,3 +99,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2929790279536487984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448360102519105463}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

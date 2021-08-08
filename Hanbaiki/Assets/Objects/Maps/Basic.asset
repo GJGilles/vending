@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd41b8fd6a346944a7fe7b30ad7269e, type: 3}
   m_Name: Basic
   m_EditorClassIdentifier: 
-  origin: {x: -4.5, y: -5}
+  origin: {x: -5, y: -0.5}
   background: {fileID: 21300000, guid: c7c8e430479b5904987902e898bafe72, type: 3}
-  height: 9
-  width: 10
+  height: 4
+  width: 11
   tiles:
   - type: 0
     station: {fileID: 0}
@@ -62,52 +62,12 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 5
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
   - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
@@ -122,42 +82,12 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
@@ -172,42 +102,12 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
@@ -222,42 +122,12 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
@@ -272,42 +142,12 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
@@ -322,42 +162,7 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}
@@ -372,42 +177,7 @@ MonoBehaviour:
     recipe: 0
     item: {fileID: 0}
     loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
-    station: {fileID: 0}
-    recipe: 0
-    item: {fileID: 0}
-    loc: {fileID: 0}
-  - type: 1
+  - type: 0
     station: {fileID: 0}
     recipe: 0
     item: {fileID: 0}

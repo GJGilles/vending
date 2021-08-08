@@ -1,57 +1,60 @@
 ﻿using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Character
 {
-    public class PlayerController : CharacterController
+    public class PlayerController : CharacterMovementController
     {
         public CharacterInventoryController inventory;
+        public float dropTime = 1f;
 
-        public LayerMask dropLayer;
-        private Collider2D dropCol;
-
+        private DropPlatformController platform;
         private SelectableController selection;
 
         protected void Update()
         {
             Vector2 input = InputManager.GetMovement();
             SetMove(Mathf.RoundToInt(input.x));
-            if (dropCol != null && input.y < 0)
+            if (platform != null && input.y < 0)
             {
-                //Physics2D.SetLayerCollisionMask(col, dropCol);
+                platform.DropDown(col);
             }
 
             if (selection != null && InputManager.GetButtonTrigger(ButtonEnum.A))
             {
                 selection.Select(this);
             }
+
+            if (InputManager.GetButtonTrigger(ButtonEnum.B))
+            {
+                SetJump();
+            }
         }
 
-        protected void OnCollisionEnter2D(Collision2D collision)
+        protected void OnTriggerEnter2D(Collider2D collision)
         {
-            SelectableController s;
-            if (collision.gameObject.TryGetComponent(out s))
+            if (collision.gameObject.TryGetComponent(out SelectableController s))
             {
                 selection = s;
             }
-            else if (dropLayer == (dropLayer | (1 << collision.gameObject.layer)))
+            if (collision.gameObject.TryGetComponent(out DropPlatformController p))
             {
-                dropCol = collision.otherCollider;
+                platform = p;
             }
         }
 
-        protected void OnCollisionExit2D(Collision2D collision)
+        protected void OnTriggerExit2D(Collider2D collision)
         {
-            SelectableController s;
-            if (collision.gameObject.TryGetComponent(out s) && selection == s)
+            if (collision.gameObject.TryGetComponent(out SelectableController s) && selection == s)
             {
                 selection = null;
             }
-            else if (dropCol == collision.otherCollider)
+            if (collision.gameObject.TryGetComponent(out DropPlatformController p) && platform == p)
             {
-                dropCol = null;
+                platform = null;
             }
         }
     }

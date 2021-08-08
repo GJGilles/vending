@@ -11,51 +11,53 @@ namespace Assets.Scripts.Controllers.Game
     public class GameStationController : SelectableController
     {
         public StationObject station;
-        public int recipe = 0;
 
         public int size = 4;
         public GameObject menuObject;
 
+        private RecipeObject recipe;
         private List<ItemObject> items = new List<ItemObject>();
         private PlayerController player;
         private InventorySelectController menu;
 
         private float cooldown = 0f;
-        private bool input = false;
 
         private void Update()
         {
-            RecipeObject current = station.recipes[recipe];
-
             cooldown -= Time.deltaTime;
-            if (input && cooldown <= 0)
+            if (recipe != null && cooldown <= 0)
             {
-                if (items.Count + current.output.Count <= size)
+                if (items.Count + recipe.output.Count <= size)
                 {
-                    foreach (var i in current.output)
+                    foreach (var i in recipe.output)
                         items.Add(i);
 
                     if (menu != null)
                         menu.SetItems(items);
 
-                    input = false;
+                    recipe = null;
                 }
             }
             else if (cooldown <= 0)
             {
-                input = true;
-                foreach (var i in current.input)
+                foreach (var r in station.recipes)
                 {
-                    input = input && items.Contains(i);
-                }
-
-                if (input)
-                {
-                    foreach (var i in current.input)
+                    bool input = true;
+                    foreach (var i in r.input)
                     {
-                        items.Remove(items.Where(it => it == i).First());
+                        input = input && items.Contains(i);
                     }
-                    cooldown = current.time;
+
+                    if (input)
+                    {
+                        foreach (var i in r.input)
+                        {
+                            items.Remove(items.Where(it => it == i).First());
+                        }
+                        cooldown = r.time;
+                        recipe = r;
+                        break;
+                    }
                 }
             }
         }

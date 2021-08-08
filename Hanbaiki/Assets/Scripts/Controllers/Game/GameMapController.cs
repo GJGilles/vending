@@ -11,8 +11,6 @@ namespace Assets.Scripts.Controllers.Game
         public GameObject stationObj;
         public GameObject inputObj;
         public GameObject outputObj;
-        public GameObject buildDeskObj;
-        public GameObject workerDeskObj;
 
         public SpriteRenderer background;
 
@@ -35,7 +33,7 @@ namespace Assets.Scripts.Controllers.Game
                 switch (tile.type)
                 {
                     case TileTypeEnum.Station:
-                        SetTile(i, tile.station, tile.recipe);
+                        SetTile(i, tile.station);
                         break;
 
                     case TileTypeEnum.Input:
@@ -65,14 +63,13 @@ namespace Assets.Scripts.Controllers.Game
                 Destroy(tiles[location].gameObject);
         }
 
-        public void SetTile(int location, StationObject station, int recipe)
+        public void SetTile(int location, StationObject station)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
             var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<GameStationController>();
             inst.station = station;
-            inst.recipe = recipe;
             inst.GetComponent<SpriteRenderer>().sprite = inst.station.spr;
             tiles[location] = inst;
         }
