@@ -68,10 +68,18 @@ namespace Assets.Scripts.Controllers.Game
             menu = Instantiate(menuObject, transform).GetComponent<InventorySelectController>();
             menu.selected.AddListener(Selected);
             menu.SetItems(items);
+
+            player.isLocked = true;
         }
 
         private void Selected(int idx)
         {
+            if (idx == -1)
+            {
+                Destroy(menu.gameObject);
+                player.isLocked = false;
+            }
+
             if (!player.inventory.IsFull() && 0 <= idx && idx < items.Count)
             {
                 player.inventory.TryPush(items[idx]);

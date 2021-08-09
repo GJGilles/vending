@@ -10,12 +10,15 @@ namespace Assets.Scripts.Controllers.Character
     {
         public CharacterInventoryController inventory;
         public float dropTime = 1f;
+        public bool isLocked = false;
 
         private DropPlatformController platform;
         private SelectableController selection;
 
         protected void Update()
         {
+            if (isLocked) return;
+
             Vector2 input = InputManager.GetMovement();
             SetMove(Mathf.RoundToInt(input.x));
             if (platform != null && input.y < 0)

@@ -39,12 +39,12 @@ namespace Assets.Scripts.Controllers.Game
 
             StartType();
 
-            player.gameObject.SetActive(false);
+            player.isLocked = true;
         }
 
         private void OnDisable()
         {
-            player.gameObject.SetActive(true);
+            player.isLocked = false;
         }
 
         private void Cancel()

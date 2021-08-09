@@ -56,12 +56,13 @@ namespace Assets.Scripts
                 case ButtonEnum.A:
                     return new List<ButtonControl>() { 
                         Gamepad.current?.aButton,
-                        Keyboard.current?.enterKey
+                        Keyboard.current?.zKey
                     };
                 case ButtonEnum.B:
                     return new List<ButtonControl>() {
                         Gamepad.current?.bButton,
-                        Keyboard.current?.backspaceKey
+                        Keyboard.current?.xKey,
+                        Keyboard.current?.spaceKey
                     };
                 case ButtonEnum.X:
                     return new List<ButtonControl>() {
@@ -86,12 +87,12 @@ namespace Assets.Scripts
         {
             float left = ReadInput(new List<ButtonControl>() {
                 Gamepad.current?.leftStick?.left,
-                Keyboard.current?.aKey
+                Keyboard.current?.leftArrowKey
             });
 
             float right = ReadInput(new List<ButtonControl>() { 
                 Gamepad.current?.leftStick?.right,
-                Keyboard.current?.dKey
+                Keyboard.current?.rightArrowKey
             });
 
             return right - left;
@@ -101,13 +102,13 @@ namespace Assets.Scripts
         {
             float up = ReadInput(new List<ButtonControl>() {
                 Gamepad.current?.leftStick?.up,
-                Keyboard.current?.wKey
+                Keyboard.current?.upArrowKey
             });
 
             float down = ReadInput(new List<ButtonControl>()
             {
                 Gamepad.current?.leftStick?.down,
-                Keyboard.current?.sKey
+                Keyboard.current?.downArrowKey
             });
 
             return up - down;
