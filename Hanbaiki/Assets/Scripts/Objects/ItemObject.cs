@@ -11,6 +11,7 @@ namespace Assets.Scripts.Objects
 		public string title;
 		public Sprite spr;
 		public int cost;
+		public int stack = 10;
 		public ItemColorEnum color;
 		public ItemTempEnum temp;
 		public ItemFlavorEnum flavor;
