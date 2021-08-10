@@ -15,4 +15,7 @@ MonoBehaviour:
   title: Tea Steeper
   spr: {fileID: 21300000, guid: 8c9c17038984ffe4d9fbec9547b9af8c, type: 3}
   recipes:
+  - {fileID: 11400000, guid: 4430c6b9420d8ad47b5c7798c4fb5cb2, type: 2}
   - {fileID: 11400000, guid: 8f2f65f1c3b78dc4cb495ef62350ab40, type: 2}
+  - {fileID: 11400000, guid: 9a762501c6914c24783d31c44f26d8a5, type: 2}
+  unlocked: 1

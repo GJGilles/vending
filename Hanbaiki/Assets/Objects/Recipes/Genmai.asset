@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f416a34d9706d242a225ba94fdf4347, type: 3}
-  m_Name: GreenTea
+  m_Name: Genmai
   m_EditorClassIdentifier: 
   input:
-  - {fileID: 11400000, guid: da67435d47ffe104fb608a7c5a287ba7, type: 2}
-  - {fileID: 11400000, guid: e19506ff66acd1f4ea30a6b13271c0e5, type: 2}
-  output: {fileID: 11400000, guid: 6e54f5620c02b8b40802667348041db9, type: 2}
-  time: 2
+  - {fileID: 11400000, guid: a82f08a1ea672b7429a594c9d4ee93cb, type: 2}
+  output: {fileID: 11400000, guid: 6a951d8247c293c47930914c0ed5417d, type: 2}
+  time: 0
   unlocked: 1

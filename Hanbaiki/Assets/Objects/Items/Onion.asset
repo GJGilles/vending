@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2469196a291e23647a9ac33839eba8f1, type: 3}
-  m_Name: BlackTeaLeaves
+  m_Name: Onion
   m_EditorClassIdentifier: 
-  title: Black Tea Leaves
-  spr: {fileID: 21300000, guid: 7f365b37b840fd247883ab07cb145792, type: 3}
+  title: Onion
+  spr: {fileID: 21300000, guid: 3200248c5594c6b4bad05e7f1e29cf89, type: 3}
   cost: 0
   stack: 10
-  color: 2
-  temp: 2
-  flavor: 3
+  color: 0
+  temp: 0
+  flavor: 0
   prep: 0
   description: 
-  input: 0
+  input: 1
   unlocked: 1
