@@ -8,7 +8,7 @@ namespace Assets.Scripts.Objects
     public class RecipeObject : ScriptableObject
     {
         public List<ItemObject> input;
-        public List<ItemObject> output;
+        public ItemObject output;
         public float time;
         public bool unlocked = true;
     }

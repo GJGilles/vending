@@ -1,22 +1,30 @@
 ﻿using Assets.Scripts.Controllers.Character;
+using Assets.Scripts.Inventory;
 using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
-using System.Collections;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
     public class GameOutputController : SelectableController
     {
-        public LocationObject location;
+        public SplitInventoryController menuObject;
 
-        public override void Select(PlayerController player)
+        [NonSerialized] public LocationObject location;
+
+        private ItemInventory inventory = new ItemInventory(1);
+
+        public override void Select(PlayerController p)
         {
-            if (player.inventory.Peek() != null && VendingService.CanAdd(location, player.inventory.Peek()))
-            {
-                VendingService.Add(location, player.inventory.TryPop());
-            }
+            var inst = Instantiate(menuObject);
+            inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
+            inst.widths = new List<int>() { 4, 1 };
+            inst.OnClose.AddListener(() => p.isLocked = true);
+
+            p.isLocked = true;
         }
     }
 }

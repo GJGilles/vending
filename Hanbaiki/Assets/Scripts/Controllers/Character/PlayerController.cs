@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Service;
+﻿using Assets.Scripts.Inventory;
+using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System.Collections;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace Assets.Scripts.Controllers.Character
 {
     public class PlayerController : CharacterMovementController
     {
-        public CharacterInventoryController inventory;
+        public ItemInventory inventory = new ItemInventory(8);
         public float dropTime = 1f;
         public bool isLocked = false;
 

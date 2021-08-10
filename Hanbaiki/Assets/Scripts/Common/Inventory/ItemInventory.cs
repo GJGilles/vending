@@ -1,9 +1,11 @@
 ﻿using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Inventory
 {
@@ -22,6 +24,8 @@ namespace Assets.Scripts.Inventory
         private List<ItemStack> items = new List<ItemStack>();
         private int selected = 0;
 
+        public UnityEvent<int> OnChange = new UnityEvent<int>();
+
         public ItemInventory(int size, bool inf = false)
         {
             capacity = size;
@@ -32,6 +36,11 @@ namespace Assets.Scripts.Inventory
         public int GetSize() { return capacity; }
 
         public int GetLocation() { return selected; }
+
+        public int Find(ItemObject item)
+        {
+            return items.FindIndex(i => i != null && i.item == item);
+        }
 
         public ItemStack Peek(int? idx = null)
         {
@@ -82,9 +91,10 @@ namespace Assets.Scripts.Inventory
                 items[i].number -= count;
                 if (items[i].number <= 0)
                 {
-                    items.RemoveAt(i);
+                    items[i] = null;
                 }
 
+                OnChange.Invoke(i);
                 return output;
             }
         }
@@ -104,6 +114,7 @@ namespace Assets.Scripts.Inventory
                 {
                     var ret = items[i];
                     items[i] = stack;
+                    OnChange.Invoke(i);
                     return ret;
                 }
                 else
@@ -129,6 +140,7 @@ namespace Assets.Scripts.Inventory
                 int next = infinite ? items[i].number + diff : Mathf.Min(items[i].number + diff, stack.item.stack);
                 stack.number -= next - items[i].number;
                 items[i].number = next;
+                OnChange.Invoke(i);
 
                 if (stack.number <= 0)
                 {

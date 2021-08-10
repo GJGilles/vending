@@ -1,7 +1,9 @@
 ﻿using Assets.Scripts.Controllers.Character;
+using Assets.Scripts.Inventory;
 using Assets.Scripts.Objects;
 using Assets.Scripts.Types;
-using System.Collections;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
@@ -9,19 +11,28 @@ namespace Assets.Scripts.Controllers.Game
     public class GameInputController : SelectableController
     {
         public SpriteRenderer spr;
-        public ItemObject item;
+        public SplitInventoryController menuObject;
+
+        [NonSerialized] public ItemObject item;
+
+        private ItemInventory inventory = new ItemInventory(1);
 
         private void Start()
         {
             spr.sprite = item.spr;
+
+            // TODO: Remove test code
+            inventory.Add(StackMoveEnum.All, new ItemStack(item, 10));
         }
 
-        public override void Select(PlayerController player)
+        public override void Select(PlayerController p)
         {
-            if (!player.inventory.IsFull())
-            {
-                player.inventory.TryPush(item);
-            }
+            var inst = Instantiate(menuObject);
+            inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
+            inst.widths = new List<int>() { 4, 1 };
+            inst.OnClose.AddListener(() => p.isLocked = true);
+
+            p.isLocked = true;
         }
     }
 }

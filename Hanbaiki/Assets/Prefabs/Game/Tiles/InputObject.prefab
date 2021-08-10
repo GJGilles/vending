@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spr: {fileID: 4117882156423489572}
   item: {fileID: 0}
+  menuObject: {fileID: 1039328924148700146, guid: 5a4d8ab0cc4debd45be9a2302ee23de4, type: 3}
 --- !u!212 &4179740914949831226
 SpriteRenderer:
   m_ObjectHideFlags: 0

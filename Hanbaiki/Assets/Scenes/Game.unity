@@ -246,7 +246,6 @@ GameObject:
   - component: {fileID: 84310084}
   - component: {fileID: 84310086}
   - component: {fileID: 84310085}
-  - component: {fileID: 84310087}
   - component: {fileID: 84310088}
   - component: {fileID: 84310089}
   m_Layer: 7
@@ -288,8 +287,8 @@ MonoBehaviour:
   anim: {fileID: 84310086}
   rb: {fileID: 84310089}
   col: {fileID: 84310088}
-  inventory: {fileID: 84310087}
   dropTime: 1
+  isLocked: 0
 --- !u!212 &84310084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -374,19 +373,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spr: {fileID: 84310084}
   anim: {fileID: 84310085}
---- !u!114 &84310087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84310081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d62a7e9c0aefc3047979f57da744fd4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capacity: 6
 --- !u!61 &84310088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -808,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 84310082}
   damping: 3
+  ppu: 32
 --- !u!1 &526475971
 GameObject:
   m_ObjectHideFlags: 0

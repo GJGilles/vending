@@ -1,46 +1,55 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Inventory
 {
     public class SplitInventoryController : MonoBehaviour
     {
-        public int padding = 16;
-        public List<int> widths = new List<int>();
-        public List<ItemInventory> inventories = new List<ItemInventory>();
+        [NonSerialized] public List<int> widths = new List<int>();
+        [NonSerialized] public List<ItemInventory> inventories = new List<ItemInventory>();
+        [NonSerialized] public UnityEvent OnClose = new UnityEvent();
 
+        public Canvas canvas;
         public RectTransform background;
-        public ItemSlotController held;
         public RectTransform slotObj;
 
+        public int padding = 16;
         public float coolTime = 0.2f;
         private float coolRemain = 0f;
 
+        private ItemSlotController held;
         private List<RectTransform> zones = new List<RectTransform>();
         private List<List<ItemSlotController>> slots = new List<List<ItemSlotController>>();
+        private Tuple<int, int> last = new Tuple<int, int>(0, 0);
         private int current = 0;
 
         private void Start()
         {
+            canvas.worldCamera = Camera.current;
+
             float totalWidth = 0f;
             float totalHeight = 0f;
 
             for (int j = 0; j < inventories.Count; j++)
             {
                 RectTransform zone = new GameObject().AddComponent<RectTransform>();
+                zone.SetParent(background.transform);
+                zone.localScale = new Vector3(1f, 1f, 1f);
                 slots.Add(new List<ItemSlotController>());
 
                 int height = Mathf.CeilToInt(inventories[j].GetSize() / (float)widths[j]);
                 zone.sizeDelta = new Vector2(
-                    padding * (widths[j] + 1) + slotObj.rect.width * widths[j],
-                    padding * (height + 1) + slotObj.rect.height * height
+                    padding * (widths[j] + 1) + slotObj.sizeDelta.x * widths[j],
+                    padding * (height + 1) + slotObj.sizeDelta.y * height
                 );
 
                 for (int i = 0; i < inventories[j].GetSize(); i++)
                 {
                     Vector2 pos = new Vector2(
-                        (slotObj.rect.width / 2) + padding - (zone.rect.width / 2) + i * (padding + slotObj.rect.width),
-                        (slotObj.rect.height / 2) + padding - (zone.rect.height / 2) + (i / widths[j]) * (padding + slotObj.rect.height)
+                        (slotObj.sizeDelta.x / 2) + padding - (zone.sizeDelta.x / 2) + (i - widths[j] * (i / widths[j])) * (padding + slotObj.sizeDelta.x),
+                        (slotObj.sizeDelta.y / 2) + padding - (zone.sizeDelta.y / 2) + (i / widths[j]) * (padding + slotObj.sizeDelta.y)
                     );
 
                     RectTransform inst = Instantiate(slotObj, zone);
@@ -52,16 +61,18 @@ namespace Assets.Scripts.Inventory
                 }
 
                 zones.Add(zone);
-                totalWidth += zone.rect.width;
-                totalHeight = Mathf.Max(totalHeight, zone.rect.height);
+                totalWidth += zone.sizeDelta.x;
+                totalHeight = Mathf.Max(totalHeight, zone.sizeDelta.y);
+
+                inventories[j].OnChange.AddListener((int i) => ChangeDisplay(j, i));
             }
 
             float xPos = -totalWidth / 2;
             background.sizeDelta = new Vector2(totalWidth, totalHeight);
             foreach (var z in zones)
             {
-                z.anchoredPosition = new Vector2(xPos + z.rect.width / 2, 0);
-                xPos += z.rect.width;
+                z.anchoredPosition = new Vector2(xPos + z.sizeDelta.x / 2, 0);
+                xPos += z.sizeDelta.x;
             }
 
             SetSelect(current, inventories[current].GetLocation());
@@ -86,7 +97,12 @@ namespace Assets.Scripts.Inventory
 
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
-                //Exit
+                if (held != null)
+                {
+                    inventories[last.Item1].Add(StackMoveEnum.All, held.Get(), last.Item2);
+                }
+                Destroy(gameObject);
+                OnClose.Invoke();
             }
 
             Vector2 input = InputManager.GetMovement();
@@ -112,8 +128,8 @@ namespace Assets.Scripts.Inventory
             else if (input.y != 0)
             {
                 next += Mathf.FloorToInt(input.y) * widths[current];
-                if (next >= slots.Count) next -= slots.Count;
-                if (next < 0) next += slots.Count;
+                if (next >= slots[current].Count) next -= slots[current].Count;
+                if (next < 0) next += slots[current].Count;
             }
 
             coolRemain -= Time.deltaTime;
@@ -124,24 +140,55 @@ namespace Assets.Scripts.Inventory
             }
         }
 
+        public void ChangeDisplay(int inv, int idx)
+        {
+            slots[inv][idx].Set(inventories[inv].Peek(idx));
+        }
+
         private void Interact(StackMoveEnum move)
         {
-            if (held.Get() == null)
+            if (held == null)
             {
+                last = new Tuple<int, int>(current, inventories[current].GetLocation());
+                held = Instantiate(slotObj, background).GetComponent<ItemSlotController>();
                 held.Set(inventories[current].Remove(move));
+                held.GetComponent<RectTransform>().anchoredPosition = GetPosition(current, inventories[current].GetLocation());
             }
             else
             {
-                held.Set(inventories[current].Add(move, held.Get()));
+                var ret = inventories[current].Add(move, held.Get());
+                if (ret == null)
+                {
+                    Destroy(held.gameObject);
+                }
+                else
+                {
+                    held.Set(ret);
+                }
             }
         }
 
         private void SetSelect(int inv, int location)
         {
-            slots[current][inventories[current].GetLocation()].transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
-            slots[inv][location].transform.parent.GetComponent<SpriteRenderer>().color = Color.yellow;
+            slots[current][inventories[current].GetLocation()].Highlight(false);
+            slots[inv][location].Highlight(true);
             inventories[inv].SetSelect(location);
             current = inv;
+
+            if (held != null)
+            {
+                held.GetComponent<RectTransform>().anchoredPosition = GetPosition(current, inventories[current].GetLocation());
+            }
+        }
+
+        private Vector2 GetPosition(int idx, int location)
+        {
+            Vector2 pos = zones[idx].anchorMin + new Vector2(slotObj.rect.width / 2, slotObj.rect.height / 2);
+
+            pos.x += (location % widths[idx]);
+            pos.y += (location / widths[idx]);
+
+            return pos;
         }
     }
 }
