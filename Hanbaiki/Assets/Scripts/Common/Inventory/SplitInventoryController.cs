@@ -22,6 +22,7 @@ namespace Assets.Scripts.Inventory
         private ItemSlotController held;
         private List<RectTransform> zones = new List<RectTransform>();
         private List<List<ItemSlotController>> slots = new List<List<ItemSlotController>>();
+        private List<UnityAction<int>> listeners = new List<UnityAction<int>>();
         private Tuple<int, int> last = new Tuple<int, int>(0, 0);
         private int current = 0;
 
@@ -64,7 +65,12 @@ namespace Assets.Scripts.Inventory
                 totalWidth += zone.sizeDelta.x;
                 totalHeight = Mathf.Max(totalHeight, zone.sizeDelta.y);
 
-                inventories[j].OnChange.AddListener((int i) => ChangeDisplay(j, i));
+                {
+                    int inv = j;
+                    UnityAction<int> change = (int i) => ChangeDisplay(inv, i);
+                    inventories[j].OnChange.AddListener(change);
+                    listeners.Add(change);
+                }
             }
 
             float xPos = -totalWidth / 2;
@@ -97,12 +103,7 @@ namespace Assets.Scripts.Inventory
 
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
-                if (held != null)
-                {
-                    inventories[last.Item1].Add(StackMoveEnum.All, held.Get(), last.Item2);
-                }
-                Destroy(gameObject);
-                OnClose.Invoke();
+                Close();
             }
 
             Vector2 input = InputManager.GetMovement();
@@ -140,6 +141,23 @@ namespace Assets.Scripts.Inventory
             }
         }
 
+        private void Close()
+        {
+            OnClose.Invoke();
+            if (held != null)
+            {
+                inventories[last.Item1].Add(StackMoveEnum.All, held.Get(), last.Item2);
+                Destroy(held.gameObject);
+            }
+
+            for (int i = 0; i < inventories.Count; i++)
+            {
+                inventories[i].OnChange.RemoveListener(listeners[i]);
+            }
+
+            Destroy(gameObject);
+        }
+
         public void ChangeDisplay(int inv, int idx)
         {
             slots[inv][idx].Set(inventories[inv].Peek(idx));
@@ -150,9 +168,14 @@ namespace Assets.Scripts.Inventory
             if (held == null)
             {
                 last = new Tuple<int, int>(current, inventories[current].GetLocation());
-                held = Instantiate(slotObj, background).GetComponent<ItemSlotController>();
-                held.Set(inventories[current].Remove(move));
-                held.GetComponent<RectTransform>().anchoredPosition = GetPosition(current, inventories[current].GetLocation());
+                var content = inventories[current].Remove(move);
+
+                if (content != null)
+                {
+                    held = Instantiate(slotObj, background).GetComponent<ItemSlotController>();
+                    held.Set(content);
+                    held.GetComponent<RectTransform>().anchoredPosition = GetPosition(current, inventories[current].GetLocation());
+                }
             }
             else
             {
@@ -183,10 +206,15 @@ namespace Assets.Scripts.Inventory
 
         private Vector2 GetPosition(int idx, int location)
         {
-            Vector2 pos = zones[idx].anchorMin + new Vector2(slotObj.rect.width / 2, slotObj.rect.height / 2);
+            Vector2 pos = zones[idx].anchoredPosition + new Vector2(slotObj.sizeDelta.x, slotObj.sizeDelta.y);
+            pos.x -= zones[idx].sizeDelta.x / 2;
+            pos.y -= zones[idx].sizeDelta.y / 2;
 
-            pos.x += (location % widths[idx]);
-            pos.y += (location / widths[idx]);
+            int x = (location % widths[idx]);
+            int y = (location / widths[idx]);
+
+            pos.x += x * slotObj.sizeDelta.x + (x + 1) * padding;
+            pos.y += y * slotObj.sizeDelta.y + (y + 1) * padding;
 
             return pos;
         }

@@ -85,11 +85,12 @@ namespace Assets.Scripts.Inventory
                         count = 1;
                         break;
                 }
+                count = Mathf.Min(count, items[i].number);
 
-                ItemStack output = new ItemStack(items[i].item, count);
+                ItemStack output = count > 0 ? new ItemStack(items[i].item, count) : null;
 
                 items[i].number -= count;
-                if (items[i].number <= 0)
+                if (items[i].number <= 0 && !items[i].permanent)
                 {
                     items[i] = null;
                 }
@@ -110,7 +111,7 @@ namespace Assets.Scripts.Inventory
             
             if (items[i].item != stack.item)
             {
-                if (amount == StackMoveEnum.All)
+                if (amount == StackMoveEnum.All && !items[i].permanent)
                 {
                     var ret = items[i];
                     items[i] = stack;
@@ -151,6 +152,32 @@ namespace Assets.Scripts.Inventory
                     return stack;
                 }
             }
+        }
+
+        public ItemStack TryPush(ItemStack stack)
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i] != null && items[i].item != stack.item)
+                {
+                    continue;
+                }
+                else
+                {
+                    stack = Add(StackMoveEnum.All, stack, i);
+                    if (stack == null)
+                    {
+                        break;
+                    }
+                }
+            }
+            return stack;
+        }
+
+        public void SetPermanent(int idx, ItemObject item)
+        {
+            infinite = true;
+            items[idx] = new ItemStack(item, 0) { permanent = true };
         }
 
         public void SetSelect(int idx)

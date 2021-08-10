@@ -22,7 +22,7 @@ namespace Assets.Scripts.Controllers.Game
             var inst = Instantiate(menuObject);
             inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
             inst.widths = new List<int>() { 4, 1 };
-            inst.OnClose.AddListener(() => p.isLocked = true);
+            inst.OnClose.AddListener(() => p.isLocked = false);
 
             p.isLocked = true;
         }

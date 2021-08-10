@@ -27,7 +27,7 @@ namespace Assets.Scripts.Controllers.Game
             cooldown -= Time.deltaTime;
             if (recipe != null && cooldown <= 0)
             {
-                if (inventory.Add(StackMoveEnum.All, new ItemStack(recipe.output, 1)) == null)
+                if (inventory.TryPush(new ItemStack(recipe.output, 1)) == null)
                 {
                     recipe = null;
                 }
@@ -61,7 +61,7 @@ namespace Assets.Scripts.Controllers.Game
             var inst = Instantiate(menuObject);
             inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
             inst.widths = new List<int>() { 4, 2 };
-            inst.OnClose.AddListener(() => p.isLocked = true);
+            inst.OnClose.AddListener(() => p.isLocked = false);
 
             p.isLocked = true;
         }

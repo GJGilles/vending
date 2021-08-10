@@ -9,6 +9,8 @@ namespace Assets.Scripts.Types
         public ItemObject item;
         public int number;
 
+        public bool permanent = false;
+
         public ItemStack(ItemObject i, int n)
         {
             item = i;
