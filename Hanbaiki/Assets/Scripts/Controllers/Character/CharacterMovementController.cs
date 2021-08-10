@@ -8,10 +8,36 @@ namespace Assets.Scripts.Controllers.Character
     {
         public float speed = 0.5f;
         public float jump = 5f;
+        public LayerMask groundMask;
 
         public CharacterAnimationController anim;
         public Rigidbody2D rb;
         public Collider2D col;
+
+        public float timeGround = 0.3f;
+        public float timeJump = 0.3f;
+        private float lastGround = 0.3f;
+        private float lastJump = 0.3f;
+
+        protected virtual void Update()
+        {
+            if (IsGrounded()) lastGround = 0f;
+
+            if (lastGround < timeGround && lastJump < timeJump)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jump);
+                lastGround = timeGround;
+                lastJump = timeJump;
+            }
+
+            lastGround += Time.deltaTime;
+            lastJump += Time.deltaTime;
+        }
+
+        private bool IsGrounded()
+        {
+            return Physics2D.BoxCast(col.bounds.center, new Vector2(col.bounds.extents.x, 0.1f), 0, Vector2.down, col.bounds.extents.y, groundMask);
+        }
 
         protected void SetMove(int dir)
         {
@@ -21,7 +47,7 @@ namespace Assets.Scripts.Controllers.Character
 
         protected void SetJump()
         {
-            rb.velocity = new Vector2(rb.velocity.x, jump);
+            lastJump = 0f;
         }
     }
 }

@@ -16,8 +16,10 @@ namespace Assets.Scripts.Controllers.Character
         private DropPlatformController platform;
         private SelectableController selection;
 
-        protected void Update()
+        protected override void Update()
         {
+            base.Update();
+
             if (isLocked) return;
 
             Vector2 input = InputManager.GetMovement();

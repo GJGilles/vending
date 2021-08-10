@@ -283,9 +283,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   jump: 5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1
   anim: {fileID: 84310086}
   rb: {fileID: 84310089}
   col: {fileID: 84310088}
+  timeGround: 0.3
+  timeJump: 0.3
   dropTime: 1
   isLocked: 0
 --- !u!212 &84310084
