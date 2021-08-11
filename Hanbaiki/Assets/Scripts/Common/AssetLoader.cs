@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using UnityEditor;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -7,16 +7,18 @@ namespace Assets.Scripts
     {
         public static List<T> LoadObjects<T>() where T : UnityEngine.Object
         {
+#if UNITY_EDITOR
             List<T> result = new List<T>();
-
-            string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).ToString(), new string[] { "Assets/Objects" });
+            string[] guids = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T).ToString(), new string[] { "Assets/Objects" });
             foreach (string g in guids)
             {
-                string path = AssetDatabase.GUIDToAssetPath(g);
-                result.Add((T)AssetDatabase.LoadAssetAtPath(path, typeof(T)));
+                string path = UnityEditor.AssetDatabase.GUIDToAssetPath(g);
+                result.Add((T)UnityEditor.AssetDatabase.LoadAssetAtPath(path, typeof(T)));
             }
-
             return result;
+#else
+            return new List<T>(Resources.FindObjectsOfTypeAll<T>());
+#endif
         }
     }
 }

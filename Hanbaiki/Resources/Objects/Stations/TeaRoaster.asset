@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2360050c8f6d84d8a46ef52590a066, type: 3}
+  m_Name: TeaRoaster
+  m_EditorClassIdentifier: 
+  title: Tea Roaster
+  spr: {fileID: 21300000, guid: 007cde49c2df41248b095cb646bc674a, type: 3}
+  recipes:
+  - {fileID: 11400000, guid: ec0b65431522cd54c8d087c084d59231, type: 2}
+  - {fileID: 11400000, guid: 6cf6904a2f64c804a8a520bce21c05a8, type: 2}
+  unlocked: 1

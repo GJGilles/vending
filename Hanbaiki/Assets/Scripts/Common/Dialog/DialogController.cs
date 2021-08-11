@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Service;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -185,6 +186,7 @@ namespace Assets.Scripts.Dialog
             }
             else
             {
+                QuestService.DoUnlock(dialog.unlocks);
                 OnClose.Invoke();
                 Destroy(gameObject);
             }

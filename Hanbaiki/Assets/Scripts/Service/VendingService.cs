@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Objects;
+﻿using Assets.Scripts.Inventory;
+using Assets.Scripts.Objects;
 using Assets.Scripts.Types;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,64 +8,42 @@ namespace Assets.Scripts.Service
 {
     public static class VendingService
     {
-        private static int capacity = 6;
-        private static Dictionary<LocationObject, VendData> machines = new Dictionary<LocationObject, VendData>();
+        private static Dictionary<LocationObject, ItemInventory> machines = new Dictionary<LocationObject, ItemInventory>();
 
         static VendingService()
         {
             var locations = AssetLoader.LoadObjects<LocationObject>();
             foreach (var loc in locations)
             {
-                machines.Add(loc, new VendData() { location = loc });
+                machines.Add(loc, new ItemInventory(6));
             }
         }
 
-        public static bool CanAdd(LocationObject loc, ItemObject item)
+        public static ItemInventory GetInventory(LocationObject loc)
         {
-            var items = machines[loc].items;
-
-            return items.ContainsKey(item) || items.Count < capacity;
-        }
-
-        public static void Add(LocationObject loc, ItemObject item)
-        {
-            if (!CanAdd(loc, item)) return;
-
-            var items = machines[loc].items;
-            if (items.ContainsKey(item))
-            {
-                items[item]++;
-            }
-            else
-            {
-                items.Add(item, 1);
-            }
+            return machines[loc];
         }
 
         public static void Update()
         {
             foreach (var loc in machines.Keys)
             {
-                var items = machines[loc].items;
-                foreach (var item in items.Keys)
+                var m = machines[loc];
+                for (int i = 0; i < m.GetSize(); i++)
                 {
+                    var stack = m.Peek(i);
+                    if (stack == null) continue;
+
+                    var item = stack.item;
                     int rand = Random.Range(1, 101);
-                    if (rand <= GetValue(item, loc.region))
+                    if (rand <= GetValue(stack.item, loc.region))
                     {
-                        items[item]--;
-                        if (items[item] <= 0)
-                        {
-                            items.Remove(item);
-                        }
+                        m.Remove(StackMoveEnum.One, i);
                         PlayerService.AddMoney(item.cost);
+                        QuestService.Update(loc, item);
                     }
                 }
             }
-        }
-
-        public static VendData GetData(LocationObject loc)
-        {
-            return machines[loc];
         }
 
         public static bool FlavorMatch(ItemObject item, RegionObject region)

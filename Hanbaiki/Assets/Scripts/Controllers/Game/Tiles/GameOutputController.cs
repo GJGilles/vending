@@ -15,13 +15,11 @@ namespace Assets.Scripts.Controllers.Game
 
         [NonSerialized] public LocationObject location;
 
-        private ItemInventory inventory = new ItemInventory(1);
-
         public override void Select(PlayerController p)
         {
             var inst = Instantiate(menuObject);
-            inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
-            inst.widths = new List<int>() { 4, 1 };
+            inst.inventories = new List<ItemInventory>() { p.inventory, VendingService.GetInventory(location) };
+            inst.widths = new List<int>() { 4, 2 };
             inst.OnClose.AddListener(() => p.isLocked = false);
 
             p.isLocked = true;

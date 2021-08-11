@@ -13,12 +13,18 @@ namespace Assets.Scripts.Controllers.Game
 
         private void Update()
         {
-            VendData data = VendingService.GetData(MapService.GetCurrent()[location]);
-            int idx = 0;
-            foreach (var key in data.items.Keys)
+            var data = VendingService.GetInventory(MapService.GetCurrent()[location]);
+            for (int i = 0; i < data.GetSize(); i++)
             {
-                slots[idx].Set(key.spr, data.items[key].ToString());
-                idx++;
+                var stack = data.Peek(i);
+                if (stack == null)
+                {
+                    slots[i].Set(null, "");
+                }
+                else
+                {
+                    slots[i].Set(stack.item.spr, stack.number.ToString());
+                }
             }
         }
     }

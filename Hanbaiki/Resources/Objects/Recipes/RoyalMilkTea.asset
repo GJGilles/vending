@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f416a34d9706d242a225ba94fdf4347, type: 3}
+  m_Name: RoyalMilkTea
+  m_EditorClassIdentifier: 
+  input:
+  - {fileID: 11400000, guid: ee0f374909c9fb84e849f5abdd67479f, type: 2}
+  - {fileID: 11400000, guid: 53461a422f77b4946aba1a1e112d6d88, type: 2}
+  output: {fileID: 11400000, guid: 5e49697504dc50e4aba13e89aab7f6d5, type: 2}
+  time: 0
+  unlocked: 1
