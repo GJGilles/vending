@@ -16,7 +16,7 @@ namespace Assets.Scripts.Controllers.Character
         private void Start()
         {
             selectable.character = character;
-            anim.anim = character.animator;
+            anim.anim.runtimeAnimatorController = character.animator;
         }
     }
 }

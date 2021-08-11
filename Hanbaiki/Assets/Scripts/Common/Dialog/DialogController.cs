@@ -40,14 +40,14 @@ namespace Assets.Scripts.Dialog
         {
             canvas.worldCamera = Camera.current;
 
-            AddCharacter(dialog.characters[0].sprite).anchoredPosition = new Vector2(-cArea.rect.width / 4, 0);
+            AddCharacter(dialog.characters[0].sprite).anchoredPosition = new Vector2(-cArea.rect.width / 4, 100);
             for (int i = 1; i < dialog.characters.Count; i++)
             {
                 int count = dialog.characters.Count - 1;
                 int idx = i - 1;
 
                 AddCharacter(dialog.characters[i].sprite).anchoredPosition = 
-                    new Vector2((cArea.rect.width / 4) + (idx - ((count - 1) / 2)) * spacing, 0);
+                    new Vector2((cArea.rect.width / 4) + (idx - ((count - 1) / 2)) * spacing, 100);
             }
         }
 
@@ -59,8 +59,8 @@ namespace Assets.Scripts.Dialog
             img.SetNativeSize();
             characters.Add(img);
 
-            var rect = img.gameObject.AddComponent<RectTransform>();
-            rect.localScale = new Vector3(1f, 1f, 1f);
+            var rect = img.gameObject.GetComponent<RectTransform>();
+            rect.localScale = new Vector3(8f, 8f, 1f);
             return rect;
         }
 
@@ -131,6 +131,7 @@ namespace Assets.Scripts.Dialog
 
             if (pos == d.text.Length)
             {
+                textbox = null;
                 state = DialogStateEnum.Paused;
             }
         }
@@ -147,20 +148,22 @@ namespace Assets.Scripts.Dialog
                 else
                 {
                     state = DialogStateEnum.Slide;
+                    tArea.localScale = (1 + dIdx * 2) * new Vector3(1f, 1f, 1f);
                 }
             }
         }
 
         private void SlideState()
         {
-            float h = tArea.rect.height * dIdx;
-            if (!CommonAnimation.DampedMove(tArea.anchoredPosition, new Vector2(0, h), out Vector2 c))
+            float h = tArea.parent.GetComponent<RectTransform>().rect.height;
+
+            if (!CommonAnimation.DampedMove(tArea.anchoredPosition, new Vector2(0, h * dIdx), out Vector2 c))
             {
-                area.anchoredPosition = c;
+                tArea.anchoredPosition = c;
             }
             else
             {
-                area.anchoredPosition = new Vector2(0, h);
+                tArea.anchoredPosition = new Vector2(0, h * dIdx);
                 state = DialogStateEnum.Reading;
             }
         }
@@ -176,7 +179,7 @@ namespace Assets.Scripts.Dialog
                 characters = null;
             }
 
-            if (!CommonAnimation.DampedMove(area.anchoredPosition, new Vector2(-area.rect.height / 2, 0), out Vector2 c))
+            if (!CommonAnimation.DampedMove(area.anchoredPosition, new Vector2(0, -area.rect.height / 2), out Vector2 c))
             {
                 area.anchoredPosition = c;
             }

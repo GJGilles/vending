@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8679c16ecfca3049bbacad2f112f1ee, type: 3}
   m_Name: Takuya
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  sprite: {fileID: 0}
+  animator: {fileID: 9100000, guid: bc010134f49371442a0f43003affb2fa, type: 2}
+  sprite: {fileID: 21300000, guid: 349357b508422b940a59ac229efaac9e, type: 3}
+  dialogs:
+  - {fileID: 11400000, guid: 099f90d509d91424ba4e7e526e280ef5, type: 2}
   state: 0

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Takumi
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 349357b508422b940a59ac229efaac9e, type: 3}
+  dialogs: []
   state: 0
