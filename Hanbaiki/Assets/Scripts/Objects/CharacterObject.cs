@@ -9,6 +9,7 @@ namespace Assets.Scripts.Objects
     public class CharacterObject : ScriptableObject
     {
         public Animator animator;
+        public Sprite sprite;
         public int state = 0;
     }
 }
