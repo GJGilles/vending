@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c79675dea8fc449a9c42b408132587, type: 3}
+  m_Name: 0
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 11400000, guid: cfc3ae8770a85d24294a2bfa03b08029, type: 2}
+  - {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+  dialogs:
+  - text: Hey there my boy, this is some test text to see how well the dialog system 
+      works. I hope that this long message is useful, sport!
+    speaker: 1
+  - text: Thanks pops!
+    speaker: 0
