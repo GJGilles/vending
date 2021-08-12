@@ -24,5 +24,28 @@ namespace Assets.Scripts.Service
         {
             return items.Where(i => i.unlocked && i.input).ToList();
         }
+
+        public class Data : DataService<Dictionary<int, bool>>
+        {
+            protected override string name => "items";
+
+            protected override Dictionary<int, bool> GetData()
+            {
+                return items
+                  .GroupBy(x => x.GetHashCode())
+                  .ToDictionary(x => x.Key, x => x.First().unlocked);
+            }
+
+            protected override void SetData(Dictionary<int, bool> data)
+            {
+                for (var i = 0; i < items.Count; i++)
+                {
+                    if (data.ContainsKey(items[i].GetHashCode()))
+                    {
+                        items[i].unlocked = data[items[i].GetHashCode()];
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,23 @@
+<linker>
+  <assembly fullname="System.Buffers">
+    <type fullname="System.Buffers" preserve="all" />
+  </assembly>
+  <assembly fullname="System.Collections.Immutable">
+    <type fullname="System.Collections.Immutable" preserve="all" />
+  </assembly>
+  <assembly fullname="System.Runtime.CompilerServices.Unsafe">
+    <type fullname="System.Runtime.CompilerServices.Unsafe" preserve="all" />
+  </assembly>
+  <assembly fullname="System.Memory">
+    <type fullname="System.Memory" preserve="all" />
+  </assembly>
+  <assembly fullname="Mono.Cecil">
+    <type fullname="Mono.Cecil" preserve="all" />
+  </assembly>
+  <assembly fullname="Apex.Analyzers.Immutable.Attributes">
+    <type fullname="Apex.Analyzers.Immutable.Attributes" preserve="all" />
+  </assembly>
+  <assembly fullname="Apex.Serialization">
+    <type fullname="Apex.Serialization" preserve="all" />
+  </assembly>
+</linker>

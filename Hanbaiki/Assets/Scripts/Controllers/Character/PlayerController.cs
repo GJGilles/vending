@@ -9,6 +9,8 @@ namespace Assets.Scripts.Controllers.Character
 {
     public class PlayerController : CharacterMovementController
     {
+        public PauseController pause;
+
         public ItemInventory inventory = new ItemInventory(8);
         public float dropTime = 1f;
         public bool isLocked = false;
@@ -37,6 +39,13 @@ namespace Assets.Scripts.Controllers.Character
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
                 SetJump();
+            }
+
+            if (InputManager.GetButtonTrigger(ButtonEnum.Start))
+            {
+                var inst = Instantiate(pause);
+                inst.OnClose.AddListener(() => isLocked = false);
+                isLocked = true;
             }
         }
 

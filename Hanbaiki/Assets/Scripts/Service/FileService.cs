@@ -1,58 +1,51 @@
 ﻿using Assets.Scripts.Types;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.IO;
 using UnityEngine;
 
 namespace Assets.Scripts.Service
 {
-    [Serializable]
-    public class JSONData
-    {
-    }
 
     public static class FileService
     {
-        [DllImport("__Internal")]
-        private static extern void Save(string str);
+        private static int slot = 0;
+        private static List<DataService> services = new List<DataService>();
 
-        [DllImport("__Internal")]
-        private static extern string Load();
-
-
-        public static void SaveData()
+        static FileService()
         {
-            JSONData data = new JSONData()
+            services.Add(new ItemService.Data().GetService());
+            services.Add(new CharacterService.Data().GetService());
+        }
+
+        private static string GetPath(string slot, string name)
+        {
+            return Application.persistentDataPath + "/" + slot + "/" + name;
+        }
+
+        public static bool Save()
+        {
+            foreach (var s in services)
             {
-            };
-            try
-            {
-                Save(JsonUtility.ToJson(data));
+                s.Save(GetPath(slot.ToString(), s.name));
             }
-            catch (Exception) { }
+
+            return true;
         }
 
-        public static void LoadData()
+        public static bool Load()
         {
-            JSONData data = JsonUtility.FromJson<JSONData>(Load());
-        }
-
-        public static void DeleteData()
-        {
-            Save("");
-        }
-
-        public static bool IsData()
-        {
-            try
-            {
-                JsonUtility.FromJson<JSONData>(Load());
-                return true;
-            }
-            catch(Exception)
+            if (!File.Exists(GetPath(slot.ToString(), "")))
             {
                 return false;
             }
+
+            foreach (var s in services)
+            {
+                s.Load(GetPath(slot.ToString(), s.name));
+            }
+
+            return true;
         }
     }
 }

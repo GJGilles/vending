@@ -291,6 +291,7 @@ MonoBehaviour:
   col: {fileID: 84310088}
   timeGround: 0.3
   timeJump: 0.3
+  pause: {fileID: 7620792942266377357, guid: 8eaf9c5df68e45b499286f04af962ec6, type: 3}
   dropTime: 1
   isLocked: 0
 --- !u!212 &84310084
