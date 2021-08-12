@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using System.IO;
-using Apex.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Assets.Scripts.Types
 {
@@ -22,15 +22,15 @@ namespace Assets.Scripts.Types
         protected void Save(string path)
         {
             var fs = File.OpenWrite(path);
-            var bs = Binary.Create(new Settings());
-            bs.Write(GetData(), fs);
+            var bf = new BinaryFormatter();
+            bf.Serialize(fs, GetData());
         }
 
         protected void Load(string path)
         {
             var fs = File.OpenRead(path);
-            var bs = Binary.Create(new Settings());
-            SetData(bs.Read<T>(fs));
+            var bf = new BinaryFormatter();
+            SetData((T)bf.Deserialize(fs));
         }
 
         public DataService GetService()

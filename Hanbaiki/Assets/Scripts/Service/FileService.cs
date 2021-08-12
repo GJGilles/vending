@@ -18,16 +18,18 @@ namespace Assets.Scripts.Service
             services.Add(new CharacterService.Data().GetService());
         }
 
-        private static string GetPath(string slot, string name)
+        private static string GetPath(string slot)
         {
-            return Application.persistentDataPath + "/" + slot + "/" + name;
+            return Application.persistentDataPath + "/" + slot + "/";
         }
 
         public static bool Save()
         {
+            Directory.CreateDirectory(GetPath(slot.ToString()));
+
             foreach (var s in services)
             {
-                s.Save(GetPath(slot.ToString(), s.name));
+                s.Save(GetPath(slot.ToString()) + s.name);
             }
 
             return true;
@@ -35,14 +37,14 @@ namespace Assets.Scripts.Service
 
         public static bool Load()
         {
-            if (!File.Exists(GetPath(slot.ToString(), "")))
+            if (!Directory.Exists(GetPath(slot.ToString())))
             {
                 return false;
             }
 
             foreach (var s in services)
             {
-                s.Load(GetPath(slot.ToString(), s.name));
+                s.Load(GetPath(slot.ToString()) + s.name);
             }
 
             return true;
