@@ -90,6 +90,11 @@ namespace Assets.Scripts.Service
             }
         }
 
+        public static int GetTempNum(RegionObject r)
+        {
+            return temp[r];
+        }
+
         public static PrecipEnum GetPrecip(RegionObject r)
         {
             if (precip[r])

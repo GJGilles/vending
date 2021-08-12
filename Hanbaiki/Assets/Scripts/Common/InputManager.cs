@@ -11,7 +11,11 @@ namespace Assets.Scripts
         B,
         X,
         Y,
-        Start
+        Start,
+        L1,
+        L2,
+        R1,
+        R2,
     }
 
     public static class InputManager
