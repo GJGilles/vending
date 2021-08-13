@@ -1,11 +1,11 @@
 ﻿using Assets.Scripts.Objects;
-using System.Collections;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers.Game
 {
     public class GameBuildLocationController : MonoBehaviour
     {
-        public LocationObject location;
+        [NonSerialized] public LocationObject location;
     }
 }
