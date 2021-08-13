@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Inventory;
+using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace Assets.Scripts.Controllers.Game
 
         public List<ItemSlotController> slots = new List<ItemSlotController>();
 
-        private int location = 0;
+        private bool visible = true;
+        private LocationObject location;
         private bool isDirty = false;
 
         private void Start()
         {
+            location = MapService.GetCurrent()[0];
             ChangeLocation(location);
         }
 
@@ -27,22 +30,54 @@ namespace Assets.Scripts.Controllers.Game
         {
             UpdateWeather();
 
+            if (InputManager.GetButtonTrigger(ButtonEnum.L2))
+            {
+                visible = !visible;
+            }
+
+            var pos = GetComponent<RectTransform>();
+            if (visible && pos.anchoredPosition.x < 0)
+            {
+                if (CommonAnimation.DampedMove(pos.anchoredPosition, new Vector2(0, 0), out Vector2 c))
+                {
+                    pos.anchoredPosition = new Vector2(0, 0);
+                }
+                else
+                {
+                    pos.anchoredPosition = c;
+                }
+            }
+            if (!visible && pos.anchoredPosition.x > -pos.rect.width)
+            {
+                if (CommonAnimation.DampedMove(pos.anchoredPosition, new Vector2(-pos.rect.width, 0), out Vector2 c))
+                {
+                    pos.anchoredPosition = new Vector2(-pos.rect.width, 0);
+                }
+                else
+                {
+                    pos.anchoredPosition = c;
+                }
+            }
+
+            if (!visible) return;
+
             if (isDirty)
             {
                 isDirty = UpdateMap();
             }
 
-            int next = location;
-            int length = MapService.GetCurrent().Count;
+            LocationObject next = location;
+            var locs = MapService.GetCurrent();
             if (InputManager.GetButtonTrigger(ButtonEnum.L1))
             {
-                next--;
-                if (next < 0) next += length;
+                int idx = locs.FindIndex(x => x == location) - 1;
+                if (idx < 0) idx += locs.Count;
+                next = locs[idx];
             }
             else if (InputManager.GetButtonTrigger(ButtonEnum.R1))
             {
-                next++;
-                if (next >= length) next -= length;
+                int idx = locs.FindIndex(x => x == location) + 1;
+                if (idx >= locs.Count) idx -= locs.Count;
             }
 
             if (next != location)
@@ -51,30 +86,35 @@ namespace Assets.Scripts.Controllers.Game
             }
         }
 
-        private void ChangeLocation(int next)
+        private void ChangeLocation(LocationObject next)
         {
+            VendingService.GetInventory(location).OnChange.RemoveListener(UpdateSlot);
+
             location = next;
             isDirty = true;
 
-            var obj = MapService.GetCurrent()[location];
-            city.text = obj.name;
+            city.text = location.name;
 
-            // TODO: Register to onchange events
-            var machine = VendingService.GetInventory(obj);
+            var machine = VendingService.GetInventory(location);
             for (int i = 0; i < machine.GetSize(); i++)
             {
-                var stack = machine.Peek(i);
-                slots[i].Set(stack);
+                UpdateSlot(i);
             }
+            machine.OnChange.AddListener(UpdateSlot);
 
             UpdateWeather();
         }
 
+        private void UpdateSlot(int i)
+        {
+            var machine = VendingService.GetInventory(location);
+            var stack = machine.Peek(i);
+            slots[i].Set(stack);
+        }
+
         private bool UpdateMap()
         {
-            var obj = MapService.GetCurrent()[location];
-
-            Vector2 dest = -obj.coords * map.localScale.x;
+            Vector2 dest = -location.coords * map.localScale.x;
             bool dirty = !CommonAnimation.DampedMove(map.anchoredPosition, dest, out Vector2 next);
 
             if (dirty)
@@ -90,10 +130,8 @@ namespace Assets.Scripts.Controllers.Game
 
         private void UpdateWeather()
         {
-            var obj = MapService.GetCurrent()[location];
-
-            precip.SetInteger("Type", (int)WeatherService.GetPrecip(obj.region));
-            temp.text = WeatherService.GetTempNum(obj.region).ToString() + " 'C";
+            precip.SetInteger("Type", (int)WeatherService.GetPrecip(location.region));
+            temp.text = WeatherService.GetTempNum(location.region).ToString() + " 'C";
         }
     }
 }

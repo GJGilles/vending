@@ -61,7 +61,7 @@ namespace Assets.Scripts.Dialog
             characters.Add(img);
 
             var rect = img.gameObject.GetComponent<RectTransform>();
-            rect.localScale = new Vector3(8f, 8f, 1f);
+            rect.localScale = new Vector3(2f, 2f, 1f);
             return rect;
         }
 

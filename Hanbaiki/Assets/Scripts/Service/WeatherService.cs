@@ -41,8 +41,10 @@ namespace Assets.Scripts.Service
 
         public static void UpdateTemp(SeasonEnum season, int hour)
         {
-            foreach (var r in temp.Keys)
+            var keys = new List<RegionObject>(temp.Keys);
+            for(int i = 0; i < keys.Count; i++)
             {
+                var r = keys[i];
                 var data = r.weather[(int)season];
                 int rand = Random.Range(data.minTemp, data.maxTemp + 1);
                 if (data.sunup <= hour && hour <= data.sundown)
@@ -58,8 +60,10 @@ namespace Assets.Scripts.Service
 
         public static void UpdatePrecip(SeasonEnum season)
         {
-            foreach (var r in precip.Keys)
+            var keys = new List<RegionObject>(temp.Keys);
+            for (int i = 0; i < keys.Count; i++)
             {
+                var r = keys[i];
                 var data = r.weather[(int)season];
                 int rand = Random.Range(1, 101);
                 precip[r] = rand >= data.precip;

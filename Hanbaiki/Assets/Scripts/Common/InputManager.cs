@@ -85,23 +85,23 @@ namespace Assets.Scripts
                     };
                 case ButtonEnum.L1:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.startButton,
-                        Keyboard.current?.escapeKey
+                        Gamepad.current?.leftShoulder,
+                        Keyboard.current?.digit1Key
                     };
                 case ButtonEnum.L2:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.startButton,
-                        Keyboard.current?.escapeKey
+                        Gamepad.current?.leftTrigger,
+                        Keyboard.current?.digit2Key
                     };
                 case ButtonEnum.R1:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.startButton,
-                        Keyboard.current?.escapeKey
+                        Gamepad.current?.rightShoulder,
+                        Keyboard.current?.digit3Key
                     };
                 case ButtonEnum.R2:
                     return new List<ButtonControl>() {
-                        Gamepad.current?.startButton,
-                        Keyboard.current?.escapeKey
+                        Gamepad.current?.rightTrigger,
+                        Keyboard.current?.digit4Key
                     };
 
             }

@@ -15,15 +15,23 @@ MonoBehaviour:
   weather:
   - minTemp: 4
     maxTemp: 23
-    percip: 0.4
+    sunup: 9
+    sundown: 18
+    precip: 40
   - minTemp: 18
     maxTemp: 30
-    percip: 0.5
+    sunup: 9
+    sundown: 18
+    precip: 50
   - minTemp: 8
     maxTemp: 27
-    percip: 0.4
+    sunup: 9
+    sundown: 18
+    precip: 40
   - minTemp: 2
     maxTemp: 11
-    percip: 0.3
+    sunup: 9
+    sundown: 18
+    precip: 30
   favFlavor: 0
   favPrep: 3
