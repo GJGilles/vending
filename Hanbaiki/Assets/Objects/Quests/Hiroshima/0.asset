@@ -19,3 +19,4 @@ MonoBehaviour:
   character:
     character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
     state: 2
+  unlocked: 1

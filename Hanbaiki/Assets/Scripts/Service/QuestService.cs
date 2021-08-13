@@ -2,12 +2,15 @@
 using Assets.Scripts.Types;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Service
 {
     public static class QuestService
     {
+        public static UnityEvent<int> OnGoalChange = new UnityEvent<int>();
+        public static UnityEvent OnQuestChange = new UnityEvent();
+
         private static List<QuestObject> quests = new List<QuestObject>();
 
         static QuestService()
@@ -51,6 +54,17 @@ namespace Assets.Scripts.Service
             {
                 c.character.state = c.state;
             }
+
+            var done = GetCurrent().Where(x => x.goals.Count == 0).Where(x => unlock.characters.Any(y => x.character.character == y.character)).ToList();
+            foreach (var d in done)
+            {
+                d.unlocked = false;
+            }
+
+            if (unlock.quests.Count > 0 || done.Count > 0)
+            {
+                OnQuestChange.Invoke();
+            }
         }
 
         public static void DoUnlock(List<CharacterState> states)
@@ -63,9 +77,10 @@ namespace Assets.Scripts.Service
 
         public static void Update(LocationObject loc, ItemObject item)
         {
-            foreach (var q in GetCurrent())
+            for (int i = 0; i < GetCurrent().Count; i++)
             {
-                bool done = true;
+                var q = GetCurrent()[i];
+
                 bool changed = false;
                 foreach (var goal in q.goals)
                 {
@@ -74,10 +89,12 @@ namespace Assets.Scripts.Service
                         goal.number--;
                         changed = true;
                     }
-                    done = done && goal.number <= 0;
                 }
+                q.goals.RemoveAll(x => x.number <= 0);
 
-                if (done && changed)
+                if (changed) OnGoalChange.Invoke(q.GetHashCode());
+
+                if (q.goals.Count == 0 && changed)
                 {
                     DoUnlock(new List<CharacterState>() { q.character });
                 }
