@@ -149,7 +149,8 @@ namespace Assets.Scripts.Dialog
                 else
                 {
                     state = DialogStateEnum.Slide;
-                    tArea.localScale = (1 + dIdx * 2) * new Vector3(1f, 1f, 1f);
+                    var obj = textObj.GetComponent<RectTransform>();
+                    tArea.sizeDelta = new Vector3(tArea.sizeDelta.x, obj.sizeDelta.y * (1 + dIdx * 2), 0);
                 }
             }
         }

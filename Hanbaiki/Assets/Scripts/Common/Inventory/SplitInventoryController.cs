@@ -117,13 +117,13 @@ namespace Assets.Scripts.Inventory
                 {
                     inv++;
                     if (inv >= inventories.Count) inv -= inventories.Count;
-                    next = 0; // TODO: improve this
+                    next = GetNextIndex(location / widths[current], inventories[current].GetSize() / widths[current], inventories[inv].GetSize() / widths[inv]) * widths[inv];
                 }
                 else if (next < 0 || next / widths[current] < location / widths[current])
                 {
                     inv--;
                     if (inv < 0) inv += inventories.Count;
-                    next = 0;
+                    next = Math.Min(inventories[inv].GetSize() - 1, (GetNextIndex(location / widths[current], inventories[current].GetSize() / widths[current], inventories[inv].GetSize() / widths[inv]) + 1)* widths[inv] - 1);
                 }
             }
             else if (input.y != 0)
@@ -189,6 +189,14 @@ namespace Assets.Scripts.Inventory
                     held.Set(ret);
                 }
             }
+        }
+
+        private int GetNextIndex(int aIdx, int aLen, int bLen)
+        {
+            int bIdx = aIdx + (bLen - aLen) / 2;
+            if (bIdx < 0 || aIdx == 0) bIdx = 0;
+            if (bIdx >= bLen || aIdx == aLen - 1) bIdx = bLen - 1;
+            return bIdx;
         }
 
         private void SetSelect(int inv, int location)
