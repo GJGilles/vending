@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 0
   m_EditorClassIdentifier: 
   goals:
-  - item: {fileID: 11400000, guid: 6e54f5620c02b8b40802667348041db9, type: 2}
+  - item: {fileID: 11400000, guid: 85d3cc3cd4eecb84aa6ca4cb1795ef4e, type: 2}
     location: {fileID: 11400000, guid: 402854cb5cac012448dfca9f4d35fb92, type: 2}
     number: 10
   character:

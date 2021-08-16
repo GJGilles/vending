@@ -15,6 +15,6 @@ MonoBehaviour:
   input:
   - {fileID: 11400000, guid: da67435d47ffe104fb608a7c5a287ba7, type: 2}
   - {fileID: 11400000, guid: e19506ff66acd1f4ea30a6b13271c0e5, type: 2}
-  output: {fileID: 11400000, guid: 6e54f5620c02b8b40802667348041db9, type: 2}
+  output: {fileID: 11400000, guid: 85d3cc3cd4eecb84aa6ca4cb1795ef4e, type: 2}
   time: 2
   unlocked: 1
