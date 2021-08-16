@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Inventory;
-using Assets.Scripts.Objects;
+﻿using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
+using PotatoTools.Character;
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;

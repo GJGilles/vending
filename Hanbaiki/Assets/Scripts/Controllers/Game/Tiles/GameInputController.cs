@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Controllers.Character;
-using Assets.Scripts.Inventory;
-using Assets.Scripts.Objects;
-using Assets.Scripts.Types;
+﻿using Assets.Scripts.Objects;
+using PotatoTools;
+using PotatoTools.Character;
+using PotatoTools.Inventory;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +13,7 @@ namespace Assets.Scripts.Controllers.Game
         public SpriteRenderer spr;
         public SplitInventoryController menuObject;
 
-        [NonSerialized] public ItemObject item;
+        [NonSerialized] public IngredientObject item;
 
         private ItemInventory inventory = new ItemInventory(1);
 

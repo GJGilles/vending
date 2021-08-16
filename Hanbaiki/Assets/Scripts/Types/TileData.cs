@@ -19,7 +19,7 @@ namespace Assets.Scripts.Types
 
         public StationObject station;
 
-        public ItemObject item;
+        public IngredientObject item;
 
         public LocationObject loc;
     }

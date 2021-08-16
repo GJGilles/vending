@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Objects;
-using Assets.Scripts.Types;
+﻿using PotatoTools;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;

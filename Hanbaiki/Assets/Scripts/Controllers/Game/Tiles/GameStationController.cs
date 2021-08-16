@@ -1,12 +1,10 @@
-﻿using Assets.Scripts.Service;
-using Assets.Scripts.Types;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Objects;
-using Assets.Scripts.Controllers.Character;
-using Assets.Scripts.Inventory;
 using System;
+using PotatoTools;
+using PotatoTools.Inventory;
+using PotatoTools.Character;
 
 namespace Assets.Scripts.Controllers.Game
 {

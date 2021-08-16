@@ -1,8 +1,7 @@
 ﻿using Assets.Scripts.Service;
-using Assets.Scripts.Types;
-using System.Collections.Generic;
+using PotatoTools;
+using PotatoTools.UI;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Assets.Scripts.Controllers.Game
 {

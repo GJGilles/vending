@@ -1,6 +1,7 @@
-﻿using Assets.Scripts.Inventory;
-using Assets.Scripts.Objects;
+﻿using Assets.Scripts.Objects;
 using Assets.Scripts.Types;
+using PotatoTools;
+using PotatoTools.Inventory;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,27 +37,27 @@ namespace Assets.Scripts.Service
 
                     var item = stack.item;
                     int rand = Random.Range(1, 101);
-                    if (rand <= GetValue(stack.item, loc.region))
+                    if (stack.item is FoodObject && rand <= GetValue((FoodObject)stack.item, loc.region))
                     {
                         m.Remove(StackMoveEnum.One, i);
-                        PlayerService.AddMoney(item.cost);
+                        PlayerService.AddMoney(((FoodObject)item).cost);
                         QuestService.Update(loc, item);
                     }
                 }
             }
         }
 
-        public static bool FlavorMatch(ItemObject item, RegionObject region)
+        public static bool FlavorMatch(FoodObject item, RegionObject region)
         {
             return item.flavor == region.favFlavor;
         }
 
-        public static bool PrepMatch(ItemObject item, RegionObject region)
+        public static bool PrepMatch(FoodObject item, RegionObject region)
         {
             return item.prep == region.favPrep;
         }
 
-        public static bool ColorMatch(ItemObject item, RegionObject region)
+        public static bool ColorMatch(FoodObject item, RegionObject region)
         {
             var weather = WeatherService.GetPrecip(region);
             switch (weather)
@@ -75,7 +76,7 @@ namespace Assets.Scripts.Service
             }
         }
 
-        public static bool TempMatch(ItemObject item, RegionObject region)
+        public static bool TempMatch(FoodObject item, RegionObject region)
         {
             var temp = WeatherService.GetTemp(region);
             switch (temp)
@@ -94,7 +95,7 @@ namespace Assets.Scripts.Service
             }
         }
 
-        public static int GetValue(ItemObject item, RegionObject region)
+        public static int GetValue(FoodObject item, RegionObject region)
         {
             int chance = 10;
             if (FlavorMatch(item, region)) chance += 20;

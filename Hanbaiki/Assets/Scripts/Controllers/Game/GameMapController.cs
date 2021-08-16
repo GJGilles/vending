@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
+using PotatoTools;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -74,7 +75,7 @@ namespace Assets.Scripts.Controllers.Game
             tiles[location] = inst;
         }
 
-        public void SetTile(int location, ItemObject item)
+        public void SetTile(int location, IngredientObject item)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);

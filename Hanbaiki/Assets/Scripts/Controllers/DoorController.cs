@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.Controllers.Character;
 using Assets.Scripts.Types;
+using PotatoTools;
+using PotatoTools.Character;
 using System.Collections;
 using UnityEngine;
 

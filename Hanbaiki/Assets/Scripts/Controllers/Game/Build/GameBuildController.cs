@@ -2,6 +2,7 @@
 using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using Assets.Scripts.Types;
+using PotatoTools.Character;
 using System;
 using System.Collections;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace Assets.Scripts.Controllers.Game
         private TileTypeEnum type = TileTypeEnum.None;
         private StationObject station;
         private int tile = 0;
-        private ItemObject item;
+        private IngredientObject item;
         private LocationObject location;
 
         private GameObject Current;
@@ -151,7 +152,7 @@ namespace Assets.Scripts.Controllers.Game
             Prev = StartTile;
         }
 
-        public void DoneItem(ItemObject i)
+        public void DoneItem(IngredientObject i)
         {
             item = i;
 
