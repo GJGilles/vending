@@ -10,11 +10,13 @@ namespace Assets.Scripts.Controllers
         public BuildTypeController tyCtrl;
         public BuildStationListController sList;
         public BuildTileController tCtrl;
+        public BuildFunnelController fCtrl;
         public BuildItemListController iList;
         public BuildMapController mCtrl;
 
         public PlayerController player;
-        public PagodaController map;
+        public PagodaTileController map;
+        public PagodaFunnelController fun;
 
         private TileTypeEnum type = TileTypeEnum.None;
         private StationObject station;
@@ -70,6 +72,20 @@ namespace Assets.Scripts.Controllers
             {
                 StartTile();
             }
+        }
+
+        private void StartFunnel()
+        {
+            if (Current) Current.SetActive(false);
+            Current = fCtrl.gameObject;
+            Current.SetActive(true);
+
+            Prev = StartType;
+        }
+
+        public void DoneFunnel()
+        {
+            //fun.SetFunnel();
         }
 
         private void StartStation()

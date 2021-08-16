@@ -63,5 +63,6 @@ namespace Assets.Scripts.Controllers
 
             p.isLocked = true;
         }
+        public ItemInventory GetInventory() { return inventory; }
     }
 }

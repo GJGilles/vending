@@ -1,12 +1,13 @@
 ﻿using Assets.Scripts.Objects;
 using Assets.Scripts.Service;
 using PotatoTools;
+using PotatoTools.Inventory;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class PagodaController : MonoBehaviour
+    public class PagodaTileController : MonoBehaviour
     {
         public StationController stationObj;
         public CrateController crateObj;
@@ -17,10 +18,10 @@ namespace Assets.Scripts.Controllers
 
         private void Start()
         {
-            SetMap();
+            SetTiles();
         }
 
-        private void SetMap()
+        private void SetTiles()
         {
             for (int i = 0; i < PagodaService.Height(); i++)
             {
@@ -107,6 +108,26 @@ namespace Assets.Scripts.Controllers
             pos.y += ((location / width) - 0.5f) * floorObj.size.y;
 
             return pos;
+        }
+
+        public ItemInventory GetInventory(int i)
+        {
+            if (tiles[i] is CrateController)
+            {
+                return ((CrateController)tiles[i]).GetInventory();
+            }
+            else if (tiles[i] is OutputController)
+            {
+                return VendingService.GetInventory(((OutputController)tiles[i]).location);
+            }
+            else if (tiles[i] is StationController)
+            {
+                return ((StationController)tiles[i]).GetInventory();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Assets.Scripts.Controllers
     public class BuildTileController : MonoBehaviour
     {
         public CameraFollow cam;
-        public PagodaController map;
+        public PagodaTileController map;
         public BuildController build;
 
         public SpriteRenderer target;
