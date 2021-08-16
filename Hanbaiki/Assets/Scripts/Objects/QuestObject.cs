@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Types;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Objects

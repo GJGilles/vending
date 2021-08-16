@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8679c16ecfca3049bbacad2f112f1ee, type: 3}
+  m_Script: {fileID: 11500000, guid: e9c448c38e7e2c4499607eaf09bf6f12, type: 3}
   m_Name: Mayumi
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   sprite: {fileID: 0}
+  dialogs: []
   state: 0

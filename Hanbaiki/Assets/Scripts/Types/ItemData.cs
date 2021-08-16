@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-
-namespace Assets.Scripts.Types
+namespace Assets.Scripts
 {
-	public enum ItemColorEnum
+    public enum ItemColorEnum
     {
 		White,
 		Green,

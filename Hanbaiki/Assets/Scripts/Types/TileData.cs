@@ -1,8 +1,7 @@
 ﻿using Assets.Scripts.Objects;
 using System;
-using UnityEngine;
 
-namespace Assets.Scripts.Types
+namespace Assets.Scripts
 {
     public enum TileTypeEnum
     {

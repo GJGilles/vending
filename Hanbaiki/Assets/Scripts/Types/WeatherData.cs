@@ -1,7 +1,6 @@
 ﻿using System;
-using UnityEngine;
 
-namespace Assets.Scripts.Types
+namespace Assets.Scripts
 {
     [Serializable]
     public class WeatherData

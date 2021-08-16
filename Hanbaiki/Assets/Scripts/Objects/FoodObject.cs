@@ -1,10 +1,8 @@
-﻿using Assets.Scripts.Types;
-using PotatoTools;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Objects
 {
-	[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FoodObject", order = 8)]
+    [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FoodObject", order = 8)]
 	public class FoodObject : IngredientObject
     {
 		public int cost;

@@ -1,16 +1,15 @@
 ﻿using PotatoTools;
 using PotatoTools.Character;
-using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class DoorController : SelectableController
+    public class BuildDeskController : SelectableController
     {
-        public GameObject room;
+        public BuildController build;
 
         public override void Select(PlayerController player)
         {
-            room.SetActive(!room.activeSelf);
+            build.gameObject.SetActive(true);
         }
     }
 }

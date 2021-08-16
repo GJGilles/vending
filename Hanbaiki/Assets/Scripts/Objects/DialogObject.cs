@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Types;
-using PotatoTools;
-using System.Collections.Generic;
+﻿using PotatoTools;
 using UnityEngine;
 
 namespace Assets.Scripts.Objects

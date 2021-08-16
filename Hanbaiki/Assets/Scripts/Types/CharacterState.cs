@@ -1,8 +1,8 @@
 ﻿using Assets.Scripts.Objects;
+using PotatoTools;
 using System;
-using UnityEngine;
 
-namespace Assets.Scripts.Types
+namespace Assets.Scripts
 {
     [Serializable]
     public class CharacterState

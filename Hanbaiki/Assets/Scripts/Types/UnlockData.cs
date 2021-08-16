@@ -1,9 +1,8 @@
 ﻿using Assets.Scripts.Objects;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Assets.Scripts.Types
+namespace Assets.Scripts
 {
     [Serializable]
     public class UnlockData

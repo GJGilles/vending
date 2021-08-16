@@ -1,17 +1,17 @@
-﻿using PotatoTools;
+﻿using Assets.Scripts.Objects;
+using PotatoTools;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace Assets.Scripts.Service
 {
     public static class ItemService
     {
-        private static List<ItemObject> items = new List<ItemObject>();
+        private static List<IngredientObject> items = new List<IngredientObject>();
 
         static ItemService()
         {
-            items = AssetLoader.LoadObjects<ItemObject>();
+            items = AssetLoader.LoadObjects<IngredientObject>();
         }
 
         public static ItemObject Get(int id)
@@ -19,9 +19,9 @@ namespace Assets.Scripts.Service
             return items[id];
         }
 
-        public static List<ItemObject> GetCurrent()
+        public static List<IngredientObject> GetCurrent()
         {
-            return items.Where(i => i.unlocked && i.input).ToList();
+            return items.Where(i => i.unlocked).ToList();
         }
 
         public class Data : DataService<Dictionary<int, bool>>
