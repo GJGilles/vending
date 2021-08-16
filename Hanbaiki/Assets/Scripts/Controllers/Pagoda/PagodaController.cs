@@ -8,11 +8,10 @@ namespace Assets.Scripts.Controllers
 {
     public class PagodaController : MonoBehaviour
     {
-        public GameObject stationObj;
-        public GameObject inputObj;
-        public GameObject outputObj;
-
-        public SpriteRenderer background;
+        public StationController stationObj;
+        public CrateController crateObj;
+        public OutputController outputObj;
+        public SpriteRenderer floorObj;
 
         private List<SelectableController> tiles = new List<SelectableController>();
 
@@ -23,25 +22,35 @@ namespace Assets.Scripts.Controllers
 
         private void SetMap()
         {
-            var map = GameService.GetMap();
-            background.sprite = map.background;
-            tiles = new List<SelectableController>(new SelectableController[map.tiles.Count]);
-
-            for (int i = 0; i < map.tiles.Count; i++)
+            for (int i = 0; i < PagodaService.Height(); i++)
             {
-                TileData tile = map.tiles[i];
-                switch (tile.type)
+                Instantiate(floorObj, transform).transform.localPosition = new Vector2(0, i * floorObj.size.y);
+            }
+
+
+            var data = PagodaService.GetTiles();
+            tiles = new List<SelectableController>(new SelectableController[data.Count]);
+
+            for (int i = 0; i < data.Count; i++)
+            {
+                if (data[i] == null)
+                {
+                    tiles.Add(null);
+                    continue;
+                }
+
+                switch (data[i].type)
                 {
                     case TileTypeEnum.Station:
-                        SetTile(i, tile.station);
+                        SetTile(i, data[i].station);
                         break;
 
                     case TileTypeEnum.Input:
-                        SetTile(i, tile.item);
+                        SetTile(i, data[i].item);
                         break;
 
                     case TileTypeEnum.Output:
-                        SetTile(i, tile.loc);
+                        SetTile(i, data[i].loc);
                         break;
 
                     case TileTypeEnum.None:
@@ -50,11 +59,6 @@ namespace Assets.Scripts.Controllers
                         break;
                 }
             }
-        }
-
-        public SelectableController GetTile(int location)
-        {
-            return tiles[location];
         }
 
         public void SetTile(int location)
@@ -79,7 +83,7 @@ namespace Assets.Scripts.Controllers
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
-            var inst = Instantiate(inputObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<CrateController>();
+            var inst = Instantiate(crateObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<CrateController>();
             inst.item = item;
             tiles[location] = inst;
         }
@@ -96,11 +100,11 @@ namespace Assets.Scripts.Controllers
 
         public Vector2 GetPosition(int location)
         {
-            var map = GameService.GetMap();
-            Vector2 pos = (Vector2)transform.position + map.origin;
+            int width = PagodaService.Width();
+            Vector2 pos = new Vector2();
 
-            pos.x += (location % map.width);
-            pos.y += (location / map.width);
+            pos.x += (location % width) - width / 2;
+            pos.y += ((location / width) - 0.5f) * floorObj.size.y;
 
             return pos;
         }

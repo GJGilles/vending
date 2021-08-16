@@ -35,8 +35,8 @@ namespace Assets.Scripts.Controllers
         private void Update()
         {
             Vector2 input = InputManager.GetMovement();
-            int width = GameService.Width();
-            int size = width * GameService.Height();
+            int width = PagodaService.Width();
+            int size = width * PagodaService.Height();
 
             if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {

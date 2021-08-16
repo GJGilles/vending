@@ -98,7 +98,7 @@ namespace Assets.Scripts.Controllers
             tile = -1;
             if (type == TileTypeEnum.Input)
             {
-                tCtrl.SetSprite(map.inputObj.GetComponent<SpriteRenderer>().sprite);
+                tCtrl.SetSprite(map.crateObj.GetComponent<SpriteRenderer>().sprite);
                 Prev = StartType;
             }
             else if (type == TileTypeEnum.Output)
