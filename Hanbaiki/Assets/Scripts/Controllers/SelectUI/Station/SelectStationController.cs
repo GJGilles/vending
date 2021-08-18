@@ -1,16 +1,17 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Objects;
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class BuildItemController : MonoBehaviour
+    public class SelectStationController : MonoBehaviour
     {
         public UnityEngine.UI.Image image;
-        public TMPro.TMP_Text textbox;
+        public TMPro.TMP_Text text;
 
-        public void Set(string text, Sprite spr)
+        public void Set(StationObject data, Sprite spr)
         {
             image.sprite = spr;
-            textbox.text = text;
+            text.text = data.title;
         }
 
         public void SetHighlight(bool highlight)

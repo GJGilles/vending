@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class BuildLocationController : MonoBehaviour
+    public class SelectLocationController : MonoBehaviour
     {
         [NonSerialized] public LocationObject location;
     }

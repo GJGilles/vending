@@ -5,7 +5,7 @@ namespace Assets.Scripts.Controllers
 {
     public class BuildDeskController : SelectableController
     {
-        public BuildController build;
+        public BuildStationController build;
 
         public override void Select(PlayerController player)
         {

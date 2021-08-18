@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class BuildTypeController : MonoBehaviour
+    public class SelectBuildController : MonoBehaviour
     {
-        public BuildController build;
+        public BuildStationController build;
         public List<UnityEngine.UI.Image> options = new List<UnityEngine.UI.Image>();
 
         public float coolTime = 0.2f;

@@ -7,7 +7,8 @@ namespace Assets.Scripts
     [Serializable]
     public class FunnelData
     {
-        public MoveDirection right = MoveDirection.None;
-        public MoveDirection up = MoveDirection.None;
+        public int x = 0;
+        public int y = 0;
+        public MoveDirection direction = MoveDirection.None;
     }
 }

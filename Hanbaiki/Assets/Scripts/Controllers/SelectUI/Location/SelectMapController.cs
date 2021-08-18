@@ -1,26 +1,22 @@
-﻿using Assets.Scripts.Service;
+﻿using Assets.Scripts.Objects;
+using Assets.Scripts.Service;
 using PotatoTools;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class BuildMapController : MonoBehaviour
+    public class SelectMapController : SelectUIController<LocationObject>
     {
-        public BuildController build;
-
         public RectTransform map;
         public TMPro.TMP_Text text;
-        public GameObject locObj;
+        public SelectLocationController locObj;
 
         private int selected = 0;
-        private List<BuildLocationController> objects = new List<BuildLocationController>();
+        private List<SelectLocationController> objects = new List<SelectLocationController>();
 
         private bool isDirty = false;
         private Vector2 dest = new Vector2();
-
-        public float coolTime = 0.2f;
-        private float coolRemain = 0f;
 
         private void OnEnable()
         {
@@ -29,7 +25,7 @@ namespace Assets.Scripts.Controllers
             var locs = MapService.GetCurrent();
             for (int i = 0; i < locs.Count; i++)
             {
-                var inst = Instantiate(locObj, map.transform).GetComponent<BuildLocationController>();
+                var inst = Instantiate(locObj, map.transform).GetComponent<SelectLocationController>();
                 inst.GetComponent<RectTransform>().anchoredPosition = locs[i].coords;
                 inst.location = locs[i];
                 objects.Add(inst);
@@ -39,29 +35,20 @@ namespace Assets.Scripts.Controllers
             isDirty = true;
         }
 
-        private void Update()
+        protected override void Update()
         {
-            if (InputManager.GetButtonTrigger(ButtonEnum.A))
-            {
-                build.DoneMap(objects[selected].location);
-                return;
-            }
-
-            if (InputManager.GetButtonTrigger(ButtonEnum.B))
-            {
-                build.Prev();
-                return;
-            }
+            base.Update();
+            if (coolRemain > 0) return;
 
             float diff = InputManager.GetVertAxis();
-            coolRemain -= Time.deltaTime;
-            if (diff != 0 && coolRemain <= 0)
+            if (diff != 0)
             {
                 selected -= Mathf.RoundToInt(diff);
                 if (selected < 0) selected += objects.Count;
                 if (selected >= objects.Count) selected -= objects.Count;
 
-                dest = -objects[selected].location.coords * map.localScale.x;
+                select = objects[selected].location;
+                dest = -select.coords * map.localScale.x;
                 text.text = "";
                 isDirty = true;
 

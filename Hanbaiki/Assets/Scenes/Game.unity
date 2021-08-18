@@ -2025,6 +2025,7 @@ MonoBehaviour:
   crateObj: {fileID: 8893420034225739180, guid: 22011b6e98b55aa42b9f5f10cfa696c6, type: 3}
   outputObj: {fileID: -1512066055861209403, guid: 3149cd16a9b5eac4fba4603771b1fd74, type: 3}
   floorObj: {fileID: 9063059543420702618, guid: 0dd559b881caa1a4d9f5c91f41f43bbd, type: 3}
+  tiles: []
 --- !u!1 &907488984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,10 +2525,18 @@ MonoBehaviour:
   tyCtrl: {fileID: 1759216154}
   sList: {fileID: 1776517393}
   tCtrl: {fileID: 416359376}
+  fCtrl: {fileID: 0}
   iList: {fileID: 2016891415}
   mCtrl: {fileID: 61749316}
   player: {fileID: 1814075085}
   map: {fileID: 882980517}
+  fun: {fileID: 0}
+  type: 0
+  station: {fileID: 0}
+  tile: 0
+  item: {fileID: 0}
+  location: {fileID: 0}
+  Current: {fileID: 0}
 --- !u!1 &1041257446
 GameObject:
   m_ObjectHideFlags: 0
