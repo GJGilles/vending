@@ -12,19 +12,9 @@ namespace Assets.Scripts.Controllers
 
         public PlayerController player;
         public PagodaTileController map;
-        public PagodaFunnelController fun;
-
-        private int tile = 0;
-        private IngredientObject item;
-
-        private GameObject Current;
-        public Action Prev;
 
         private void OnEnable()
         {
-            tile = -1;
-            item = null;
-
             StartTile();
 
             player.isLocked = true;
@@ -42,39 +32,34 @@ namespace Assets.Scripts.Controllers
 
         private void StartTile()
         {
-            if (Current) Current.SetActive(false);
-            Current = tCtrl.gameObject;
-            Current.SetActive(true);
-
-            tile = -1;
+            tCtrl.gameObject.SetActive(true);
             tCtrl.SetSprite(map.crateObj.GetComponent<SpriteRenderer>().sprite);
-            Prev = Cancel;
+
+            tCtrl.OnCancel = () =>
+            {
+                Cancel();
+            };
+
+            tCtrl.OnDone = (int i) =>
+            {
+                StartItem(i);
+            };
         }
 
-        public void DoneTile(int t)
+        private void StartItem(int loc)
         {
-            tile = t;
-            StartItem();
-        }
+            iList.gameObject.SetActive(true);
 
-        private void StartItem()
-        {
-            if (Current) Current.SetActive(false);
-            Current = iList.gameObject;
-            Current.SetActive(true);
+            iList.OnCancel = () =>
+            {
+                Cancel();
+            };
 
-            item = null;
-
-            Prev = StartTile;
-        }
-
-        public void DoneItem(IngredientObject i)
-        {
-            item = i;
-
-            map.SetTile(tile, item);
-
-            StartTile();
+            iList.OnDone = (IngredientObject i) =>
+            {
+                map.SetTile(loc, i);
+                StartTile();
+            };
         }
     }
 }

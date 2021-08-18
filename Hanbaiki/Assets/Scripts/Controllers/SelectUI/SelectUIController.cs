@@ -20,12 +20,14 @@ namespace Assets.Scripts.Controllers
             if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
                 OnDone.Invoke(select);
+                gameObject.SetActive(false);
                 return;
             }
 
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
                 OnCancel.Invoke();
+                gameObject.SetActive(false);
                 return;
             }
 

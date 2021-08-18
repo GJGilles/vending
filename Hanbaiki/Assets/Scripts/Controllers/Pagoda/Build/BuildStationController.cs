@@ -13,12 +13,6 @@ namespace Assets.Scripts.Controllers
         public PlayerController player;
         public PagodaTileController map;
 
-        private StationObject station;
-        private int tile = 0;
-
-        private GameObject Current;
-        public Action Prev;
-
         private void OnEnable()
         {
             StartStation();
@@ -38,37 +32,34 @@ namespace Assets.Scripts.Controllers
 
         private void StartStation()
         {
-            if (Current) Current.SetActive(false);
-            Current = sList.gameObject;
-            Current.SetActive(true);
+            sList.gameObject.SetActive(true);
 
-            station = null;
+            sList.OnCancel = () =>
+            {
+                Cancel();
+            };
 
-            Prev = Cancel;
+            sList.OnDone = (StationObject s) =>
+            {
+                StartTile(s);
+            };
         }
 
-        public void DoneStation(StationObject s) 
+        private void StartTile(StationObject s)
         {
-            station = s;
-            StartTile();
-        }
+            tCtrl.gameObject.SetActive(true);
+            tCtrl.SetSprite(s.spr);
 
-        private void StartTile()
-        {
-            if (Current) Current.SetActive(false);
-            Current = tCtrl.gameObject;
-            Current.SetActive(true);
+            tCtrl.OnCancel = () =>
+            {
+                Cancel();
+            };
 
-            tile = -1;
-                tCtrl.SetSprite(station.spr);
-                Prev = StartStation;
-        }
-
-        public void DoneTile(int t)
-        {
-            tile = t;
-            map.SetTile(tile, station);
-            StartTile();
+            tCtrl.OnDone = (int i) =>
+            {
+                map.SetTile(i, s);
+                StartStation();
+            };
         }
     }
 }

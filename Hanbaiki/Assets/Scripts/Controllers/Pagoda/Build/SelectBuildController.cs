@@ -1,4 +1,5 @@
 ﻿using PotatoTools;
+using PotatoTools.Character;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,31 +7,48 @@ namespace Assets.Scripts.Controllers
 {
     public class SelectBuildController : MonoBehaviour
     {
-        public BuildStationController build;
+        public PlayerController player;
         public List<UnityEngine.UI.Image> options = new List<UnityEngine.UI.Image>();
+
+        public BuildStationController bsCtrl;
+        public BuildCrateController bcCtrl;
+        public BuildOutputController boCtrl;
+        public BuildFunnelController bfCtrl;
+        public BuildEraseController beCtrl;
 
         public float coolTime = 0.2f;
         private float coolRemain = 0f;
 
-        private List<TileTypeEnum> choices = new List<TileTypeEnum>() { TileTypeEnum.Station, TileTypeEnum.Input, TileTypeEnum.Output, TileTypeEnum.None };
+        private List<GameObject> choices = new List<GameObject>();
         private int selection = 0;
 
         private void Start()
         {
+            player.isLocked = true;
             options[selection].color = new Color(100, 100, 0);
+
+            choices.Add(bsCtrl.gameObject);
+            choices.Add(bcCtrl.gameObject);
+            choices.Add(boCtrl.gameObject);
+            choices.Add(bfCtrl.gameObject);
+            choices.Add(beCtrl.gameObject);
+
         }
 
         private void Update()
         {
             if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
-                build.DoneType(choices[selection]);
+                player.isLocked = false;
+                choices[selection].SetActive(true);
+                gameObject.SetActive(false);
                 return;
             }
 
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
-                build.Prev();
+                player.isLocked = false;
+                gameObject.SetActive(false);
                 return;
             }
 

@@ -11,18 +11,10 @@ namespace Assets.Scripts.Controllers
         public SelectItemListController iList;
 
         public PlayerController player;
-        public PagodaTileController map;
         public PagodaFunnelController fun;
-
-        private IngredientObject item;
-
-        private GameObject Current;
-        public Action Prev;
 
         private void OnEnable()
         {
-            item = null;
-
             StartFunnel();
 
             player.isLocked = true;
@@ -40,36 +32,33 @@ namespace Assets.Scripts.Controllers
 
         private void StartFunnel()
         {
-            if (Current) Current.SetActive(false);
-            Current = fCtrl.gameObject;
-            Current.SetActive(true);
+            fCtrl.gameObject.SetActive(true); 
+            
+            fCtrl.OnCancel = () =>
+            {
+                Cancel();
+            };
 
-            Prev = Cancel;
+            fCtrl.OnDone = (FunnelData f) =>
+            {
+                StartItem(f);
+            };
         }
 
-        public void DoneFunnel()
+        private void StartItem(FunnelData f)
         {
-            //fun.SetFunnel();
-        }
+            iList.gameObject.SetActive(true);
 
-        private void StartItem()
-        {
-            if (Current) Current.SetActive(false);
-            Current = iList.gameObject;
-            Current.SetActive(true);
+            iList.OnCancel = () =>
+            {
+                Cancel();
+            };
 
-            item = null;
-
-            Prev = StartFunnel;
-        }
-
-        public void DoneItem(IngredientObject i)
-        {
-            item = i;
-
-            //map.SetTile(tile, item);
-
-            StartFunnel();
+            iList.OnDone = (IngredientObject i) =>
+            {
+                fun.SetFunnel(f.x, f.y, f.direction, i);
+                StartFunnel();
+            };
         }
     }
 }

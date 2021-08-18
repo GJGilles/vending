@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
-    public class BuildOutputController : MonoBehaviour
+    public class BuildEraseController : MonoBehaviour
     {
         public SelectTileController tCtrl;
-        public SelectMapController mCtrl;
+        public Sprite spr;
 
         public PlayerController player;
         public PagodaTileController map;
@@ -33,7 +33,7 @@ namespace Assets.Scripts.Controllers
         private void StartTile()
         {
             tCtrl.gameObject.SetActive(true);
-            tCtrl.SetSprite(map.outputObj.GetComponent<SpriteRenderer>().sprite);
+            tCtrl.SetSprite(spr);
 
             tCtrl.OnCancel = () =>
             {
@@ -42,23 +42,7 @@ namespace Assets.Scripts.Controllers
 
             tCtrl.OnDone = (int i) =>
             {
-                StartMap(i);
-            };
-        }
-
-        private void StartMap(int i)
-        {
-            mCtrl.gameObject.SetActive(true);
-
-            mCtrl.OnCancel = () =>
-            {
-                Cancel();
-            };
-
-            mCtrl.OnDone = (LocationObject loc) =>
-            {
-                map.SetTile(i, loc);
-                StartTile();
+                map.SetTile(i);
             };
         }
     }
