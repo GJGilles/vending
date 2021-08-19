@@ -33,7 +33,7 @@ namespace Assets.Scripts.Controllers
                 int idx = input.Find(item);
                 if (idx >= 0)
                 {
-                    inventory.Add(StackMoveEnum.All, input.Remove(StackMoveEnum.One, idx));
+                    inventory.TryPush(input.Remove(StackMoveEnum.One, idx));
                     moveRemain = moveTime;
                 }
             }

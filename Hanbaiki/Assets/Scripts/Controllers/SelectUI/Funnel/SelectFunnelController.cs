@@ -11,11 +11,12 @@ namespace Assets.Scripts.Controllers
         public CameraFollow cam;
         public PagodaFunnelController map;
 
-        private SpriteRenderer target;
+        public SpriteRenderer target;
         private Transform prev;
 
         private void OnEnable()
         {
+            select = new FunnelData() { x = 0, y = 0, direction = MoveDirection.Right };
             target.gameObject.SetActive(true);
             prev = cam.target;
             cam.target = target.transform;
@@ -72,12 +73,13 @@ namespace Assets.Scripts.Controllers
             if (input.x != 0 || input.y != 0)
             {
                 UpdatePosition();
+                coolRemain = coolTime;
             }
         }
 
         private void UpdatePosition()
         {
-            target.transform.position = map.GetPosition(select.x, select.y);
+            target.transform.localPosition = map.GetPosition(select.x, select.y) + new Vector2(0, 1);
             target.sprite = map.sprites[(int)select.direction];
         }
     }

@@ -11,7 +11,7 @@ namespace Assets.Scripts.Controllers
         public CameraFollow cam;
         public PagodaTileController map;
 
-        private SpriteRenderer target;
+        public SpriteRenderer target;
         private Transform prev;
 
         private void OnEnable()

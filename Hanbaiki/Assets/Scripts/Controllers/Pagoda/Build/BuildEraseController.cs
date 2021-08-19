@@ -43,6 +43,7 @@ namespace Assets.Scripts.Controllers
             tCtrl.OnDone = (int i) =>
             {
                 map.SetTile(i);
+                StartTile();
             };
         }
     }

@@ -19,15 +19,15 @@ namespace Assets.Scripts.Controllers
         {
             if (InputManager.GetButtonTrigger(ButtonEnum.A))
             {
-                OnDone.Invoke(select);
                 gameObject.SetActive(false);
+                OnDone.Invoke(select);
                 return;
             }
 
             if (InputManager.GetButtonTrigger(ButtonEnum.B))
             {
-                OnCancel.Invoke();
                 gameObject.SetActive(false);
+                OnCancel.Invoke();
                 return;
             }
 

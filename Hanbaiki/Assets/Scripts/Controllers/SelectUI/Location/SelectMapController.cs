@@ -38,6 +38,19 @@ namespace Assets.Scripts.Controllers
         protected override void Update()
         {
             base.Update();
+
+            if (isDirty)
+            {
+                Vector2 next = new Vector2();
+                isDirty = !CommonAnimation.DampedMove(map.anchoredPosition, dest, out next);
+                map.anchoredPosition = next;
+
+                if (!isDirty)
+                {
+                    text.text = objects[selected].location.name;
+                }
+            }
+
             if (coolRemain > 0) return;
 
             float diff = InputManager.GetVertAxis();
@@ -53,18 +66,6 @@ namespace Assets.Scripts.Controllers
                 isDirty = true;
 
                 coolRemain = coolTime;
-            }
-
-            if (isDirty)
-            {
-                Vector2 next = new Vector2();
-                isDirty = !CommonAnimation.DampedMove(map.anchoredPosition, dest, out next);
-                map.anchoredPosition = next;
-
-                if (!isDirty)
-                {
-                    text.text = objects[selected].location.name;
-                }
             }
         }
 

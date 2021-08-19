@@ -19,6 +19,19 @@ namespace Assets.Scripts.Controllers
         private List<FunnelController> horzFunnel = new List<FunnelController>();
         private List<FunnelController> vertFunnel = new List<FunnelController>();
 
+        private void Start()
+        {
+            SetFunnels();
+        }
+
+        private void SetFunnels()
+        {
+            int h = PagodaService.Height();
+            int w = PagodaService.Width();
+            horzFunnel = new List<FunnelController>(new FunnelController[h*(w-1)]);
+            vertFunnel = new List<FunnelController>(new FunnelController[(h - 1)*w]);
+        }
+
         public int GetHeight()
         {
             return PagodaService.Height() * 2 - 1;
@@ -38,13 +51,14 @@ namespace Assets.Scripts.Controllers
 
         public Vector2 GetPosition(int x, int y)
         {
+            int width = PagodaService.Width();
             if (y % 2 == 0)
             {
-                return new Vector2(x + 0.5f, y);
+                return new Vector2(x + 0.5f - width / 2, (y / 2));
             }
             else
             {
-                return new Vector2(x, y + 0.5f);
+                return new Vector2(x - width / 2, (y / 2) + 0.5f);
             }
         }
 
@@ -58,7 +72,7 @@ namespace Assets.Scripts.Controllers
             Func<ItemInventory> output = () => null;
             if (y % 2 == 0)
             {
-                int a = PagodaService.Width() * y + x;
+                int a = PagodaService.Width() * (y / 2) + x;
                 if (dir == MoveDirection.Right)
                 {
                     input = () => tiles.GetInventory(a);
