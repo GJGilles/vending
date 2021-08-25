@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f234f9cbd40acf84e90fece8f155fe87, type: 3}
+  m_Name: Taiko-1
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: db19b5bb34abfe84da8b97c0edc2ffd0, type: 3}
+  - {fileID: 8300000, guid: e7d9bf02d3adf08428a42199c8f73615, type: 3}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 94f6c03792f04014290b1a1d0518dd9a, type: 3}
+  notes:
+  - direction: 3
+    time: 0
+  - direction: 0
+    time: 0.5
+  - direction: 3
+    time: 1
+  - direction: 0
+    time: 1.375
+  - direction: 0
+    time: 1.75
+  - direction: 1
+    time: 2
+  - direction: 1
+    time: 2.25
+  - direction: 1
+    time: 2.5
+  - direction: 1
+    time: 2.75
+  - direction: 0
+    time: 2.75
+  - direction: 3
+    time: 3
+  - direction: 0
+    time: 3
+  - direction: 3
+    time: 3.25
+  - direction: 3
+    time: 3.375
+  - direction: 3
+    time: 3.5
+  - direction: 3
+    time: 3.75
+  - direction: 3
+    time: 3.875

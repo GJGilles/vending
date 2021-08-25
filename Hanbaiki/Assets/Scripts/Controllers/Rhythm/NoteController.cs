@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,7 +8,8 @@ namespace Assets.Scripts.Controllers
     public class NoteController : MonoBehaviour
     {
         public RectTransform rt;
-        public SpriteRenderer spr;
+        public UnityEngine.UI.Image spr;
+        public List<Sprite> sprites = new List<Sprite>();
 
         private RhythmNote note;
 
@@ -25,6 +27,7 @@ namespace Assets.Scripts.Controllers
         {
             note = n;
             rt.anchoredPosition = GetVector() * dist;
+            spr.sprite = sprites[(int)n.direction];
         }
 
         public void MoveTo(float dist)

@@ -3,6 +3,7 @@ using PotatoTools;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace Assets.Scripts.Controllers
@@ -12,17 +13,24 @@ namespace Assets.Scripts.Controllers
         public float oRadius;
         public float iRadius;
 
-        public int range;
-        public float speed;
+        public float range;
         public float tolerance;
         public NoteController noteObject;
+        public List<AudioSource> sources = new List<AudioSource>();
 
-        [NonSerialized] public RhythmObject rhythm;
-
+        private int mistakes = 0;
         private int index = 0;
         private float time = 0f;
 
+        public UnityEvent<int> OnDone = new UnityEvent<int>();
+
+        private RhythmObject rhythm;
         private List<NoteController> current = new List<NoteController>();
+
+        private void Start()
+        {
+            GetComponent<Canvas>().worldCamera = Camera.main;
+        }
 
         private void Update()
         {
@@ -53,7 +61,29 @@ namespace Assets.Scripts.Controllers
                 ProcessButton(MoveDirection.Up);
             }
 
+            if (index >= rhythm.notes.Count && current.Count == 0)
+            {
+                OnDone.Invoke(100 - (100 * mistakes) / rhythm.notes.Count);
+                Destroy(gameObject);
+            }
+
             MoveNotes();
+        }
+
+        public void Set(RhythmObject obj)
+        {
+            index = 0;
+            time = -range;
+            current = new List<NoteController>();
+
+            rhythm = obj;
+            for (int i = 0; i < sources.Count; i++)
+            {
+                if (i < obj.sounds.Count)
+                    sources[i].clip = obj.sounds[i];
+                else
+                    sources[i].clip = null;
+            }
         }
 
         private void AddNote(RhythmNote note)
@@ -72,10 +102,12 @@ namespace Assets.Scripts.Controllers
                     // Success
                     Destroy(current[i].gameObject);
                     current.RemoveAt(i);
-                    return;
+
+                    break;
                 }
             }
-            // Mistake
+
+            sources[(int)dir].Play();
         }
 
         private void MoveNotes()
@@ -86,6 +118,7 @@ namespace Assets.Scripts.Controllers
                 if (n.GetTime() + tolerance < time)
                 {
                     // Missed
+                    mistakes++;
                     Destroy(n.gameObject);
                     current.RemoveAt(i);
                 }
