@@ -57,7 +57,7 @@ namespace Assets.Scripts.Controllers
 
             mCtrl.OnDone = (LocationObject loc) =>
             {
-                map.SetTile(i, loc);
+                map.SetTile(i, new LocationTileData() { type = TileTypeEnum.Output, loc = loc });
                 StartTile();
             };
         }

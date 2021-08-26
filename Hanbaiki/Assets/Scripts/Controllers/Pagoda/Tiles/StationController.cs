@@ -10,14 +10,11 @@ namespace Assets.Scripts.Controllers
 {
     public class StationController : SelectableController
     {
-        [NonSerialized] public StationObject station;
+        [NonSerialized] public StationTileData data;
 
-        public int size = 4;
         public SplitInventoryController menuObject;
 
         private RecipeObject recipe;
-        private ItemInventory inventory = new ItemInventory(4);
-
         private float cooldown = 0f;
 
         private void Update()
@@ -25,26 +22,26 @@ namespace Assets.Scripts.Controllers
             cooldown -= Time.deltaTime;
             if (recipe != null && cooldown <= 0)
             {
-                if (inventory.TryPush(new ItemStack(recipe.output, 1)) == null)
+                if (data.inventory.TryPush(new ItemStack(recipe.output, 1)) == null)
                 {
                     recipe = null;
                 }
             }
             else if (cooldown <= 0)
             {
-                foreach (var r in station.recipes)
+                foreach (var r in data.station.recipes)
                 {
                     bool input = true;
                     foreach (var i in r.input)
                     {
-                        input = input && inventory.Find(i) != -1;
+                        input = input && data.inventory.Find(i) != -1;
                     }
 
                     if (input)
                     {
                         foreach (var i in r.input)
                         {
-                            inventory.Remove(StackMoveEnum.One, inventory.Find(i));
+                            data.inventory.Remove(StackMoveEnum.One, data.inventory.Find(i));
                         }
                         cooldown = r.time;
                         recipe = r;
@@ -57,12 +54,12 @@ namespace Assets.Scripts.Controllers
         public override void Select(PlayerController p)
         {
             var inst = Instantiate(menuObject);
-            inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
+            inst.inventories = new List<ItemInventory>() { p.inventory, data.inventory };
             inst.widths = new List<int>() { 4, 2 };
             inst.OnClose.AddListener(() => p.isLocked = false);
 
             p.isLocked = true;
         }
-        public ItemInventory GetInventory() { return inventory; }
+        public ItemInventory GetInventory() { return data.inventory; }
     }
 }

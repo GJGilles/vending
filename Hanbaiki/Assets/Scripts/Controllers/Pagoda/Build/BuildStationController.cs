@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools.Character;
+using PotatoTools.Inventory;
 using System;
 using UnityEngine;
 
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Controllers
 
             tCtrl.OnDone = (int i) =>
             {
-                map.SetTile(i, s);
+                map.SetTile(i, new StationTileData() { type = TileTypeEnum.Station, station = s , inventory = new ItemInventory(4) });
                 StartStation();
             };
         }

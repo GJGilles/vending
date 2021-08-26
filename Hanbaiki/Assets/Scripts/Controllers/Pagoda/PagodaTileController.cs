@@ -43,15 +43,15 @@ namespace Assets.Scripts.Controllers
                 switch (data[i].type)
                 {
                     case TileTypeEnum.Station:
-                        SetTile(i, data[i].station);
+                        SetTile(i, (StationTileData)data[i]);
                         break;
 
-                    case TileTypeEnum.Input:
-                        SetTile(i, data[i].item);
+                    case TileTypeEnum.Crate:
+                        SetTile(i, (CrateTileData)data[i]);
                         break;
 
                     case TileTypeEnum.Output:
-                        SetTile(i, data[i].loc);
+                        SetTile(i, (LocationTileData)data[i]);
                         break;
 
                     case TileTypeEnum.None:
@@ -68,34 +68,34 @@ namespace Assets.Scripts.Controllers
                 Destroy(tiles[location].gameObject);
         }
 
-        public void SetTile(int location, StationObject station)
+        public void SetTile(int location, StationTileData data)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
             var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<StationController>();
-            inst.station = station;
-            inst.GetComponent<SpriteRenderer>().sprite = inst.station.spr;
+            inst.data = data;
+            inst.GetComponent<SpriteRenderer>().sprite = data.station.spr;
             tiles[location] = inst;
         }
 
-        public void SetTile(int location, IngredientObject item)
+        public void SetTile(int location, CrateTileData data)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
             var inst = Instantiate(crateObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<CrateController>();
-            inst.item = item;
+            inst.data = data;
             tiles[location] = inst;
         }
 
-        public void SetTile(int location, LocationObject loc)
+        public void SetTile(int location, LocationTileData data)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
             var inst = Instantiate(outputObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<OutputController>();
-            inst.location = loc;
+            inst.data = data;
             tiles[location] = inst;
         }
 
@@ -118,7 +118,7 @@ namespace Assets.Scripts.Controllers
             }
             else if (tiles[i] is OutputController)
             {
-                return VendingService.GetInventory(((OutputController)tiles[i]).location);
+                return VendingService.GetInventory(((OutputController)tiles[i]).data.loc);
             }
             else if (tiles[i] is StationController)
             {

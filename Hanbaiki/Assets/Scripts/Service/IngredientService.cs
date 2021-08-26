@@ -5,18 +5,18 @@ using System.Linq;
 
 namespace Assets.Scripts.Service
 {
-    public static class ItemService
+    public static class IngredientService
     {
         private static List<IngredientObject> items = new List<IngredientObject>();
 
-        static ItemService()
+        static IngredientService()
         {
             items = AssetLoader.LoadObjects<IngredientObject>();
         }
 
-        public static ItemObject Get(int id)
+        public static IngredientObject Get(int id)
         {
-            return items[id];
+            return items.Find(x => x.GetHashCode() == id);
         }
 
         public static List<IngredientObject> GetCurrent()

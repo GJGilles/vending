@@ -16,7 +16,7 @@ namespace Assets.Scripts.Service
 
         public static StationObject Get(int id)
         {
-            return stations[id];
+            return stations.Find(x => x.GetHashCode() == id);
         }
 
         public static List<StationObject> GetAll() 

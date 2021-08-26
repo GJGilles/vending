@@ -95,6 +95,38 @@ namespace Assets.Scripts.Service
 
             protected override void SetData(PagodaData data)
             {
+                height = data.height;
+                tiles = new List<TileData>(new TileData[height * width]);
+
+                for (int i = 0; i < data.tiles.Count; i++)
+                {
+                    if (data.tiles[i] == null)
+                    {
+                        tiles[i] = null;
+                    }
+                    else if ((TileTypeEnum)data.tiles[i].type == TileTypeEnum.Station)
+                    {
+                        var station = StationService.Get(data.tiles[i].id);
+                        var inventory = new ItemInventory(4);
+                        inventory.Load(data.tiles[i].inventory);
+
+                        tiles[i] = new StationTileData() { type = TileTypeEnum.Station, station = station, inventory = inventory };
+                    }
+                    else if ((TileTypeEnum)data.tiles[i].type == TileTypeEnum.Crate)
+                    {
+                        var item = IngredientService.Get(data.tiles[i].id);
+                        var inventory = new ItemInventory(1);
+                        inventory.Load(data.tiles[i].inventory);
+
+                        tiles[i] = new CrateTileData() { type = TileTypeEnum.Crate, item = item, inventory = inventory };
+                    }
+                    else if ((TileTypeEnum)data.tiles[i].type == TileTypeEnum.Output)
+                    {
+                        var loc = MapService.Get(data.tiles[i].id);
+
+                        tiles[i] = new LocationTileData() { type = TileTypeEnum.Output, loc = loc };
+                    }
+                }
             }
         }
     }

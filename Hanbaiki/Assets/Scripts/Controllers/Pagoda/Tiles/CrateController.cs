@@ -13,26 +13,24 @@ namespace Assets.Scripts.Controllers
         public SpriteRenderer spr;
         public SplitInventoryController menuObject;
 
-        [NonSerialized] public IngredientObject item;
-
-        private ItemInventory inventory = new ItemInventory(1);
+        [NonSerialized] public CrateTileData data;
 
         private void Start()
         {
-            spr.sprite = item.spr;
-            inventory.SetPermanent(0, item);
+            spr.sprite = data.item.spr;
+            data.inventory.SetPermanent(0, data.item);
         }
 
         public override void Select(PlayerController p)
         {
             var inst = Instantiate(menuObject);
-            inst.inventories = new List<ItemInventory>() { p.inventory, inventory };
+            inst.inventories = new List<ItemInventory>() { p.inventory, data.inventory };
             inst.widths = new List<int>() { 4, 1 };
             inst.OnClose.AddListener(() => p.isLocked = false);
 
             p.isLocked = true;
         }
 
-        public ItemInventory GetInventory() { return inventory; }
+        public ItemInventory GetInventory() { return data.inventory; }
     }
 }

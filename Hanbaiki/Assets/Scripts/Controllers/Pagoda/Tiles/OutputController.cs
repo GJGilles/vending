@@ -12,12 +12,12 @@ namespace Assets.Scripts.Controllers
     {
         public SplitInventoryController menuObject;
 
-        [NonSerialized] public LocationObject location;
+        [NonSerialized] public LocationTileData data;
 
         public override void Select(PlayerController p)
         {
             var inst = Instantiate(menuObject);
-            inst.inventories = new List<ItemInventory>() { p.inventory, VendingService.GetInventory(location) };
+            inst.inventories = new List<ItemInventory>() { p.inventory, VendingService.GetInventory(data.loc) };
             inst.widths = new List<int>() { 4, 2 };
             inst.OnClose.AddListener(() => p.isLocked = false);
 

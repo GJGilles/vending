@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools.Character;
+using PotatoTools.Inventory;
 using System;
 using UnityEngine;
 
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Controllers
 
             iList.OnDone = (IngredientObject i) =>
             {
-                map.SetTile(loc, i);
+                map.SetTile(loc, new CrateTileData() { type = TileTypeEnum.Crate, item = i, inventory = new ItemInventory(1) });
                 StartTile();
             };
         }

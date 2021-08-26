@@ -16,7 +16,7 @@ namespace Assets.Scripts.Service
 
         public static LocationObject Get(int id)
         {
-            return locations[id];
+            return locations.Find(x => x.GetHashCode() == id);
         }
 
         public static List<LocationObject> GetCurrent()

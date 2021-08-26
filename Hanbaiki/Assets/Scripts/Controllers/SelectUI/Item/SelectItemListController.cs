@@ -14,7 +14,7 @@ namespace Assets.Scripts.Controllers
         {
             list.Clean();
 
-            var items = ItemService.GetCurrent();
+            var items = IngredientService.GetCurrent();
             for (int i = 0; i < items.Count; i++)
             {
                 var inst = list.Add().GetComponent<SelectItemController>();
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Controllers
                 list.GetItem(list.GetSelected()).GetComponent<SelectItemController>().SetHighlight(false);
                 list.UpdateSelect(Mathf.RoundToInt(diff));
                 list.GetItem(list.GetSelected()).GetComponent<SelectItemController>().SetHighlight(true);
-                select = ItemService.GetCurrent()[list.GetSelected()];
+                select = IngredientService.GetCurrent()[list.GetSelected()];
 
                 coolRemain = coolTime;
             }
