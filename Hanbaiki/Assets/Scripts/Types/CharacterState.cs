@@ -8,6 +8,6 @@ namespace Assets.Scripts
     public class CharacterState
     {
         public CharacterObject character;
-        public int state;
+        public DialogObject dialog;
     }
 }

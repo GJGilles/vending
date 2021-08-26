@@ -31,8 +31,7 @@ namespace Assets.Scripts.Service
             protected override Dictionary<int, bool> GetData()
             {
                 return items
-                  .GroupBy(x => x.GetHashCode())
-                  .ToDictionary(x => x.Key, x => x.First().unlocked);
+                  .ToDictionary(x => x.GetHashCode(), x => x.unlocked);
             }
 
             protected override void SetData(Dictionary<int, bool> data)

@@ -52,7 +52,7 @@ namespace Assets.Scripts.Service
 
             foreach (var c in unlock.characters)
             {
-                c.character.state = c.state;
+                c.character.dialogs.Push(c.dialog);
             }
 
             var done = GetCurrent().Where(x => x.goals.Count == 0).Where(x => unlock.characters.Any(y => x.character.character == y.character)).ToList();
@@ -71,7 +71,7 @@ namespace Assets.Scripts.Service
         {
             foreach (var c in states)
             {
-                c.character.state = c.state;
+                c.character.dialogs.Push(c.dialog);
             }
         }
 
