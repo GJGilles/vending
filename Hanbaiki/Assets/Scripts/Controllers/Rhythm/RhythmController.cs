@@ -102,12 +102,11 @@ namespace Assets.Scripts.Controllers
                     // Success
                     Destroy(current[i].gameObject);
                     current.RemoveAt(i);
-
+                    sources[(int)dir].Play();
                     break;
                 }
             }
 
-            sources[(int)dir].Play();
         }
 
         private void MoveNotes()

@@ -21,9 +21,6 @@ namespace Assets.Scripts.Controllers
         {
             spr.sprite = item.spr;
             inventory.SetPermanent(0, item);
-
-            // TODO: Remove test code
-            inventory.Add(StackMoveEnum.All, new ItemStack(item, 10));
         }
 
         public override void Select(PlayerController p)

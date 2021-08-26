@@ -3,7 +3,11 @@ guid: 048475c7d8b97f94e9d618da9d3c753c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - item: {instanceID: 0}
+  - rhythm: {instanceID: 0}
+  - rObject: {fileID: 4681728826325718563, guid: 6c85e9b1b94bfce4eac01377fb26400c, type: 3}
+  - iObject: {fileID: 2140239618512071305, guid: 4f108a34a0e104741b8a49fb38ed86e1, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

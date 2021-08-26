@@ -926,8 +926,10 @@ GameObject:
   m_Component:
   - component: {fileID: 276370107}
   - component: {fileID: 276370106}
+  - component: {fileID: 276370109}
+  - component: {fileID: 276370108}
   m_Layer: 0
-  m_Name: TX Village Props Well
+  m_Name: Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -995,9 +997,53 @@ Transform:
   m_LocalPosition: {x: 31, y: -8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1418671285}
+  m_Father: {fileID: 346874109}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &276370108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276370105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 048475c7d8b97f94e9d618da9d3c753c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: e19506ff66acd1f4ea30a6b13271c0e5, type: 2}
+  count: 10
+  spread: 0
+  rhythm: {fileID: 11400000, guid: 7bc555952f98eda44b31b1f51350611e, type: 2}
+  rObject: {fileID: 4681728826325718563, guid: 6c85e9b1b94bfce4eac01377fb26400c, type: 3}
+  iObject: {fileID: 2140239618512071305, guid: 4f108a34a0e104741b8a49fb38ed86e1, type: 3}
+--- !u!61 &276370109
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276370105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.17558849, y: 1.421875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.56458426, y: 0}
+    oldSize: {x: 2.71875, y: 2.84375}
+    newSize: {x: 2.71875, y: 2.84375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.71875, y: 2.84375}
+  m_EdgeRadius: 0
 --- !u!1 &346874108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1075,7 @@ Transform:
   - {fileID: 1999800976}
   - {fileID: 660648042}
   - {fileID: 2010126294}
+  - {fileID: 276370107}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4926,7 +4973,6 @@ Transform:
   - {fileID: 220389169}
   - {fileID: 1453083774}
   - {fileID: 2125277092}
-  - {fileID: 276370107}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7118,10 +7164,6 @@ PrefabInstance:
     - target: {fileID: 7151228055694602576, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7151228055694602577, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
-      propertyPath: speed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7151228055694602579, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
       propertyPath: m_Name
