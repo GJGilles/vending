@@ -20,7 +20,7 @@ namespace Assets.Scripts.Controllers
 
         private void Start()
         {
-            player.isLocked = true;
+            PlayerService.Lock();
             select = 0;
             options[select].color = Color.yellow;
 
@@ -32,13 +32,13 @@ namespace Assets.Scripts.Controllers
 
             OnCancel = () =>
             {
-                player.isLocked = false;
+                PlayerService.Unlock();
                 gameObject.SetActive(false);
             };
 
             OnDone = (int i) =>
             {
-                player.isLocked = false;
+                PlayerService.Unlock();
                 gameObject.SetActive(false);
 
                 choices[i].SetActive(true);

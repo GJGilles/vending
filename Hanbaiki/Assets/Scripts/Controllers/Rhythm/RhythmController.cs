@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools;
+using PotatoTools.Character;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,12 @@ namespace Assets.Scripts.Controllers
         private void Start()
         {
             GetComponent<Canvas>().worldCamera = Camera.main;
+            PlayerService.Lock();
+        }
+
+        private void OnDestroy()
+        {
+            PlayerService.Unlock();
         }
 
         private void Update()

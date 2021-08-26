@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools;
+using PotatoTools.Character;
 using PotatoTools.Inventory;
 using System.Collections.Generic;
 using UnityEngine;

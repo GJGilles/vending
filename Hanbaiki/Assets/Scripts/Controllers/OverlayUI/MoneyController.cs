@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Service;
+using PotatoTools.Character;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers

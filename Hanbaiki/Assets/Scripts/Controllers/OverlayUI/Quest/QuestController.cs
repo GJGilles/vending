@@ -53,13 +53,6 @@ namespace Assets.Scripts.Controllers
                 height -= Mathf.RoundToInt(r.rect.height);
                 goals.Add(inst);
             }
-            
-            if (goals.Count == 0)
-            {
-                var inst = Instantiate(goalObj, goalArea);
-                inst.Set(quest.character);
-                goals.Add(inst);
-            }
         }
 
         private void RemoveAll()

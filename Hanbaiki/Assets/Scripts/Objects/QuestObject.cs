@@ -7,7 +7,7 @@ namespace Assets.Scripts.Objects
     public class QuestObject : ScriptableObject
     {
         public List<QuestGoal> goals = new List<QuestGoal>();
-        public CharacterState character = new CharacterState();
+        public UnlockData data = new UnlockData();
         public bool unlocked = false;
     }
 }

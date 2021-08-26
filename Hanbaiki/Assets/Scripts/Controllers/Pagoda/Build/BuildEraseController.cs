@@ -17,12 +17,12 @@ namespace Assets.Scripts.Controllers
         {
             StartTile();
 
-            player.isLocked = true;
+            PlayerService.Lock();
         }
 
         private void OnDisable()
         {
-            player.isLocked = false;
+            PlayerService.Unlock();
         }
 
         private void Cancel()

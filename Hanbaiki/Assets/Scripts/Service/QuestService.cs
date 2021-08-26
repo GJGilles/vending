@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools;
+using PotatoTools.Character;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Events;
@@ -16,6 +17,8 @@ namespace Assets.Scripts.Service
         static QuestService()
         {
             quests = AssetLoader.LoadObjects<QuestObject>();
+
+            CharacterService.OnDialog.AddListener(OnDialog);
         }
 
         public static QuestObject Get(int id)
@@ -55,7 +58,7 @@ namespace Assets.Scripts.Service
                 c.character.dialogs.Push(c.dialog);
             }
 
-            var done = GetCurrent().Where(x => x.goals.Count == 0).Where(x => unlock.characters.Any(y => x.character.character == y.character)).ToList();
+            var done = GetCurrent().Where(x => x.goals.Count == 0).ToList();
             foreach (var d in done)
             {
                 d.unlocked = false;
@@ -64,14 +67,6 @@ namespace Assets.Scripts.Service
             if (unlock.quests.Count > 0 || done.Count > 0)
             {
                 OnQuestChange.Invoke();
-            }
-        }
-
-        public static void DoUnlock(List<CharacterState> states)
-        {
-            foreach (var c in states)
-            {
-                c.character.dialogs.Push(c.dialog);
             }
         }
 
@@ -84,19 +79,59 @@ namespace Assets.Scripts.Service
                 bool changed = false;
                 foreach (var goal in q.goals)
                 {
-                    if (goal.number > 0 && goal.location == loc && goal.item == item)
+                    if (!(goal is QuestSellGoal)) continue;
+
+                    var g = (QuestSellGoal)goal;
+                    if (g.number > 0 && g.location == loc && g.item == item)
                     {
-                        goal.number--;
+                        g.number--;
                         changed = true;
                     }
                 }
-                q.goals.RemoveAll(x => x.number <= 0);
+                q.goals.RemoveAll(x => x is QuestSellGoal && ((QuestSellGoal)x).number <= 0);
 
                 if (changed) OnGoalChange.Invoke(q.GetHashCode());
 
                 if (q.goals.Count == 0 && changed)
                 {
-                    DoUnlock(new List<CharacterState>() { q.character });
+                    DoUnlock(q.data);
+                }
+            }
+        }
+
+        private static void OnDialog(CharacterObject character)
+        {
+            for (int i = 0; i < GetCurrent().Count; i++)
+            {
+                var q = GetCurrent()[i];
+
+                bool changed = false;
+                for (int j = q.goals.Count - 1; j >= 0; j--)
+                {
+                    var goal = q.goals[j];
+                    if (goal is QuestTalkGoal && ((QuestTalkGoal)goal).character == character)
+                    {
+                        changed = true;
+                        q.goals.RemoveAt(j);
+                    }
+                    else if (goal is QuestGiveGoal && ((QuestGiveGoal)goal).character == character)
+                    {
+                        var g = (QuestGiveGoal)goal;
+                        if (PlayerService.GetInventory().CanPull(new ItemStack(g.item, g.number)))
+                        {
+                            changed = true;
+                            PlayerService.GetInventory().TryPull(new ItemStack(g.item, g.number));
+                            q.goals.RemoveAt(j);
+                        }
+                    }
+                }
+
+
+                if (changed) OnGoalChange.Invoke(q.GetHashCode());
+
+                if (q.goals.Count == 0 && changed)
+                {
+                    DoUnlock(q.data);
                 }
             }
         }

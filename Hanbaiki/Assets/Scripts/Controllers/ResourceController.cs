@@ -19,10 +19,8 @@ namespace Assets.Scripts.Controllers
 
         public override void Select(PlayerController player)
         {
-            player.isLocked = true;
             var inst = Instantiate(rObject);
             inst.Set(rhythm);
-            inst.OnDone.AddListener(_ => player.isLocked = false);
             inst.OnDone.AddListener(Done);
         }
 

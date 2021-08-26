@@ -54,11 +54,8 @@ namespace Assets.Scripts.Controllers
         public override void Select(PlayerController p)
         {
             var inst = Instantiate(menuObject);
-            inst.inventories = new List<ItemInventory>() { p.inventory, data.inventory };
+            inst.inventories = new List<ItemInventory>() { PlayerService.GetInventory(), data.inventory };
             inst.widths = new List<int>() { 4, 2 };
-            inst.OnClose.AddListener(() => p.isLocked = false);
-
-            p.isLocked = true;
         }
         public ItemInventory GetInventory() { return data.inventory; }
     }

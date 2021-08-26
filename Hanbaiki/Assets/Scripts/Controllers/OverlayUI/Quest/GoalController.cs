@@ -8,12 +8,25 @@ namespace Assets.Scripts.Controllers
 
         public void Set(QuestGoal goal)
         {
-            text.text = $"Sell {goal.number} {goal.item.name} In {goal.location.name}";
-        }
-
-        public void Set (CharacterState state)
-        {
-            text.text = $"Talk to {state.character.name}";
+            if (goal is QuestSellGoal)
+            {
+                var g = (QuestSellGoal)goal;
+                text.text = $"Sell {g.number} {g.item.title} in {g.location.name}";
+            }
+            else if (goal is QuestTalkGoal)
+            {
+                var g = (QuestTalkGoal)goal;
+                text.text = $"Talk to {g.character.name}";
+            }
+            else if (goal is QuestGiveGoal)
+            {
+                var g = (QuestGiveGoal)goal;
+                text.text = $"Give {g.number} {g.item.title} to {g.character.name}";
+            }
+            else
+            {
+                text.text = "";
+            }
         }
     }
 }
