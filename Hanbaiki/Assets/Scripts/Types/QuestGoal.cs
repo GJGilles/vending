@@ -7,6 +7,7 @@ namespace Assets.Scripts
     [Serializable]
     public class QuestGoal
     {
+        public int number;
     }
 
     [Serializable]
@@ -14,7 +15,6 @@ namespace Assets.Scripts
     {
         public FoodObject item;
         public LocationObject location;
-        public int number;
     }
 
     [Serializable]
@@ -29,6 +29,5 @@ namespace Assets.Scripts
         public CharacterObject character;
 
         public ItemObject item;
-        public int number;
     }
 }

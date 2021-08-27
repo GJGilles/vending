@@ -3,6 +3,7 @@ using PotatoTools;
 using PotatoTools.Character;
 using PotatoTools.Inventory;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Service
@@ -18,6 +19,7 @@ namespace Assets.Scripts.Service
             {
                 machines.Add(loc, new ItemInventory(6));
             }
+            FileService.Add(new Data().GetService());
         }
 
         public static ItemInventory GetInventory(LocationObject loc)
@@ -103,6 +105,24 @@ namespace Assets.Scripts.Service
             if (ColorMatch(item, region)) chance += 20;
             if (TempMatch(item, region)) chance += 20;
             return chance;
+        }
+
+        public class Data : DataService<Dictionary<int, InventoryData>>
+        {
+            protected override string name => "vending";
+
+            protected override Dictionary<int, InventoryData> GetData()
+            {
+                return machines.ToDictionary(x => x.Key.GetHashCode(), x => x.Value.Save());
+            }
+
+            protected override void SetData(Dictionary<int, InventoryData> data)
+            {
+                foreach (var val in data)
+                {
+                    machines[MapService.Get(val.Key)].Load(val.Value);
+                }
+            }
         }
     }
 }

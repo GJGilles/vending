@@ -17,6 +17,7 @@ namespace Assets.Scripts.Service
         static QuestService()
         {
             quests = AssetLoader.LoadObjects<QuestObject>();
+            FileService.Add(new Data().GetService());
 
             CharacterService.OnDialog.AddListener(OnDialog);
         }
@@ -132,6 +133,43 @@ namespace Assets.Scripts.Service
                 if (q.goals.Count == 0 && changed)
                 {
                     DoUnlock(q.data);
+                }
+            }
+        }
+
+        public class Data : DataService<Dictionary<int, Dictionary<int, int>>>
+        {
+            protected override string name => "quests";
+
+            protected override Dictionary<int, Dictionary<int, int>> GetData()
+            {
+                return quests.Where(x => x.unlocked).ToDictionary(x => x.GetHashCode(), x => x.goals.ToDictionary(y => y.GetHashCode(), y => y.number));
+            }
+
+            protected override void SetData(Dictionary<int, Dictionary<int, int>> data)
+            {
+                foreach (var q in quests)
+                {
+                    if (data.ContainsKey(q.GetHashCode()))
+                    {
+                        q.unlocked = true;
+                        var d = data[q.GetHashCode()];
+                        for (int i = q.goals.Count - 1; i >= 0; i--)
+                        {
+                            if (d.ContainsKey(q.goals[i].GetHashCode()))
+                            {
+                                q.goals[i].number = d[q.goals[i].GetHashCode()];
+                            }
+                            else
+                            {
+                                q.goals.RemoveAt(i);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        q.unlocked = false;
+                    }
                 }
             }
         }

@@ -15,6 +15,7 @@ namespace Assets.Scripts.Service
         static PagodaService()
         {
             tiles = new List<TileData>(new TileData[height * width]);
+            FileService.Add(new Data().GetService());
         }
 
         public static int Height() { return height;  }

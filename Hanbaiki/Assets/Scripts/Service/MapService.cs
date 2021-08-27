@@ -12,6 +12,7 @@ namespace Assets.Scripts.Service
         static MapService()
         {
             locations = AssetLoader.LoadObjects<LocationObject>();
+            FileService.Add(new Data().GetService());
         }
 
         public static LocationObject Get(int id)

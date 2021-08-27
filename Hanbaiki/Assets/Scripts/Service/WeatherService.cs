@@ -1,6 +1,8 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Service
@@ -37,6 +39,7 @@ namespace Assets.Scripts.Service
                 temp.Add(r, 20);
                 precip.Add(r, false);
             }
+            FileService.Add(new Data().GetService());
         }
 
         public static void UpdateTemp(SeasonEnum season, int hour)
@@ -46,7 +49,7 @@ namespace Assets.Scripts.Service
             {
                 var r = keys[i];
                 var data = r.weather[(int)season];
-                int rand = Random.Range(data.minTemp, data.maxTemp + 1);
+                int rand = UnityEngine.Random.Range(data.minTemp, data.maxTemp + 1);
                 if (data.sunup <= hour && hour <= data.sundown)
                 {
                     if (rand > temp[r]) temp[r]++;
@@ -65,7 +68,7 @@ namespace Assets.Scripts.Service
             {
                 var r = keys[i];
                 var data = r.weather[(int)season];
-                int rand = Random.Range(1, 101);
+                int rand = UnityEngine.Random.Range(1, 101);
                 precip[r] = rand >= data.precip;
             }
         }
@@ -126,6 +129,36 @@ namespace Assets.Scripts.Service
                 {
                     return PrecipEnum.Heatwave;
                 }
+            }
+        }
+
+
+        [Serializable]
+        public class WeatherData
+        {
+            public Dictionary<int, int> temp;
+            public Dictionary<int, bool> precip;
+        }
+
+        public class Data : DataService<WeatherData>
+        {
+            protected override string name => "weather";
+
+            protected override WeatherData GetData()
+            {
+                return new WeatherData()
+                {
+                    temp = temp.ToDictionary(x => x.Key.GetHashCode(), x => x.Value),
+                    precip = precip.ToDictionary(x => x.Key.GetHashCode(), x => x.Value)
+                };
+            }
+
+            protected override void SetData(WeatherData data)
+            {
+                var regions = AssetLoader.LoadObjects<RegionObject>();
+
+                temp = data.temp.ToDictionary(x => regions.Find(y => y.GetHashCode() == x.Key), x => x.Value);
+                precip = data.precip.ToDictionary(x => regions.Find(y => y.GetHashCode() == x.Key), x => x.Value);
             }
         }
     }

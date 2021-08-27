@@ -12,6 +12,7 @@ namespace Assets.Scripts.Service
         static IngredientService()
         {
             items = AssetLoader.LoadObjects<IngredientObject>();
+            FileService.Add(new Data().GetService());
         }
 
         public static IngredientObject Get(int id)

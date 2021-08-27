@@ -1,4 +1,7 @@
-﻿namespace Assets.Scripts.Service
+﻿using PotatoTools;
+using System.Collections.Generic;
+
+namespace Assets.Scripts.Service
 {
     public enum SeasonEnum
     {
@@ -18,6 +21,11 @@
         private static int minute = 0;
 
         private static float time = 0;
+
+        static TimeService()
+        {
+            FileService.Add(new Data().GetService());
+        }
 
         public static void Update(float diff)
         {
@@ -94,6 +102,32 @@
         public static string GetTime()
         {
             return (hour + 1).ToString() + ":" + minute.ToString().PadLeft(2, '0');
+        }
+
+        public class Data : DataService<List<int>>
+        {
+            protected override string name => "time";
+
+            protected override List<int> GetData()
+            {
+                return new List<int>() 
+                {
+                    year,
+                    month,
+                    day, 
+                    hour, 
+                    minute
+                };
+            }
+
+            protected override void SetData(List<int> data)
+            {
+                year = data[0];
+                month = data[1];
+                day = data[2];
+                hour = data[3];
+                minute = data[4];
+            }
         }
     }
 }
