@@ -68,7 +68,7 @@ namespace Assets.Scripts.Controllers
                 ProcessButton(MoveDirection.Up);
             }
 
-            if (index >= rhythm.notes.Count && current.Count == 0)
+            if (index >= rhythm.notes.Count && time > rhythm.notes[index - 1].time + range)
             {
                 OnDone.Invoke(100 - (100 * mistakes) / rhythm.notes.Count);
                 Destroy(gameObject);
