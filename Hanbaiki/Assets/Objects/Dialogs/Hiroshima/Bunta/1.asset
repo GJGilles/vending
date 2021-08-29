@@ -9,19 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3331ceed6fd23f46bcf789a03e65629, type: 3}
-  m_Name: 0
+  m_Script: {fileID: 11500000, guid: 8bf07bdd105c39c46b6ffe7af945f35a, type: 3}
+  m_Name: 1
   m_EditorClassIdentifier: 
-  sell: []
-  give:
-  - number: 1
-    character: {fileID: 11400000, guid: 8f7a96c532778054e89b348f7c6b7deb, type: 2}
-    item: {fileID: 11400000, guid: 85d3cc3cd4eecb84aa6ca4cb1795ef4e, type: 2}
-  talk: []
-  data:
+  characters: []
+  dialogs: []
+  unlocks:
     locations: []
     recipes: []
     stations: []
     quests: []
     characters: []
-  unlocked: 0

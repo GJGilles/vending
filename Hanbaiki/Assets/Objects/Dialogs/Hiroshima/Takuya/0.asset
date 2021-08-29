@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 8bf07bdd105c39c46b6ffe7af945f35a, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: Assembly-CSharp:Assets.Scripts.Objects:DialogUnlockObject
   characters:
@@ -54,4 +54,6 @@ MonoBehaviour:
     recipes: []
     stations: []
     quests: []
-    characters: []
+    characters:
+    - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+      dialog: {fileID: 11400000, guid: 048e479750511cc4a948a3ed5293a689, type: 2}
