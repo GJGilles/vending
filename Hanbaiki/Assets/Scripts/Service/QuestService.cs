@@ -56,7 +56,7 @@ namespace Assets.Scripts.Service
 
             foreach (var c in unlock.characters)
             {
-                c.character.dialogs.Push(c.dialog);
+                c.character.dialogs.Add(c.dialog);
             }
 
             var done = GetCurrent().Where(x => x.goals.Count == 0).ToList();

@@ -9,24 +9,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c79675dea8fc449a9c42b408132587, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 0
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp:Assets.Scripts.Objects:DialogUnlockObject
   characters:
   - {fileID: 11400000, guid: cfc3ae8770a85d24294a2bfa03b08029, type: 2}
+  - {fileID: 11400000, guid: 8f7a96c532778054e89b348f7c6b7deb, type: 2}
   - {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+  - {fileID: 11400000, guid: 4f04eee053718ae4e910c434c431299b, type: 2}
   dialogs:
-  - text: Hey there my boy, this is some test text to see how well the dialog system 
-      works. I hope that this long message is useful, sport!
+  - text: 'Ah, it feels good to finally be back here! '
     speaker: 1
-  - text: Thanks pops!
+  - text: Bunta, you are finally back! Please, tell me about your journey! Please!
+    speaker: 0
+  - text: Takumi Tanuki! At least greet our guest properly before you start bothering
+      him with your requests.
+    speaker: 3
+  - text: Welcome back to our humble teahouse, Mr. Biwa. How long will you be staying?
+      Is there  anything that we can get you?
+    speaker: 3
+  - text: No need to be so formal, Mayumi. I enjoy regaling young Takumi with tales
+      of my travels. Now, shall I tell you of my recent travels through Okayama and
+      the great crow castle?
+    speaker: 1
+  - text: Please do Bunta!! Tell me everything!
+    speaker: 0
+  - text: '*Ahem*. Well, could I first offer you something to drink? Our famous green
+      tea perhaps?'
+    speaker: 2
+  - text: That would be wonderful!
+    speaker: 1
+  - text: Alright, Takumi, before you sit down and listen to Bunta's tales, go make
+      him a cup of green tea at the pagoda. Francis should be outside his farm as
+      per usual and sell you some fresh tea leaves that you can use.
+    speaker: 2
+  - text: Don't forget to pull up some water at the well too, dear!
+    speaker: 3
+  - text: Alright, see you when you get back, kid!
+    speaker: 1
+  - text: (I wish I could travel instead of being stuck here making tea)
     speaker: 0
   unlocks:
     locations: []
     recipes: []
     stations: []
-    quests:
-    - {fileID: 11400000, guid: 180044d4f0b069c4eb604c04a9947194, type: 2}
-    characters:
-    - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
-      state: 1
+    quests: []
+    characters: []

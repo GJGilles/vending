@@ -18,9 +18,13 @@ namespace Assets.Scripts.Controllers
 
         private List<GameObject> choices = new List<GameObject>();
 
-        private void Start()
+        private void OnEnable()
         {
             PlayerService.Lock();
+        }
+
+        private void Start()
+        {
             select = 0;
             options[select].color = Color.yellow;
 

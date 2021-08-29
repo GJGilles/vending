@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3331ceed6fd23f46bcf789a03e65629, type: 3}
   m_Name: 0
   m_EditorClassIdentifier: 
-  goals:
-  - item: {fileID: 11400000, guid: 85d3cc3cd4eecb84aa6ca4cb1795ef4e, type: 2}
-    location: {fileID: 11400000, guid: 402854cb5cac012448dfca9f4d35fb92, type: 2}
-    number: 10
-  character:
-    character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
-    state: 2
+  sell: []
+  give: []
+  talk: []
+  data:
+    locations: []
+    recipes: []
+    stations: []
+    quests: []
+    characters: []
   unlocked: 1
