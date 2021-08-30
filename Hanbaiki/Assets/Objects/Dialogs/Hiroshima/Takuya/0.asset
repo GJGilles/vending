@@ -53,7 +53,8 @@ MonoBehaviour:
     locations: []
     recipes: []
     stations: []
-    quests: []
+    quests:
+    - {fileID: 11400000, guid: 0b244a8eda2981b4ab39b882b731e1ed, type: 2}
     characters:
     - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
       dialog: {fileID: 11400000, guid: 048e479750511cc4a948a3ed5293a689, type: 2}

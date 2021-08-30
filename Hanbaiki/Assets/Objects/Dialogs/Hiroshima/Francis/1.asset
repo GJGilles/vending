@@ -12,11 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf07bdd105c39c46b6ffe7af945f35a, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  characters: []
-  dialogs: []
+  characters:
+  - {fileID: 11400000, guid: cfc3ae8770a85d24294a2bfa03b08029, type: 2}
+  - {fileID: 11400000, guid: 97f4db960d743c346ad469b4200f3fdf, type: 2}
+  dialogs:
+  - text: Hi there Francis. I'm here to buy some tea leaves again. Here, my dad gave
+      me some money.
+    speaker: 0
+  - text: Hmm, well this dosen't look like enough to buy my high quality tea leaves.
+    speaker: 1
+  - text: What do you mean?! This is the same amount that we have paid for years.
+      What changed?
+    speaker: 0
+  - text: The songs of the land have grown too complex for my old bones, so prices
+      rise to match.
+    speaker: 1
+  - text: Bah, well, if I pick the leaves myself then could I pay a reduced cost.
+    speaker: 0
+  - text: Heck, if you manage to pick the leaves, you can have them for free. I don't
+      have the strength
+    speaker: 1
+  - text: Alright, thanks! I may as well give it a shot.
+    speaker: 0
   unlocks:
     locations: []
     recipes: []
     stations: []
     quests: []
-    characters: []
+    characters:
+    - character: {fileID: 11400000, guid: 97f4db960d743c346ad469b4200f3fdf, type: 2}
+      dialog: {fileID: 11400000, guid: 45e2391e371f72d4da1a5ab6edf2d39d, type: 2}
