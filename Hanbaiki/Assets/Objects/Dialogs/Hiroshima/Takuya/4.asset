@@ -12,11 +12,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf07bdd105c39c46b6ffe7af945f35a, type: 3}
   m_Name: 4
   m_EditorClassIdentifier: 
-  characters: []
-  dialogs: []
+  characters:
+  - {fileID: 11400000, guid: cfc3ae8770a85d24294a2bfa03b08029, type: 2}
+  - {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+  - {fileID: 11400000, guid: 4f04eee053718ae4e910c434c431299b, type: 2}
+  dialogs:
+  - text: Dad!! I gave Bunta his tea but then I opened some kind of portal to the
+      human world! It was amazing!!
+    speaker: 0
+  - text: Ha! Thats great, Takumi! You probably opened one of my old vending machine
+      portals I used to sell to humans in my old travelling days
+    speaker: 1
+  - text: Ha! Thats great, Takumi! You probably opened one of my old vending machine
+      portals I used to sell food to humans in my old travelling days
+    speaker: 1
+  - text: Hahaha!! Now that I can use magic, I'm old enough to travel, right Dad?
+      I can finally see more of the human and yokai worlds!!
+    speaker: 0
+  - text: Ha.. ha. Well, ... um
+    speaker: 1
+  - text: You are old enough to travel on your own, if you want, dear. But travelling
+      isn't exactly free. We can give you a bit of money to help, but you are going
+      to need to show us that you can support yourself like your sister before we
+      feel safe letting you go.
+    speaker: 2
+  - text: Huh, ... well, thats fair... Just let me think.
+    speaker: 0
+  - text: Wait! Didn't Dad say that he used a vending machine to sell to humans?
+      I could do the same! There are a lot more of them than Yokai!
+    speaker: 0
+  - text: Well, selling to humans is a bit more complicated as well, but if you can
+      prove that you can do it then that would be a good source of income...
+    speaker: 0
+  - text: Alright, dear. If you can sell 10 cups of green tea to the humans then
+      I will buy you a train ticket to Okayama to start your journey.
+    speaker: 2
+  - text: Thanks Mom! Thanks Dad! I'm off to sell some tea!
+    speaker: 0
+  - text: Ah, and be sure to talk to Bunta! He is sure to know more about the human
+      world.
+    speaker: 2
   unlocks:
     locations: []
     recipes: []
     stations: []
-    quests: []
-    characters: []
+    quests:
+    - {fileID: 11400000, guid: ffaa27fd47ffb8a4eabf33d2b6bd20d4, type: 2}
+    - {fileID: 11400000, guid: 27352eaab6f0d454d9404dae2ed5889b, type: 2}
+    characters:
+    - character: {fileID: 11400000, guid: 8f7a96c532778054e89b348f7c6b7deb, type: 2}
+      dialog: {fileID: 11400000, guid: 7d6d064c9baa4024183c73e16915869c, type: 2}
+    - character: {fileID: 11400000, guid: 4f04eee053718ae4e910c434c431299b, type: 2}
+      dialog: {fileID: 11400000, guid: ae99a6605e602ae43a2eebf0b80f6e61, type: 2}
+    - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+      dialog: {fileID: 11400000, guid: 5c4fb40c1f8d4714ab95fb24c0e921e6, type: 2}

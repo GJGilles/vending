@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3331ceed6fd23f46bcf789a03e65629, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  sell:
+  - number: 10
+    item: {fileID: 11400000, guid: 85d3cc3cd4eecb84aa6ca4cb1795ef4e, type: 2}
+    location: {fileID: 11400000, guid: 402854cb5cac012448dfca9f4d35fb92, type: 2}
+  give: []
+  talk: []
+  data:
+    locations: []
+    recipes: []
+    stations: []
+    quests:
+    - {fileID: 11400000, guid: 802772cbfbec1904ea89f14eac51d866, type: 2}
+    characters: []
+  unlocked: 0
