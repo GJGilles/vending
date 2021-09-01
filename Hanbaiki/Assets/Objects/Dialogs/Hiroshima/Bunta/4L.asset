@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bf07bdd105c39c46b6ffe7af945f35a, type: 3}
-  m_Name: 1
+  m_Name: 4L
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 11400000, guid: cfc3ae8770a85d24294a2bfa03b08029, type: 2}
-  - {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+  - {fileID: 11400000, guid: 8f7a96c532778054e89b348f7c6b7deb, type: 2}
   dialogs:
-  - text: Go talk to farmer Francis to get some tea leaves, then make Bunta some
-      tea at the pagoda!
-    speaker: 1
+  - text: Use the insturment before you to play a song to the people of Hiroshima
+    speaker: 0
+  looping: 1
   unlocks:
     locations: []
     recipes: []
     stations: []
     quests: []
-    characters:
-    - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
-      dialog: {fileID: 11400000}
+    characters: []

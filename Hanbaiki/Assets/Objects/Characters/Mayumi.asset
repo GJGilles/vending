@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 9100000, guid: 1be079dc436b63747b2f2878daa5dbba, type: 2}
   sprite: {fileID: 21300000, guid: 349357b508422b940a59ac229efaac9e, type: 3}
-  dialogs: []
+  dialogs:
+  - {fileID: 11400000, guid: 5ed8235e32196644683e2e4f9d185252, type: 2}

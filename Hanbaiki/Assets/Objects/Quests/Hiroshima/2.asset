@@ -16,11 +16,13 @@ MonoBehaviour:
   give: []
   talk:
   - number: 0
-    character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
+    character: {fileID: 11400000, guid: 97f4db960d743c346ad469b4200f3fdf, type: 2}
   data:
     locations: []
     recipes: []
     stations: []
     quests: []
-    characters: []
+    characters:
+    - character: {fileID: 11400000, guid: 97f4db960d743c346ad469b4200f3fdf, type: 2}
+      dialog: {fileID: 11400000, guid: 73e47c31e4c977a428da4cb190bf6ca8, type: 2}
   unlocked: 0

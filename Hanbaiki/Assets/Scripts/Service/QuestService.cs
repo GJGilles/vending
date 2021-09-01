@@ -56,7 +56,7 @@ namespace Assets.Scripts.Service
 
             foreach (var c in unlock.characters)
             {
-                c.character.dialogs.Add(c.dialog);
+                c.character.PushDialog(c.dialog);
             }
 
             var done = GetCurrent().Where(x => x.goals.Count == 0).ToList();
@@ -100,8 +100,10 @@ namespace Assets.Scripts.Service
             }
         }
 
-        private static void OnDialog(CharacterObject character)
+        private static void OnDialog(CharacterObject character, DialogObject dialog)
         {
+            DoUnlock(((DialogUnlockObject)dialog).unlocks);
+
             for (int i = 0; i < GetCurrent().Count; i++)
             {
                 var q = GetCurrent()[i];

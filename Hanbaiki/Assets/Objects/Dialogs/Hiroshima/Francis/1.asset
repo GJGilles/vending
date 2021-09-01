@@ -34,6 +34,7 @@ MonoBehaviour:
     speaker: 1
   - text: Alright, thanks! I may as well give it a shot.
     speaker: 0
+  looping: 0
   unlocks:
     locations: []
     recipes: []

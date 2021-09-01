@@ -49,12 +49,18 @@ MonoBehaviour:
     speaker: 1
   - text: (I wish I could travel instead of being stuck here making tea)
     speaker: 0
+  looping: 0
   unlocks:
     locations: []
     recipes: []
     stations: []
     quests:
+    - {fileID: 11400000, guid: 180044d4f0b069c4eb604c04a9947194, type: 2}
     - {fileID: 11400000, guid: 0b244a8eda2981b4ab39b882b731e1ed, type: 2}
     characters:
+    - character: {fileID: 11400000, guid: 8f7a96c532778054e89b348f7c6b7deb, type: 2}
+      dialog: {fileID: 11400000, guid: ad0f79f75c2220e42a520e84d5b7e976, type: 2}
+    - character: {fileID: 11400000, guid: 4f04eee053718ae4e910c434c431299b, type: 2}
+      dialog: {fileID: 11400000, guid: 5ed8235e32196644683e2e4f9d185252, type: 2}
     - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
       dialog: {fileID: 11400000, guid: 048e479750511cc4a948a3ed5293a689, type: 2}
