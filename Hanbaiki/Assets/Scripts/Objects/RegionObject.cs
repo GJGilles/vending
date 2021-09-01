@@ -7,8 +7,5 @@ namespace Assets.Scripts.Objects
     public class RegionObject : ScriptableObject
     {
         public List<WeatherData> weather;
-
-        public ItemFlavorEnum favFlavor;
-        public ItemPrepEnum favPrep;
     }
 }

@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a427a62c807f543b1b12996ac5d658, type: 3}
+  m_Name: TeaSong
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: db19b5bb34abfe84da8b97c0edc2ffd0, type: 3}
+  - {fileID: 8300000, guid: e7d9bf02d3adf08428a42199c8f73615, type: 3}
+  - {fileID: 8300000, guid: 94f6c03792f04014290b1a1d0518dd9a, type: 3}
+  - {fileID: 8300000, guid: 94f6c03792f04014290b1a1d0518dd9a, type: 3}
+  notes:
+  - direction: 0
+    time: 0
+  - direction: 0
+    time: 0.25
+  - direction: 2
+    time: 0.5
+  - direction: 0
+    time: 1
+  - direction: 0
+    time: 1.25
+  - direction: 2
+    time: 1.5
+  - direction: 0
+    time: 2
+  - direction: 2
+    time: 2.25
+  - direction: 1
+    time: 2.5
+  - direction: 0
+    time: 2.75
+  - direction: 0
+    time: 3
+  - direction: 2
+    time: 3.25
+  - direction: 0
+    time: 3.5
+  - direction: 3
+    time: 3.75
+  - direction: 2
+    time: 4
+  - direction: 3
+    time: 4
+  - direction: 0
+    time: 4.25
+  - direction: 3
+    time: 4.25
+  - direction: 2
+    time: 4.5
+  - direction: 3
+    time: 4.5
+  - direction: 2
+    time: 4.75
+  - direction: 1
+    time: 4.75
+  - direction: 2
+    time: 5
+  - direction: 3
+    time: 5
+  - direction: 2
+    time: 5.25
+  - direction: 3
+    time: 5.25
+  - direction: 0
+    time: 5.5
+  - direction: 3
+    time: 5.5
+  - direction: 0
+    time: 5.75
+  - direction: 3
+    time: 5.75
+  - direction: 0
+    time: 6
+  - direction: 2
+    time: 6.25
+  - direction: 1
+    time: 6.5
+  - direction: 0
+    time: 7
+  - direction: 2
+    time: 7.25
+  - direction: 0
+    time: 7.5
+  - direction: 3
+    time: 7.75
+  title: Sakura
+  spr: {fileID: 0}
+  flavor: 3
+  prep: 1
+  unlocked: 1

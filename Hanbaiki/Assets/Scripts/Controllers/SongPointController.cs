@@ -11,6 +11,7 @@ namespace Assets.Scripts.Controllers
     {
         public SelectSongListController select;
 
+        public LocationObject location;
         public RhythmController rObject;
 
         private SongObject song;
@@ -36,6 +37,10 @@ namespace Assets.Scripts.Controllers
 
         private void Done(int success)
         {
+            int amount = (20 * success) / 100;
+            location.popularity.UpdateFlavor(song.flavor, amount);
+            location.popularity.UpdatePrep(song.prep, amount);
+            select.gameObject.SetActive(true);
         }
     }
 }

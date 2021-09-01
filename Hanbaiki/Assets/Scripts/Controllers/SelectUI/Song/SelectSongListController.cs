@@ -20,7 +20,8 @@ namespace Assets.Scripts.Controllers
                 var inst = list.Add().GetComponent<SelectSongController>();
                 inst.Set(items[i].title, items[i].spr);
             }
-            list.GetItem(list.GetSelected()).GetComponent<SelectSongController>().SetHighlight(true);
+            list.GetItem(list.GetSelected()).GetComponent<SelectSongController>().SetHighlight(true); 
+            select = SongService.GetCurrent()[list.GetSelected()];
         }
 
         protected override void Update()

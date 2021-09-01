@@ -9,7 +9,7 @@ namespace Assets.Scripts.Controllers
 
         public void Set(string text, Sprite spr)
         {
-            image.sprite = spr;
+            // image.sprite = spr;
             textbox.text = text;
         }
 

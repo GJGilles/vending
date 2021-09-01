@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Objects
 {
@@ -6,6 +7,7 @@ namespace Assets.Scripts.Objects
     public class LocationObject : ScriptableObject
     {
         public RegionObject region;
+        [NonSerialized] public PopularityTracker popularity = new PopularityTracker();
 
         public Vector2 coords;
         public int population;

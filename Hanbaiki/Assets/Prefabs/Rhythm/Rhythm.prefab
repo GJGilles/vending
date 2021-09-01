@@ -681,8 +681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4956d4d94f63ebf4183611ca0c03cc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oRadius: 50
-  iRadius: 6
+  oRadius: 200
+  iRadius: 24
   range: 0.5
   tolerance: 0.125
   noteObject: {fileID: 1631782141106666845, guid: fd0cb59d57f7fb7478d4ccd40e330121, type: 3}

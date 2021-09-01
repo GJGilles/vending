@@ -39,7 +39,7 @@ namespace Assets.Scripts.Service
 
                     var item = stack.item;
                     int rand = Random.Range(1, 101);
-                    if (stack.item is FoodObject && rand <= GetValue((FoodObject)stack.item, loc.region))
+                    if (stack.item is FoodObject && rand <= GetValue((FoodObject)stack.item, loc))
                     {
                         m.Remove(StackMoveEnum.One, i);
                         PlayerService.AddMoney(((FoodObject)item).cost);
@@ -47,16 +47,6 @@ namespace Assets.Scripts.Service
                     }
                 }
             }
-        }
-
-        public static bool FlavorMatch(FoodObject item, RegionObject region)
-        {
-            return item.flavor == region.favFlavor;
-        }
-
-        public static bool PrepMatch(FoodObject item, RegionObject region)
-        {
-            return item.prep == region.favPrep;
         }
 
         public static bool ColorMatch(FoodObject item, RegionObject region)
@@ -97,13 +87,13 @@ namespace Assets.Scripts.Service
             }
         }
 
-        public static int GetValue(FoodObject item, RegionObject region)
+        public static int GetValue(FoodObject item, LocationObject loc)
         {
             int chance = 10;
-            if (FlavorMatch(item, region)) chance += 20;
-            if (PrepMatch(item, region)) chance += 20;
-            if (ColorMatch(item, region)) chance += 20;
-            if (TempMatch(item, region)) chance += 20;
+            chance += (20 * loc.popularity.GetFlavor(item.flavor)) / 100;
+            chance += (20 * loc.popularity.GetPrep(item.prep)) / 100;
+            if (ColorMatch(item, loc.region)) chance += 20;
+            if (TempMatch(item, loc.region)) chance += 20;
             return chance;
         }
 
