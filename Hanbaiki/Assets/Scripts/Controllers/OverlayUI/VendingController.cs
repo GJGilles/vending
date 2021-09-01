@@ -13,6 +13,7 @@ namespace Assets.Scripts.Controllers
         public RectTransform map;
         public Animator precip;
         public TMPro.TMP_Text temp;
+        public TMPro.TMP_Text blog;
 
         public List<ItemSlotController> slots = new List<ItemSlotController>();
 
@@ -29,6 +30,7 @@ namespace Assets.Scripts.Controllers
         private void Update()
         {
             UpdateWeather();
+            UpdateBlog();
 
             if (InputManager.GetButtonTrigger(ButtonEnum.L2))
             {
@@ -102,6 +104,7 @@ namespace Assets.Scripts.Controllers
             }
             machine.OnChange.AddListener(UpdateSlot);
 
+            UpdateBlog();
             UpdateWeather();
         }
 
@@ -132,6 +135,11 @@ namespace Assets.Scripts.Controllers
         {
             precip.SetInteger("Type", (int)WeatherService.GetPrecip(location.region));
             temp.text = WeatherService.GetTempNum(location.region).ToString() + " 'C";
+        }
+
+        private void UpdateBlog()
+        {
+            blog.text = location.popularity.GetText();
         }
     }
 }

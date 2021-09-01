@@ -12,6 +12,24 @@ namespace Assets.Scripts
         private List<int> flavor = new List<int>() { 20, 20, 20, 20, 20};
         private List<int> prep = new List<int>() { 20, 20, 20, 20, 20 };
 
+        public string GetText()
+        {
+            string text = "";
+            var temp = new List<int>() { 0, 1, 2, 3, 4 };
+
+            temp = temp.OrderByDescending(x => flavor[x]).ToList();
+            text += flavor[temp[0]] + "% - " + ((ItemFlavorEnum)temp[0]).ToString() + "\n";
+            text += flavor[temp[1]] + "% - " + ((ItemFlavorEnum)temp[1]).ToString() + "\n";
+            text += "\n";
+
+            temp = temp.OrderByDescending(x => prep[x]).ToList();
+            text += prep[temp[0]] + "% - " + ((ItemPrepEnum)temp[0]).ToString() + "\n";
+            text += prep[temp[1]] + "% - " + ((ItemPrepEnum)temp[1]).ToString() + "\n";
+            text += "\n";
+
+            return text;
+        }
+
         public int GetFlavor(ItemFlavorEnum i)
         {
             return flavor[(int)i];
@@ -24,7 +42,7 @@ namespace Assets.Scripts
 
         public void UpdateFlavor(ItemFlavorEnum i, int amount)
         {
-            amount = Math.Min(amount, 100 - flavor[(int)i]);
+            amount = Math.Max(Math.Min(amount, 100 - flavor[(int)i]), -flavor[(int)i]);
             int inc = Mathf.FloorToInt(amount / 4f);
             amount = 4 * inc;
 
@@ -32,7 +50,7 @@ namespace Assets.Scripts
             {
                 if ((int)i != j)
                 {
-                    amount -= inc - Mathf.Min(inc, flavor[j]);
+                    amount -= inc - Math.Max(Math.Min(inc, flavor[j]), flavor[j] - 100);
                 }
             }
 
@@ -44,14 +62,14 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    flavor[j] -= Math.Min(inc, flavor[j]);
+                    flavor[j] -= Math.Max(Math.Min(inc, flavor[j]), flavor[j] - 100);
                 }
             }
         }
 
         public void UpdatePrep(ItemPrepEnum i, int amount)
         {
-            amount = Math.Min(amount, 100 - prep[(int)i]);
+            amount = Math.Max(Math.Min(amount, 100 - prep[(int)i]), -prep[(int)i]);
             int inc = Mathf.FloorToInt(amount / 4f);
             amount = 4 * inc;
 
@@ -59,7 +77,7 @@ namespace Assets.Scripts
             {
                 if ((int)i != j)
                 {
-                    amount -= inc - Mathf.Min(inc, prep[j]);
+                    amount -= inc - Math.Max(Math.Min(inc, prep[j]), prep[j] - 100);
                 }
             }
 
@@ -71,7 +89,7 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    prep[j] -= Math.Min(inc, prep[j]);
+                    prep[j] -= Math.Max(Math.Min(inc, prep[j]), prep[j] - 100);
                 }
             }
         }

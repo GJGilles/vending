@@ -42,8 +42,12 @@ namespace Assets.Scripts.Service
                     if (stack.item is FoodObject && rand <= GetValue((FoodObject)stack.item, loc))
                     {
                         m.Remove(StackMoveEnum.One, i);
-                        PlayerService.AddMoney(((FoodObject)item).cost);
                         QuestService.Update(loc, item);
+
+                        FoodObject food = (FoodObject)item;
+                        loc.popularity.UpdateFlavor(food.flavor, -4);
+                        loc.popularity.UpdatePrep(food.prep, -4);
+                        PlayerService.AddMoney(food.cost);
                     }
                 }
             }
