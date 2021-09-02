@@ -37,7 +37,7 @@ MonoBehaviour:
   - direction: 1
     time: 5.5
   - direction: 0
-    time: 11
+    time: 5.5
   - direction: 3
     time: 6
   - direction: 0

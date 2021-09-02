@@ -31,6 +31,7 @@ namespace Assets.Scripts.Controllers
                 objects.Add(inst);
             }
 
+            select = objects[0].location;
             dest = -objects[0].location.coords * map.localScale.x;
             isDirty = true;
         }

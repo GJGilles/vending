@@ -21,77 +21,77 @@ MonoBehaviour:
   - direction: 0
     time: 0
   - direction: 0
-    time: 0.25
-  - direction: 2
     time: 0.5
-  - direction: 0
+  - direction: 2
     time: 1
   - direction: 0
-    time: 1.25
-  - direction: 2
-    time: 1.5
-  - direction: 0
     time: 2
-  - direction: 2
-    time: 2.25
-  - direction: 1
+  - direction: 0
     time: 2.5
-  - direction: 0
-    time: 2.75
-  - direction: 0
+  - direction: 2
     time: 3
-  - direction: 2
-    time: 3.25
   - direction: 0
-    time: 3.5
-  - direction: 3
-    time: 3.75
-  - direction: 2
     time: 4
-  - direction: 3
-    time: 4
-  - direction: 0
-    time: 4.25
-  - direction: 3
-    time: 4.25
   - direction: 2
     time: 4.5
-  - direction: 3
-    time: 4.5
-  - direction: 2
-    time: 4.75
   - direction: 1
-    time: 4.75
-  - direction: 2
     time: 5
-  - direction: 3
-    time: 5
-  - direction: 2
-    time: 5.25
-  - direction: 3
-    time: 5.25
   - direction: 0
     time: 5.5
-  - direction: 3
-    time: 5.5
-  - direction: 0
-    time: 5.75
-  - direction: 3
-    time: 5.75
   - direction: 0
     time: 6
   - direction: 2
-    time: 6.25
-  - direction: 1
     time: 6.5
   - direction: 0
     time: 7
-  - direction: 2
-    time: 7.25
-  - direction: 0
-    time: 7.5
   - direction: 3
-    time: 7.75
+    time: 7.5
+  - direction: 2
+    time: 8
+  - direction: 3
+    time: 8
+  - direction: 0
+    time: 8.5
+  - direction: 3
+    time: 8.5
+  - direction: 2
+    time: 9
+  - direction: 3
+    time: 9
+  - direction: 2
+    time: 9.5
+  - direction: 1
+    time: 9.5
+  - direction: 2
+    time: 10
+  - direction: 3
+    time: 10
+  - direction: 2
+    time: 10.5
+  - direction: 3
+    time: 10.5
+  - direction: 0
+    time: 11
+  - direction: 3
+    time: 11
+  - direction: 0
+    time: 11.5
+  - direction: 3
+    time: 11.5
+  - direction: 0
+    time: 12
+  - direction: 2
+    time: 12.5
+  - direction: 1
+    time: 13
+  - direction: 0
+    time: 14
+  - direction: 2
+    time: 14.5
+  - direction: 0
+    time: 15
+  - direction: 3
+    time: 15.5
   title: Sakura
   spr: {fileID: 0}
   flavor: 3
