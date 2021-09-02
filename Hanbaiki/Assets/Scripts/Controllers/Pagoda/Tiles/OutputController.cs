@@ -5,6 +5,7 @@ using PotatoTools.Character;
 using PotatoTools.Inventory;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
@@ -14,7 +15,7 @@ namespace Assets.Scripts.Controllers
 
         [NonSerialized] public LocationTileData data;
 
-        public override void Select(PlayerController p)
+        public override void Select()
         {
             var inst = Instantiate(menuObject);
             inst.inventories = new List<ItemInventory>() { PlayerService.GetInventory(), VendingService.GetInventory(data.loc) };

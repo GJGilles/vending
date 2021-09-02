@@ -25,4 +25,4 @@ MonoBehaviour:
     characters:
     - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
       dialog: {fileID: 11400000, guid: 099f90d509d91424ba4e7e526e280ef5, type: 2}
-  unlocked: 1
+  unlocked: 0

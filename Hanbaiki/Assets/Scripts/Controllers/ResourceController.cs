@@ -17,7 +17,7 @@ namespace Assets.Scripts.Controllers
         public RhythmController rObject;
         public ItemController iObject;
 
-        public override void Select(PlayerController player)
+        public override void Select()
         {
             var inst = Instantiate(rObject);
             inst.Set(rhythm);

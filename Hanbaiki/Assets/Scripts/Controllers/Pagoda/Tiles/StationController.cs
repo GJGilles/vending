@@ -51,12 +51,13 @@ namespace Assets.Scripts.Controllers
             }
         }
 
-        public override void Select(PlayerController p)
+        public override void Select()
         {
             var inst = Instantiate(menuObject);
             inst.inventories = new List<ItemInventory>() { PlayerService.GetInventory(), data.inventory };
             inst.widths = new List<int>() { 4, 2 };
         }
+
         public ItemInventory GetInventory() { return data.inventory; }
     }
 }

@@ -55,7 +55,7 @@ namespace Assets.Scripts.Controllers
             item = it;
         }
 
-        public override void Select(PlayerController player)
+        public override void Select()
         {
             var inst = Instantiate(menuObject);
             inst.inventories = new List<ItemInventory>() { PlayerService.GetInventory(), inventory };

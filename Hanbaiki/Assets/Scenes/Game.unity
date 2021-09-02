@@ -7884,7 +7884,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7151228055694602586, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
 --- !u!4 &1814075084 stripped
 Transform:
@@ -7896,7 +7897,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7151228055694602577, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
   m_PrefabInstance: {fileID: 1814075083}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2107819176}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3eb8ed02dfb854479c61b856fff0351, type: 3}
@@ -24505,6 +24506,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolTime: 0.2
   list: {fileID: 1517840118}
+--- !u!1 &2107819176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7151228055694602579, guid: b8de2594d0d7f4f4aa57f8f81eda52d9, type: 3}
+  m_PrefabInstance: {fileID: 1814075083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &2107819177
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107819176}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.1}
+  m_Size: {x: 0.5, y: 0.7}
+  m_Direction: 0
 --- !u!1 &2125277090
 GameObject:
   m_ObjectHideFlags: 0

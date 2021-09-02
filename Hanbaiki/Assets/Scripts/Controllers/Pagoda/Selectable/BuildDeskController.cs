@@ -1,5 +1,6 @@
 ﻿using PotatoTools;
 using PotatoTools.Character;
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
@@ -7,7 +8,7 @@ namespace Assets.Scripts.Controllers
     {
         public SelectBuildController build;
 
-        public override void Select(PlayerController player)
+        public override void Select()
         {
             build.gameObject.SetActive(true);
         }

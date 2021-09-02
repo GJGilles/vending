@@ -21,7 +21,7 @@ namespace Assets.Scripts.Controllers
             data.inventory.SetPermanent(0, data.item);
         }
 
-        public override void Select(PlayerController p)
+        public override void Select()
         {
             var inst = Instantiate(menuObject);
             inst.inventories = new List<ItemInventory>() { PlayerService.GetInventory(), data.inventory };

@@ -8,7 +8,7 @@ namespace Assets.Scripts.Controllers
     {
         public GameObject room;
 
-        public override void Select(PlayerController player)
+        public override void Select()
         {
             room.SetActive(!room.activeSelf);
         }

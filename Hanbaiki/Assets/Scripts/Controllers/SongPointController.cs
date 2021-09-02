@@ -16,7 +16,7 @@ namespace Assets.Scripts.Controllers
 
         private SongObject song;
 
-        public override void Select(PlayerController player)
+        public override void Select()
         {
             select.gameObject.SetActive(true);
 

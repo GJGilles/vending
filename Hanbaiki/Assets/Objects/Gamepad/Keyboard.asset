@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22aebf51356620649900fee0eb7c8043, type: 3}
+  m_Name: Keyboard
+  m_EditorClassIdentifier: 
+  gamepad: 3
+  buttons:
+  - button: 0
+    spr: {fileID: 7304244184475788409, guid: 18f304f69962f44459e9cbf28bd1dd90, type: 3}
+  - button: 1
+    spr: {fileID: -8347414814739083954, guid: 18f304f69962f44459e9cbf28bd1dd90, type: 3}
+  - button: 2
+    spr: {fileID: 4751730009444582227, guid: 18f304f69962f44459e9cbf28bd1dd90, type: 3}
+  - button: 3
+    spr: {fileID: 8486844007131521276, guid: 18f304f69962f44459e9cbf28bd1dd90, type: 3}

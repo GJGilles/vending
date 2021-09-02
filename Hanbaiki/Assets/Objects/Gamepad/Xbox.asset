@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22aebf51356620649900fee0eb7c8043, type: 3}
+  m_Name: Xbox
+  m_EditorClassIdentifier: 
+  gamepad: 0
+  buttons:
+  - button: 0
+    spr: {fileID: -8191739510646017925, guid: 1a61503daedcdf941ac06d43c0616e51, type: 3}
+  - button: 1
+    spr: {fileID: 3713549098536957005, guid: 1a61503daedcdf941ac06d43c0616e51, type: 3}
+  - button: 2
+    spr: {fileID: -480254276019886394, guid: 1a61503daedcdf941ac06d43c0616e51, type: 3}
+  - button: 3
+    spr: {fileID: -6460607209241108654, guid: 1a61503daedcdf941ac06d43c0616e51, type: 3}
