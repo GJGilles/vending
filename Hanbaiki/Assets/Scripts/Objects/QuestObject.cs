@@ -17,7 +17,7 @@ namespace Assets.Scripts.Objects
         public UnlockData data = new UnlockData();
         public bool unlocked = false;
 
-        public QuestObject()
+        private void OnEnable()
         {
             goals = new List<QuestGoal>();
             foreach (var g in sell) goals.Add(g);

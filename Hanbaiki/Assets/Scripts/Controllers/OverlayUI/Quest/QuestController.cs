@@ -28,7 +28,7 @@ namespace Assets.Scripts.Controllers
 
         public int GetHeight()
         {
-            return 0;
+            return 10 * goals.Count + 25;
         }
 
         private void UpdateAll(int code)

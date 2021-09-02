@@ -41,7 +41,7 @@ namespace Assets.Scripts.Controllers
 
         private void Update()
         {
-            time += Time.deltaTime / 2f;
+            time += Time.deltaTime;
             while (index < rhythm.notes.Count && rhythm.notes[index].time < time + range)
             {
                 AddNote(rhythm.notes[index]);
