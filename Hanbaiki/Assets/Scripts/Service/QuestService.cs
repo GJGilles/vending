@@ -59,6 +59,11 @@ namespace Assets.Scripts.Service
                 c.character.PushDialog(c.dialog);
             }
 
+            foreach (var p in unlock.positions)
+            {
+                CharacterService.SetPosition(p.character, p.position);
+            }
+
             var done = GetCurrent().Where(x => x.goals.Count == 0).ToList();
             foreach (var d in done)
             {

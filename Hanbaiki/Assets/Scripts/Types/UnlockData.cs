@@ -12,5 +12,6 @@ namespace Assets.Scripts
         public List<StationObject> stations = new List<StationObject>();
         public List<QuestObject> quests = new List<QuestObject>();
         public List<CharacterState> characters = new List<CharacterState>();
+        public List<CharacterLocation> positions = new List<CharacterLocation>();
     }
 }
