@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Objects;
 using PotatoTools;
+using PotatoTools.Audio;
 using PotatoTools.Character;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,6 @@ namespace Assets.Scripts.Controllers
         public float range;
         public float tolerance;
         public NoteController noteObject;
-        public List<AudioSource> sources = new List<AudioSource>();
 
         private int mistakes = 0;
         private int index = 0;
@@ -84,13 +84,6 @@ namespace Assets.Scripts.Controllers
             current = new List<NoteController>();
 
             rhythm = obj;
-            for (int i = 0; i < sources.Count; i++)
-            {
-                if (i < obj.sounds.Count)
-                    sources[i].clip = obj.sounds[i];
-                else
-                    sources[i].clip = null;
-            }
         }
 
         private void AddNote(RhythmNote note)
@@ -109,7 +102,7 @@ namespace Assets.Scripts.Controllers
                     // Success
                     Destroy(current[i].gameObject);
                     current.RemoveAt(i);
-                    sources[(int)dir].Play();
+                    AudioService.Play(rhythm.sounds[(int)dir], AudioTypeEnum.SFX);
                     break;
                 }
             }
