@@ -48,22 +48,22 @@ namespace Assets.Scripts.Controllers
                 index++;
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.A))
+            if (InputManager.GetButtonTrigger(ButtonEnum.A) || InputManager.GetButtonTrigger(ButtonEnum.DDown))
             {
                 ProcessButton(MoveDirection.Down);
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.B))
+            if (InputManager.GetButtonTrigger(ButtonEnum.B) || InputManager.GetButtonTrigger(ButtonEnum.DRight))
             {
                 ProcessButton(MoveDirection.Right);
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.X))
+            if (InputManager.GetButtonTrigger(ButtonEnum.X) || InputManager.GetButtonTrigger(ButtonEnum.DLeft))
             {
                 ProcessButton(MoveDirection.Left);
             }
 
-            if (InputManager.GetButtonTrigger(ButtonEnum.Y))
+            if (InputManager.GetButtonTrigger(ButtonEnum.Y) || InputManager.GetButtonTrigger(ButtonEnum.DUp))
             {
                 ProcessButton(MoveDirection.Up);
             }
