@@ -319,7 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52147292}
   - component: {fileID: 52147293}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props Wheat C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 276370106}
   - component: {fileID: 276370109}
   - component: {fileID: 276370108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6143,7 +6143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1534549960}
   - component: {fileID: 1534549961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props Wheat D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6225,7 +6225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580569420}
   - component: {fileID: 1580569421}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props Bush A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23990,7 +23990,7 @@ GameObject:
   - component: {fileID: 1930292569}
   - component: {fileID: 1930292570}
   - component: {fileID: 1930292571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props Bush C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
