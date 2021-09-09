@@ -30,6 +30,16 @@ namespace Assets.Scripts.Service
             return stations.Where(s => s.unlocked).ToList();
         }
 
+        public static List<RecipeObject> GetRecipes()
+        {
+            return stations.SelectMany(x => x.recipes).Where(x => x.unlocked).ToList();
+        }
+
+        public static StationObject GetStation(RecipeObject recipe)
+        {
+            return stations.Where(x => x.recipes.Contains(recipe)).First();
+        }
+
         public class Data : DataService<Dictionary<int, bool>>
         {
             protected override string name => "stations";

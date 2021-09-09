@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoyalMilkTea
   m_EditorClassIdentifier: 
   title: 
-  spr: {fileID: 0}
+  spr: {fileID: 21300000, guid: 311706ab58cd7c74fa0e519f06de4087, type: 3}
   stack: 10
   description: 
   unlocked: 1
