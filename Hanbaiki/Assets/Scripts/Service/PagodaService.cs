@@ -11,6 +11,7 @@ namespace Assets.Scripts.Service
         private static int height = 3;
         private static int width = 11;
         private static List<TileData> tiles = new List<TileData>();
+        private static List<FunnelData> funnels = new List<FunnelData>();
 
         static PagodaService()
         {
@@ -22,12 +23,24 @@ namespace Assets.Scripts.Service
 
         public static int Width() { return width; }
 
+        public static TileData GetTile(int i) { return tiles[i];  }
+
         public static List<TileData> GetTiles() { return tiles; }
 
         public static void AddFloor() 
         { 
             height++;
             tiles.AddRange(new TileData[width]);
+        }
+
+        public static void SetTile(int i, TileData data)
+        {
+            tiles[i] = data;
+        }
+
+        public static void AddFunnel(FunnelData data)
+        {
+            funnels.Add(data);
         }
 
 

@@ -8,7 +8,7 @@ namespace Assets.Scripts.Objects
     {
         public List<IngredientObject> input;
         public IngredientObject output;
-        public float time;
+        public int ticks;
         public bool unlocked = true;
     }
 }

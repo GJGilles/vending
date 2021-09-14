@@ -9,10 +9,8 @@ namespace Assets.Scripts.Controllers
 {
     public class PagodaTileController : MonoBehaviour
     {
-        public StationController stationObj;
-        public CrateController crateObj;
-        public OutputController outputObj;
         public SpriteRenderer floorObj;
+        public TileController tileObject;
 
         private List<SelectableController> tiles = new List<SelectableController>();
 
@@ -34,30 +32,14 @@ namespace Assets.Scripts.Controllers
 
             for (int i = 0; i < data.Count; i++)
             {
-                if (data[i] == null)
+                if (data[i] == null || data[i].type == TileTypeEnum.None)
                 {
                     tiles.Add(null);
                     continue;
                 }
-
-                switch (data[i].type)
+                else
                 {
-                    case TileTypeEnum.Station:
-                        SetTile(i, (StationTileData)data[i]);
-                        break;
-
-                    case TileTypeEnum.Crate:
-                        SetTile(i, (CrateTileData)data[i]);
-                        break;
-
-                    case TileTypeEnum.Output:
-                        SetTile(i, (LocationTileData)data[i]);
-                        break;
-
-                    case TileTypeEnum.None:
-                    default:
-                        tiles.Add(null);
-                        break;
+                    SetTile(i, data[i]);
                 }
             }
         }
@@ -68,35 +50,16 @@ namespace Assets.Scripts.Controllers
                 Destroy(tiles[location].gameObject);
         }
 
-        public void SetTile(int location, StationTileData data)
+        public void SetTile(int location, TileData data)
         {
             if (tiles[location] != null)
                 Destroy(tiles[location].gameObject);
 
-            var inst = Instantiate(stationObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<StationController>();
-            inst.data = data;
-            inst.GetComponent<SpriteRenderer>().sprite = data.station.spr;
-            tiles[location] = inst;
-        }
+            PagodaService.SetTile(location, data);
 
-        public void SetTile(int location, CrateTileData data)
-        {
-            if (tiles[location] != null)
-                Destroy(tiles[location].gameObject);
-
-            var inst = Instantiate(crateObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<CrateController>();
-            inst.data = data;
-            tiles[location] = inst;
-        }
-
-        public void SetTile(int location, LocationTileData data)
-        {
-            if (tiles[location] != null)
-                Destroy(tiles[location].gameObject);
-
-            var inst = Instantiate(outputObj, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform).GetComponent<OutputController>();
-            inst.data = data;
-            tiles[location] = inst;
+            var tile = Instantiate(tileObject, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform);
+            tile.data = data;
+            tiles[location] = tile;
         }
 
         public Vector2 GetPosition(int location)
@@ -108,26 +71,6 @@ namespace Assets.Scripts.Controllers
             pos.y += ((location / width) - 0.5f) * floorObj.size.y;
 
             return pos;
-        }
-
-        public ItemInventory GetInventory(int i)
-        {
-            if (tiles[i] is CrateController)
-            {
-                return ((CrateController)tiles[i]).GetInventory();
-            }
-            else if (tiles[i] is OutputController)
-            {
-                return VendingService.GetInventory(((OutputController)tiles[i]).data.loc);
-            }
-            else if (tiles[i] is StationController)
-            {
-                return ((StationController)tiles[i]).GetInventory();
-            }
-            else
-            {
-                return null;
-            }
         }
     }
 }

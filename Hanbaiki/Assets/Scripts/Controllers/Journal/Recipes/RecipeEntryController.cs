@@ -27,7 +27,7 @@ namespace Assets.Scripts.Controllers
                 }
             }
 
-            time.text = (Mathf.RoundToInt(recipe.time) + " seconds");
+            time.text = (recipe.ticks + " ticks");
             station.sprite = StationService.GetStation(recipe).spr;
             output.sprite = recipe.output.spr;
         }

@@ -7,6 +7,8 @@ namespace Assets.Scripts.Controllers
 {
     public class BuildOutputController : MonoBehaviour
     {
+        public Sprite tileSpr;
+
         public SelectTileController tCtrl;
         public SelectMapController mCtrl;
 
@@ -33,7 +35,7 @@ namespace Assets.Scripts.Controllers
         private void StartTile()
         {
             tCtrl.gameObject.SetActive(true);
-            tCtrl.SetSprite(map.outputObj.GetComponent<SpriteRenderer>().sprite);
+            tCtrl.SetSprite(tileSpr);
 
             tCtrl.OnCancel = () =>
             {

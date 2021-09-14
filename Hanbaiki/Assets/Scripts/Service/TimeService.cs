@@ -1,5 +1,6 @@
 ﻿using PotatoTools;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace Assets.Scripts.Service
 {
@@ -14,6 +15,8 @@ namespace Assets.Scripts.Service
 
     public static class TimeService
     {
+        public static UnityEvent OnTick = new UnityEvent();
+
         private static int year = 0;
         private static int month = 0;
         private static int day = 0;
@@ -62,6 +65,8 @@ namespace Assets.Scripts.Service
                     month = 0;
                     year += 1;
                 }
+
+                OnTick.Invoke();
             }
         }
 

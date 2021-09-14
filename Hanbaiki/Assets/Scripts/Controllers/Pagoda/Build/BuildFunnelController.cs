@@ -7,7 +7,7 @@ namespace Assets.Scripts.Controllers
 {
     public class BuildFunnelController : MonoBehaviour
     {
-        public SelectFunnelController fCtrl;
+        public SelectTileController tList;
         public SelectItemListController iList;
 
         public PlayerController player;
@@ -15,7 +15,7 @@ namespace Assets.Scripts.Controllers
 
         private void OnEnable()
         {
-            StartFunnel();
+            StartTileA();
 
             PlayerService.Lock();
         }
@@ -30,22 +30,37 @@ namespace Assets.Scripts.Controllers
             gameObject.SetActive(false);
         }
 
-        private void StartFunnel()
+        private void StartTileA()
         {
-            fCtrl.gameObject.SetActive(true); 
-            
-            fCtrl.OnCancel = () =>
+            tList.gameObject.SetActive(true);
+
+            tList.OnCancel = () =>
             {
                 Cancel();
             };
 
-            fCtrl.OnDone = (FunnelData f) =>
+            tList.OnDone = (int loc) =>
             {
-                StartItem(f);
+                StartTileB(loc);
             };
         }
 
-        private void StartItem(FunnelData f)
+        private void StartTileB(int a)
+        {
+            tList.gameObject.SetActive(true);
+
+            tList.OnCancel = () =>
+            {
+                Cancel();
+            };
+
+            tList.OnDone = (int loc) =>
+            {
+                StartItem(a, loc);
+            };
+        }
+
+        private void StartItem(int a, int b)
         {
             iList.gameObject.SetActive(true);
 
@@ -56,8 +71,8 @@ namespace Assets.Scripts.Controllers
 
             iList.OnDone = (IngredientObject i) =>
             {
-                fun.SetFunnel(f.x, f.y, f.direction, i);
-                StartFunnel();
+                fun.SetFunnel(a, b, i);
+                StartTileA();
             };
         }
     }

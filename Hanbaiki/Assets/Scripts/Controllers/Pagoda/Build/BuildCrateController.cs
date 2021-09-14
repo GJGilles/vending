@@ -8,6 +8,8 @@ namespace Assets.Scripts.Controllers
 {
     public class BuildCrateController : MonoBehaviour
     {
+        public Sprite tileSpr;
+
         public SelectTileController tCtrl;
         public SelectItemListController iList;
 
@@ -34,7 +36,7 @@ namespace Assets.Scripts.Controllers
         private void StartTile()
         {
             tCtrl.gameObject.SetActive(true);
-            tCtrl.SetSprite(map.crateObj.GetComponent<SpriteRenderer>().sprite);
+            tCtrl.SetSprite(tileSpr);
 
             tCtrl.OnCancel = () =>
             {
