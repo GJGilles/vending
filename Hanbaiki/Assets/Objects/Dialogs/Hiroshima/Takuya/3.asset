@@ -23,9 +23,6 @@ MonoBehaviour:
   - text: Ha! Thats great, Takumi! You probably opened one of my old vending machine
       portals I used to sell to humans in my old travelling days
     speaker: 1
-  - text: Ha! Thats great, Takumi! You probably opened one of my old vending machine
-      portals I used to sell food to humans in my old travelling days
-    speaker: 1
   - text: Hahaha!! Now that I can use magic, I'm old enough to travel, right Dad?
       I can finally see more of the human and yokai worlds!!
     speaker: 0
@@ -43,7 +40,7 @@ MonoBehaviour:
     speaker: 0
   - text: Well, selling to humans is a bit more complicated as well, but if you can
       prove that you can do it then that would be a good source of income...
-    speaker: 0
+    speaker: 1
   - text: Alright, dear. If you can sell 10 cups of green tea to the humans then
       I will buy you a train ticket to Okayama to start your journey.
     speaker: 2
@@ -65,3 +62,4 @@ MonoBehaviour:
       dialog: {fileID: 11400000, guid: ae99a6605e602ae43a2eebf0b80f6e61, type: 2}
     - character: {fileID: 11400000, guid: 35e89d7b96da7994faf96ea477dcbc42, type: 2}
       dialog: {fileID: 11400000, guid: 5c4fb40c1f8d4714ab95fb24c0e921e6, type: 2}
+    positions: []
