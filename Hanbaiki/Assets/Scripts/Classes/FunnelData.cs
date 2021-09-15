@@ -29,6 +29,9 @@ namespace Assets.Scripts
             TimeService.OnTick.RemoveListener(Update);
         }
 
+        public int Input { get => input; }
+        public int Output { get => output; }
+
         private void Update()
         {
             var a = PagodaService.GetTile(input);

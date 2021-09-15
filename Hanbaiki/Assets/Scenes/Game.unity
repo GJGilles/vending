@@ -257,6 +257,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10326884}
   m_CullTransparentMesh: 1
+--- !u!1 &34961586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34961587}
+  - component: {fileID: 34961588}
+  m_Layer: 5
+  m_Name: 'AxisSelect '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &34961587
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34961586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 990495673}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &34961588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34961586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af036586c864af4fa942b35c69e8eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolTime: 0.3
+  cam: {fileID: 519420033}
+  pivot: {fileID: 0}
+  target: {fileID: 1080908596}
 --- !u!1 &52147291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1910,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolTime: 0.3
   cam: {fileID: 519420033}
-  map: {fileID: 882980517}
   target: {fileID: 1080908596}
 --- !u!1 &418049602
 GameObject:
@@ -3147,7 +3198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33bba2e163954b4e8975424544d2876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tList: {fileID: 0}
+  tList: {fileID: 416359376}
+  aList: {fileID: 34961588}
   iList: {fileID: 2016891415}
   player: {fileID: 1814075085}
   fun: {fileID: 882980518}
@@ -4215,6 +4267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles: {fileID: 882980517}
+  funnelObj: {fileID: 6907967447627132295, guid: 702a0d0665cece948ae6a73a79da91db, type: 3}
 --- !u!1 &907488984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,6 +4744,7 @@ RectTransform:
   - {fileID: 2016891412}
   - {fileID: 61749317}
   - {fileID: 130108990}
+  - {fileID: 34961587}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7109,7 +7163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8426542991317457279, guid: a96ed6b1ada73924cb18d3802c29af61, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96ed6b1ada73924cb18d3802c29af61, type: 3}

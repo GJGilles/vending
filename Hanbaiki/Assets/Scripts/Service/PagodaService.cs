@@ -3,6 +3,7 @@ using PotatoTools;
 using PotatoTools.Inventory;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Scripts.Service
 {
@@ -22,6 +23,17 @@ namespace Assets.Scripts.Service
         public static int Height() { return height;  }
 
         public static int Width() { return width; }
+
+        public static Vector2 GetPosition(int location)
+        {
+            int width = Width();
+            Vector2 pos = new Vector2();
+
+            pos.x += (location % width) - width / 2;
+            pos.y += ((location / width) - 0.5f);
+
+            return pos;
+        }
 
         public static TileData GetTile(int i) { return tiles[i];  }
 

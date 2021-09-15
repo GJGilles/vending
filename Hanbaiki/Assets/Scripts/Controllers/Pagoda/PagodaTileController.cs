@@ -57,20 +57,9 @@ namespace Assets.Scripts.Controllers
 
             PagodaService.SetTile(location, data);
 
-            var tile = Instantiate(tileObject, GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform);
+            var tile = Instantiate(tileObject, PagodaService.GetPosition(location) - new Vector2(0, 0.5f), new Quaternion(), transform);
             tile.data = data;
             tiles[location] = tile;
-        }
-
-        public Vector2 GetPosition(int location)
-        {
-            int width = PagodaService.Width();
-            Vector2 pos = new Vector2();
-
-            pos.x += (location % width) - width / 2;
-            pos.y += ((location / width) - 0.5f) * floorObj.size.y;
-
-            return pos;
         }
     }
 }

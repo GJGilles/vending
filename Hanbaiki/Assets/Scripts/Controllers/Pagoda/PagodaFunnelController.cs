@@ -13,6 +13,7 @@ namespace Assets.Scripts.Controllers
     public class PagodaFunnelController : MonoBehaviour
     {
         public PagodaTileController tiles;
+        public FunnelController funnelObj;
 
         private void Start()
         {
@@ -20,7 +21,10 @@ namespace Assets.Scripts.Controllers
 
         public void SetFunnel(int x, int y, IngredientObject item)
         {
-            PagodaService.AddFunnel(new FunnelData(x, y, item));
+            var data = new FunnelData(x, y, item);
+            PagodaService.AddFunnel(data);
+            var inst = Instantiate(funnelObj, transform);
+            inst.data = data;
         }
     }
 }

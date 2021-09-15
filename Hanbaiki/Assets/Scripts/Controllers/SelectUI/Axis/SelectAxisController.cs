@@ -6,11 +6,13 @@ using System;
 
 namespace Assets.Scripts.Controllers
 {
-    public class SelectTileController : SelectUIController<int>
+    public class SelectAxisController : SelectUIController<int>
     {
         public CameraFollow cam;
-
+        public SpriteRenderer pivot;
         public SpriteRenderer target;
+
+        [NonSerialized] public int center;
         private Transform prev;
 
         private void OnEnable()
@@ -18,6 +20,7 @@ namespace Assets.Scripts.Controllers
             target.gameObject.SetActive(true);
             prev = cam.target;
             cam.target = target.transform;
+            //pivot.transform.localPosition = PagodaService.GetPosition(center);
             UpdateSelected(select);
         }
 
@@ -46,7 +49,7 @@ namespace Assets.Scripts.Controllers
                 next = select + Mathf.RoundToInt(input.y) * width;
             }
 
-            if (next != select)
+            if (next != select && ((center % width == next % width) || (center / width == next / width)))
             {
                 if (next < 0) next += size;
                 if (next >= size) next -= size;

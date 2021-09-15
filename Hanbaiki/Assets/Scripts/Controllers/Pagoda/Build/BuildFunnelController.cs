@@ -8,6 +8,7 @@ namespace Assets.Scripts.Controllers
     public class BuildFunnelController : MonoBehaviour
     {
         public SelectTileController tList;
+        public SelectAxisController aList;
         public SelectItemListController iList;
 
         public PlayerController player;
@@ -33,6 +34,7 @@ namespace Assets.Scripts.Controllers
         private void StartTileA()
         {
             tList.gameObject.SetActive(true);
+            tList.target.sprite = null;
 
             tList.OnCancel = () =>
             {
@@ -47,14 +49,16 @@ namespace Assets.Scripts.Controllers
 
         private void StartTileB(int a)
         {
-            tList.gameObject.SetActive(true);
+            aList.gameObject.SetActive(true);
+            //aList.pivot.sprite = null;
+            aList.target.sprite = null;
 
-            tList.OnCancel = () =>
+            aList.OnCancel = () =>
             {
                 Cancel();
             };
 
-            tList.OnDone = (int loc) =>
+            aList.OnDone = (int loc) =>
             {
                 StartItem(a, loc);
             };
