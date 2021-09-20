@@ -19,9 +19,9 @@ namespace Assets.Scripts.Controllers
         {
         }
 
-        public void SetFunnel(int x, int y, IngredientObject item)
+        public void SetFunnel(int x, int y)
         {
-            var data = new FunnelData(x, y, item);
+            var data = new FunnelData(x, y);
             PagodaService.AddFunnel(data);
             var inst = Instantiate(funnelObj, transform);
             inst.data = data;

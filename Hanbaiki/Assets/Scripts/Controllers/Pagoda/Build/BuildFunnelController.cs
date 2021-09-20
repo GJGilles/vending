@@ -7,6 +7,8 @@ namespace Assets.Scripts.Controllers
 {
     public class BuildFunnelController : MonoBehaviour
     {
+        public Sprite targetSpr;
+
         public SelectTileController tList;
         public SelectAxisController aList;
         public SelectItemListController iList;
@@ -34,7 +36,7 @@ namespace Assets.Scripts.Controllers
         private void StartTileA()
         {
             tList.gameObject.SetActive(true);
-            tList.target.sprite = null;
+            tList.target.sprite = targetSpr;
 
             tList.OnCancel = () =>
             {
@@ -49,9 +51,9 @@ namespace Assets.Scripts.Controllers
 
         private void StartTileB(int a)
         {
+            aList.center = a;
             aList.gameObject.SetActive(true);
-            //aList.pivot.sprite = null;
-            aList.target.sprite = null;
+            aList.target.sprite = targetSpr;
 
             aList.OnCancel = () =>
             {
@@ -60,22 +62,7 @@ namespace Assets.Scripts.Controllers
 
             aList.OnDone = (int loc) =>
             {
-                StartItem(a, loc);
-            };
-        }
-
-        private void StartItem(int a, int b)
-        {
-            iList.gameObject.SetActive(true);
-
-            iList.OnCancel = () =>
-            {
-                Cancel();
-            };
-
-            iList.OnDone = (IngredientObject i) =>
-            {
-                fun.SetFunnel(a, b, i);
+                fun.SetFunnel(a, loc);
                 StartTileA();
             };
         }

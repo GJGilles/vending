@@ -9,17 +9,13 @@ namespace Assets.Scripts
 {
     public class FunnelData
     {
-        public ItemInventory inventory = new ItemInventory(1);
-
         private int input = 0;
         private int output = 0;
-        private ItemObject item;
 
-        public FunnelData(int a, int b, ItemObject i)
+        public FunnelData(int a, int b)
         {
             input = a;
             output = b;
-            item = i;
 
             TimeService.OnTick.AddListener(Update);
         }
@@ -37,22 +33,15 @@ namespace Assets.Scripts
             var a = PagodaService.GetTile(input);
             var b = PagodaService.GetTile(output);
 
-            if (inventory.Peek(0) == null && a != null)
+            if (a != null && b != null)
             {
-                int idx = a.GetInventory().Find(item);
-                if (idx >= 0)
-                {
-                    inventory.TryPush(a.GetInventory().Remove(StackMoveEnum.One, idx));
-                }
-            }
-            
-            if (inventory.Peek(0) != null && b != null)
-            {
-                var remain = b.GetInventory().TryPush(inventory.Remove(StackMoveEnum.All));
-                if (remain != null)
-                {
-                    inventory.Add(StackMoveEnum.All, remain);
-                }
+                var stack = a.GetInventory().TryPull();
+
+                if (stack != null)
+                    stack = b.GetInventory().TryPush(stack);
+
+                if (stack != null)
+                    a.GetInventory().TryPush(stack);
             }
         }
     }

@@ -20,14 +20,18 @@ namespace Assets.Scripts.Controllers
             target.gameObject.SetActive(true);
             prev = cam.target;
             cam.target = target.transform;
-            //pivot.transform.localPosition = PagodaService.GetPosition(center);
-            UpdateSelected(select);
+
+            pivot.gameObject.SetActive(true);
+            pivot.transform.position = PagodaService.GetPosition(center) - new Vector2(0, 0.5f);
+
+            UpdateSelected(center);
         }
 
         private void OnDisable()
         {
             target.gameObject.SetActive(false);
             cam.target = prev;
+            pivot.gameObject.SetActive(false);
         }
 
         protected override void Update()
