@@ -47,7 +47,7 @@ namespace Assets.Scripts.Service
                         FoodObject food = (FoodObject)item;
                         loc.popularity.UpdateFlavor(food.flavor, -4);
                         loc.popularity.UpdatePrep(food.prep, -4);
-                        PlayerService.AddMoney(food.cost);
+                        PlayerService.AddMoney(food.sell);
                     }
                 }
             }

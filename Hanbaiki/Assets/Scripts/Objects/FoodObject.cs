@@ -5,7 +5,7 @@ namespace Assets.Scripts.Objects
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/FoodObject", order = 8)]
 	public class FoodObject : IngredientObject
     {
-		public int cost;
+		public int sell;
 		public ItemColorEnum color;
 		public ItemTempEnum temp;
 		public ItemFlavorEnum flavor;

@@ -6,6 +6,7 @@ namespace Assets.Scripts.Objects
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/IngredientObject", order = 3)]
 	public class IngredientObject : ItemObject
     {
+		public int buy;
 		public string description;
 		public bool unlocked = true;
 	}

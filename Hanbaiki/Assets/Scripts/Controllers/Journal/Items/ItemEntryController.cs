@@ -23,7 +23,7 @@ namespace Assets.Scripts.Controllers
             if (i is FoodObject)
             {
                 FoodObject f = (FoodObject)i;
-                costArea.text = "$" + f.cost;
+                costArea.text = "$" + f.sell;
                 colorArea.text = f.color.ToString();
                 tempArea.text = f.temp.ToString();
                 flavorArea.text = f.flavor.ToString();
