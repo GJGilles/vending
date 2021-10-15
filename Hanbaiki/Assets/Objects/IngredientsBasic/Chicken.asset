@@ -9,17 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd81f54b27342c46a577e8fc5f35ec6, type: 3}
-  m_Name: GenmaiTea
+  m_Script: {fileID: 11500000, guid: 2469196a291e23647a9ac33839eba8f1, type: 3}
+  m_Name: Chicken
   m_EditorClassIdentifier: 
   title: 
-  spr: {fileID: 21300000, guid: b8480bd243893454c856a154b360f98b, type: 3}
+  spr: {fileID: 21300000, guid: 6ee36b32f9776dd4eaff884187e8a6a8, type: 3}
   stack: 10
-  buy: 0
+  buy: 336
   description: 
-  unlocked: 0
-  sell: 367
-  color: 1
-  temp: 0
-  flavor: 3
-  prep: 1
+  unlocked: 1

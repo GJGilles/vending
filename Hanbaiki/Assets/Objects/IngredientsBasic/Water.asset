@@ -10,16 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2469196a291e23647a9ac33839eba8f1, type: 3}
-  m_Name: BlackTeaLeaves
+  m_Name: Water
   m_EditorClassIdentifier: 
-  title: Black Tea Leaves
-  spr: {fileID: 21300000, guid: 7f365b37b840fd247883ab07cb145792, type: 3}
-  cost: 0
+  title: Water
+  spr: {fileID: 21300000, guid: b19e538a3f4259b4bad13c05d76208fc, type: 3}
   stack: 10
-  color: 2
-  temp: 2
-  flavor: 3
-  prep: 0
+  buy: 0
   description: 
-  input: 0
-  unlocked: 1
+  unlocked: 0

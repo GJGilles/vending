@@ -9,16 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2469196a291e23647a9ac33839eba8f1, type: 3}
-  m_Name: GreenTeaLeaves
+  m_Script: {fileID: 11500000, guid: bcd81f54b27342c46a577e8fc5f35ec6, type: 3}
+  m_Name: IceCream
   m_EditorClassIdentifier: 
-  title: Green Tea Leaves
-  spr: {fileID: 21300000, guid: 138e4a36d38ee9a4c94e6328c8eb2716, type: 3}
-  cost: 0
-  color: 1
-  temp: 2
-  flavor: 3
-  prep: 0
+  title: 
+  spr: {fileID: 21300000, guid: f19cfccd35603b748b6ac1ea9e5428c2, type: 3}
+  stack: 10
+  buy: 0
   description: 
-  input: 1
-  unlocked: 1
+  unlocked: 0
+  sell: 175
+  color: 0
+  temp: 4
+  flavor: 1
+  prep: 0

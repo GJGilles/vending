@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcd81f54b27342c46a577e8fc5f35ec6, type: 3}
-  m_Name: GenmaiTea
+  m_Name: Flan
   m_EditorClassIdentifier: 
   title: 
-  spr: {fileID: 21300000, guid: b8480bd243893454c856a154b360f98b, type: 3}
+  spr: {fileID: 21300000, guid: 9bb7c218fa4b5a54da0bf1f7b4e4ebb2, type: 3}
   stack: 10
   buy: 0
   description: 
   unlocked: 0
-  sell: 367
-  color: 1
-  temp: 0
-  flavor: 3
-  prep: 1
+  sell: 379
+  color: 3
+  temp: 3
+  flavor: 1
+  prep: 4
